@@ -12,8 +12,7 @@ export const getMovies = () => {
 };
 
 export const selectMovie = (id) => {
-  const promise = axios.get('http://localhost:5000/movies/:'+id)
-  console.log(promise);
+  const promise = axios.get('http://localhost:5000/movies/:id')
   return {
     type: SELECT_MOVIE,
     payload: promise,

@@ -23,10 +23,10 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
     <Router>
       <Switch>
-        <Route path="/movies" component={MovieList} />
-        <Route path="/movies/:id" component={MovieDescriptions} />
-        <Route path="/movies/new-movie" component={AddMovie} />
-        <Route path="/" component={App} />
+        <Route exact path="/movies" component={MovieList} />
+        <Route exact path="/movies/:id" component={MovieDescriptions} />
+        <Route exact path="/movies/new-movie" component={AddMovie} />
+        <Route exact path="/" component={App} />
       </Switch>
     </Router>
   </Provider>,

@@ -3,7 +3,7 @@ import MoviesReducer from './LoadMovie';
 
 const rootReducer = combineReducers({
   movies: MoviesReducer,
-  movie: MoviesReducer,
+  selectedMovie: MoviesReducer,
 });
 
 export default rootReducer;

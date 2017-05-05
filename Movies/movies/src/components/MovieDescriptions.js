@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectMovie } from '../actions';
 import { Link } from 'react-router-dom';
-import MovieList from './MovieList';
 
 class MovieDescriptions extends Component {
   componentDidMount() {
@@ -16,13 +15,13 @@ class MovieDescriptions extends Component {
   render () {
     if (this.props.selectedMovie === undefined) return (<div>Movie Not Found</div>);
     return (
-      <div className="blue">
+      <div>
         {this.props.selectedMovie.title}<br/>
         Directed By: {this.props.selectedMovie.director}<br/>
         Starring: {this.props.selectedMovie.stars}<br/> //??
         {this.props.selectedMovie.description}<br/>
         {this.props.selectedMovie.metascore}<br/>
-        <Link to='/movies' component={MovieList}>Back To List</Link>
+        <Link to='/movies'>Back To List</Link>
       </div>
     );
   }
