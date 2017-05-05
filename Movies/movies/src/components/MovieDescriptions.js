@@ -2,26 +2,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectMovie } from '../actions';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import MovieList from './MovieList';
 
 class MovieDescriptions extends Component {
   componentDidMount() {
-    console.log(this.props.movies);
-    const movie = this.props.movies.filter(movie => movie.id === movie)[0];
+    const id = this.props.match.params.id;
+    const movie = this.props.movies.filter(movie => movie.id === id)[0];
+    if (movie === undefined) return;
     this.props.selectMovie(movie);
-   if (movie === undefined) return;
-    // this.props.selectMovie(movie);
   }
 
   render () {
-    if (this.props.movie === undefined) return (<div>Movie Not Found</div>);
+    if (this.props.selectedMovie === undefined) return (<div>Movie Not Found</div>);
     return (
-      <div>
-        {this.props.movie.title}<br/>
-        Directed By: {this.props.movie.director}<br/>
-        Starring: {this.props.movie.stars}<br/> //??
-        {this.props.movie.description}<br/>
-        {this.props.movie.metascore}<br/>
+      <div className="blue">
+        {this.props.selectedMovie.title}<br/>
+        Directed By: {this.props.selectedMovie.director}<br/>
+        Starring: {this.props.selectedMovie.stars}<br/> //??
+        {this.props.selectedMovie.description}<br/>
+        {this.props.selectedMovie.metascore}<br/>
+        <Link to='/movies' component={MovieList}>Back To List</Link>
       </div>
     );
   }
@@ -30,6 +31,7 @@ class MovieDescriptions extends Component {
 const mapStateToProps = (state) => {
   return {
     movies: state.movies,
+    selectedMovie: state.selectedMovie,
   };
 };
 

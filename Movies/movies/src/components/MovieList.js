@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getMovies, selectMovie } from '../actions';
 import { Link } from 'react-router-dom';
+//import MovieDescriptions from './MovieDescriptions';
 
 class MovieList extends Component {
   componentDidMount() {
@@ -13,9 +14,9 @@ class MovieList extends Component {
         <ul>
           {this.props.movies.map((movie, i) => {
             return (
-                <li className="movietitle" key={i}>
+                <li className="movietitle" key={i} /*onClick={() => this.props.selectMovie(`${movie.id}`)}*/>
                 <Link to={`/movies/:${movie.id}`} >{movie.title}</Link>
-                <span className="year">XXXX</span>
+                <span className="year">{movie.year}</span>
                 </li>
             );
           })}

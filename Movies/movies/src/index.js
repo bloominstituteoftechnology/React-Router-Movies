@@ -25,7 +25,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/movies" component={MovieList} />
         <Route path="/movies/:id" component={MovieDescriptions} />
-        <Route path="/new-movie" component={AddMovie} />
+        <Route path="/movies/new-movie" component={AddMovie} />
         <Route path="/" component={App} />
       </Switch>
     </Router>
