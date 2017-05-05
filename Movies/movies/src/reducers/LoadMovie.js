@@ -5,7 +5,7 @@ export default (state = [], action) => {
     case GET_MOVIES:
       return action.payload.data;
     case SELECT_MOVIE:
-      return action.payload.data;
+      return action.payload;
     default:
       return state;
   }

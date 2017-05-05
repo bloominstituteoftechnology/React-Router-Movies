@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getMovies } from '../actions';
-//import { Link  } from 'react-router-dom';
+import { getMovies, selectMovie } from '../actions';
+import { Link } from 'react-router-dom';
 
 class MovieList extends Component {
   componentDidMount() {
@@ -14,7 +14,7 @@ class MovieList extends Component {
           {this.props.movies.map((movie, i) => {
             return (
                 <li className="movietitle" key={i}>
-                {movie.title}
+                <Link to={`/movies/:${movie.id}`} >{movie.title}</Link>
                 <span className="year">XXXX</span>
                 </li>
             );
@@ -31,4 +31,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getMovies })(MovieList);
+export default connect(mapStateToProps, { getMovies, selectMovie })(MovieList);
