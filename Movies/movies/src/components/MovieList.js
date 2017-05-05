@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getMovies } from '../actions';
-import { Link  } from 'react-router-dom';
+//import { Link  } from 'react-router-dom';
 
 class MovieList extends Component {
   componentDidMount() {
@@ -13,10 +13,10 @@ class MovieList extends Component {
         <ul>
           {this.props.movies.map((movie, i) => {
             return (
-              <li className="movietitle" key={i}>
-              {movie.title}
-              <span className="year">XXXX</span>
-              </li>
+                <li className="movietitle" key={i}>
+                {movie.title}
+                <span className="year">XXXX</span>
+                </li>
             );
           })}
         </ul>

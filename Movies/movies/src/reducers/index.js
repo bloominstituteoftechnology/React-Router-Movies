@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import MoviesReducer from './LoadMovie';
 
 const rootReducer = combineReducers({
-  activeMovie: MoviesReducer,
+  movies: MoviesReducer,
 });
 
 export default rootReducer;

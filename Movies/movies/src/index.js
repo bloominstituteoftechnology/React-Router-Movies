@@ -4,9 +4,9 @@ import './index.css';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
+  //Link,
   Switch,
-  Redirect
+  //Redirect
 } from 'react-router-dom';
 import reducers from './reducers';
 import { Provider } from 'react-redux';
@@ -20,7 +20,7 @@ import AddMovie from './components/AddMovie';
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
     <Router>
       <Switch>
         <Route path="/movies" component={MovieList} />

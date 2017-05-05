@@ -7,7 +7,6 @@ class App extends Component {
     return (
       <div className="App">
         <Link to="/movies">Movies</Link>
-        <div className="display"></div>
       </div>
     );
   }
