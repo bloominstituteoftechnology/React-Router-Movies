@@ -1,0 +1,34 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from 'react-router-dom';
+import reducers from './reducers';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxPromise from 'redux-promise';
+import App from './App';
+import MovieList from './components/MovieList';
+import MovieDescriptions from './components/MovieDescriptions';
+import AddMovie from './components/AddMovie';
+
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <Router>
+      <Switch>
+        <Route path="/movies" component={MovieList} />
+        <Route path="/movies/:id" component={MovieDescriptions} />
+        <Route path="/new-movie" component={AddMovie} />
+        <Route path="/" component={App} />
+      </Switch>
+    </Router>
+  </Provider>,
+  document.getElementById('root')
+);
