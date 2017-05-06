@@ -11,6 +11,7 @@ const movies = [
   {
     id: 0,
     title: 'Happy People: A Year In The Taiga',
+    year: '2005',
     director: '',
 		description: '',
     metascore: '',
@@ -19,6 +20,7 @@ const movies = [
   {
     id: 1,
     title: 'Touching The Void',
+    year: '2001',
     director: '',
 		description: '',
     metascore: '',
@@ -27,6 +29,7 @@ const movies = [
   {
     id: 2,
     title: 'Housebound',
+    year: '2014',
     director: '',
 		description: '',
     metascore: '',
@@ -35,6 +38,7 @@ const movies = [
   {
     id: 3,
     title: 'The Babadook',
+    year: '2014',
     director: '',
 		description: '',
     metascore: '',
@@ -43,6 +47,7 @@ const movies = [
   {
     id: 4,
     title: 'The Martian',
+    year: '2015',
     director: '',
 		description: '',
     metascore: '',
@@ -51,6 +56,7 @@ const movies = [
   {
     id: 5,
     title: 'Cabin In The Woods',
+    year: '2012',
     director: '',
 		description: '',
     metascore: '',
@@ -59,6 +65,7 @@ const movies = [
   {
     id: 6,
     title: 'The Descent',
+    year: '2006',
     director: '',
 		description: '',
     metascore: '',
@@ -67,6 +74,7 @@ const movies = [
   {
     id: 7,
     title: 'The Departed',
+    year: '2012',
     director: '',
 		description: '',
     metascore: '',
@@ -75,6 +83,7 @@ const movies = [
   {
     id: 8,
     title: 'The Fifth Element',
+    year: '1996',
     director: '',
 		description: '',
     metascore: '',
@@ -83,6 +92,7 @@ const movies = [
   {
     id: 9,
     title: 'Fargo',
+    year: '1994',
     director: '',
 		description: '',
     metascore: '',
@@ -91,6 +101,7 @@ const movies = [
   {
     id: 10,
     title: 'Deadpool',
+    year: '2016',
     director: '',
 		description: '',
     metascore: '',
@@ -99,6 +110,7 @@ const movies = [
   {
     id: 11,
     title: 'Logan',
+    year: '2017',
     director: '',
 		description: '',
     metascore: '',
