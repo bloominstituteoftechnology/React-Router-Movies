@@ -29,7 +29,7 @@ const movies = [
     runtime: '1hr 46min',
     rating: 'R',
     director: ['Kevin Macdonald'],
-		description: 'The true story of two climbers and their perilous journey up to the west face of Siula Grande in the Peruvian Andes in 1985',
+		description: 'The true story of two climbers and their perilous journey up to the west face of Siula Grande in the Peruvian Andes in 1985.',
     metascore: '82',
     stars: ['Simon Yates', 'Joe Simpson', 'Brendan Mackey'],
     userrating: 'Not yet rated',
