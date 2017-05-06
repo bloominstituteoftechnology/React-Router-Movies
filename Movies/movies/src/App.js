@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <Link to="/movies">Movies</Link>
+        <Link to="/new-movie">Add A Movie</Link>
       </div>
     );
   }
