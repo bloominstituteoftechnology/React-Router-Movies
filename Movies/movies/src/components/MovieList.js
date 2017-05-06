@@ -10,16 +10,21 @@ class MovieList extends Component {
   render() {
     return(
       <div>
+        <h1>Must-Watch Movie Queue:</h1>
         <ul>
           {this.props.movies.map((movie, i) => {
             return (
-                <li className="movietitle" key={i} /*onClick={() => this.props.selectMovie(`${movie.id}`)}*/>
+
+                <li className="movietitle" key={i}>
+                <input type='number' name='queueposition' value={movie.id+1}/>
                 <Link to={`/movies/${movie.id}`} >{movie.title}</Link>
                 <span className="year">{movie.year}</span>
                 </li>
             );
           })}
         </ul>
+        <Link to="/new-movie">Add A Movie</Link><br/>
+        <Link to="/movies">Back</Link>
       </div>
     )
   }
