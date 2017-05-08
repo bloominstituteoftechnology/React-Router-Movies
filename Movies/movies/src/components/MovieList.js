@@ -14,7 +14,6 @@ class MovieList extends Component {
         <ul>
           {this.props.movies.map((movie, i) => {
             return (
-
                 <li className="movietitle" key={i}>
                 <input type='number' name='queueposition' value={movie.id+1}/>
                 <Link to={`/movies/${movie.id}`} >{movie.title}</Link>
