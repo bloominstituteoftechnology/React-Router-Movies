@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getMovies } from '../actions'
-import { bindActionCreaters } from 'redux';
+import { bindActionCreators } from 'redux';
 
 class MoviesList extends Component {
   componentDidMount() {
@@ -15,10 +15,10 @@ class MoviesList extends Component {
             return (
               <li key={i}>
                 <p>{`film ${i + 1}`}</p>
-                <p>{`title ${movies.title}`}</p>
-                <p>{`director: ${movies.director}`}</p>
-                <p>{`metascore: ${movies.metascore}`}</p>
-                <p>{`stars: ${movies.stars}`}</p>
+                <p>{`title ${titulo.title}`}</p>
+                <p>{`director: ${titulo.director}`}</p>
+                <p>{`metascore: ${titulo.metascore}`}</p>
+                <p>{`stars: ${titulo.stars}`}</p>
               </li>
             )
           })}
@@ -35,7 +35,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreaters({getFilms: getMovies}, dispatch);
+  return bindActionCreators({getFilms: getMovies}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviesList);
