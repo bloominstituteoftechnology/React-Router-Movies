@@ -18,8 +18,20 @@
   },
   "homepage": "https://github.com/SunJieMing/LS-Routing-Movies#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.17.1",
+    "bootstrap": "^4.0.0-alpha.6",
     "cors": "^2.8.3",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-addons-transition-group": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.2",
+    "reactstrap": "^4.8.0",
+    "redux": "^3.7.2",
+    "redux-promise": "^0.5.3"
   }
 }
