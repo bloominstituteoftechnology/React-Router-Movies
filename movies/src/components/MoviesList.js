@@ -3,6 +3,7 @@ import { getMovies } from '../actions';
 import { connect } from 'react-redux';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Display from './Display'
 
 class MoviesList extends Component {
   componentDidMount() {
