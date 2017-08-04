@@ -13,10 +13,7 @@ class Movie extends Component {
   }
   render() {
     if (this.props.movies === null) {
-      return <h1>This is a problem!</h1>;
-    }
-    if (this.props.moves === undefined) {
-      return <h1>This too is a problem!!!</h1>
+      return null;
     }
     return (
       <div key={this.props.movies.id}>

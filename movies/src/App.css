@@ -28,3 +28,8 @@
   justify-content: center;
   flex-direction: column;
 }
+body {
+  font-family: 'Love Ya Like A Sister', cursive;
+  justify-content: center;
+  background-color: #FDE4F1;
+}
