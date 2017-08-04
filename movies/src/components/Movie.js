@@ -1,17 +1,38 @@
 //movie
-import React from 'react';
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getMoviesById } from '../actions';
 
-const Movie = ({ movie }) => {
-  return (
-    console.log(movie),
-    <li key={movie.id}>
-      <p>{`Movie ${movie.id}`}</p>
-      <p>{`Title: ${movie.title}`}</p>
-      <p>{`Director: ${movie.director}`}</p>
-      <p>{`Metascore: ${movie.metascore}`}</p>
-      <p>{`Stars: ${movie.stars}`}</p>
-    </li>
-  );
+class Movie extends Component {
+  constructor(props) {
+  super(props);
+  }
+  componentDidMount() {
+    this.props.getMoviesById(this.props.match.params.id);
+  }
+  render() {
+    if (this.props.movies === null) {
+      return <h1>This is a problem!</h1>;
+    }
+    if (this.props.moves === undefined) {
+      return <h1>This too is a problem!!!</h1>
+    }
+    return (
+      <div key={this.props.movies.id}>
+        <h1>{`Title: ${this.props.movies.title}`}</h1>
+        <p>{`Director: ${this.props.movies.director}`}</p>
+        <p>{`Metascore: ${this.props.movies.metascore}`}</p>
+        <p>{`Stars: ${this.props.movies.stars}`}</p>
+      </div>
+    );
+  };
 };
 
-export default Movie;
+const mapStateToProps = (state) => {
+  return {
+    movies: state.movies
+  };
+};
+
+export default connect(mapStateToProps, { getMoviesById })(Movie);

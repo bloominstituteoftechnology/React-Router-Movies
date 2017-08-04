@@ -14,7 +14,7 @@ export const getMovies = () => {
 };
 
 export const getMoviesById = (id) => {
-  const promise = axios.get('http://localhost:5000/movies/:id', id);
+  const promise = axios.get('http://localhost:5000/movies/${id}');
     return {
       type: GET_MOVIES_BY_ID,
       payload: promise
