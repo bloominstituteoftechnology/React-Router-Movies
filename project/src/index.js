@@ -15,10 +15,11 @@ const creatStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 
 ReactDOM.render(
-<Router>
-<Provider store={creatStoreWithMiddleware(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
-  <App />
-</Provider>
-</Router>,
+  <Provider store={creatStoreWithMiddleware(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+
 document.getElementById('root'));
 

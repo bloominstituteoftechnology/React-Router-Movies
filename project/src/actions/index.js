@@ -22,10 +22,10 @@ export const selectMovie = (id) => {
   };
 };
 
-export const addMovies = (newMovie) => {
+export const addMovie = (newMovie) => {
   const promise = axios.post('http://localhost:5000/new-movie', newMovie)
   return {
-    type: ADD_MOVIES,
+    type: GET_MOVIES,
     payload: promise
   };
 };

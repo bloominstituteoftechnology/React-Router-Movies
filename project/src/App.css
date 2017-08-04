@@ -27,3 +27,23 @@ NavItem {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+input {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+ul a {
+  color: grey;
+}
+
+ul a:hover {
+  color: #000000;
+}
+
+.App {
+  text-align: center;
+}

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { selectMovie } from '../actions';
 
 class ViewDetails extends Component {
-  componentDidMount() {
+  componentWillMount(props) {
     this.props.selectMovie(this.props.match.params.id);
   }
   
