@@ -2,4 +2,42 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: url("http://img01.deviantart.net/9921/i/2008/007/2/6/theatre_movie_curtains_stock_by_pyronixcorestock.jpg");
+  background-size: cover;
+  height: 100vh;
+  background-position: top;
+}
+
+.jumbotron {
+  margin-top: 5%;
+  background-color: transparent;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: purple;
+}
+
+#navbrand {
+  color:white;
+}
+
+.navbuttons {
+  margin-right: 20px;
+}
+
+.row {
+  margin-top: 10%;
+}
+
+.card {
+  height: 40vh;
+}
+
+.singlemovie {
+  font-size: 3em;
 }

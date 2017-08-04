@@ -24,16 +24,17 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        <Navbar color="faded" light toggleable>
+        <Navbar color="dark" toggleable>
           <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand>Router Movies</NavbarBrand>
+          <NavbarBrand id="navbrand">Router Movies</NavbarBrand>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link to='/'>Home</Link>
+                <Link className="navbuttons" to='/'>Home</Link>
               </NavItem>
               <NavItem>
-                <Link to='/movies'>Movies</Link>
+                <Link className="navbuttons" to='/movies'>Movies</Link>
+
               </NavItem>
             </Nav>
           </Collapse>

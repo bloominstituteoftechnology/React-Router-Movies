@@ -19,21 +19,19 @@ class MovieDetails extends Component {
     )
     return (
       <div className='container'>
-        <div>
-          <h1>Movie:{this.props.moviesId.title}</h1>
-          <h3>MetaScore: {this.props.moviesId.metascore}</h3>
-        </div>
-        {/* <Row>
-          <Col md='4' xs='12'>
-            <Card block inverse color='primary'>
-              <CardHeader>Movie</CardHeader>
-              <CardBlock>
-                <CardTitle>{this.props.moviesId.title}</CardTitle>
-                <CardText> {`Director: ${this.props.moviesId.director}`}</CardText>
-                <CardText> {`Actors: ${this.props.moviesId.stars}`}</CardText>
-                <CardText> {`metascore: ${this.props.moviesId.metascore}`}</CardText>
-              </CardBlock>
-            </Card>
+        <Row>
+          <Col xs='12'>
+          <center>
+              <Card block inverse color='primary'>
+                <CardHeader class="singlemovie">Movie</CardHeader>
+                <CardBlock class="singlemovie">
+                  <CardTitle>{this.props.moviesId.title}</CardTitle>
+                  <CardTitle> {`Director: ${this.props.moviesId.director}`}</CardTitle>
+                  <CardTitle> {`Actors: ${this.props.moviesId.stars}`}</CardTitle>
+                  <CardTitle> {`metascore: ${this.props.moviesId.metascore}`}</CardTitle>
+                </CardBlock>
+              </Card>
+            </center>
           </Col>
         </Row> */}
       </div>

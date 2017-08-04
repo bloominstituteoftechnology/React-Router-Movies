@@ -4,8 +4,9 @@ class home extends Component {
   render() {
     return (
       <div className='container'>
-        <div className='jumbotron'>
-          <h1>hello</h1>
+        <div className='jumbotron text-center'>
+          <h1>Hello!</h1>
+
         </div>
       </div>
     )
