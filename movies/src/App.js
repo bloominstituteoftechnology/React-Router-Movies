@@ -6,7 +6,7 @@ import { Movies, MoviesList, MoviesTitle } from './components';
 
 const App = () => (
   <div>
-    <Navigation/>
+    <Navigation />
     <Route path="/" component={ Movies }/>
     <Route path="/movieslist" component={ MoviesList }/>
     <Route path="/moviestitle" component={ MoviesTitle }/>
