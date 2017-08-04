@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MoviesList from './containers/MoviesList';
-import { ViewMovie } from './components'
+import ViewDetails from './components/ViewDetails';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -9,8 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path='/' component={ MoviesList }/>
-        <Route path='/movies:id' component={ ViewMovie }/> 
-        <MoviesList />
+        <Route path='/movies:id' component={ ViewDetails }/>
       </div>
     );
   }

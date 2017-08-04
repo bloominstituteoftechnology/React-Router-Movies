@@ -4,7 +4,7 @@ class ViewMovie extends Component {
   render() {
     return (
     <div>
-    <p>{`title ${this.props.titulo.title}`}</p>
+    <p>Tai was here. {`title ${this.props.movieInfo.title}`}</p>
     </div>
     )
   }
