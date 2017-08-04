@@ -4,7 +4,6 @@ const moviesReducer = (movies = [], action) => {
       return action.payload.data;
     default:
       return movies;
-
     }
 };
 

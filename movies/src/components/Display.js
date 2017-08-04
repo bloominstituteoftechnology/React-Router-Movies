@@ -1,28 +1,20 @@
 import React from 'react';
-import { getMovies } from '../actions';
+import { getMovieByID } from '../actions';
 import { connect } from 'react-redux';
 import { Component } from 'react';
 
 class Display extends Component {
   componentDidMount() {
-    this.props.getMovies();
+    this.props.getMovieByID(this.props.match.params.id);
   }
 
   render() {
     return (
       <div>
-        <ul>
-          {this.props.movies.map((movies, i) => {
-            return (
-              <div key={i}>
-                <p>{`Title: ${movies.title}`}</p>
-                <p>{`Director: ${movies.director}`}</p>
-                <p>{`Metascore: ${movies.metascore}`}</p>
-                <p>{`Stars: ${movies.stars}`}</p>
-              </div>
-            );
-          })}
-        </ul>
+        <p>{`Title: ${this.props.film.title}`}</p>
+        <p>{`Director: ${this.props.film.director}`}</p>
+        <p>{`Metascore: ${this.props.film.metascore}`}</p>
+        <p>{`Stars: ${this.props.film.stars}`}</p>
       </div>
     );
   }
@@ -30,8 +22,8 @@ class Display extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    movies: state.movies
+    film: state.movie
   };
 };
 
-export default connect(mapStateToProps, { getMovies })(Display);
+export default connect(mapStateToProps, { getMovieByID })(Display);
