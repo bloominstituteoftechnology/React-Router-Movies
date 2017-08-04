@@ -14,18 +14,18 @@ export const getMovies = () => {
   };
 };
 
-export const addMovies = (newMovie) => {
-  const promise = axios.post('http://localhost:5000/new-movie', newMovie)
-  return {
-    type: ADD_MOVIES,
-    payload: promise
-  };
-};
-
 export const selectMovie = (id) => {
   const promise = axios.get(`http://localhost:5000/movies/${id}`);
   return {
     type: SELECTED_MOVIE,
+    payload: promise
+  };
+};
+
+export const addMovies = (newMovie) => {
+  const promise = axios.post('http://localhost:5000/new-movie', newMovie)
+  return {
+    type: ADD_MOVIES,
     payload: promise
   };
 };

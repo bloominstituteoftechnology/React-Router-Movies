@@ -8,14 +8,13 @@ class MoviesList extends Component {
     this.props.getMovies();
   }
   render () {
-    console.log(this.props);
     return (
       <div>
         <ul>
           {this.props.film.map((movieInfo, index) => {
             return (
               <li key={index}>
-                <Link to={`/movies/${index}`} className="Nav-link">{movieInfo.title}</Link>
+                <Link to={`/movies/${index}`}>{movieInfo.title}</Link>
               </li>
             )
           })}
