@@ -28,8 +28,29 @@
   justify-content: center;
   flex-direction: column;
 }
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 30px;
+  margin: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-decoration: none;
+}
 body {
   font-family: 'Love Ya Like A Sister', cursive;
   justify-content: center;
   background-color: #FDE4F1;
+}
+.inputFields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+.container {
+  width: 600px;
+  height: 600px;
+  display: flex;
 }
