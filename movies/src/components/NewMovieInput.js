@@ -1,106 +1,87 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 // import {  } from '../actions';
 
 class NewMovieInput extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       id: '',
       title: '',
       director: '',
       metascore: '',
-      stars: '',
+      stars: [],
     };
   }
 
-  handleNameChange = (e) => {
-    this.setState({
-        name: e.target.value
+
+  handleIDChange = (e) => {
+      this.setState({
+          id: this.props.movies.length
     });
   };
 
-    handleAgeChange = (e) => {
+  handleTitleChange = (e) => {
+    this.setState({
+      title: e.target.value
+    });
+  };
+
+    handleDirectorChange = (e) => {
         this.setState({
-            age: e.target.value
-        });
+          director: e.target.value
+      });
     };
 
-    handleEmailChange = (e) => {
+    handleMetascoreChange = (e) => {
         this.setState({
-            email: e.target.value
-        });
+          metascore: e.target.value
+      });
     };
 
-    handleIndexChange = (e) => {
+     handleStarsChange = (e) => {
         this.setState({
-            index: e.target.value
-        });
+            stars: e.target.value
+      });
     };
 
-    newFriend = (e) => {
+   
+
+    newMovie = (e) => {
         e.preventDefault();
-        const newFriend = {
-            name: this.state.name,
-            age: this.state.age,
-            email: this.state.email
+        const newMovie = {
+            id: this.props.movies.length,
+            director: this.state.director,
+            title: this.state.title,
+            metascore: this.state.metascore,
+            stars: this.state.stars,
         };
-        this.props.dispatch(addFriend(newFriend));
+        this.props.dispatch(NewMovieInput(newMovie));
         this.setState({
-            name: '',
-            age: '',
-            email: '',
-            index: ''
-        });
-    };
-
-    updateFriend = (e) => {
-        e.preventDefault();
-        if (!this.state.index) {
-            return;
-        }
-        const data = {
-            index: parseInt(this.state.index),
-            update: {
-                name: this.state.name,
-                age: this.state.age,
-                email: this.state.email
-            }
-        };
-        this.props.dispatch(updateFriend(data));
-        this.setState({
-            name: '',
-            age: '',
-            email: '',
-            index: ''
-        }); 
-    };
-
-    deleteFriend = (e) => {
-        e.preventDefault();
-        this.props.dispatch(deleteFriend());
-        this.setState({
-            name: '',
-            age: '',
-            email: '',
-            index: ''
+            director: '',
+            title: '',
+            metascore: '',
+            stars: [],
         });
     };
 
     render() {
         return (
             <div>
-                <input value={this.state.name} onChange={this.handleNameChange} placeholder="Name" />
-                <input value={this.state.age} onChange={this.handleAgeChange} placeholder="Age" />
-                <input value={this.state.email} onChange={this.handleEmailChange} placeholder="Email" />
-                <input value={this.state.index} onChange={this.handleIndexChange} placeholder="Index" />
-                <button onClick={this.newFriend}>Add</button>
-                <button onClick={this.updateFriend}>Update</button> 
-                <button onClick={this.deleteFriend}>Delete</button>
+                <input value={this.state.title} onChange={this.handleTitleChange} placeholder="Title" />
+                <input value={this.state.director} onChange={this.handleDirectorChange} placeholder="Director" />
+                <input value={this.state.metascore} onChange={this.handleMetascoreChange} placeholder="Metascore" />
+                <input value={this.state.stars} onChange={this.handleStarsChange} placeholder="Star 1, Star 2, etc" />
+                <button onClick={this.newMovie}>Add</button>
+                <p> </p>
+                <div><Link to={`/`}> <button>Home</button></Link></div>
+                
             </div>
         );
     }
 }
 
-export default connect()(AddFriend);
+export default connect()(NewMovieInput);

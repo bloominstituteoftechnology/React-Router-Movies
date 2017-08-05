@@ -11,6 +11,7 @@ class MoviesList extends Component {
   render() {
     return (
       <div>
+        <h1> Movies </h1>
         {this.props.movies.map((movies, i) => {
           return (
             <div key={i}>
@@ -19,6 +20,7 @@ class MoviesList extends Component {
                   {`${movies.title}`}
                 </button>
               </Link>
+              <p> </p>
             </div>
           );
         })}

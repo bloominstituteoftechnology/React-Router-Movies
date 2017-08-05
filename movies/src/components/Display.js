@@ -2,6 +2,7 @@ import React from 'react';
 import { getMovieByID } from '../actions';
 import { connect } from 'react-redux';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Display extends Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ class Display extends Component {
         <p>{`Director: ${this.props.film.director}`}</p>
         <p>{`Metascore: ${this.props.film.metascore}`}</p>
         <p>{`Stars: ${this.props.film.stars}`}</p>
+        <Link to={`/`}> <button>Home</button></Link>
       </div>
     );
   }
