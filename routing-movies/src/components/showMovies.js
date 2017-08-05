@@ -13,16 +13,16 @@ class ShowMovies extends Component {
   render() {
     return (
       <div className='container'>
-       <Row> 
+       <Row>
           {
             this.props.movies.map((movie, index) => {
               return (
                 <Col md='4' xs='12' key={index}>
                   <Card block inverse color='primary'>
-                    <CardHeader>Movie</CardHeader>
+                    <CardHeader>Movie Title</CardHeader>
                     <CardBlock>
                       <CardTitle>
-                        <Link to={`/movies/${movie.id}`} >
+                        <Link to={`/movies/${movie.id}`} className='movies'>
                           {movie.title}
                         </Link>
                       </CardTitle>

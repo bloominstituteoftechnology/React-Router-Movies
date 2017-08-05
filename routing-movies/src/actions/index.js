@@ -10,7 +10,6 @@ export const getMovies = () => {
 
 export const getId = (id) => {
   const request = axios.get(`http://localhost:5000/movies/${id}`);
-  console.log(request);
   return {
     type: 'GET_ID',
     payload: request,

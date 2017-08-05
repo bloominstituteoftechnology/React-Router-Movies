@@ -2,18 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getId } from '../actions';
 
-import { Card, CardHeader, CardBlock, CardTitle, CardText, Row, Col } from 'reactstrap'
+import { Card, CardHeader, CardBlock, CardTitle, Row, Col } from 'reactstrap'
 
 class MovieDetails extends Component {
 
   componentDidMount() {
     this.props.getId(this.props.match.params.id);
-    console.log(this.props)
-
   }
 
   render() {
-    console.log(this.props)
     if (this.props.moviesId === null) return (
       <div>hello</div>
     )
@@ -23,12 +20,12 @@ class MovieDetails extends Component {
           <Col xs='12'>
           <center>
               <Card block inverse color='primary'>
-                <CardHeader class="singlemovie">Movie</CardHeader>
-                <CardBlock class="singlemovie">
-                  <CardTitle>{this.props.moviesId.title}</CardTitle>
-                  <CardTitle> {`Director: ${this.props.moviesId.director}`}</CardTitle>
-                  <CardTitle> {`Actors: ${this.props.moviesId.stars}`}</CardTitle>
-                  <CardTitle> {`metascore: ${this.props.moviesId.metascore}`}</CardTitle>
+                <CardHeader><h2>{this.props.moviesId.title}</h2></CardHeader>
+                <CardBlock className="singlemovie">
+                  {/* <CardTitle>{this.props.moviesId.title}</CardTitle> */}
+                  <CardTitle className='text-left'> {`Director: ${this.props.moviesId.director}`}</CardTitle>
+                  <CardTitle className='text-left'> {`Actors: ${this.props.moviesId.stars}`}</CardTitle>
+                  <CardTitle className='text-left'> {`metascore: ${this.props.moviesId.metascore}`}</CardTitle>
                 </CardBlock>
               </Card>
             </center>

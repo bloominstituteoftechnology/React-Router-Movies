@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Nav, Navbar, NavbarToggler, NavbarBrand, Collapse, NavItem, NavLink } from 'reactstrap';
+import { Nav, Navbar, NavbarToggler, NavbarBrand, Collapse, NavItem } from 'reactstrap';
 
 // import { Link } from 'react-router-dom';
 
@@ -26,14 +26,16 @@ class Navigation extends Component {
       <div>
         <Navbar color="dark" toggleable>
           <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand id="navbrand">Router Movies</NavbarBrand>
-          <Collapse isOpen={this.state.isOpen} navbar>
+          <div id="navbrand" className='navbar-brand'>
+            <Link to='/'> Router Movies </Link>
+          </div>
+          <Collapse isOpen={this.state.isOpen} navbar className="navbar-toggleable-md">
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link className="navbuttons" to='/'>Home</Link>
+                <Link className="navbuttons" to='/'> Home </Link>
               </NavItem>
               <NavItem>
-                <Link className="navbuttons" to='/movies'>Movies</Link>
+                <Link className="navbuttons" to='/movies'> Movies </Link>
 
               </NavItem>
             </Nav>
