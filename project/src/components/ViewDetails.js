@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectMovie } from '../actions';
+import '../App.css';
 
 class ViewDetails extends Component {
   componentWillMount(props) {
@@ -10,11 +11,11 @@ class ViewDetails extends Component {
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div className="details">
         <h1>{`${this.props.details.title}`}</h1>
-        <p>{`director: ${this.props.details.director}`}</p>
-        <p>{`metascore: ${this.props.details.metascore}`}</p>
-        <p>{`stars: ${this.props.details.stars}`}</p>
+        <p>{`Directed By: ${this.props.details.director}`}</p>
+        <p>{`Metascore: ${this.props.details.metascore}`}</p>
+        <p>{`Starring: ${this.props.details.stars}`}</p>
       </div>
     );
   };

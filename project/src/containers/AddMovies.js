@@ -45,12 +45,11 @@ class AddMovie extends Component {
       metascore: this.state.metascore,
       stars: this.state.stars,
     };
-    console.log(this.state.title);
     this.props.dispatch(addMovie(movie));
   }
   render() {
     return (
-      <div>
+      <div className="add-movie">
         <form>
           <input onChange={this.handleIdChange} type='number' placeholder="ID" value={this.state.id} />
           <input onChange={this.handleTitleChange} type='text' placeholder="Title" value={this.state.title} />

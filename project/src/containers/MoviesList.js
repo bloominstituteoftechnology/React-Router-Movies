@@ -14,8 +14,8 @@ class MoviesList extends Component {
         <ul>
           {this.props.film.map((movieInfo, index) => {
             return (
-              <li key={index}>
-                <Link to={`/movies/${movieInfo.id}`}>{movieInfo.title}</Link>
+              <li className="movie-titles" key={index}>
+                <button><Link to={`/movies/${movieInfo.id}`}>{movieInfo.title}</Link></button>
               </li>
             )
           })}

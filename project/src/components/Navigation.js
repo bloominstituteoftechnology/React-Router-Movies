@@ -1,20 +1,17 @@
 import React from 'react';
-import { Nav, NavItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
 const Navigation = () => {
   return (
     <div>
-      <Nav className="App">
+      <ul className="header">
         <h1>Movie List</h1>
-        <NavItem>
-          <Link to="/movies" className="Nav-link">Home</Link>
-        </NavItem>
-        <NavItem>
-          <Link to="/new-movie" className="Nav-link">New Movie</Link>
-        </NavItem>
-      </Nav>
+          <div className="nav-bar">
+          <button><li><Link to="/movies">Home</Link></li></button>
+          <button><li><Link to="/new-movie">New Movie</Link></li></button>
+        </div>
+      </ul>
     </div>
   );
 };
