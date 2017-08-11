@@ -4,9 +4,6 @@ const CORS = require('cors');
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(CORS());
-
 const movies = [
 	{
 		id: 0,
@@ -30,6 +27,10 @@ const movies = [
 		stars: ['Elijah Wood', 'Ian McKellen', 'Orlando Bloom'],
 	},
 ];
+
+app.use(bodyParser.json());
+
+app.use(CORS());
 
 app.get('/movies', (req, res) => {
 	res.send(movies);
