@@ -15,10 +15,10 @@ import { BrowserRouter as Router,
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
-     <Router>
-     <Provider store={createStoreWithMiddleware(Reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>    
-     <App />
-     </Provider>
-     </Router>
+  <Provider store={createStoreWithMiddleware(Reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>    
+  <Router>
+  <App />
+  </Router>
+  </Provider>
      , document.getElementById('root'));
 registerServiceWorker();
