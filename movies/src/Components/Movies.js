@@ -9,6 +9,7 @@ const linkStyles = {
   textDecoration: 'none',
 }
 
+
 class Movies extends Component {
   componentDidMount() {
     this.props.fetchMovies();
@@ -19,7 +20,7 @@ class Movies extends Component {
         <ul>
         {this.props.movies.map((movie) => {
           return (
-          <Link style={linkStyles} to={`/movies/${movie}`} key={movie.id}>{`${movie.title}`}</Link>
+          <Link style={linkStyles} to={`/movies/${movie.id}`} key={movie.id}>{`${movie.title}`}</Link>
           );
         })}
       </ul>

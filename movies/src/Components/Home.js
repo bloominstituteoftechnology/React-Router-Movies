@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 export const Home = () => {
   return (
-      <h1> </h1>
+      <h1>Are we at home?</h1>
   );
 };
 
