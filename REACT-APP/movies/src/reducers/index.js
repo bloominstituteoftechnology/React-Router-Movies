@@ -1,17 +1,10 @@
 import { combineReducers } from 'redux';
-import { GET_MOVIES } from '../actions';
+import MoviesReducer from './MoviesReducer';
+import SelectedMovieReducer from './SelectedMovieReducer';
 
-const moviesReducer = (movies=[], action) => {
-    switch(action.type) {
-        case GET_MOVIES:
-            return action.payload.data;
-        default:
-            return movies;
-    }
-}
+const rootReducer = combineReducers({
+    movies: MoviesReducer,
+    selectedMovie: SelectedMovieReducer, 
+});
 
-// const rootReducer = combineReducers({
-//     movies: moviesReducer    
-// });
-
-export default moviesReducer;
+export default rootReducer;
