@@ -1,0 +1,19 @@
+body {
+   background-color: darkgray;
+}
+.panel {
+    font-size: 23px;
+    text-align: center;
+    line-height: 2em;
+    width: 60%;
+    margin: 30px auto;
+    font-weight: 800;
+}
+.panel_body {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 3em;
+}
+.panel_body ul {
+    list-style: none;
+}
