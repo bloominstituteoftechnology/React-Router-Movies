@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default (props) => {
-    console.log(props.location.state)
     const state = props.location.state.movie;
     const image = {
         backgroundImage: 'url(' + state.img + ')',

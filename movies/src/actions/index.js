@@ -11,7 +11,6 @@ export const getMovies = () => {
     }
 }
 export const addMovie = (movie) => {
-    console.log(movie);
     const promise = axios.post('http://localhost:5000/new-movie', movie);
     return {
         type: ADD_MOVIE,
