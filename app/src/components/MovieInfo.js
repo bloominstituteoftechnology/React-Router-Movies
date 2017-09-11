@@ -25,7 +25,7 @@ class MovieInfo extends React.Component {
           <h1 className="details_creds">Movie Details & Credits</h1>
           <p className="studio_release">{movies[id].studio}{' │ '}{movies[id].release}</p>
           <p>
-            <span className="bold">Staring:</span>{' '}
+            <span className="bold">Starring:</span>{' '}
             {movies[id].stars
               .map((star, i) => <span key={i}>{star}</span>)
               .reduce((prev, curr) => [prev, ', ', curr])}
