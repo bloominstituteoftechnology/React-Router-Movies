@@ -26,6 +26,7 @@ class Home extends Component {
             );
           })}
         </ListGroup>
+        <Link to="/new-movie">Add a New Movie</Link>
       </Container>
     );
   }
