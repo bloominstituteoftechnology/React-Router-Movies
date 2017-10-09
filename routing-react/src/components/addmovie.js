@@ -44,8 +44,8 @@ class AddMovie extends Component {
     }
 
     submitNewMovie(event) {
-        event.preventDefault()
-        this.handleStars();
+        event.preventDefault();
+        // this.handleStars();
         console.log(this.state.movie)
         this.props.newMovie(this.state.movie)
         this.setState({
@@ -174,7 +174,7 @@ class AddMovie extends Component {
 
     handleStars() {
         console.log(this.state.inputStars);
-        const starArr = [];
+        let starArr = [];
         starArr.push(this.state.inputStars.star1)
         starArr.push(this.state.inputStars.star2)
         starArr.push(this.state.inputStars.star3)
@@ -213,7 +213,7 @@ class AddMovie extends Component {
                         <input type='text' onChange={this.handleStar2.bind(this)} className="movies" placeholder='Stars'></input>
                         <input type='text' onChange={this.handleStar3.bind(this)} className="movies" placeholder='Stars'></input>
                     </div>
-                    <button type="submit" className="movies">Submit</button>
+                    <button onClick={this.handleStars.bind(this)} type="submit" className="movies">Submit</button>
                 </form>
             </div>
         )
