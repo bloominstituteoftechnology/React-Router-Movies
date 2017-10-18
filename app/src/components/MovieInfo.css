@@ -1,0 +1,67 @@
+.poster_wrap {
+  display: flex;
+  flex-direction: row;
+  float: left;
+  margin-top: 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+}
+.img_wrapper {
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 500px;
+  width: 337px;
+}
+img.img_poster {
+  float: left;
+  position: relative;
+  height: 500px;
+  width: 337px;
+}
+.metascore_wrap {
+  background-color: rgb(102, 204, 51);
+  border-radius: 50%;
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  right: 0;
+  top: 0;
+}
+span.metascore {
+  color: rgb(255, 255, 255);
+  font-family: 'Circular-Pro-Medium';
+  font-size: 25px;
+  position: absolute;
+  margin: -2px 0 0 0;
+  padding: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+.movie_details {
+  margin: 0 0 0 20px;
+  position: relative;
+  left: 20px;
+  height: 500px;
+  width: 463px;
+}
+h1.details_creds {
+  color: rgb(72, 72, 72);
+  font-family: 'Circular-Pro-Medium';
+  margin: -8px 0 0 0;
+  padding: 0;
+}
+p {
+  font-family: 'Circular-Pro-Book';
+  line-height: 1.45em;
+}
+p.studio_release {
+  margin: 10px 0 0 0;
+}
+span.bold {
+  font-family: 'Circular-Pro-Bold';
+}
