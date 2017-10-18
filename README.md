@@ -19,7 +19,7 @@ Topics:
   * Your home page should retrieve a list of movies from the server and display them.
   * When a user clicks on a movie title they should be taken to a second page that displays more info about each movie.
 
-
+<>
 ### Notes/Hints
  * Dispatch the action to retrieve the list of movies from inside of `componentDidMount`.
  * Use `<Link />` tags to navigate between both pages.
