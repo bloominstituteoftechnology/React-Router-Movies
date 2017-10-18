@@ -1,0 +1,132 @@
+
+ul {
+  list-style: none;
+}
+
+ul a {
+  color: grey;
+}
+
+ul a:hover {
+  color: #000000;
+}
+
+.App h1 {
+  text-align: center;
+}
+
+html, .App {
+  background-color: gray;
+}
+
+.details p {
+  display: block;
+}
+
+.movie-titles button {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(0,0,0,.0975);
+  border-radius: 0.35rem;
+  font-variant: small-caps;
+  background-color: #FFFFFF;
+}
+
+.movie-titles button a {
+  text-decoration: none;
+  width: 100%;
+}
+
+.movie-titles button:hover {
+  box-shadow: 2px 2px 2px #000000;
+}
+
+.movie-titles button a:hover {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar button {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+  margin: 0 auto;
+  padding: 0.75rem;
+  border: 1px solid rgba(0,0,0,.0975);
+  border-radius: 0.35rem;
+  font-variant: small-caps;
+  background-color: #FFFFFF;
+}
+
+.nav-bar button:hover {
+  box-shadow: 2px 2px 2px #000000;
+}
+
+.nav-bar button a:hover {
+  text-decoration: none;
+}
+
+.details {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border-radius: 0.35rem;
+}
+
+.details h1 {
+  padding: 1.25rem;
+}
+
+.details p {
+  padding: 1.25rem;
+}
+
+.add-movie form {
+   display: flex;
+   width: 65%;
+   margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  background-color: darkgrey;
+  border: 1px solid rgba(0,0,0,0.0975);
+  border-radius: 0.35rem;
+  margin-bottom: 0.75rem;
+
+}
+
+.add-movie form input {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  width: 25%;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(0,0,0,0.0975);
+  border-radius: 0.35rem;
+  text-align: center;
+}
+
+.add-movie form button {
+  width: 25%;
+  margin: 0 auto;
+  padding: 0.60rem;
+  margin-bottom: 0.45rem;
+  border-radius: 0.50rem;
+}
