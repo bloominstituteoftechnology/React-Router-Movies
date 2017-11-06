@@ -96,6 +96,15 @@
   align-items: center;
   width:  100%;
   margin-bottom: 200px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition-duration: 0.6s;
+}
+
+.home-show,
+.movie-page-show {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .home>div,

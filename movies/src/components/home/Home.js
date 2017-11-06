@@ -4,14 +4,25 @@ import { getMovies } from '../../actions';
 import { NavLink } from 'react-router-dom';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      classes: "home"
+    }
+  }
 
 	componentDidMount() {
 		this.props.getMovies();
+    setTimeout(() => { this.setState({classes: "home home-show"}) }, 100);
 	}
+
+  componentWillUnmount() {
+    this.setState({classes: "home"});
+  }
 
   render = () => {
     return (
-    	<section className="home">
+    	<section className={this.state.classes}>
     		<div>
     			<h2>Our list of movies:</h2>
     			<div className="movie-list">
