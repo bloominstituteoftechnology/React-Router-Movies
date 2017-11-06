@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Navigation.css';
 
-const Navigation = () => {
+const Home = () => {
   return (
     <div className = "MovieNavigation">
+      <h1>Movie List. Select A movie:</h1>
           <Link className="movie-link" to="/" exact>Home</Link>
           <Link className="movie-link" to="/godfather">The GodFather</Link>
           <Link className="movie-link" to="/starwars">Star Wars</Link>
@@ -13,4 +13,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Home;

@@ -1,0 +1,12 @@
+.MovieNavigation {
+  padding: 12px;
+}
+
+.nav-link--active {
+  font-weight: bold;
+}
+
+.movie-link {
+  margin: 10px;
+  text-decoration: none;
+}
