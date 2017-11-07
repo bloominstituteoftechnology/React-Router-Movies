@@ -17,10 +17,10 @@ import registerServiceWorker from './registerServiceWorker';
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
-<BrowserRouter>
   <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
-    <App />
-  </Provider>
-</BrowserRouter>, 
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>, 
 document.getElementById('root'));
 registerServiceWorker();

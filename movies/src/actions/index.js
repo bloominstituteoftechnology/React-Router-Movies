@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const GET_MOVIES = 'GET_MOVIES';
-export const GET_MOVIESID = 'GET_MOVIESID';
+export const SELECTED_MOVIE = 'SELECTED_MOVIE';
 
 export const getMovies = () => {
   const moviesEndpoint = axios.get('http://localhost:5000/movies');
@@ -11,10 +11,10 @@ export const getMovies = () => {
   }
 }
 
-export const getMoviesId = () => {
-  const moviesEndpoint = axios.get('http://localhost:5000/movies/:id');
+export const selectedMovie = () => {
+  const moviesEndpoint = axios.get(`http://localhost:5000/movies/${id}`);
   return {
-    type: GET_MOVIESID,
+    type: SELECTED_MOVIE,
     payload: moviesEndpoint
   }
 }
