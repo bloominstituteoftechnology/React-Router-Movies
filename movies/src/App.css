@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.App ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.App a {
+  text-decoration: none;
+  color: #333;
+}
+
+.App .nav-link--active {
+  color: orange;
+}
+
+.App form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+}
