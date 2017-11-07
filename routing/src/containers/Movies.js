@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { fetchMovies } from "../actions/movies";
+import { fetchMovies, addMovie } from "../actions/movies";
 import { connect } from "react-redux";
 
 class Movies extends Component {
@@ -10,7 +10,7 @@ class Movies extends Component {
     this.props.fetchMovies();
   }
   render() {
-    return this.props.children(this.props.movies);
+    return this.props.children(this.props.movies, this.props.addMovie);
   }
 }
 
@@ -23,6 +23,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchMovies () {
       return dispatch(fetchMovies());
+    },
+    addMovie(movie) {
+      return dispatch(addMovie(movie))
     }
   }
 }

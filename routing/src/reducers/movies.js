@@ -1,8 +1,12 @@
-import { FETCH_MOVIES, FETCH_MOVIE } from '../actions/types'
+import { FETCH_MOVIES, FETCH_MOVIE, ADD_MOVIE } from '../actions/types'
 
 
 export const MoviesReducer = (movies = [], action) => {
     switch(action.type) {
+        case ADD_MOVIE: {
+            const movies = action.payload.data;
+            return movies;
+        }
         case FETCH_MOVIES: {
             const movies = action.payload.data;
             return movies;
