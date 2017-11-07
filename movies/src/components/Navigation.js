@@ -1,14 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navigation.css';
+import { Nav, NavItem } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   return (
-    <div className = "MovieNavigation">
-          <Link className="movie-link" to="/" exact>Home</Link>
-          <Link className="movie-link" to="/godfather">The GodFather</Link>
-          <Link className="movie-link" to="/starwars">Star Wars</Link>
-          <Link className="movie-link" to="/lotr">The Lord the Rings</Link>
+    <div>
+      <Nav className="App">
+        <h1>Movie List. Select A movie:</h1>
+        <NavItem>
+          <NavLink activeClassName="nav-link--active" to="/" exact>Home</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink activeClassName="nav-link--active" to="/godfather">The GodFather</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink activeClassName="nav-link--active" to="/starwars">Star Wars</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink activeClassName="nav-link--active" to="/lotr">The Lord the Rings</NavLink>
+        </NavItem>
+      </Nav>
     </div>
   );
 };
