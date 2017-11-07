@@ -6,7 +6,7 @@ const Movie = ({ movie, index }) => {
             <p>{`Title: ${movie.title}`}</p>
             <p>{`Director: ${movie.director}`}</p>
             <p>{`Metascore: ${movie.metascore}`}</p>
-            <p>{`stars: ${movie.stars}`}</p>
+            <p>{`Stars: ${movie.stars}`}</p>
         </li>
     );
 };
