@@ -12,7 +12,6 @@ class App extends Component {
      <Navigation/>
      <Route exact = {true} path = "/" component = {Home}/>
      <Route path = "/movielist" component = {MovieList}/>
-     <MovieItem/>
       </div>
     );
   }
