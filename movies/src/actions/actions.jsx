@@ -14,7 +14,7 @@ export const getMovies = () => {
   };
 };
 export const getMovie = (id) => {
-  console.log('getMovie action  id:',id)
+  //console.log('getMovie action  id:',id)
     const promise = axios.get('http://localhost:5000/movies/'+id.substring(1))
     return {
         type: GET_MOVIE,
