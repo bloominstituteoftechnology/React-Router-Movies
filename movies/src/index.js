@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Movies from './components/Movies';
-import MovieDetail from './components/MovieDetail';
+import MovieDetail from './components/MovieDetails';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
