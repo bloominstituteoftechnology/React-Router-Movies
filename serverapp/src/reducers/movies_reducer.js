@@ -1,15 +1,11 @@
-import { MOVIES } from '..constants';
+import { MOVIES } from '../actions';
 
-function Search(state = [], action) {
-    switch(action.type) {
+export default (state = [], action) => {
+    switch (action.type) {
         case MOVIES:
-            console.log("Movies are ", action.items);
-            return action.items;
-        case MOVIE:
-            console.log("Movie title selected ", action.items.id);
-            return action.items.id;
+            console.log("Movies are ", action.payload.data);
+            return action.payload.data;
         default:
             return state;
     }
-}
-export default Search;
+};

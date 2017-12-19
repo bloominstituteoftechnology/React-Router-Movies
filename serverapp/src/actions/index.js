@@ -1,9 +1,18 @@
+import axios from 'axios';
 
 
-export function movies(items) {
-    const action = {
+export const showMovies = () => {
+    const promise = axios.get('http://localhost:3000/movies');
+    return {
         type: MOVIES,
-        items
-    }
-    return action;
-}
+        payload: promise
+    };
+};
+
+export const showMovie = (movieId) => {
+    const promise = axios.get (`http://localhost:3000/movies/${movieid}`);
+    return {
+        type: MOVIE,
+        payload: promise,
+    };
+};
