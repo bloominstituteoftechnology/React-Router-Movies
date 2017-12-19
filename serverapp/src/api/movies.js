@@ -1,22 +1,37 @@
 import React, {Component } from 'react';
-import Movie from './Movie';
+import {showMovies } from '../actions';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
-const Movies = () => (
+const Movies = () => {
+  componentDidMount() {
+    this.props.showMovies();
+  }
+  render() {
+    return (
     <div>
       <h2 className="movies-header">
         Movies
       </h2>
       <div className="movie-listings">
-        {movies.map((movie, i) => (
-          <div key={i}>
+        {this.props.movies.map((movie, i) => {
+          return (
+          <li key={i}>
               <Link to={`/movies/${movie.id}`}>
               </Link>
-          </div>
-        ))}
+          </li>
+          );
+        })}
        </div>
     </div>
-  );
-  
-  export default Movies;
+    );
+  }
+} 
+const mapStateToProps = (state) => {
+  return {
+    movies: state.movies,
+  };
+};
+
+export default connect(mapStateToProps, { showMovies })(Movies);

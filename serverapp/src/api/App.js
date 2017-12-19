@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Movies from './api/movies';
+import Movie from './api/movie';
+import './App.css';
 import { 
   BrowserRouter as Router,
   Switch,

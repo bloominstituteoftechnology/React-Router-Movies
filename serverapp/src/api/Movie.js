@@ -1,9 +1,9 @@
-import { movies } from '../actions';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-class Movies extends Component {
+import { connect } from 'react-redux';
+import {showMovie} from '../actions';
+class Movie extends Component {
   componentDidMount() {
-    this.props.getMovies();
+    this.props.showMovie(this.props.match.params.id);
   }
 
   render() {
@@ -27,21 +27,22 @@ class Movies extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    movies: state.movies,
+    searchMovie: state.searchMovie,
   };
 };
 
-export default connect(mapStateToProps, { getMovies })(Movies);
-const Movie = ({ params: { movieId } }) => {
-    const movie = movies.find(
-      movie => movie.id === parseInt(movieId, 10)
-    );
-  }
-  
-  Movie.propTypes = {
-  params: PropTypes.shape({
-    movieId: PropTypes.string.isRequired,
-  }).isRequired,
-};
+export default connect(mapStateToProps, { showMovie })(Movie);
 
-export default Movie;
+// const Movie = ({ params: { movieId } }) => {
+//     const movie = movies.find(
+//       movie => movie.id === parseInt(movieId, 10)
+//     );
+//   }
+  
+//   Movie.propTypes = {
+//   params: PropTypes.shape({
+//     movieId: PropTypes.string.isRequired,
+//   }).isRequired,
+// };
+
+// export default Movie;
