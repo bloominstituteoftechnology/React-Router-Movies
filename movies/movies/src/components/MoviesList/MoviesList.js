@@ -47,6 +47,7 @@ class MovieList extends Component {
             );
           })
         }
+        <Link to="/new-movie">Add New Movie</Link>
       </div>
     );
 
