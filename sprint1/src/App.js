@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './components/Home';
 import Movies from './components/Movies';
+import Movie from './components/Movie';
+
 
 class App extends Component {
 
   render() {
     return (
       <BrowserRouter>
-      <div className="App">
+      <Switch>
+        <Route path = {'movies/:id'} component = {Movie} /> 
+        <Route exact path = '/movies' component = {Movies} /> 
         <Route exact path = '/' component = {Home} />
-        <Route exact path = '/movies' component = {Movies} />
-      </div>
+      </Switch>
       </BrowserRouter>
     );
   }

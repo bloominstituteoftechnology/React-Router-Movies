@@ -1,21 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Movie from './Movie';
 
-class Movies extends Component {
-    constructor() {
-        super();
+class Movies extends React.Component {
+    constructor(props) {
+        super(props);
+
         this.state = {
-            events: '',
+            movies: [],
         };
     }
+
     componentDidMount() {
-        const apiLocation = "https://localhost:5005/api/movies";
-        axios.get(apiLocation).then(response => {
-            this.setState({ events: response.data });
-          });
-          console.log(this.state);
+        const apiLocation = "http://localhost:5000/api/movies";
+        axios.get(apiLocation)
+            .then(res => {
+                console.log(res);
+                const films = res.data;
+                this.setState({ movies: films });
+            })
+            .catch(e => {
+                console.log(e);
+            });
     }
 
     render() {
@@ -23,6 +30,11 @@ class Movies extends Component {
             <div>
                 <div>All Movies Titles</div>
                 <div>for each map to movie file</div>
+                <ul>
+                    {this.state.movies.map(item =>
+                    <Link to = {`/$[this.state.id}`} key = {item.id}>{item.title}</Link>
+                    )}
+                </ul>
             </div>
         );
     }
