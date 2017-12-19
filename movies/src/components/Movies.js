@@ -13,6 +13,7 @@ class Movies extends Component {
       <div>
         <h2>Please Selec the Movie Title</h2>
         <NavLink to="/">Back</NavLink>
+        <NavLink to="/new-movie">Add New Movie</NavLink>
         {this.props.movies.map((movie, i) => {
           return (
             <div key={i}>
