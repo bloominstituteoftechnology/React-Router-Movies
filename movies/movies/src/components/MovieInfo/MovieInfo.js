@@ -1,34 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+
+import axios from 'axios';
 
 import './MovieInfo.css';
 
-const MovieInfo = (props) => {
+class MovieInfo extends Component {
   
-  const movie = props.movies[Number(props.match.params.id)];
+  state = {
+    movie: {
+      title: "",
+      director: "",
+      metascore: "",
+      stars: []
+    }
+  };
+
+  componentDidMount() {
   
-  if (movie === undefined)
-    props.history.push("/");
+    const promise = axios.get(`http://localhost:5000/api/movies/${ this.props.match.params.id }`);
 
-  return ((movie !== undefined) ? (
+    promise.then((response) => {
 
-    <div className="MovieInfo">
-      <Link to="/">Go Back to List</Link>
-      <div className="Movie__title">{ movie.title }</div>
-      <div className="Movie__director">{ movie.director }</div>
-      <div className="Movie__score">{ movie.metascore }</div>
-      <div className="Movie__cast">{ movie.stars.join(", ") }</div>
-    </div>
+      this.setState({
+        movie: response.data
+      });
 
-  ) : null);
+    });
 
-};
+  }
 
-const mapStateToProps = (state) => {  
-  return {
-    movies: state
+  render() {
+        
+    return (
+
+      <div className="MovieInfo">
+        <Link to="/">Go Back to List</Link>
+        <br/>
+        <div className="Movie__title">{ this.state.movie.title }</div>
+        <div className="Movie__director">{ this.state.movie.director }</div>
+        <div className="Movie__score">{ this.state.movie.metascore }</div>
+        <div className="Movie__cast">{ this.state.movie.stars.join(", ") }</div>
+      </div>
+
+    );
+
   }
 };
 
-export default connect(mapStateToProps, {  })(MovieInfo);
+export default MovieInfo;
