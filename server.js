@@ -31,18 +31,18 @@ const movies = [
 	},
 ];
 
-app.get('/api/movies', (req, res) => {
+app.get('/movies', (req, res) => {
 	res.send(movies);
 });
 
-app.get('/api/movies/:id', (req, res) => {
+app.get('/movies/:id', (req, res) => {
 	const movie = movies.filter(movie => movie.id.toString() === req.params.id)[0];
-	res.status(200).json(movie);
+	res.send(movie);
 });
 
-app.post('/api/movies', (req, res) => {
+app.post('/new-movie', (req, res) => {
 	if (req.body.id !== undefined) movies.push(req.body);
-	res.status(201).json(movies);
+	res.send(movies);
 });
 
 app.listen(5000, () => {
