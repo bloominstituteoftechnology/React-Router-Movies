@@ -25,7 +25,7 @@ class Home extends Component{
 const mapStateToProps = (state)=>{
     // console.log(state)
     return {
-        movies:state
+        movies:state.movies
     }
 }
 export default connect(mapStateToProps,{getMovies})(Home);

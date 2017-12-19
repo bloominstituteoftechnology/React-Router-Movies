@@ -1,28 +1,28 @@
-import React from 'react';
-import {getMovies} from '../../actions';
+import React,{Component} from 'react';
+import {setMovie} from '../../actions';
 import {connect} from 'react-redux';
 
-function Movie(props) {
-    
-    return (
+class Movie extends Component {
+    componentDidMount() {
+        this.props.setMovie(this.props.match.params.id);
+    }
+    render (){
+        return (
         <div>
-        {props.movies.map(movie =>
-            movie.id.toString() === props.match.params.id?
-            <ul key={movie.id}>
-               <li> {movie.title}</li>
-                <li>{movie.director}</li>
-                <li>{movie.metascore}</li>
-            </ul>:null
-        )
-        }
+            <ul>
+            <li>{this.props.movie.title}</li>
+            <li>{this.props.movie.director}</li>
+            </ul>
         </div>
-    )
-}
-
-const mapStateToProps = (state)=>{
-    return {
-        movies:state
+        )
     }
 }
-export default connect(mapStateToProps,{getMovies})(Movie);
+
+const mapStateToProps = (state) =>{
+    // console.log(state)
+    return {
+        movie:state.setMovie
+    }
+}
+export default connect(mapStateToProps,{setMovie})(Movie);
 
