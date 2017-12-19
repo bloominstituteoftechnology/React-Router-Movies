@@ -1,22 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Movies from "./Movies";
+import Movie from "./Movie";
 import { getMovies } from "../actions";
 
-class Home extends Component {
+class MoviesList extends Component {
   componentDidMount() {
-    console.log("getmovies", getMovies);
     this.props.getMovies();
   }
 
   render() {
-    console.log("render called?", this.props);
+    console.log("movies?", this.props.movies);
     return (
       <div>
-        <div>hi</div>
         <ul>
           {this.props.movies.map((movie, i) => (
-            <Movies key={i} index={i} movie={movie} />
+            <Movie key={i} index={i} movie={movie} />
           ))}
         </ul>
       </div>
@@ -30,4 +28,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { getMovies })(Home);
+export default connect(mapStateToProps, { getMovies })(MoviesList);

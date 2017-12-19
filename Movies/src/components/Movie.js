@@ -1,10 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Movies = ({ movie, index }) => {
+const Movie = ({ movie, index }) => {
+  console.log("movie is?", movie);
   return (
     <li>
       <p>{`ID ${index + 1}`}</p>
-      <p>{`Title: ${movie.title}`}</p>
+      <p>
+        <Link to={"movies/" + movie.id}>{`Title ${movie.title}`} </Link>
+      </p>
       <p>{`Director: ${movie.director}`}</p>
       <p>{`Metascore: ${movie.metascore}`}</p>
       <p>{`Stars: ${movie.stars}`}</p>
@@ -12,4 +16,4 @@ const Movies = ({ movie, index }) => {
   );
 };
 
-export default Movies;
+export default Movie;
