@@ -1,53 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { createStore, applyMiddleware } from 'redux';
+import { Providers } from 'react-redux';
+import ReduxPromise from 'redux-promise';
+import { BrowserRouter as Router, Route } from 'react router-dom';
+
+import ./index.css';
+import Movies from './components/Movies';
+import MovieDetails from './components/MovieDetails';
+import reducers from './reducers';
+
+const createStorewithMiddleware = applyMiddleware(ReduxPromise)(createStore)
+
+function NavBar() {
+    return <div>Navigation Bar</div>;
+}
 
 ReactDOM.render(
-  <BrowserRouter>
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <Router>
      <div>
-         <Header />
-         <Switch>
-             <Route path="/greet/:name/:lastname" component=(Greeter) />
-             <Route path="/about/company" component=(About) />
-             <Route path="/about/" component=(About) />
-             <Route path="/" component=(Home) />
-             <Route component={NotFound} />
-         </Switch>
+         <NavBar />
+         <Route exact path="/" component={Movies} />
+         <Routhe path="/movies/:id" component={MovieDetails} />
     </div>
-</BrowserRouter>, 
+   </Router>, 
+   </Provider>,
 document.getElementById('root')
 };
              
              
              
-             
-             
-             
-             <App />, document.getElementById('root'));
-registerServiceWorker();
-
-BrowserRouter as Router, 
-Link, 
-Route } from 'react-router-dom';
-
-class App extends Component {
-    constructor() {
-        super(); 
-
-        this.state = {
-            name: "",
-            detail: []
-        };
-
-    }
-    render () {
-        return(
-            <div>
-                Whatever
-                </div>
-
-        );
-    }
-}
+           
