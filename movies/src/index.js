@@ -1,35 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
+import Movies from './components/Movies';
+import MovieDetail from './components/MovieDetail';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxPromise from 'redux-promise';
 import {
-BrowserRouter as Router,
-Link,
-Route } from 'react-router-dom';
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom';
+import reducers from './reducers';
+import './index.css';
 
-class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      name: "",
-      detail: [] 
-    };
-
-  }
-render () {
-  return(
-    <div> 
-      Whatever
-    </div>
-
-    );
-  }
-}
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
-<BrowserRouter>
-  <div>
-  <App />
-    </div>
-</BrowserRouter>,
-document.getElementById('root')
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <Router>
+      <div>
+        <Route exact path="/" component={App} />
+        <Route exact path="/movies" component={Movies} />
+        <Route path="/movies/:id" component={MovieDetail} />
+      </div>
+    </Router>
+  </Provider>,
+  document.getElementById('root')
 );
