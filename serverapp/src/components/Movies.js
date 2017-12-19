@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
-const Movies = () => {
+class Movies extends Component {
   componentDidMount() {
     this.props.showMovies();
   }

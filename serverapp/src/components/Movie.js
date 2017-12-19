@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {showMovie} from '../actions';
+import { Link } from 'react-router';
 class Movie extends Component {
   componentDidMount() {
     this.props.showMovie(this.props.match.params.id);
