@@ -9,10 +9,11 @@ import {
 
 ReactDOM.render(
     <Router>
+        <Header />
         <Switch>
-            <Route path="/app" component={App} exact />
-            <Route path="/api/movies" component={Movies} />
-            <Route path="/api/movies/:id" component={Movie} />
+            <Route path="/api/Movies/:movieId" component={Movie} />
+            <Route path="/api/Movies" component={Movies} />
+            <Route path="/app" component={App} />
             <Miss component={PageNotFound} />
         </Switch>
     </Router>,

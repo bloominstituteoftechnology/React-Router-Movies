@@ -6,11 +6,12 @@ const Movie = ({ params: { movieId } }) => {
     const movie = movies.find(
       movie => movie.id === parseInt(movieId, 10)
     );
+  }
   
-    return (
-      <div>
-        <div className="movie-title">
-          <h2>{movie.name}</h2>
-          <hr />
-        </div>
-  
+  Movie.propTypes = {
+  params: PropTypes.shape({
+    movieId: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+export default Movie;
