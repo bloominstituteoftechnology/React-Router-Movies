@@ -1,2 +1,2 @@
-export const MOVIES = "MOVIES";
-export const MOVIE = "MOVIE";
+export const MOVIES = 'MOVIES';
+export const MOVIE = 'MOVIE';

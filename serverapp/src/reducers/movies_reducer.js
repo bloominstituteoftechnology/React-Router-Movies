@@ -1,8 +1,8 @@
-import { MOVIES } from '../actions';
+import { showMovies } from '../actions';
 
 export default (state = [], action) => {
     switch (action.type) {
-        case MOVIES:
+        case showMovies:
             console.log("Movies are ", action.payload.data);
             return action.payload.data;
         default:

@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { MOVIES, MOVIE } from '../constants';
 
 
-export const showMovies = () => {
+export  const showMovies = () => {
     const promise = axios.get('http://localhost:3000/movies');
     return {
         type: MOVIES,
@@ -9,8 +10,8 @@ export const showMovies = () => {
     };
 };
 
-export const showMovie = (movieId) => {
-    const promise = axios.get (`http://localhost:3000/movies/${movieid}`);
+export  const showMovie = (movieId) => {
+    const promise = axios.get (`http://localhost:3000/movies/${movieId}`);
     return {
         type: MOVIE,
         payload: promise,
