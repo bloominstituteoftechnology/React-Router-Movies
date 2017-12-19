@@ -1,0 +1,22 @@
+.Nav {
+    padding: 10px;
+    margin:0;
+    font-size: 24px;
+    font-weight: 900;
+    color: white;
+    -webkit-text-stroke: 0.4px black;
+    background-image: linear-gradient(to bottom, rgb(30, 41, 53), rgb(0, 0, 0));
+    justify-content: center;
+}
+
+.Nav__Link {
+    text-decoration: none;
+    color: white;
+}
+
+.Links__Container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 700px;
+}
