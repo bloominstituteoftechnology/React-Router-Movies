@@ -1,19 +1,15 @@
 import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import Movies from "./components/Movies";
 
-function Home() {
+function Header() {
   return (
     <div>
-      <h1>Home</h1>
-    </div>
-  );
-}
-
-function Movies() {
-  return (
-    <div>
-      <h1>Movies</h1>
+      <h1>Header</h1>
+      <Link to="/">Home</Link>
+      <Link to="/movies">Movies</Link>
     </div>
   );
 }
@@ -23,6 +19,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
+          <Header />
           <Route exact path="/" component={Home} />
           <Route path="/movies" component={Movies} />
         </div>
