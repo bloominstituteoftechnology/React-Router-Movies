@@ -4,7 +4,7 @@ export const GET_MOVIES = 'GET_MOVIES';
 export const SET_SELECTED_MOVIE = 'SET_SELECTED_MOVIE';
 
 export const getMovies = () => {
-  const promise = axios.get('http://localhost:5000/movies');
+  const promise = axios.get('http://localhost:5000/api/movies');
   return {
     type: GET_MOVIES,
     payload: promise,
@@ -12,7 +12,7 @@ export const getMovies = () => {
 };
 
 export const setSelectedMovie = (id) => {
-  const promise = axios.get(`http://localhost:5000/movies/${id}`);
+  const promise = axios.get(`http://localhost:5000/api/movies/${id}`);
   return {
     type: SET_SELECTED_MOVIE,
     payload: promise,
