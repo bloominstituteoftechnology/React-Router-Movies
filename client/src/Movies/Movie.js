@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
+import { BrowserRouter as Route, NavLink } from 'react-router-dom';
+import MovieList from './MovieList';
+
 export default class MovieCard extends React.Component {
 
   state = {
@@ -27,6 +30,7 @@ export default class MovieCard extends React.Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="movie-card">
+        <NavLink to="/" exact>Home</NavLink>
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
@@ -41,6 +45,8 @@ export default class MovieCard extends React.Component {
             {star}
           </div>
         ))}
+
+        <Route path="/" component={MovieList} exact />
       </div>
     );
   }
