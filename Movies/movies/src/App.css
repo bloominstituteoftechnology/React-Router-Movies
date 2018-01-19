@@ -1,0 +1,14 @@
+body {
+  background-color: whitesmoke;
+}
+.year {
+  border: solid 1px black;
+  background-color: lightgrey;
+  margin: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: x-small;
+}
+.blue {
+  background-color: blue;
+}
