@@ -28,8 +28,8 @@ export default class MovieCard extends React.Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div>
-        <div className="home">
-        <NavLink to="/"> Home </NavLink>
+        <div>
+        <button className="home"><NavLink to="/"> Home </NavLink></button>
         </div>
       <div className="movie-card">
         <h2>{title}</h2>
