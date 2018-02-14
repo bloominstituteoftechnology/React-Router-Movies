@@ -17,7 +17,7 @@ export default class MovieList extends React.Component {
         console.error('Server Error', error);
       });
   }
-  F;
+  // F;
 
   render() {
     return (
@@ -30,6 +30,8 @@ export default class MovieList extends React.Component {
   }
 }
 
+
+// another component
 function MovieCard({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
