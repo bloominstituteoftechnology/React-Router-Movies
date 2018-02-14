@@ -24,9 +24,14 @@ export default class MovieCard extends React.Component {
       return <div>Loading movie information...</div>
     }
 
+  
+
+
+
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="movie-card">
+        <button onClick={ () => {this.props.history.push("/")} }>Take me Home Country Road..to the place I belong</button>
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>

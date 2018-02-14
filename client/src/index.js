@@ -9,13 +9,6 @@ import Movie from './Movies/Movie'
 const App = () => (
   <Router>
     <div>
-    <ul>
-        <li>
-          <NavLink to="/" activeClassName="navlink--active">
-            GetMovie
-          </NavLink>
-        </li>
-      </ul>
       <Route path = "/" component={MovieList} exact />
       <Route path = "/movies/:id" component={Movie} />
     </div>
