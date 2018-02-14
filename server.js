@@ -4,9 +4,6 @@ const CORS = require('cors');
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(CORS());
-
 const movies = [
 	{
 		id: 0,
@@ -29,7 +26,17 @@ const movies = [
 		metascore: 92,
 		stars: ['Elijah Wood', 'Ian McKellen', 'Orlando Bloom'],
 	},
+	{
+		id: 3,
+		title: 'BASEketball',
+		director: 'David Zucker',
+		metascore: 39,
+		stars: ['Matt Stone', 'Trey Parker'],
+	},
 ];
+
+app.use(bodyParser.json());
+app.use(CORS());
 
 app.get('/api/movies', (req, res) => {
 	res.send(movies);
