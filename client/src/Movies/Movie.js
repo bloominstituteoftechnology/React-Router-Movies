@@ -1,8 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-
 export default class MovieCard extends React.Component {
-  
+imp
   state = {
     movie: null,
   };
