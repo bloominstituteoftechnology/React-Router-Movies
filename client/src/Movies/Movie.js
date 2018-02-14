@@ -8,7 +8,6 @@ export default class MovieCard extends React.Component {
   };
 
   componentDidMount() {
-    // change this line to grab the id passed on the URL
     const id = 1;
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
@@ -40,6 +39,7 @@ export default class MovieCard extends React.Component {
             {star}
           </div>
         ))}
+
       </div>
     );
   }
