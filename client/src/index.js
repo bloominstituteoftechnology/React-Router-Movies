@@ -8,7 +8,11 @@ import Movie from './Movies/Movie'
 
 ReactDOM.render(
   <Router>
-    <div>Application running, add your routing</div>
+    <div>
+      <NavLink to="/" activeClassName="navlink--active"><MovieList /></NavLink>
+      <route path="/" component={MovieList}/>
+      <route path="/movies/:id" component={Movie} />
+    </div>
   </Router>,
   document.getElementById('root')
 );
