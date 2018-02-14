@@ -8,7 +8,8 @@ export default class MovieCard extends React.Component {
   };
 
   componentDidMount() {
-    const id = 1;
+    const id = this.props.match.params.id;
+    // const id = 1;
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => this.setState(() => ({ movie: response.data })))
