@@ -41,6 +41,9 @@ export default class MovieCard extends React.Component {
             {star}
           </div>
         ))}
+        <div style={{margin: "40px 0 20px"}}>
+          <a href="/" >Go back to Movie List</a>
+        </div>
       </div>
     );
   }
