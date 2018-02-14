@@ -26,6 +26,7 @@ export default class MovieCard extends React.Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="movie-card">
+        <button onClick={ () => {this.props.history.push("/")} }>Back To Movie List</button>
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
