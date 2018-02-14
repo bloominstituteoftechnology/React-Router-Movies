@@ -8,7 +8,10 @@ import { BrowserRouter as Route, Router } from 'react-router-dom';
 
 ReactDOM.render(
   <Router>
-  <div>Application running, add your routing</div>
+    <div>
+    <Route path='/' component={MovieList}/>
+    <Route path='/movie:id' component={Movie} />
+    </div>
   </Router>,
   document.getElementById('root')
 );
