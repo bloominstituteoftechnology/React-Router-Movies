@@ -18,3 +18,8 @@ body {
   padding: 4px 0;
   font-size: 0.8rem;
 }
+
+.home-link {
+  margin-top: 10px;
+  font-size: 20px;
+}
