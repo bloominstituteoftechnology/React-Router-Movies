@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {BrowserRouter as Router, Route, Link, NavLink} from 'react-router-dom';
 
 export default class MovieCard extends React.Component {
 
@@ -41,6 +42,13 @@ export default class MovieCard extends React.Component {
             {star}
           </div>
         ))}
+        <ul>
+          <li>
+            <NavLink to="/" activeClassName="navlink--active" exact>
+              Click Here To Go Back Home
+            </NavLink>
+          </li>
+        </ul>        
       </div>
     );
   }
