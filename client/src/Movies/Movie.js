@@ -1,15 +1,17 @@
 import React from 'react';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
+
+import './Movie.css';
 
 export default class MovieCard extends React.Component {
-  
   state = {
     movie: null,
   };
 
   componentDidMount() {
-    // change this line to grab the id passed on the URL
-    const id = 1;
+    const id = this.props.match.params.id;
+
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => this.setState(() => ({ movie: response.data })))
@@ -25,6 +27,10 @@ export default class MovieCard extends React.Component {
 
     const { title, director, metascore, stars } = this.state.movie;
     return (
+      <div>
+        <div className="home">
+        <NavLink to="/"> Home </NavLink>
+        </div>
       <div className="movie-card">
         <h2>{title}</h2>
         <div className="movie-director">
@@ -40,6 +46,7 @@ export default class MovieCard extends React.Component {
             {star}
           </div>
         ))}
+      </div>
       </div>
     );
   }
