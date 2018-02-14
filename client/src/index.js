@@ -9,8 +9,9 @@ import Movie from './Movies/Movie'
 ReactDOM.render(
     <Router>
       <div>
-        <Route path="/" exact component={MovieList}/>
-        <Route path="/movies/" component={Movie}/>
+        <Link to="/">Home</Link>
+        <Route path="/" component={MovieList} exact/>
+        <Route path="/movies/:id" component={Movie} exact/>
       </div>
     </Router>,
   document.getElementById('root')
