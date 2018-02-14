@@ -11,12 +11,16 @@ ReactDOM.render(
   <div>
     <ul>
         <li>
-          <NavLink to="/api/movies">
+          <NavLink to="/movies">
             Movie List
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/movies"/>
+        </li>
       </ul>
-    <Route path="/api/movies" component={MovieList}/>
+    <Route path="/movies" component={MovieList} exact/>
+    <Route path="/movies/:id" component={Movie}/>
   </div>
   </Router>,
   document.getElementById('root')
