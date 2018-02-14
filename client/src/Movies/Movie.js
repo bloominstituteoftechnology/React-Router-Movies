@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 export default class MovieCard extends React.Component {
-  
   state = {
     movie: null,
   };
