@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
+
 export default class MovieCard extends React.Component {
+
   
   state = {
     movie: null,
@@ -9,7 +12,7 @@ export default class MovieCard extends React.Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-  
+    
     const id = this.props.match.params.id;
     console.log(this.props);
     axios
@@ -18,6 +21,7 @@ export default class MovieCard extends React.Component {
       .catch(error => {
         console.error(error);
       });
+      
   }
 
   render() {
@@ -41,6 +45,8 @@ export default class MovieCard extends React.Component {
             {star}
           </div>
         ))}
+        <Link to='/'> <div>Back to Home</div> </Link>
+        
       </div>
     );
   }
