@@ -17,7 +17,7 @@ const movies = [
 	},
 	{
 		id: 1,
-		title: 'Star Wars',
+		title: 'Sta Wars',
 		director: 'George Lucas',
 		metascore: 92,
 		stars: ['Mark Hamill', 'Harrison Ford', 'Carrie Fisher'],

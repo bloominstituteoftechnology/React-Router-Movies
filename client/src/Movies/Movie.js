@@ -9,7 +9,9 @@ export default class MovieCard extends React.Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+  
+    const id = this.props.match.params.id;
+    console.log(this.props);
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => this.setState(() => ({ movie: response.data })))
@@ -22,9 +24,9 @@ export default class MovieCard extends React.Component {
     if(!this.state.movie) {
       return <div>Loading movie information...</div>
     }
-
     const { title, director, metascore, stars } = this.state.movie;
     return (
+
       <div className="movie-card">
         <h2>{title}</h2>
         <div className="movie-director">
