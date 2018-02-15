@@ -1,20 +1,20 @@
-import React from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class MovieList extends React.Component {
   state = {
-    movies: [],
+    movies: []
   };
 
-  componentDidMount() {
+  componentDidMount(props) {
     axios
-      .get('http://localhost:5000/api/movies')
+      .get("http://localhost:5000/api/movies")
       .then(response => {
         this.setState(() => ({ movies: response.data }));
       })
       .catch(error => {
-        console.error('Server Error', error);
+        console.error("Server Error", error);
       });
   }
   F;
