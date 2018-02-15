@@ -8,8 +8,8 @@ import Movie from './Movies/Movie'
 ReactDOM.render(
   <Router>
     <div>
-    <Route path="/" component={MovieList} />
-    <Route path id="/movie" component={Movie} />
+    <Route path="/" component={MovieList} exact></Route>
+    <Route path ="/movies/:id" component={Movie}></Route>
     </div>
   </Router>,
   document.getElementById('root')
