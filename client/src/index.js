@@ -16,14 +16,14 @@ function About() {
   );
 }
 
-function Home() {
-  return (
-    <div>
-      <h1>Home component</h1>
-      <p id="paragraph">This is the home component</p>
-    </div>
-  );
-}
+// function Home() {
+//   return (
+//     <div>
+//       <h1>Home component</h1>
+//       <p id="paragraph">This is the home component</p>
+//     </div>
+//   );
+// }
 
 
 ReactDOM.render(
@@ -37,13 +37,13 @@ ReactDOM.render(
       <li>
         <NavLink to="/about" activeClassName="navlink--active">About</NavLink>
       </li>
-      {/* <li>
-        <link to="/products">Products</link>
-      </li> */}
     </ul>
+    {/* * one route for `/` that loads the `MovieList` component. */}
     <Route path='/' component={MovieList} exact />
-    <Route path="/about" component={Movie} />
-    {/* <Route path="/products" component={Products} /> */}
+
+    {/* * one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component. */}
+    <Route path="/movie" component={Movie} />
+
   </div>
 </Router>,
 
