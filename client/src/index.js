@@ -9,17 +9,7 @@ import Movie from './Movies/Movie'
 ReactDOM.render(
   <Router>
   <div>
-    <ul>
-        <li>
-          <NavLink to="/movies">
-            Movie List
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/movies"/>
-        </li>
-      </ul>
-    <Route path="/movies" component={MovieList} exact/>
+    <Route path="/" component={MovieList} exact/>
     <Route path="/movies/:id" component={Movie}/>
   </div>
   </Router>,
