@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class MovieList extends React.Component {
@@ -33,6 +33,7 @@ class MovieList extends React.Component {
 
 function MovieCard({ movie }) {
   const { title, director, metascore, stars } = movie;
+  
   return (
     <Link to={`/movies/${movie.id}`}>
       <div className="movie-card">

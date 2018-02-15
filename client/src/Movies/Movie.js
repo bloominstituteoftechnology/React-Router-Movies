@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-
 export default class MovieCard extends React.Component {
   
   state = {
     movie: null,
   };
+
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
@@ -21,12 +21,12 @@ export default class MovieCard extends React.Component {
   }
 
   render() {
+  
     if(!this.state.movie) {
       return <div>Loading movie information...</div>
     }
     const { title, director, metascore, stars } = this.state.movie;
     return (
-
       <div className="movie-card">
         <h2>{title}</h2>
         <div className="movie-director">
@@ -36,7 +36,6 @@ export default class MovieCard extends React.Component {
           Metascore: <strong>{metascore}</strong>
         </div>
         <h3>Actors</h3>
-
         {stars.map(star => (
           <div key={star} className="movie-star">
             {star}
