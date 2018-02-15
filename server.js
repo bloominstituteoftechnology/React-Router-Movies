@@ -29,6 +29,13 @@ const movies = [
 		metascore: 92,
 		stars: ['Elijah Wood', 'Ian McKellen', 'Orlando Bloom'],
 	},
+	{
+		id: 3,
+		title: 'Movie Title',
+		director: 'Movie Director',
+		metascore: 0,
+		stars: ['Actor 0', 'Actor 1', 'Actor 2'],
+	},
 ];
 
 app.get('/api/movies', (req, res) => {
