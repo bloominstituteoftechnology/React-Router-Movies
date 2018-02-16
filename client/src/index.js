@@ -42,7 +42,7 @@ ReactDOM.render(
     <Route path='/' component={MovieList} exact />
 
     {/* * one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component. */}
-    <Route path="/movie" component={Movie} />
+    <Route path="/movie/:id" component={Movie.id} />
 
   </div>
 </Router>,
