@@ -1,0 +1,14 @@
+* {
+    box-sizing: content-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+.appWrap {
+    margin: 0;
+}
+
+html {
+    background-image: linear-gradient(to bottom, rgb(53, 65, 87), rgb(0, 0, 0));
+    background-repeat: no-repeat;
+    height: 100%;
+}
