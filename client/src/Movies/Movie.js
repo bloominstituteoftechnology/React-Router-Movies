@@ -1,6 +1,9 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import App from '../App.js'
+import MovieList from '../Movies/MovieList';
 
 export default class MovieCard extends React.Component {
   
@@ -42,7 +45,7 @@ export default class MovieCard extends React.Component {
           </div>
         ))}
 
-        <a href="/"> Go Back </a>
+        <Link to="/">Go Back</Link>
       </div>
     );
   }
