@@ -11,8 +11,8 @@ export default class MovieCard extends React.Component {
   componentDidMount() {
     // change this line to grab the id passed on the URL
     
-    const id = 1;
-    <NavLink to="movies/id">{id}</NavLink>
+    const id = this.props.match.params.id;
+    console.log(this);
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => this.setState(() => ({ movie: response.data })))
@@ -29,6 +29,7 @@ export default class MovieCard extends React.Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="movie-card">
+        <NavLink to="/">Home Page</NavLink>
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
