@@ -4,12 +4,13 @@ import axios from 'axios';
 export default class MovieCard extends React.Component {
   
   state = {
-    movie: null,
+    movie: null //this.props.movie,
+    // id: this.state.movie.pathname.slice('/')[1]
   };
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const id = this.props.match.params; //this.state.movie.pathname.slice('/')[1] //"/movies/0" //this.state.movie;
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => this.setState(() => ({ movie: response.data })))
