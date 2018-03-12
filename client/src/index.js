@@ -10,9 +10,9 @@ import Movie from './Movies/Movie'
 ReactDOM.render(
   <Router>
     
-    <div>Application running, add your routing
+    <div>
     <Route exact path="/" component={MovieList} />
-    <Route path={`/movies/`} component={Movie} />
+    <Route path="/movies/:id" component={Movie} />
     </div>
   </Router>,
   document.getElementById('root')
