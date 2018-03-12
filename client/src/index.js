@@ -4,8 +4,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie'
+import {Route} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 ReactDOM.render(
-  <div>Application running, add your routing</div>,
+  <Router>
+    <div>
+    <Route exact path ="/" component= {MovieList}/>
+    <Route exact path ="/Movies/Movie" component= {Movie}/>
+    </div>
+  </Router>,
   document.getElementById('root')
 );
