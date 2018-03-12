@@ -11,9 +11,9 @@ import Movie from './Movies/Movie';
 ReactDOM.render(
   <Router>
     <div>
-      <h1>Main</h1>
+      <h1>MovieList</h1>
       <Route exact path='/' component={ MovieList } />
-      <Route path='/:id' component={ Movie } />
+      <Route path='/movies/:id' component={ Movie } />
     </div>
 
   </Router>

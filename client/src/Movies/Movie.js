@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class MovieCard extends React.Component {
   
@@ -10,9 +11,10 @@ export default class MovieCard extends React.Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = this.props.match.params; //this.state.movie.pathname.slice('/')[1] //"/movies/0" //this.state.movie;
+    const { match: { params }} = this.props;
+    //const id = this.props.match.params; //this.state.movie.pathname.slice('/')[1] //"/movies/0" //this.state.movie;
     axios
-      .get(`http://localhost:5000/api/movies/${id}`)
+      .get(`http://localhost:5000/api/movies/${params.id}`)
       .then(response => this.setState(() => ({ movie: response.data })))
       .catch(error => {
         console.error(error);
@@ -41,6 +43,7 @@ export default class MovieCard extends React.Component {
             {star}
           </div>
         ))}
+        <Link to='/'>Go Home!</Link>
       </div>
     );
   }
