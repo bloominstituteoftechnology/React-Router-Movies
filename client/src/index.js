@@ -12,7 +12,7 @@ ReactDOM.render(
     
     <div>
     <Route exact path="/" component={MovieList} />
-    <Route path="/movies/:id" component={Movie} />
+    <Route path="/movies/:movieNumber" component={Movie} />
     </div>
   </Router>,
   document.getElementById('root')

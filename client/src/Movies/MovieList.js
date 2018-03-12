@@ -17,11 +17,12 @@ export default class MovieList extends React.Component {
         console.error('Server Error', error);
       });
   }
-  F;
+  
 
   render() {
     return (
       <div className="movie-list">
+      {console.log(this.state.movies)}
         {this.state.movies.map(movie => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
