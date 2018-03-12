@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './Movie.css'; 
 
 import { Link } from 'react-router-dom';
 
@@ -27,9 +28,10 @@ export default class MovieCard extends React.Component {
       return <div>Loading movie information...</div>
     }
 
-    const { title, director, metascore, stars } = this.state.movie;
+    const { title, director, metascore, stars} = this.state.movie;
     return (
-      <div className="movie-card">
+      <div className='movie-box'>
+      <div className={`movie-card movie-${this.props.match.params.id}`} id={this.props.id}>
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
@@ -45,10 +47,16 @@ export default class MovieCard extends React.Component {
           </div>
         ))}
 
+
+
         <Link to='/'>
           <h4>Go Back</h4>
-          </Link>
-        
+          </Link> 
+      </div>
+      <div className={`movie-${this.props.match.params.id} movie-img`}>
+          {/* <img className={`movie-${this.props.match.params.id}`} src='https://lunkiandsika.files.wordpress.com/2011/11/the-godfather-alternative-poster-1972-01.png' /> */}
+        </div>
+
       </div>
     );
   }
