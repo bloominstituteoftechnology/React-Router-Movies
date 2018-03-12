@@ -11,15 +11,20 @@ const Navigation = () => {
   return(
   <div>
     <Route exact path = "/" component = {MovieList} />
-    <Route path="/id" component={id}/> 
+    <Route path="/movies/:id" component={Movie}/> 
     </div>
   );
 }
 ReactDOM.render(
-  <div>Application running, add your routing 
+  // <div>Application running, add your routing 
   <Router>
-    <Movie/>
+    <div>
+    {/* <Route exact path = "/" component = {MovieList} />
+    <Route path="/movies/:id" component={Movie}/>  */}
+    <Router>
+    <Navigation/>
+    </Router>
+    </div>
   </Router>
-  </div>
   ,document.getElementById('root')
 );
