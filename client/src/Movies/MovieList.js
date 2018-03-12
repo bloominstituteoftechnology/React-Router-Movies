@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default class MovieList extends React.Component {
   state = {
-    movies: [],
+    movies: []
   };
 
   componentDidMount() {
@@ -17,8 +17,6 @@ export default class MovieList extends React.Component {
         console.error('Server Error', error);
       });
   }
-  F;
-
   render() {
     return (
       <div className="movie-list">
