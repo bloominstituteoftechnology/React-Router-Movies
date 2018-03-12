@@ -9,7 +9,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
   <Router>
-  
+    <div> 
+    <Route exact path="/" component={MovieList}/>  
+    <Route path="/" component={Movie}/> 
+    </div>
   </Router>
   , document.getElementById('root')
 );
