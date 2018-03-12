@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Card, CardText, CardBody, CardTitle } from "reactstrap";
+import { Button } from "reactstrap";
 
 export default class MovieCard extends React.Component {
   state = {
@@ -25,24 +27,42 @@ export default class MovieCard extends React.Component {
 
     const { title, director, metascore, stars } = this.state.movie;
     return (
-      <div className="movie-card">
-        <Link to="/">
-          <h1>Home</h1>
-        </Link>
-        <h2>{title}</h2>
-        <div className="movie-director">
-          Director: <em>{director}</em>
-        </div>
-        <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
-        </div>
-        <h3>Actors</h3>
-
-        {stars.map(star => (
-          <div key={star} className="movie-star">
-            {star}
-          </div>
-        ))}
+      <div>
+        <Card>
+          <CardBody>
+            <Button color="info">
+              <Link to="/">
+                <h4 class="home">Home</h4>
+              </Link>
+            </Button>
+            <CardTitle>
+              <h2>{title}</h2>
+            </CardTitle>
+            <CardText>
+              <div className="movie-director">
+                Director: <em>{director}</em>
+              </div>
+            </CardText>
+            <CardText>
+              {" "}
+              <div className="movie-metascore">
+                Metascore: <strong>{metascore}</strong>
+              </div>
+            </CardText>
+            <CardText>
+              {" "}
+              <h3>Actors</h3>
+            </CardText>
+            <CardText>
+              {" "}
+              {stars.map(star => (
+                <div key={star} className="movie-star">
+                  {star}
+                </div>
+              ))}
+            </CardText>
+          </CardBody>
+        </Card>
       </div>
     );
   }
