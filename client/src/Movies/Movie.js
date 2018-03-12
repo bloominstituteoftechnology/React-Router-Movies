@@ -41,6 +41,8 @@ export default class MovieCard extends React.Component {
             {star}
           </div>
         ))}
+
+        <a href="/"> Go Back </a>
       </div>
     );
   }
