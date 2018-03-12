@@ -25,9 +25,16 @@ export default class MovieCard extends React.Component {
     }
 
     const { title, director, metascore, stars } = this.state.movie;
+    const backgroundImg = require(`../img/0.jpg`);
+    console.log(this.props.style);
     return (
       <div>
-        <div className="movie-card">
+        <div
+          className={`movie-card`}
+          style={{
+            backgroundImage: { backgroundImg }
+          }}
+        >
           <h2>{title}</h2>
           <div className="movie-director">
             Director: <em>{director}</em>
