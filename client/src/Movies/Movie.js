@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class MovieCard extends React.Component {
   
@@ -41,6 +42,8 @@ export default class MovieCard extends React.Component {
             {star}
           </div>
         ))}
+        <br/>
+        <Link to='/'>Go Back!!!</Link>
       </div>
     );
   }
