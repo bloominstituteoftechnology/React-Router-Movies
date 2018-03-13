@@ -40,3 +40,6 @@ body a {
 .home-button:hover {
   color: lightcoral;
 }
+.movie-poster {
+  width: 100%;
+}

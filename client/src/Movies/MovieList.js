@@ -23,10 +23,11 @@ export default class MovieList extends React.Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => {
-          var styles = {
-            color: "pink"
-          };
-          return <MovieCard key={movie.id} movie={movie} style={styles} />;
+          return (
+            <div>
+              <MovieCard key={movie.id} movie={movie} />
+            </div>
+          );
         })}
       </div>
     );

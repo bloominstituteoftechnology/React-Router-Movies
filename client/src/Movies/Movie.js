@@ -1,6 +1,19 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Container, Row, Col } from "reactstrap";
+
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => {
+    images[item.replace("./", "")] = r(item);
+  });
+  return images;
+}
+
+const images = importAll(
+  require.context("../img", false, /\.(png|jpe?g|svg)$/)
+);
 
 export default class MovieCard extends React.Component {
   state = {
@@ -25,35 +38,40 @@ export default class MovieCard extends React.Component {
     }
 
     const { title, director, metascore, stars } = this.state.movie;
-    const backgroundImg = require(`../img/0.jpg`);
+    const backgroundColor = "pink";
     console.log(this.props.style);
     return (
-      <div>
-        <div
-          className={`movie-card`}
-          style={{
-            backgroundImage: { backgroundImg }
-          }}
-        >
-          <h2>{title}</h2>
-          <div className="movie-director">
-            Director: <em>{director}</em>
-          </div>
-          <div className="movie-metascore">
-            Metascore: <strong>{metascore}</strong>
-          </div>
-          <h3>Actors</h3>
+      <Container className="movie-card">
+        <Row>
+          <Col sm={6}>
+            <div>
+              <h2>{title}</h2>
+              <div className="movie-director">
+                Director: <em>{director}</em>
+              </div>
+              <div className="movie-metascore">
+                Metascore: <strong>{metascore}</strong>
+              </div>
+              <h3>Actors</h3>
 
-          {stars.map(star => (
-            <div key={star} className="movie-star">
-              {star}
+              {stars.map(star => (
+                <div key={star} className="movie-star">
+                  {star}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </Col>
+          <Col sm={6}>
+            <img
+              className="movie-poster img-fluid img-thumbnail mx-auto"
+              src={images[`${this.props.match.params.movieId}.jpg`]}
+            />
+          </Col>
+        </Row>
         <Link to="/" className="home-button">
           Home
         </Link>
-      </div>
+      </Container>
     );
   }
 }

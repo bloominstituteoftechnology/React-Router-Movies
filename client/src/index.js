@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./index.css";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
+import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(
   <Router>
