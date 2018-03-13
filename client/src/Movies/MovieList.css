@@ -1,0 +1,44 @@
+a{
+    text-decoration: none;
+}
+
+
+
+.movie-list{
+    width: 44.3%;
+}
+
+.movie-card{
+    width:100%;
+    text-align: center;
+}
+
+
+.movie-card-0{
+    background-color: rgb(226, 164, 109);
+    border: 2px solid rgb(94, 55, 5);
+
+}
+
+.movie-card-0 h2{
+    color:rgb(94, 55, 5);
+}
+
+.movie-card-1{
+    background-color: black;
+    border: 2px solid yellow;
+}
+
+.movie-card-1 h2{
+    color: yellow;
+}
+
+.movie-card-2{
+    background-color:rgba(0, 12, 0, 0.87);
+    border: 2px solid gold;
+
+}
+
+.movie-card-2 h2{
+    color: gold;
+}

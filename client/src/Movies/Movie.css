@@ -1,0 +1,66 @@
+.movie-box{
+    display: flex;
+    margin-left: .2%;
+    flex-direction: row;
+    width: 165%;
+
+}
+
+.movie-card{
+    width: 220%;
+    font-size: 150%;
+}
+
+.movie-director{
+    font-size: 120%;
+}
+
+.movie-0 {
+    margin: 3% 0 0 0;
+    width: 100%;
+    background-color: rgb(226, 164, 109);
+    color:rgb(94, 55, 5);
+    text-align: center;
+    border: 2px solid rgb(94, 55, 5);
+  
+}
+
+.movie-0.movie-img{
+    background-image: url('https://lunkiandsika.files.wordpress.com/2011/11/the-godfather-alternative-poster-1972-01.png');
+    background-repeat: no-repeat;
+    background-size: 20%;
+}
+
+.movie-1 {
+    margin: 3% 0 0 0;
+    width: 100%;
+    background-color: black;
+    color: yellow;
+    text-align: center;
+    border: 2px solid yellow;
+  
+}
+
+.movie-1.movie-img{
+    background-image: url('https://i.pinimg.com/originals/b4/b8/50/b4b8503d0b2ae4e62ef2cc67d98e7d20.jpg');
+    background-repeat: no-repeat;
+    background-size: 20%;
+
+}
+
+.movie-2 {
+    margin: 3% 0 0 0;
+    width: 100%;
+    background-color:rgba(0, 12, 0, 0.87);
+    color: gold;
+    text-align: center;
+    border: 2px solid gold;
+}
+
+.movie-2.movie-img{
+    background-image: url('https://02varvara.files.wordpress.com/2012/01/00-the-fellowship-of-the-ring-movie-poster.jpg?w=1000');
+    background-repeat: no-repeat;
+    background-size: 21%;
+    margin-right: .7%;
+
+}
