@@ -28,6 +28,20 @@ const movies = [
     director: "Peter Jackson",
     metascore: 92,
     stars: ["Elijah Wood", "Ian McKellen", "Orlando Bloom"]
+  },
+  {
+    id: 3,
+    title: "The Green Mile",
+    director: "Frank Darabont",
+    metascore: 61,
+    stars: ["Tom Hanks", "Michael Clarke Duncan", "David Morse"]
+  },
+  {
+    id: 4,
+    title: "The Shawshank Redemption",
+    director: "Frank Darabont",
+    metascore: 80,
+    stars: ["Tim Robbins", "Morgan Freeman", "Bob Gunton"]
   }
 ];
 
