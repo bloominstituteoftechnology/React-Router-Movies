@@ -43,3 +43,9 @@ body a {
 .movie-poster {
   width: 100%;
 }
+.title {
+  font-family: "Righteous", cursive;
+}
+.movie-list a:hover {
+  text-decoration: none;
+}
