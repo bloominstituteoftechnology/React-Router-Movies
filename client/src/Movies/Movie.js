@@ -6,12 +6,16 @@ export default class MovieCard extends React.Component {
   state = {
     movie: null,
   };
-
+  
   componentDidMount() {
+    console.log(this.props.match);
+    
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const { match: { params } } = this.props;
+    // === const id = this.props.match.params.id;
+    
     axios
-      .get(`http://localhost:5000/api/movies/${id}`)
+      .get(`http://localhost:5000/api/movies/${params.id}`)
       .then(response => this.setState(() => ({ movie: response.data })))
       .catch(error => {
         console.error(error);
