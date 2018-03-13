@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import MovieList from './MovieList';
 
 export default class MovieCard extends React.Component {
   
@@ -7,9 +9,8 @@ export default class MovieCard extends React.Component {
     movie: null,
   };
 
-  componentDidMount() {
-    // change this line to grab the id passed on the URL
-    const id = 1;
+  componentDidMount(match) {
+    const id = this.props.match.params.id;
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => this.setState(() => ({ movie: response.data })))
@@ -22,6 +23,9 @@ export default class MovieCard extends React.Component {
     if(!this.state.movie) {
       return <div>Loading movie information...</div>
     }
+    var divStyle = {
+      marginTop:'100px'
+    };
 
     const { title, director, metascore, stars } = this.state.movie;
     return (
@@ -40,6 +44,11 @@ export default class MovieCard extends React.Component {
             {star}
           </div>
         ))}
+
+        <div style={divStyle}>
+          <Link to="/">Return to index</Link>
+          <Route exact path="/" component={MovieList} />
+        </div>
       </div>
     );
   }
