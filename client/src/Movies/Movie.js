@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class MovieCard extends React.Component {
   
@@ -9,6 +10,7 @@ export default class MovieCard extends React.Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
+    // this.props.match.params.id; this doesn't work for some reason it just returns the render function.
     const id = 1;
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
@@ -26,6 +28,7 @@ export default class MovieCard extends React.Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="movie-card">
+      <Link to="/">Homepage</Link>
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
