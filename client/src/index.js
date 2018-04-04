@@ -43,7 +43,6 @@ class App extends Component {
 ReactDOM.render(
   <Router>
     <App />
-    {/* <MovieList/> */}
   </Router>,
   document.getElementById('root')
 );
