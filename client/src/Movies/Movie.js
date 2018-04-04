@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class MovieCard extends React.Component {
+
+export default class Movie extends React.Component {
   
   state = {
     movie: null,
