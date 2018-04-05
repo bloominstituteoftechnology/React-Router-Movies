@@ -3,14 +3,13 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 export default class MovieList extends React.Component {
-  
   state = {
     movies: [],
   };
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/movies')
+      .get('http://localhost:5000/api/movies/')
       .then(response => {
         this.setState(() => ({ movies: response.data }));
       })
