@@ -10,14 +10,17 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
+    // console.log(this.props.match.params.id)
+    
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const id = this.props.match.params.id;
+    console.log(id)
     this.fetchMovie(id);
   }
 
   fetchMovie = id => {
     axios
-      .get(`http://localhost:5000/api/movies/:id`)
+      .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => {
         this.setState(() => ({ movie: response.data }));
       })

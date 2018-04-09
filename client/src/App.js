@@ -20,17 +20,13 @@ export default class App extends Component {
   };
 
 
-  // const Movies = ({match}) => {
-  //   return (
-  //     <div> {match.params.movie}</div>
-  //   )
-  // }
+
 
   render() {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <Route path="/" component={MovieList} />
+        <Route exact path="/" component={MovieList} />
         <Route path="/movies/:id" component={Movie} />
       </div>
     );
