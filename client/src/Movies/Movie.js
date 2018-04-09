@@ -11,7 +11,14 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    // this.props.location;
+    const myStr = window.location.href;
+  
+    
+    console.log(window.location.href);
+    console.log(this.props.match.params);
+    // myStr.substr(myStr.length - 2)
+    const id = this.props.match.params.id;
     this.fetchMovie(id);
   }
 
@@ -38,6 +45,8 @@ export default class Movie extends Component {
   // }
 
   render() {
+    console.log(this.state.movie);
+
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
