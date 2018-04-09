@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import SavedList from "./Movies/SavedList";
-import MovieList from "./Movies/MovieList";
-import Movie from "./Movies/Movie";
-import { Route } from "react-router-dom";
+import React, { Component } from 'react';
+import SavedList from './Movies/SavedList';
+import MovieList from './Movies/MovieList';
+import MovieLayout from './Movies/Movie';
+import { Route } from 'react-router-dom';
 
+const Movie = props => <MovieLayout {...props} />;
 export default class App extends Component {
   constructor() {
     super();
@@ -24,8 +25,25 @@ export default class App extends Component {
         <SavedList list={this.state.savedList} />
         <div>
           {/* Exact path is needed otherwise the list will show on every page */}
-          <Route exact path="/" component={MovieList} />
-          <Route path="/movies/:id" component={Movie} />
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <MovieList
+                {...props}
+                addToSavedList={movie => this.addToSavedList(movie)}
+              />
+            )}
+          />
+          <Route
+            path="/movies/:id"
+            render={props => (
+              <Movie
+                {...props}
+                addToSavedList={movie => this.addToSavedList(movie)}
+              />
+            )}
+          />
         </div>
       </div>
     );
