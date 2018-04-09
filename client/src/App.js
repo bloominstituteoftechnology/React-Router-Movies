@@ -3,13 +3,13 @@ import React, { Component } from "react";
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
-import { BrowserRouter as Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      savedList: []
+      savedList: [],
     };
   }
 
@@ -27,8 +27,8 @@ export default class App extends Component {
         <Route exact path="/" component={MovieList} />
         {/* path to individual movies */}
         <Route path="/movies/:id" component={Movie} />
+        <div><MovieList /></div>
       </div>
-      // <MovieDetails />
     );
   }
 }
