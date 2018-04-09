@@ -5,12 +5,12 @@ export default class MovieCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: this.props
+      movie: this.props.movie
     };
   }
 
   render() {
-    const movieRef = this.state.movie.movie;
+    const movieRef = this.state.movie;
     return (
       <Link to={`/movies/${movieRef.id}`}>
         <div className="movie-card">
