@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default class MovieList extends Component {
@@ -21,10 +22,15 @@ export default class MovieList extends Component {
   }
 
   render() {
+    if (!this.state.movies) return <div>Loading movie List...</div>;
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
+          <div key={movie.id}>
+            <Link to={`/movies/${movie.id}`}>
+              <MovieDetails key={movie.id} movie={movie} />
+            </Link>
+          </div>
         ))}
       </div>
     );
