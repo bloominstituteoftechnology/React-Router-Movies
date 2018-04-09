@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -7,6 +9,7 @@ export default class MovieList extends Component {
     this.state = {
       movies: []
     };
+    this.HandleClick = this.HandleClick.bind(this)
   }
 
   componentDidMount() {
@@ -19,25 +22,44 @@ export default class MovieList extends Component {
         console.error('Server Error', error);
       });
   }
+  HandleClick() {
+    alert('hey')
+  }
 
   render() {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
+          console.log("Hey, inside map: ", movie),
+          <MovieLinks key={movie.id} movie={movie} onClick={this.HandleClick}/>
+          // <MovieDetails key={movie.id}  movie={movie}  />
         ))}
       </div>
     );
   }
 }
+const style = {
+  // border: '1px solid red',
+  margin: '5px 0px'
+}
+function MovieLinks({ movie, onClick }) {
+  const { title, director, metascore, stars } = movie;
+  return (
+    <div className="LinkURL" onClick={onClick} style={style} >
+      <Link to={`/movies/${movie.id}`}>{title}</Link>, 
+
+    </div>
+  );
+}
 
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
-    <div className="movie-card">
+    <div className="movie-card" style={style} >
       <h2>{title}</h2>
+      {/* <Link to='/movies:id' >{title}</Link>,  */}
       <div className="movie-director">
-        Director: <em>{director}</em>
+        {/* Director: <em>{director}</em> */}
       </div>
       <div className="movie-metascore">
         Metascore: <strong>{metascore}</strong>
