@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {MovieCard} from './MovieCard'
+import addToSavedList from '../App'
 
 export default class Movie extends Component {
   constructor(props) {
@@ -9,7 +10,11 @@ export default class Movie extends Component {
       movie: null
     };
   }
-
+  // addToSavedList = movie => {
+  //   const savedList = this.state.savedList;
+  //   savedList.push(movie);
+  //   this.setState({ savedList });
+  // };
   componentDidMount() {
     // change this line to grab the id passed on the URL
     const id = this.props.match.params.id;
@@ -62,7 +67,7 @@ export default class Movie extends Component {
             </div>
           ))}
         </div>
-        <div className="save-button">Save</div>
+        <div onClick={this.saveMovie} className="save-button" > Save</div>
       </div>
     );
   }
