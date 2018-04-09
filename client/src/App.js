@@ -9,7 +9,7 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      savedList: [],
+      savedList: []
     };
   }
 
@@ -27,7 +27,6 @@ export default class App extends Component {
         <Route exact path="/" component={MovieList} />
         {/* path to individual movies */}
         <Route path="/movies/:id" component={Movie} />
-        <div><MovieList /></div>
       </div>
     );
   }
