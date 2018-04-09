@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Nav, NavItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 export default class MovieList extends Component {
   constructor(props) {
