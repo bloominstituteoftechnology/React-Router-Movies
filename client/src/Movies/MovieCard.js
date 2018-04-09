@@ -12,7 +12,7 @@ export default class MovieCard extends Component {
   render() {
     const movieRef = this.state.movie.movie;
     return (
-      <Link to={`/movies/${this.state.movie.id}`}>
+      <Link to={`/movies/${movieRef.id}`}>
         <div className="movie-card">
           <h2>{movieRef.title}</h2>
           <div className="movie-director">
