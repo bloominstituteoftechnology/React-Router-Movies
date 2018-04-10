@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export default class MovieList extends Component {
+export default class MovieList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +35,9 @@ export default class MovieList extends Component {
 
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
+  const { id } = movie;
   return (
+    <Link to={`/Movies/${movie.id}`}>
     <div className="movie-card">
       <h2>{title}</h2>
       <div className="movie-director">
@@ -43,12 +47,14 @@ function MovieDetails({ movie }) {
         Metascore: <strong>{metascore}</strong>
       </div>
       <h3>Actors</h3>
-
       {stars.map(star => (
         <div key={star} className="movie-star">
           {star}
         </div>
       ))}
     </div>
+</Link>
   );
 }
+
+
