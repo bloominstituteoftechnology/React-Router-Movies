@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import MovieCard from "./MovieCard"
+import React from 'react';
+import {MovieCard, MovieDetails} from "./MovieCard"
 
  const MovieList = () => {
   return(

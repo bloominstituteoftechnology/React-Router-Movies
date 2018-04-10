@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Link} from "react-router-dom"; 
 
 
-export default class MovieCard extends Component {
+class MovieCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -12,7 +12,6 @@ export default class MovieCard extends Component {
   };
 
   componentDidMount() {
-    console.log('hello');
     axios
       .get('http://localhost:5000/api/movies')
       .then(response => {
@@ -56,4 +55,9 @@ return (
           ))}
         </div>
   )
+}
+
+export {
+  MovieCard,
+  MovieDetails,
 }
