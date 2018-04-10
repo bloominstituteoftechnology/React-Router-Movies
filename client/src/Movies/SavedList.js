@@ -17,4 +17,3 @@ export default class SavedList extends Component {
     );
   }
 }
-// asdf
