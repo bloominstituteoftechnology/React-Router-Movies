@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import MovieCard from './MovieCard';
+import MovieCard from "./MovieCard";
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
@@ -12,12 +12,12 @@ export default class MovieList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/movies')
+      .get("http://localhost:5000/api/movies")
       .then(response => {
         this.setState(() => ({ movies: response.data }));
       })
       .catch(error => {
-        console.error('Server Error', error);
+        console.error("Server Error", error);
       });
   }
 
@@ -31,7 +31,6 @@ export default class MovieList extends Component {
     );
   }
 }
-
 
 function MovieDetails({ movie }) {
   return (
