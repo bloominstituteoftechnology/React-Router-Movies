@@ -26,9 +26,10 @@ export default class Movie extends Component {
         console.error(error);
       });
   };
+
   // Uncomment this code when you're ready for the stretch problems
-  componentWillReceiveProps(newProps){
-    if(this.props.match.params.id !== newProps.match.params.id){
+  componentWillReceiveProps(newProps) {
+    if (this.props.match.params.id !== newProps.match.params.id) {
       this.fetchMovie(newProps.match.params.id);
     }
   }
@@ -39,7 +40,7 @@ export default class Movie extends Component {
   // }
 
   render() {
-    console.log('props', this.props);
+    console.log("props", this.props);
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
@@ -48,7 +49,14 @@ export default class Movie extends Component {
     return (
       <div className="save-wrapper">
         <MovieCard movie={this.state.movie} />
-        <div className="save-button" onClick={() => {this.props.addToSavedList(this.state.movie)}}>Save</div>
+        <div
+          className="save-button"
+          onClick={() => {
+            this.props.addToSavedList(this.state.movie);
+          }}
+        >
+          Save
+        </div>
       </div>
     );
   }
