@@ -12,10 +12,12 @@ export default class App extends Component {
     };
   }
 
-  addToSavedList = movie => {
+  addToSavedList = ({ title }) => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    if (!savedList.includes(title)){
+      savedList.push(title);
+      this.setState({ savedList });
+    }
   };
 
   render() {
