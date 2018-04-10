@@ -27,7 +27,10 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={MovieList} />
           {/* path to individual movies */}
-          <Route path="/movies/:id" component={Movie} />
+          <Route path="/movies/:id" 
+            component={Movie} 
+            saveMovie={this.addToSavedList} 
+            render={props => <Movie {...props} />} />
           {/* Default */}
           <Route component={() => <h1>Invalid URL! GO BACK HOME</h1>} />
         </Switch>
