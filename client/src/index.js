@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route } from 'react-router-dom';
-
 import './index.css';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
 ReactDOM.render(
     <Router>
-        <div>
-            <h2>Movies</h2>
-            <Route exact path="/" component={ MovieList } />
-            <Route path="/movies/:id" component={ Movie } />
-        </div>
+        <App />
     </Router>,
 document.getElementById('root'));
