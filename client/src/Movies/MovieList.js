@@ -23,14 +23,14 @@ export default class MovieList extends Component {
       });
   }
   HandleClick() {
-    alert('hey')
+    // alert('hey')
   }
 
   render() {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          console.log("Hey, inside map: ", movie),
+          // console.log("Hey, inside map: ", movie),
           <MovieLinks key={movie.id} movie={movie} onClick={this.HandleClick}/>
           // <MovieDetails key={movie.id}  movie={movie}  />
         ))}
@@ -40,7 +40,9 @@ export default class MovieList extends Component {
 }
 const style = {
   // border: '1px solid red',
-  margin: '5px 0px'
+  margin: '5px 0px',
+  justifyContent: 'center',
+  display: 'flex'
 }
 function MovieLinks({ movie, onClick }) {
   const { title, director, metascore, stars } = movie;

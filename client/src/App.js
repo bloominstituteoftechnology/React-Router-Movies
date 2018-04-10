@@ -24,6 +24,8 @@ export default class App extends Component {
     return (
       <div>
         {/* <Navigation /> */}
+        {this.state.savedList.map((item) => (
+          console.log("Inside of App.js",item) ))}
         <Route exact path="/" component={MovieList} />
         <Route path="/movies/:id" component={Movie} />
         <SavedList list={this.state.savedList} />
