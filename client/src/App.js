@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Switch } from "react-router-dom";
-import { Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
@@ -27,8 +26,12 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" component={MovieList} />
           {/* path to individual movies */}
-          <Route path="/movies/:id"
-            render={props => <Movie addToSavedList={this.addToSavedList} {...props} />} />
+          <Route
+            path="/movies/:id"
+            render={props => (
+              <Movie addToSavedList={this.addToSavedList} {...props} />
+            )}
+          />
           {/* Default */}
           <Route component={() => <h1>Invalid URL! GO BACK HOME</h1>} />
         </Switch>
