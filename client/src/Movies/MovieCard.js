@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
@@ -9,7 +9,7 @@ const MovieCard = props => {
     <div className="save-wrapper">
       <div className="movie-card">
       <div>
-      <Link to={`/movies/${props.movie.id}`}>
+      <NavLink to={`/movies/${props.movie.id}`}>
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
@@ -24,7 +24,7 @@ const MovieCard = props => {
             {star}
           </div>
         ))}
-         </Link>
+         </NavLink>
         </div>
       </div>
       <div className="save-button" onClick={addToSavedList} >Save</div>
