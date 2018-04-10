@@ -3,6 +3,7 @@ import { Nav, NavItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Route } from 'react-router-dom';
+import Movie from './Movies/Movie';
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -26,11 +27,12 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
+          
           <Nav>
         {this.state.movies.map(movie => (
             <NavItem>
           <Link to={'/Movie/' + movie.id}>{movie.title}</Link>
-          <Route path={'/Movie/' + movie.id} />
+          <Route path={'/Movie/' + movie.id} component={Movie} />
             </NavItem>
         ))}
          </Nav>

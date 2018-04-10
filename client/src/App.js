@@ -27,7 +27,7 @@ export default class App extends Component {
         <div>Replace this Div with your Routes</div>
         <NavBar />
         <Switch>
-          <Route path='/Movie' component={MovieList}/>
+          <Route exact path='/Movie' component={MovieList}/>
           <Route exact path="/" />
         </Switch>
       </div>
