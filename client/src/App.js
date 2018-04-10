@@ -25,8 +25,10 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <Route exact path="/" component={ MovieList } />
-        <Route exact path="/movies/:id" render={(props) => <Movie addToSavedList={this.addToSavedList} {...props} />} />
+        <Route exact path="/" component={MovieList} />
+        {/* passing named props to a react Route component */}
+        {/* https://github.com/ReactTraining/react-router/issues/4105#issuecomment-289195202 */}
+        <Route exact path="/movies/:id" render={(props) => <Movie addToSavedList={this.addToSavedList} {...props} />} /> 
       </div>
     );
   }
