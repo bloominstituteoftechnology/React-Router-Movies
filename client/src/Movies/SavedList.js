@@ -5,9 +5,22 @@ export default class SavedList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieList: props.list
+      savedList: props.list
     };
   }
+
+  // removeMovie(e, title) {
+  //   const movieArr = this.state.movieList.map(movie => movie.title);
+  //   console.log(e, title);
+  //   console.log(movieArr.indexOf(title));
+
+
+  //   // const newState = this.state.movieList.filter(obj => {
+  //   //   return obj.title !== title;
+  //   // }) 
+
+  //   this.setState({ movieList: [] });
+  // }
 
   render() {
     return (
@@ -16,8 +29,14 @@ export default class SavedList extends Component {
         {this.props.list.map(movie => (
           <span className="saved-movie">{movie.title}</span>
         ))}
-        <NavLink className="home-button" to="/">Home</NavLink>
+        <div>
+          <NavLink className="home-button" to="/">Home</NavLink>
+          <button className="home-button" onClick={this.props.clearList}>Delete All</button>
+        </div>
       </div>
     );
   }
 }
+
+// () => {this.setState({ savedList: [] })
+{/* onClick={(e) => this.removeMovie(e, movie.title)} */} 
