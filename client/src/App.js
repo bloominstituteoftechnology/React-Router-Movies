@@ -22,8 +22,34 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <div>Replace this Div with your Routes</div>
+        <MovieList/>
+        <div>Route exact path="/" component={MovieList}</div>
+        <div>Route path="/movies/:id" component={Movie}</div>
       </div>
     );
   }
 }
+
+
+// Inside your App file add two routes.
+// one route for / that loads the MovieList component.
+// one route that will take an id parameter after/movies/ (ex: /movies/2, /movies/3 where the id is dynamic). This route should load the Movie component.
+
+
+// import React from 'react';
+// import './App.css';
+// import Navigation from './components/Navigation';
+// import { Home, About, Contact } from './components';
+// import { Route } from 'react-router-dom';
+
+// const App = () => (
+//   <div>
+//     <Navigation />
+//     <Route exact path="/" component={Home} />
+//     <Route path="/about" component={About} />
+//     <Route path="/contact" component={Contact} />
+
+//   </div>
+// );
+
+// export default App;
