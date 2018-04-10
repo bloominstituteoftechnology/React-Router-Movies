@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const MovieCard = ({ movie }) => {
-  const { title, director, metascore, stars, id } = movie;
+const MovieCard = props => {
+  const { title, director, metascore, stars } = props.movie;
   return (
     <div className="movie-card">
       <h2>{title}</h2>
@@ -22,6 +22,4 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-
 export default MovieCard;
-
