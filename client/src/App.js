@@ -36,7 +36,7 @@ export default class App extends Component {
           <h3 className="movie-warning">{movieInList}</h3>
         ) : null}
         <SavedList list={this.state.savedList} />
-        <Route exact pth="/" component={MovieList} />
+        <Route exact path="/" component={MovieList} />
         <Route
         path="/movies/:id"
         render={props => (
