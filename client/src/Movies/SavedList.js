@@ -39,4 +39,4 @@ export default class SavedList extends Component {
 }
 
 // () => {this.setState({ savedList: [] })
-{/* onClick={(e) => this.removeMovie(e, movie.title)} */} 
+// onClick={(e) => this.removeMovie(e, movie.title)}
