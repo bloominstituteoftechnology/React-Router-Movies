@@ -9,28 +9,54 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      savedList: []
+      savedList: [{}]
     };
   }
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
     if (!savedList.includes(movie)) savedList.push(movie);
-    this.setState({ savedList });
+    this.setState({ savedList: savedList });
   };
 
-  clearList() {
-    console.log(this);
-  };
+  onSavedCleared() {
+    const blankList = [];
+    this.setState({ savedList: blankList });
+  }
+
+  removeItem(e) {
+    this.setState({ savedList: e });
+  }
 
   render() {
     return (
       <div>
-        <SavedList list={this.state.savedList} clearList={this.clearList}/>
-        <Route exact path="/" render={props =>
-           <MovieList addToSavedList={this.addToSavedList} list={this.state.savedList} {...props} />} />
-        <Route path="/movies/:id" render={props =>
-           <Movie addToSavedList={this.addToSavedList} list={this.state.savedList} {...props} />} />
+        <SavedList
+          list={this.state.savedList}
+          callbackParent={() => this.onSavedCleared()}
+          callbackRemove={(e) => this.removeItem(e)}
+        />
+        <Route
+          exact
+          path="/"
+          render={props => (
+            <MovieList
+              addToSavedList={this.addToSavedList}
+              list={this.state.savedList}
+              {...props}
+            />
+          )}
+        />
+        <Route
+          path="/movies/:id"
+          render={props => (
+            <Movie
+              addToSavedList={this.addToSavedList}
+              list={this.state.savedList}
+              {...props}
+            />
+          )}
+        />
       </div>
     );
   }
