@@ -2,6 +2,7 @@ import React from 'react';
 
 const MovieCard = movie =>  {
   const { title, director, metascore, stars } = movie.movie;
+  const saveMovie = movie.saveMovie;
   return (
     <div className="save-wrapper">
       <div className="movie-card">
@@ -20,10 +21,9 @@ const MovieCard = movie =>  {
           </div>
         ))}
         </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={saveMovie}>Save</div>
     </div>
   )
 };
 
 export default MovieCard;
-
