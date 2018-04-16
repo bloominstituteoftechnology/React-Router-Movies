@@ -32,7 +32,7 @@ export default class NavBar extends Component {
         {this.state.movies.map(movie => (
             <NavItem>
           <Link to={'/Movie/' + movie.id}>{movie.title}</Link>
-          <Route path={'/Movie/' + movie.id} component={Movie} />
+          <Route exact path={'/Movie/' + movie.id} component={Movie} />
             </NavItem>
         ))}
          </Nav>

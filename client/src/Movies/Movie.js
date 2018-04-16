@@ -11,7 +11,8 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    let meow = window.location.href;
+    const id = meow[meow.length -1];
     this.fetchMovie(id);
   }
 
