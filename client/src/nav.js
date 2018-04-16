@@ -27,8 +27,8 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-          
           <Nav>
+          <Link to={'/Movie'}>List of Movies</Link>
         {this.state.movies.map(movie => (
             <NavItem>
           <Link to={'/Movie/' + movie.id}>{movie.title}</Link>
