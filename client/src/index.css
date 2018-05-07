@@ -5,6 +5,22 @@ body {
   background-color: #f2f2f2;
 }
 
+.movie-list a {
+  text-decoration: none;
+}
+.movie-list a:link {
+  color: navy;
+}
+.movie-list a:visited {
+  color: navy;
+}
+.movie-list a:hover {
+  color: navy;
+}
+.movie-list a:active {
+  color: navy;
+}
+
 .movie-card {
   background-color: #fff;
   border: 0;
@@ -15,6 +31,7 @@ body {
   position: relative;
   margin: 1rem auto;
   /* cursor: pointer; */
+  text-decoration: none;
 }
 
 .movie-director {
