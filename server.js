@@ -59,6 +59,7 @@ app.get('/api/movies', (req, res) => {
 app.get('/api/movies/:id', (req, res) => {
 	const movie = movies.filter(movie => movie.id.toString() === req.params.id)[0];
 	res.status(200).json(movie);
+	console.log(movie);
 });
 
 app.post('/api/movies', (req, res) => {
@@ -67,5 +68,5 @@ app.post('/api/movies', (req, res) => {
 });
 
 app.listen(5000, () => {
-	console.log('Server listening on port 5000');
+	console.log('Hi Server listening on port 5000');
 });
