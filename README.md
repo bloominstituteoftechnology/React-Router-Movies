@@ -2,7 +2,7 @@
 
 Topics:
 
-* React Router
+<!-- * React Router
 * Using Link and NavLink to navigate to specific routes
 * Passing Route Parameters
 * Passing props to components rendered by the Router
@@ -17,7 +17,7 @@ Topics:
 * Still inside the `client` folder run `yarn start` to run the client application.
 
 * Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
-  ![Movies Home](https://ibin.co/3xhmmHVl9BKF.png)
+  ![Movies Home](https://ibin.co/3xhmmHVl9BKF.png) -->
 
 ### Part 1:
 
