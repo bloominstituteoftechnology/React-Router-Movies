@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Movie from './Movies/Movie';
 
 export default class App extends Component {
@@ -24,7 +24,7 @@ export default class App extends Component {
       <div>
         <SavedList list={this.state.savedList} />
         <Route exact path="/" component={MovieList}> </Route>
-        <Route path="/movies/:id'" component={Movie}> </Route>
+        <Route path="/movies/:id" component={Movie}> </Route>
       </div>
     );
   }
