@@ -8,14 +8,18 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      savedList: []
+      savedList: [],
+      addedMovieIds: []
     };
   }
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    if (this.state.addedMovieIds.includes(movie.id) === false) {
+      this.state.addedMovieIds.push(movie.id);
+      savedList.push(movie);
+      this.setState({ savedList });
+    }
   };
 
   render() {
