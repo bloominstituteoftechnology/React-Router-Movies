@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+// import MovieList from './MovieList.js';
 
 export default class SavedList extends Component {
   constructor(props) {
@@ -7,6 +9,7 @@ export default class SavedList extends Component {
 
   render() {
     return (
+      <Link to="/">
       <div className="saved-list">
         <h3>Saved Movies:</h3>
         {this.props.list.map(movie => (
@@ -14,6 +17,7 @@ export default class SavedList extends Component {
         ))}
         <div className="home-button">Home</div>
       </div>
+      </Link>
     );
   }
 }
