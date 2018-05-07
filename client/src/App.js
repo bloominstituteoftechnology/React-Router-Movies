@@ -26,4 +26,11 @@ export default class App extends Component {
       </div>
     );
   }
+
+  ReactDOM.render(
+  <Router>
+  <App />
+  </Router >,
+    document.getElementById("root")
+  );
 }
