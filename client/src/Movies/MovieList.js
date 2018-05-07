@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+        color: black;
+    }
+`;
+
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -24,7 +37,9 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
+          <StyledLink to={`/movies/${movie.id}`} key={movie.id}>
+            <MovieDetails movie={movie} />
+          </StyledLink>
         ))}
       </div>
     );
