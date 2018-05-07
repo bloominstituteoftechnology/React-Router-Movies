@@ -11,8 +11,15 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
+    let id2 = this.props.match.params.id;
     const id = 1;
-    this.fetchMovie(id);
+    if(id2 === undefined){
+      this.fetchMovie(id);
+    }
+    else{
+      this.fetchMovie(id2);
+    }
+    
   }
 
   fetchMovie = id => {
