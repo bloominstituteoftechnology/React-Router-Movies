@@ -1,3 +1,4 @@
 .selected-movie {
   background: goldenrod;
+  border: solid gray 1px;
 }
