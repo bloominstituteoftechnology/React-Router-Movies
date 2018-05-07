@@ -1,7 +1,88 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const MovieCard = props => {
-  return;
+import axios from 'axios';
+
+export default class MovieCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movie: null
+    };
+  }
+
+  componentDidMount() {
+    if (!this.props.hasOwnProperty('match')) {
+      this.setState({
+        movie: [ ...this.props.movie ]
+      })
+    }
+    else {
+      const id = this.props.match.params.id;
+      this.fetchMovie(id);
+    }
+  }
+
+  fetchMovie = id => {
+    axios
+      .get(`http://localhost:5000/api/movies/${id}`)
+      .then(response => {
+        this.setState(() => ({ movie: response.data }));
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+  render() {
+    if (!this.state.movie) {
+      return <div>Loading movie information...</div>;
+    }
+
+    const { title, director, metascore, stars } = this.props.movie || this.state.movie;
+    console.log(this.props.movie, this.state.movie);
+
+    return (
+      <div className="save-wrapper">
+        <div className="movie-card">
+
+          <h2>{ title }</h2>
+
+          <div className="movie-director">
+            Director: <em>{ director }</em>
+          </div>
+
+          <div className="movie-metascore">
+            Metascore: <strong>{ metascore }</strong>
+          </div>
+
+          <h3>Actors</h3>
+
+          {
+            stars.map(star => (
+              <div key={ star } className="movie-star">
+                { star }
+              </div>
+            ))
+          }
+
+        </div>
+
+        <div className="save-button">
+          Save
+        </div>
+      </div>
+    );
+  }
 };
 
-export default MovieCard;
+  // Uncomment this code when you're ready for the stretch problems
+  // componentWillReceiveProps(newProps){
+  //   if(this.props.match.params.id !== newProps.match.params.id){
+  //     this.fetchMovie(newProps.match.params.id);
+  //   }
+  // }
+
+  // saveMovie = () => {
+  //   const addToSavedList = this.props.addToSavedList;
+  //   addToSavedList(this.state.movie)
+  // }
