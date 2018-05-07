@@ -4,23 +4,20 @@ import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
-const addedMovieIds = [];
-
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      savedList: []
+      savedList: [],
+      addedMovieIds: []
     };
   }
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
 
-    if (addedMovieIds.includes(movie.id) === false) {
-      console.log(movie.id);
-      console.log(addedMovieIds);
-      addedMovieIds.push(movie.id);
+    if (this.state.addedMovieIds.includes(movie.id) === false) {
+      this.state.addedMovieIds.push(movie.id);
       savedList.push(movie);
       this.setState({ savedList });
     }
