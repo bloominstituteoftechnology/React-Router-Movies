@@ -17,11 +17,11 @@ export default class App extends Component {
   addToSavedList = movie => {
     console.log("addToSavedList invoked");
     const savedList = this.state.savedList;
-    if( this.state.savedList.filter( savedMovie => savedMovie.id === movie.id ).length === 0 ) {
-      console.log(this.state.savedList.filter( savedMovie => savedMovie.id === movie.id ))
+    if( this.state.savedList.filter( savedMovie => savedMovie.title === movie.title ).length === 0 ) {
+      console.log(this.state.savedList.filter( savedMovie => savedMovie.title === movie.title ))
       savedList.push(movie);
       this.setState({ savedList });
-      console.log(this.state.savedList.filter( savedMovie => savedMovie.id === movie.id ))
+      console.log(this.state.savedList.filter( savedMovie => savedMovie.title === movie.title ))
     }
   };
 
