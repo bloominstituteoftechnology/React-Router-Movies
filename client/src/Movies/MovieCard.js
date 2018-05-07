@@ -1,21 +1,23 @@
 import React from 'react';
 
 const MovieCard = props => {
-  console.log("card", props)
+  console.log("MovieCard props",props);
+  const { title, director, metascore, stars } = props.movie;
+  console.log("Stats", title, director, metascore, stars);
   return (
     <div className="movie-card">
-      <h2>{props.data.title}</h2>
+      <h2>{title}</h2>
       <div className="movie-director">
-        Director: <em>{props.data.director}</em>
+        Director: <em>{director}</em>
       </div>
       <div className="movie-metascore">
-        Metascore: <strong>{props.data.metascore}</strong>
+        Metascore: <strong>{metascore}</strong>
       </div>
       <h3>Actors</h3>
 
-      {props.data.stars.map(star => (
-        <div key={props.data.star} className="movie-star">
-          {props.data.star}
+      {stars.map(star => (
+        <div key={star} className="movie-star">
+          {star}
         </div>
       ))}
     </div>
