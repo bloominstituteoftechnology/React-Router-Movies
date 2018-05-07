@@ -51,3 +51,23 @@ You will notice there is a 'Saved Movies' component that we are not currently us
 You will need to uncomment lines 29-39 in `Movie.js` to complete this. Your list of saved movies should be links to the movie itself. Study and understand what the `saveMovie` function is doing.
 
 ### Turn your Saved Movie `Link`s into `NavLink`s.
+
+## React Router Movies
+
+- [X] Follow the setup instructions in the README.md
+
+### Part 1
+- [X] Wrap your app with the Router
+- [X] Add a route for `/` that loads the `MovieList` component
+- [X] Add a route that will accept an `id` parameter after `/movies/` and load the `Movie` component
+
+### Part 2
+- [X] Turn the card in `MovieList` into a link that directs the user to the `/movies/{id}` URL, where `:id` corresponds to that movie's ID
+- [ ] Modify line 13 of `movie.js` to accept the correct ID for the selected movie
+- [ ] Make the `Home` button on the `SavedList` comopnent navigate to the homepage
+
+### Stretch Goals
+- [ ] Refactor your code to be DRY
+- [ ] Add `Save Movie` functionality that allows the user to save movies to a list
+- [ ] Turn the items on the `Saved Movies` list into Links
+- [ ] Turn your `Saved Movies` Links into NavLinks
