@@ -14,13 +14,14 @@ export default class App extends Component {
     };
   }
 
-  addToSavedList = movie => {
+  addToSavedList = (movie) => {
     const savedList = this.state.savedList;
     savedList.push(movie);
     this.setState({ savedList });
   };
 
   render() {
+        console.log("APP Props", this.props);
     return (
       <div>
         <SavedList list={this.state.savedList} />

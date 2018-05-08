@@ -32,10 +32,17 @@ export default class Movie extends Component {
      this.fetchMovie(newProps.match.params.id);
    }
  }
+  addToSavedList = (movie) => {
+    const savedList = this.state.savedList;
+    savedList.push(movie);
+    this.setState({
+      savedList
+    });
+  }
 
  saveMovie = () => {
    const addToSavedList = this.props.addToSavedList;
-   addToSavedList(this.state.movie);
+   addToSavedList(this.state.movie.title);
  }
 
   handleSaveClick = () => {
