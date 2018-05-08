@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 
 export default class Movie extends Component {
   constructor(props) {
@@ -63,8 +64,11 @@ export default class Movie extends Component {
               {star}
             </div>
           ))}
+
         </div>
+        <Link to='/savedlist'>
         <div className="save-button">Save</div>
+        </Link>
       </div>
     );
   }
