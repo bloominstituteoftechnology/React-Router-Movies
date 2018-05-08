@@ -25,13 +25,11 @@ export default class App extends Component {
         <ul>
           <li>
             <Link to="/movielist">Movie List</Link>
-          </li>
-          <li>
-            <Link to="/movie">Movie</Link>
+            <Link to="/movie/:id"></Link>
           </li>
         </ul>
-        <Route path="/movielist" component={MovieList} />
-        <Route path="/movie/:id" component={Movie}></Route>
+        <Route path="/movielist" component={MovieList}/>
+        <Route path="/movie/:id" component={Movie}/>
       </div>
     );
   }

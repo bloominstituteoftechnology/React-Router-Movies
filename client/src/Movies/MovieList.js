@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MovieCard from './MovieCard';
+import Movie from './Movie';
+import { Route } from "react-router-dom";
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -36,8 +38,8 @@ export default class MovieList extends Component {
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars, id } = movie;
   return (
-    <Link to={`/movies/${movie.id}`} key={movie.id}>
-      <div className="movie-card">
+    <div className="movie-card">
+      <Link to={`/movie/${id}`} key={id}>
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
@@ -52,7 +54,8 @@ function MovieDetails({ movie }) {
             {star}
           </div>
         ))}
-      </div>
-    </Link>  
+      </Link>  
+      <Route path="/movie/:id" component={Movie}/>
+    </div> 
   );
 }
