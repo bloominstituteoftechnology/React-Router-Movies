@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import MovieCard from "./MovieCard";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+
 
 
 export default class MovieList extends Component {
@@ -26,7 +28,7 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
+        <MovieDetails key={movie.id} movie={movie} />
         ))}
       </div>
     );
@@ -37,26 +39,26 @@ function MovieDetails({ movie }) {
   const { title, director, metascore, stars, id } = movie;
   return (
 
-      <div className="movie-card">
-        <Link
-          to={`/movies/${id}`}
-          key={id}
-        >
-          <h2>{title}</h2>
-        </Link>
-        <div className="movie-director">
-          Director: <em>{director}</em>
-        </div>
-        <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
-        </div>
-        <h3>Actors</h3>
+          <div className="movie-card">
+            <Link
+              to={`/movies/${id}`}
+              key={id}
+            >
+              <h2>{title}</h2>
+            </Link>
+            <div className="movie-director">
+              Director: <em>{director}</em>
+            </div>
+            <div className="movie-metascore">
+              Metascore: <strong>{metascore}</strong>
+            </div>
+            <h3>Actors</h3>
 
-        {stars.map(star => (
-          <div key={star} className="movie-star">
-            {star}
+            {stars.map(star => (
+              <div key={star} className="movie-star">
+                {star}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-  );
-}
+          );
+  }
