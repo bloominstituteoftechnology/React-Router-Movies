@@ -58,14 +58,6 @@ const movies = [
 	},
 ];
 
-// const posters =[
-// 	{id: 0, poster: 'godFatherimg.jpg'}
-// 	{id: 1, poster: 'starWarsimg.jpg'}
-// 	{id: 2, poster: 'lotrimg.jpg'}
-// 	{id: 3, poster: 'terminator2img.jpg'}
-// 	{id: 4, poster: 'dumbAndDumberimg.jpg'}
-// 	{id: 5, poster: 'tombstoneimg.jpg'}
-// ]
 
 app.get('/api/movies', (req, res) => {
 	res.send(movies);
