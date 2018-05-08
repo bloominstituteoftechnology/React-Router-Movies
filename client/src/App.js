@@ -8,14 +8,22 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      savedList: []
+      savedList: [],
+      // duplicateMovieError: ""
+      idArray: []
     };
   }
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    // if (savedList.indexOf(movie) === -1) {
+      if(this.state.idArray.includes(movie.id) === false) {
+        savedList.push(movie);
+        this.state.idArray.push(movie.id)
+        console.log('movie pushed')
+        this.setState({ savedList }); 
+      }
+    // else {this.setState({duplicateMovieError: "Already saved!"})}
   };
 
   render() {
