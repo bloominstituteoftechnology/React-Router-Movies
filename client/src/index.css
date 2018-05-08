@@ -42,6 +42,18 @@ body {
 
 .saved-movie {
   margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  background: lightgray;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 1px black;
+}
+
+.saved-movie:hover {
+  background: slategray;
+  color: white;
+  box-shadow: none;
 }
 .saved-active {
   color: blue;

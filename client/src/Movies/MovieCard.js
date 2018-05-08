@@ -3,12 +3,12 @@ import React from 'react';
 const MovieCard = (props) => {
   return (
     <div className="movie-card">
-      <h2>{this.title}</h2>
+      <h2>{props.title}</h2>
       <div className="movie-director">
-        Director: <em>{this.director}</em>
+        Director: <em>{props.director}</em>
       </div>
       <div className="movie-metascore">
-        Metascore: <strong>{this.metascore}</strong>
+        Metascore: <strong>{props.metascore}</strong>
       </div>
       <h3>Actors</h3>
 
