@@ -1,6 +1,7 @@
+import React from 'react;'
 import Movie from './Movie';
-import MovieCard from './MovieCard';
-import MovieList from './MovieList';
+import Card from './Card';
+import List from './List';
 import SavedList from './SavedList';
 
 export { 
