@@ -14,6 +14,7 @@ const movies = [
 		director: 'Francis Ford Coppola',
 		metascore: 100,
 		stars: ['Marlon Brando', 'Al Pacino', 'Robert Duvall'],
+		poster: 'godFatherimg.jpg',
 	},
 	{
 		id: 1,
@@ -21,6 +22,7 @@ const movies = [
 		director: 'George Lucas',
 		metascore: 92,
 		stars: ['Mark Hamill', 'Harrison Ford', 'Carrie Fisher'],
+		poster: 'starWarsimg.jpg',
 	},
 	{
 		id: 2,
@@ -28,6 +30,7 @@ const movies = [
 		director: 'Peter Jackson',
 		metascore: 92,
 		stars: ['Elijah Wood', 'Ian McKellen', 'Orlando Bloom'],
+		poster: 'lotrimg.jpg',
 	},
 	{
 		id: 3,
@@ -35,6 +38,7 @@ const movies = [
 		director: 'James Cameron',
 		metascore: 94,
 		stars: ['Arnold Schwarzenegger', 'Edward Furlong', 'Linda Hamilton'],
+		poster: 'terminator2img.jpg',
 	},
 	{
 		id: 4,
@@ -42,6 +46,7 @@ const movies = [
 		director: 'The Farely Brothers',
 		metascore: 76,
 		stars: ['Jim Carrey', 'Jeff Daniels', 'Lauren Holly'],
+		poster: 'dumbAndDumberimg.jpg',
 	},
 	{
 		id: 5,
@@ -49,6 +54,7 @@ const movies = [
 		director: 'George P. Cosmatos',
 		metascore: 89,
 		stars: ['Kurt Russell', 'Bill Paxton', 'Sam Elliot'],
+		poster: 'tombstoneimg.jpg',
 	},
 ];
 
