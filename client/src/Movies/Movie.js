@@ -32,22 +32,11 @@ export default class Movie extends Component {
      this.fetchMovie(newProps.match.params.id);
    }
  }
-  addToSavedList = (movie) => {
-    const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({
-      savedList
-    });
-  }
 
- saveMovie = () => {
+ saveMovie = (event) => {
    const addToSavedList = this.props.addToSavedList;
-   addToSavedList(this.state.movie.title);
+   addToSavedList(this.state.movie)
  }
-
-  handleSaveClick = () => {
-    this.saveMovie();
-  }
 
   render() {
     if (!this.state.movie) {
@@ -58,7 +47,7 @@ export default class Movie extends Component {
     return (
       <div className="save-wrapper">
       <MovieCard {...movie}/>
-        <div className="save-button" onClick={event => this.handleSaveClick(event)}>Save</div>
+        <div className="save-button" onClick={this.saveMovie}>Save</div>
       </div>
     );
   }
