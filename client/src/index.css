@@ -16,11 +16,6 @@ body {
   margin: 1rem auto;
 }
 
-.movie-card:link {
-  text-decoration: none;
-}
-
-
 .movie-director {
   padding: 4px 0;
   font-size: 0.8rem;
