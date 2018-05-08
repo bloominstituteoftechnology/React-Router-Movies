@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {Route, link} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
-import MovieCard from './Movies/MovieCard';
+
 
 export default class App extends Component {
   constructor() {
