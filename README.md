@@ -63,7 +63,7 @@ You will need to uncomment lines 29-39 in `Movie.js` to complete this. Your list
 
 ### Part 2
 - [X] Turn the card in `MovieList` into a link that directs the user to the `/movies/{id}` URL, where `:id` corresponds to that movie's ID
-- [ ] Modify line 13 of `movie.js` to accept the correct ID for the selected movie
+- [X] Modify line 13 of `movie.js` to accept the correct ID for the selected movie
 - [ ] Make the `Home` button on the `SavedList` comopnent navigate to the homepage
 
 ### Stretch Goals
