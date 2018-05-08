@@ -44,7 +44,6 @@ export default class Movie extends Component {
       return <div>Loading movie information...</div>;    
   
     }
-
     
     return (
       <div className="save-wrapper">
