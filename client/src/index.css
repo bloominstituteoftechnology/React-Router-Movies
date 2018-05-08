@@ -44,7 +44,7 @@ body {
   margin: 0 10px;
 }
 .saved-active {
-  color: blue;
+  color: rgb(15, 15, 189);
   border: 1px solid grey;
   padding: 5px;
 }
