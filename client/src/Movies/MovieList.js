@@ -9,6 +9,7 @@ export default class MovieList extends Component {
     this.state = {
       movies: []
     };
+    console.log(props);
   }
 
   componentDidMount() {
@@ -33,8 +34,7 @@ export default class MovieList extends Component {
   }
 }
 
-function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
+function MovieDetails({ movie }) { {/*destructured props.movie*/}
   return (
     <Link to={`/movies/${movie.id}`}>
       <MovieCard movie={movie}/>
