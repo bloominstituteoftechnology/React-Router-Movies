@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+
 import SavedList from './Movies/SavedList';
-import MovieList from './Movies/List';
+import List from './Movies/List';
 import Movie from './Movies/Movie';
 
 export default class App extends Component {
@@ -14,26 +14,15 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    let found = false;
-    
-    savedList.forEach(savedMovie => {
-      if (savedMovie.id === movie.id){
-        found = true;
-      }
-    });
-
-    if(!found){
-      savedList.push(movie);
-      this.setState({ savedList });
-    }
+    savedList.push(movie);
+    this.setState({ savedList });
   };
 
   render() {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <Route exact path = '/' component={MovieList}></Route>
-        <Route path = '/movies/:id' component={Movie}></Route>
+        <div>Replace this Div with your Routes</div>
       </div>
     );
   }
