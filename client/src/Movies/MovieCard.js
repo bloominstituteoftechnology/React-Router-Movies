@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MovieCard = ({ card }) => {
-  console.log(card)
+  // console.log(card)
   return(
     <div className="movie-card">
       <h2>{card.title}</h2>
@@ -19,6 +19,7 @@ const MovieCard = ({ card }) => {
         </div>
       ))}
     </div>
+    
   )
 };
 
