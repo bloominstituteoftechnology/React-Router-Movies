@@ -56,9 +56,10 @@ body {
   box-shadow: none;
 }
 .saved-active {
-  color: blue;
+  color: black;
+  font-weight: bold;
+  background: white;
   border: 1px solid grey;
-  padding: 5px;
 }
 .save-wrapper {
   position: relative;
