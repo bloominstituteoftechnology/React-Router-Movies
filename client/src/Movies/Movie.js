@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard'
+import SavedList from './SavedList'
 
 export default class Movie extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
+    console.log("movies.s",this.props)
     let id2 = this.props.match.params.id;
     const id = 1;
     if(id2 === undefined){
@@ -35,14 +37,16 @@ export default class Movie extends Component {
   };
   // Uncomment this code when you're ready for the stretch problems
   componentWillReceiveProps(newProps){
+    console.log("new props",this.props)
     if(this.props.match.params.id !== newProps.match.params.id){
       this.fetchMovie(newProps.match.params.id);
     }
   }
 
   saveMovie = () => {
+    console.log("save movie",this.props)
     const addToSavedList = this.props.addToSavedList;
-    addToSavedList(this.state.movie)
+    addToSavedList(this.state.movie);
   }
 
   render() {
@@ -52,7 +56,7 @@ export default class Movie extends Component {
 
     const { title, director, metascore, stars } = this.state.movie;
     return (
-      <div className="save-wrapper">
+      <div className="save-wrapper movie-card">
         <MovieCard movie = {this.state.movie} />
         <div className="save-button" onClick = {this.saveMovie}>Save</div>
       </div>
