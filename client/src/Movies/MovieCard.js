@@ -1,9 +1,8 @@
 import React from 'react';
 import './Movies.css';
-import './Movieposter';
 
 const MovieCard = ({ movie }) => {
-  const { title, director, metascore, stars, id } = movie;
+  const { title, director, metascore, stars, id, poster } = movie;
   return (
     
     <div className="cardstyle">
@@ -24,9 +23,10 @@ const MovieCard = ({ movie }) => {
         <div key={star} className="movie-star">
           {star}
         </div>
-      ))}
-      
-      ))}
+      ))}      
+      <div className='MoviePoster'>
+        <img src={`${poster}`}/>
+      </div>
     </div>
 
     </div>
