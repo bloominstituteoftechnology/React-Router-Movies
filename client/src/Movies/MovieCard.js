@@ -1,3 +1,5 @@
+{/* I'm pretty sure I basically copied and pasted this from MovieList.js */}
+
 import React from 'react';
 
 const MovieCard = ({movie}) => {

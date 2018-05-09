@@ -1,3 +1,5 @@
+{/* This is totally copied from class today */}
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
