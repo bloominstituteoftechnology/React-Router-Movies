@@ -1,0 +1,9 @@
+.saved-movie:hover {
+    
+background: darkgray;
+}
+
+.active {
+    background: teal;
+}
+
