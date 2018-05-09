@@ -1,4 +1,5 @@
 {/* I'm pretty sure I basically copied and pasted this from MovieList.js */}
+{/* I didn't understand why it was in there when this is everything you want on your movie card, not the list, which you get from somewhere else anyway */}
 
 import React from 'react';
 

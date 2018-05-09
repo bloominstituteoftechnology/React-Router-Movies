@@ -8,10 +8,12 @@ export default class Movie extends Component {
     this.state = {
       movie: null,
     };
-  } // didn't touch this
+  }
+
+// didn't touch lines 5-11
 
   componentDidMount() {
-    const id = this.props.match.params.id; // I totally stole this from line 30 and was very pleased when it worked
+    const id = this.props.match.params.id; // I totally stole this from line 30 and was pleasantly surprised when it worked
     this.fetchMovie(id);
   }
 
@@ -24,20 +26,23 @@ export default class Movie extends Component {
       .catch(error => {
         console.error(error);
       });
-  }; // didn't touch this part, either
+  };
+// didn't touch this part, either
 
   
-  // Uncomment this code when you're ready for the stretch problems
+// Uncomment this code when you're ready for the stretch problems
   componentWillReceiveProps(newProps){
     if(this.props.match.params.id !== newProps.match.params.id)    {
       this.fetchMovie(newProps.match.params.id);
     }
-   } // didn't touch any of this code after I uncommented it
+  }
+// didn't touch any of this code after I uncommented it
 
   saveMovie = () => {
     const addToSavedList = this.props.addToSavedList;
     addToSavedList(this.state.movie);
-  } // didn't touch any of this code after I uncommented it
+  }
+// didn't touch any of this code after I uncommented it
 
   render() {
     if (!this.state.movie) {
@@ -49,7 +54,8 @@ export default class Movie extends Component {
         <MovieCard movie={this.state.movie} />
         <div className="save-button" onClick={this.saveMovie}>Save</div>
       </div>
-    ); 	//this is one of those things where I tried about 16 different variations before it finally worked
-        //I am nothing if not persistent
+    ); 	
   }
 }
+// I agonized over this render for a long time. The first part (lines 48-50) was already there. I think this returns the text if there is no movie in state.
+// Otherwise, the render returns a MovieCard displaying info about any movies in state and then saves them if the user clicks on them.
