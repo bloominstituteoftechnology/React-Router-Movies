@@ -75,3 +75,14 @@ body {
   color: red;
   text-align: center;
 }
+.movie-list{
+  background-color: lightgrey;
+
+}
+.saved-list{
+  background-color: whitesmoke;
+}
+.movie-card{
+  background-color: whitesmoke;
+  border: 1px solid darkolivegreen;
+}
