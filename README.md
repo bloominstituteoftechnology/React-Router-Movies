@@ -8,22 +8,7 @@ Topics:
 * Passing props to components rendered by the Router
 
 ## Instructions
-
-* **Fork** this repository, then clone your fork.
-* **In the root of this directory**: Run `yarn install` to download dependencies.
-xx* Run the server using `yarn start` or `node server.js`. (Don't worry too much about this process, you'll get used to doing this and it will be xxexplained more in the future).
-xx* In a separate terminal cd into the `client` folder and run `yarn` to download dependencies.
-xx* Still inside the `client` folder run `yarn start` to run the client application.
-
-* Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
-  ![Movies Home](https://ibin.co/3xhmmHVl9BKF.png)
-
 ### Part 1:
-
-xx* Wrap your app with the router.
-xx* Inside your App file add two routes.
-xx  * one route for `/` that loads the `MovieList` component.
-xx  * one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
 
 ### Part 2:
 
