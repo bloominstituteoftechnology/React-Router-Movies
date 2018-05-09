@@ -14,8 +14,20 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    let found = false; //always want found to be false so we can add to array...if found, remark already found
+    
+    savedList.forEach(savedMovie => {
+      if (savedMovie.id === movie.id){
+        found = true;
+        return
+          {`Movie already added to list!`}
+      }
+      else {
+        savedList.push(movie);
+        this.setState({ savedList });
+      }
+      
+    });
   };
 
   render() {
