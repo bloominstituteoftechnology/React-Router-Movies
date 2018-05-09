@@ -45,7 +45,7 @@ export default class Movie extends Component {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
-    console.log(this.props)
+    console.log("props on movie.js",this.props)
 
     // const { title, director, metascore, stars } = this.state.movie;
     // console.log(this.state.movie)
