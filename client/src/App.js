@@ -4,9 +4,6 @@ import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
-
-
-
 export default class App extends Component {
   constructor() {
     super();
@@ -23,11 +20,17 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <SavedList list={this.state.savedList} />
-        <Route exact path="/" component={MovieList} />
-        <Route  path="/movie/:id" component={Movie} />
-      </div>
-    );
+      
+      <Router history ={history}>
+      <SavedList list={this.state.savedList} />
+      <Route exact path="/" component={MovieList} />
+      <Route exact path="/movie/:id" component={Movie} />
+      <Route path='/savedList' component={SavedList} />
+    </Router>
+    
+    )
   }
 }
+
+
+        
