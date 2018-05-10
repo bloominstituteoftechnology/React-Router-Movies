@@ -47,6 +47,9 @@ export default class Movie extends Component {
     }
 
     const { title, director, metascore, stars } = this.state.movie;
+    const { movie } = this.state;
+    
+      
     return (
       <div className="save-wrapper">
         <div className="movie-card">
@@ -66,9 +69,12 @@ export default class Movie extends Component {
           ))}
         </div>
 
-        <Link to='/savedlist'>
-            <div className="save-button">Save</div>
-        </Link>
+      <div className="save-wrapper">
+        <MovieCard movie={movie} />
+        <div className="save-button" onClick={() => this.saveMovie()}>
+          Save
+        </div>
+      </div>
       </div>
     );
   }
