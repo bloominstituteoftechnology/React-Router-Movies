@@ -1,4 +1,3 @@
-
 .cardstyle {
     background-color: rgba(84, 34, 5, 0.75);
     width: 90%;
@@ -9,31 +8,34 @@
     justify-content: space-between;
 }
 
-.cardtitle{
+.cardtitle {
     color: White;
 }
-.movie-director{
+
+.movie-director {
     color: lightskyblue;
     padding: 4px 0;
     font-size: 0.8rem;
 }
-.movie-metascore{
+
+.movie-metascore {
     color: lightgreen;
 }
-.movie-actors{
+
+.movie-actors {
     color: lightgoldenrodyellow;
 }
-.movie-star{
+
+.movie-star {
     color: gold;
 }
+
 .cardflow {
     display: flex;
     position: relative;
     flex-wrap: wrap;
     flex-direction: row;
-    
-  }
-
+}
 
 .saved-list {
     background-color: rgba(11, 29, 189, 0.9);
@@ -55,6 +57,7 @@
 
 .saved-movie {
     margin: 0 10px;
+    color: white;
 }
 
 .saved-active {
