@@ -3,13 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 
-export default class MovieList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movies: []
-    };
-  }
+
 
   componentDidMount() {
     axios
@@ -31,7 +25,7 @@ export default class MovieList extends Component {
       </div>
     );
   }
-}
+
 
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars, poster } = movie;
@@ -52,9 +46,17 @@ function MovieDetails({ movie }) {
           {star}
         </div>
       ))}
-      <h3>Poster</h3>
+      
       
     </div>
     </Link>
   );
 }
+
+export default class MovieList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movies: []
+    };
+  }}

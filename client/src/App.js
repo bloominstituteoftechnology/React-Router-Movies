@@ -9,7 +9,8 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      savedList: []
+      savedList: [],
+      movieInList: null,
     };
   }
 
@@ -45,3 +46,4 @@ export default class App extends Component {
 //   path='/dashboard'
 //   render={(props) => <Dashboard {...props} isAuthed={true} />}
 // />
+

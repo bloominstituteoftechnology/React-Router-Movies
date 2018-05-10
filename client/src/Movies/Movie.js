@@ -41,41 +41,41 @@ export default class Movie extends Component {
 
 
 
-  render() {
-    if (!this.state.movie) {
-      return <div>Loading movie information...</div>;
+  addToSavedList = movie => {
+    const savedList = this.state.savedList;
+    const findMovie = savedList.find(el => movie.id === el.id);
+    if (findMovie) {
+      this.setState({ movieInList: `You've already saved that movie!` });
+      setTimeout(() => this.setState({ movieInList: null }), 2000);
+    } else {
+      savedList.push(movie);
     }
 
-    const { title, director, metascore, stars } = this.state.movie;
-    const { movie } = this.state;
-    
-      
+    this.setState({ savedList });
+  };
+
+  render() {
+    const { movieInList } = this.state;
     return (
-      <div className="save-wrapper">
-        <div className="movie-card">
-          <h2>{title}</h2>
-          <div className="movie-director">
-            Director: <em>{director}</em>
-          </div>
-          <div className="movie-metascore">
-            Metascore: <strong>{metascore}</strong>
-          </div>
-          <h3>Actors</h3>
-
-          {stars.map(star => (
-            <div key={star} className="movie-star">
-              {star}
-            </div>
-          ))}
-        </div>
-
-      <div className="save-wrapper">
-        <MovieCard movie={movie} />
-        <div className="save-button" onClick={() => this.saveMovie()}>
-          Save
-        </div>
-      </div>
+      <div>
+        {movieInList !== null ? (
+          <h3 className="movie-warning">{movieInList}</h3>
+        ) : null}
+        <SavedList list={this.state.savedList} />
+        <Route exact path="/" component={MovieList} />
+        <Route
+          path="/movies/:id"
+          render={props => (
+            <Movie {...props} addToSavedList={this.addToSavedList} />
+          )}
+        />
       </div>
     );
   }
 }
+
+
+
+// import React, { Component } from 'react';
+// import { Route } from 'react-router-dom';
+
