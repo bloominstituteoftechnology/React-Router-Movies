@@ -6,3 +6,5 @@ const Poster = [
     {id: 4, img: url('../Img/4_dumbanddumber.jpg')},
     {id: 5, img: url('../Img/5_tombstone.jpg')},
 ];
+
+export default Movieposter;

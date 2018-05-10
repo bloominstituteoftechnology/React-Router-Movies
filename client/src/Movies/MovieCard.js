@@ -1,5 +1,6 @@
 import React from 'react';
 import './Movies.css';
+import './Movieposter';
 
 const MovieCard = ({ movie }) => {
   const { title, director, metascore, stars, id } = movie;
@@ -24,7 +25,10 @@ const MovieCard = ({ movie }) => {
           {star}
         </div>
       ))}
+      
+      ))}
     </div>
+
     </div>
   );
 };
