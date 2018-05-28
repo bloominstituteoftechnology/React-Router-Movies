@@ -13,11 +13,35 @@ export default class App extends Component {
     };
   }
 
+  // addToSavedList = movie => {
+  //   console.log("movie: ", movie)
+  //   const savedList = this.state.savedList;
+  //   console.log("savedList: ", savedList)
+  //   if (savedList.includes(movie)){
+  //     return
+  //   } else {
+  //     savedList.push(movie);
+  //     this.setState({ savedList });
+  //   }
+  // };
+
+
   addToSavedList = movie => {
-    const savedList = this.state.savedList.slice();
-    savedList.push(movie);
-    this.setState({ savedList });
+    const savedList = this.state.savedList;
+    let found = false;
+    
+    savedList.forEach(savedMovie => {
+      if (savedMovie.id === movie.id){
+        found = true;
+      }
+    });
+
+    if(!found){
+      savedList.push(movie);
+      this.setState({ savedList });
+    }
   };
+
 
   render() {
     return (
