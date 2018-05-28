@@ -6,9 +6,9 @@ const SavedList = (props) => {
       <div className="saved-list">
         <h3>Saved Movies:</h3>
         {props.list.map(movie => (
-          <Link to={`/movie/${movie.id}`} key={movie.id}><span className="saved-movie">{movie.title}</span></Link>
+          <NavLink to={`/movie/${movie.id}`} key={movie.id} activeClassName='saved-active'><span className="saved-movie">{movie.title}</span></NavLink>
         ))}
-        <NavLink to='/'><div className="home-button">Home</div></NavLink>
+        <Link to='/'><div className="home-button">Home</div></Link>
       </div>
     );
   }
