@@ -40,7 +40,7 @@ function MovieDetails({ movie }) {
     <Link to={`${`/movies/${movie.id}`}`}>
       <div className="movie-card">
         <h2>{title}</h2>
-        <div className="movie-director">
+        {/* <div className="movie-director">
           Director: <em>{director}</em>
         </div>
         <div className="movie-metascore">
@@ -52,7 +52,7 @@ function MovieDetails({ movie }) {
           <div key={star} className="movie-star">
             {star}
           </div>
-        ))}
+        ))} */}
       </div>
     </Link>
   );
