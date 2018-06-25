@@ -21,6 +21,11 @@ a {
   color: inherit;
 }
 
+a.active {
+  background: darkblue;
+  color: yellow;
+}
+
 .movie-director {
   padding: 4px 0;
   font-size: 0.8rem;
