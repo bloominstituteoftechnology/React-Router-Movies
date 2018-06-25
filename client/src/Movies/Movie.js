@@ -6,7 +6,12 @@ export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: {
+        title: '',
+        director: '',
+        metascore: '',
+        stars: []
+      }
     };
   }
 
@@ -39,6 +44,8 @@ export default class Movie extends Component {
    }
 
   render() {
+
+    
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
