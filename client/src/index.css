@@ -4,6 +4,18 @@ body {
   font-family: sans-serif;
   background-color: #f2f2f2;
 }
+.movie-list {
+  width: 1000px;
+  margin: auto;
+}
+
+.movie-list a {
+  text-decoration: none;
+}
+
+.list-item {
+  color: black;
+}
 
 .movie-card {
   background-color: #fff;
