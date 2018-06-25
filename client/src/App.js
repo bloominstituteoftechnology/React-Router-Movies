@@ -7,12 +7,8 @@ import Movie from './Movies/Movie';
 
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      savedList: []
-    };
-  }
+
+  state = { savedList: [] }
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
@@ -25,8 +21,11 @@ export default class App extends Component {
       <div>
         <SavedList list={this.state.savedList} />
         <Route exact path="/" component={MovieList} />
-        <Route path="/movies/:id" component={Movie} />
+        <Route path="/movies/:id" component={addHandler(Movie, this.addToSavedList)} />
       </div>
     );
   }
 }
+
+const addHandler = (Component, handler) => props => 
+  <Component {...props} addToSavedList={handler} />
