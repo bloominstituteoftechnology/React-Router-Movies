@@ -3,23 +3,25 @@ import axios from 'axios';
 
 export default class Movie extends Component {
   constructor(props) {
+    console.log(props.match);
     super(props);
     this.state = {
-      movie: null
+      movie: null,
+      id: props.match.params.id
     };
   }
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
-    this.fetchMovie(id);
+    
+    this.fetchMovie(this.state.id);
   }
 
   fetchMovie = id => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => {
-        this.setState(() => ({ movie: response.data }));
+        this.setState(() => ({ movie: response.data, id }));
       })
       .catch(error => {
         console.error(error);
@@ -38,6 +40,7 @@ export default class Movie extends Component {
   // }
 
   render() {
+    console.log('this state movie: ', this.state.movie)
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
