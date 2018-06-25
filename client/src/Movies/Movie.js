@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default class Movie extends Component {
   constructor(props) {
@@ -11,6 +12,9 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
+    if (this.movie.id) {
+      return (<Route path="/movies/:id" component={Movie}/>)
+    }
     const id = 1;
     this.fetchMovie(id);
   }
