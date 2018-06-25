@@ -5,13 +5,14 @@ export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: props
     };
   }
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = this.fetchMovie(id);
+    const id = 1;
+    this.fetchMovie(id);
   }
 
   fetchMovie = id => {
