@@ -12,7 +12,7 @@ export default class SavedList extends Component {
         <h3>Saved Movies:</h3>
         {this.props.list.map(movie => (
           <Link   key={movie.id}to={`/movies/${movie.id}`}>
-          <span className="saved-movie" onClick ={this.display}>{movie.title}</span>
+          <span className="saved-movie">{movie.title}</span>
           </Link>
         ))}
         <Link to='/' >
