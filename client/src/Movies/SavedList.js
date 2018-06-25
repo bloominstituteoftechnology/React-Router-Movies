@@ -12,7 +12,9 @@ export default class SavedList extends Component {
         <h3>Saved Movies:</h3>
         {this.props.list.map(movie => (
           <span key={movie.id} className="saved-movie">
-            {movie.title}
+            <Link style={{ textDecoration: 'none' }} to={`/movies/${movie.id}`}>
+              {movie.title}
+            </Link>
           </span>
         ))}
         <div className="home-button">
