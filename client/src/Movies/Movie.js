@@ -7,12 +7,11 @@ export default class Movie extends Component {
     this.state = {
       movie: null
     };
-    this.id = this.props.match.params.movieId;
   }
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = this.id;
+    const id = this.props.match.params.movieId;
     this.fetchMovie(id);
   }
 
@@ -26,12 +25,12 @@ export default class Movie extends Component {
         console.error(error);
       });
   };
-  // Uncomment this code when you're ready for the stretch problems
-  // componentWillReceiveProps(newProps){
-  //   if(this.props.match.params.id !== newProps.match.params.id){
-  //     this.fetchMovie(newProps.match.params.id);
-  //   }
-  // }
+  
+  componentWillUpdate(newProps){
+    if(this.props.match.params.movieId !== newProps.match.params.movieId){
+      this.fetchMovie(newProps.match.params.movieId);
+    }
+  }
 
 
 
