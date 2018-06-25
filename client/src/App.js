@@ -14,9 +14,8 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    if (savedList.indexOf(movie) < 0) savedList.push(movie);
-    console.log('saved list',savedList);
-    console.log('this state saved list',this.state.savedList)
+    let index = savedList.indexOf(movie);
+    if (index < 0) savedList.push(movie);
     this.setState({ savedList });
   };
 
