@@ -13,7 +13,7 @@ export default class SavedList extends Component {
         {this.props.list.map(movie => (
           <span className="saved-movie">{movie.title}</span>
         ))}
-        <Link to ="/" style={{"text-decoration": 'none'}}>
+        <Link to ="/" style={{"textDecoration": 'none'}}>
           <div className="home-button">Home</div>
         </Link>
       </div>
