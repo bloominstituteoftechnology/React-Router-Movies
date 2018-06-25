@@ -15,6 +15,10 @@ body {
   position: relative;
   margin: 1rem auto;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+ }
 
 .movie-director {
   padding: 4px 0;
@@ -70,3 +74,4 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
