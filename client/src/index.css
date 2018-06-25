@@ -71,3 +71,7 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+.selected {
+  background: rgb(163, 163, 163);
+}
