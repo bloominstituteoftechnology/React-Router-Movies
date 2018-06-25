@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export default class Movie extends Component {
   constructor(props) {
+    console.log(props, "hello")
     super(props);
     this.state = {
       movie: null
