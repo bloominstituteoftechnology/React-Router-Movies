@@ -15,10 +15,22 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    if (!savedList.includes(movie)) {
-      savedList.push(movie);
-      this.setState({ savedList });
+
+    //! comparing objects is tricky
+    //! if different memory locations, they are !=
+    // if (!savedList.includes(movie.id)) {
+    //   savedList.push(movie);
+    //   this.setState({ savedList });
+    // }
+
+    for (let i = 0; i < savedList.length; i++) {
+      if (savedList[i].id === movie.id) {
+        return; // we have one, don't add it to the array
+      }
     }
+    // add new movie to the array
+    savedList.push(movie);
+    this.setState({ savedList });
   };
 
   render() {
