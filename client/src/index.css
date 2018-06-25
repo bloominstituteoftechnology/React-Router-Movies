@@ -5,6 +5,11 @@ body {
   background-color: #f2f2f2;
 }
 
+.card-link{
+	text-decoration: none;
+	color: black;
+}
+
 .movie-card {
   background-color: #fff;
   border: 0;
@@ -14,6 +19,7 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  text-decoration: none;
 }
 
 .movie-director {
@@ -69,4 +75,5 @@ body {
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+  text-decoration: none;
 }
