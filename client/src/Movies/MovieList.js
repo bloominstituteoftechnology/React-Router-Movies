@@ -23,10 +23,6 @@ export default class MovieList extends Component {
       });
   }
 
-  onHomeClick = () => {
-    console.log('something');
-  }
-
   render() {
     return (
       <div className="movie-list">
