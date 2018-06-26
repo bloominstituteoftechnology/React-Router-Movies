@@ -17,7 +17,7 @@ export default class App extends Component {
     const savedList = this.state.savedList;
     for(let i = 0; i < savedList.length;++i){
       if(savedList[i].title === movie.title){
-        return;
+        return alert('Already Saved');
       }
     }
     savedList.push(movie);
