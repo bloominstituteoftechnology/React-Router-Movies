@@ -26,8 +26,8 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <Link to={`/movies/${movie.id}`}>
-            <MovieDetails movie={movie} key={movie.id} id={movie.id} />
+          <Link to={`/movies/${movie.id}`} key={movie.id} >
+            <MovieDetails movie={movie} id={movie.id} />
           </Link>
         ))}
       </div>
