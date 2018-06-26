@@ -13,6 +13,15 @@ body {
   text-decoration: none;
 }
 
+.saved-list a {
+  text-decoration: none;
+}
+
+.saved-movie {
+  color: black;
+  font-weight: bold;
+}
+
 .list-item {
   color: black;
 }
