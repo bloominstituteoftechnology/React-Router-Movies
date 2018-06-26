@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
-import { Route } from 'react-router-dom';;
+import { Route, Switch } from 'react-router-dom';
+
 
 export default class App extends Component {
   constructor() {
@@ -21,11 +22,21 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+
+
+      <div>    
         <SavedList list={this.state.savedList} />
         <Route exact path="/" component={MovieList}></Route>
-        <Route path="/movies/:id" component={Movie}></Route>
+        <Route 
+            path="/movies/:id" 
+            render={props => (
+            <Movie {...props} addToSavedList={this.addToSavedList} />
+           )}
+        />
+        
+              
       </div>
+
     );
   }
 }
