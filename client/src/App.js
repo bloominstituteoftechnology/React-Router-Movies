@@ -25,7 +25,7 @@ export default class App extends Component {
         <div>
           <Route exact path="/" component={MovieList} /> 
 
-          <Route exact path="/movie/:id" component={Movie} />
+          <Route path="/movie/:id" component={Movie} />
 
         </div>
       </div>
