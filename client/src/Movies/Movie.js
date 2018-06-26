@@ -11,7 +11,8 @@ export default class Movie extends Component {
         director: "",
         metascore: "",
         stars: []
-      }
+      },
+      savedList: []
     };
   }
 
@@ -33,23 +34,30 @@ export default class Movie extends Component {
       });
   };
   // Uncomment this code when you're ready for the stretch problems
-  // componentWillReceiveProps(newProps){
-  //   if(this.props.match.params.id !== newProps.match.params.id){
-  //     this.fetchMovie(newProps.match.params.id);
-  //   }
-  // }
+  componentWillReceiveProps(newProps){
+    if(this.props.match.params.id !== newProps.match.params.id){
+      this.fetchMovie(newProps.match.params.id);
+    }
+  }
+  addToSavedList = (movie) => {
+    var newSavedList = this.state.savedList;
+    newSavedList.push(movie);
+    console.log(newSavedList);
+    console.log(this.state.savedList)
+  }
 
-  // saveMovie = () => {
-  //   const addToSavedList = this.props.addToSavedList;
-  //   addToSavedList(this.state.movie)
-  // }
+  saveMovie = () => {
+    console.log("Hk")
+    const addToSavedList = this.addToSavedList;
+    addToSavedList(this.state.movie)
+  }
 
   render() {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
     return (
-        <MovieCard movie={this.state.movie}/>
+        <MovieCard movie={this.state.movie} clickFunction={this.saveMovie()} />
     );
   }
 }
