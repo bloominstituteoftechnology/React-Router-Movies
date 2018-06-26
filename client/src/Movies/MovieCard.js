@@ -17,9 +17,11 @@ const MovieCard = (props) => {
         <div key={star} className="movie-star">
           {star}
         </div>
+
       ))}
+            <div className="save-button">Save</div>
     </div>
   )
 }
 
-export default MovieCard
+export default MovieCard;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
 
+
 export default class Movie extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,7 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const id = this.props.match.params;
     this.fetchMovie(id);
   }
 
@@ -38,17 +39,22 @@ export default class Movie extends Component {
   //   addToSavedList(this.state.movie)
   // }
 
+
+
+
   render() {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
 
-
+    const { movie } = this.state;
     return (
       <div className="save-wrapper">
-       <MovieCard movie={this.state.movie} />
-        <div className="save-button">Save</div>
-      </div>
+           <MovieCard movie={this.state.movie} />
+
+           <div className="save-button">Save</div>
+        </div>
+
     );
   }
 }
