@@ -27,7 +27,10 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <NavLink key={movie.id} to={`/movies/${movie.id}`}>
+          <NavLink activeStyle={{
+            fontWeight: 'bold',
+            color: 'red'
+           }} key={movie.id} to={`/movies/${movie.id}`}>
           <MovieDetails key={movie.id} movie={movie} />
           </NavLink>
         ))}
