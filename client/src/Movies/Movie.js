@@ -51,7 +51,11 @@ export default class Movie extends Component {
           metascore={metascore}
           stars={stars}
         />
-        <div className="save-button">Save</div>
+        <div className="save-button" onClick={() => {
+          this.props.saveToListHandler(this.state.movie);
+          }}>
+          Save
+        </div>
       </div>
     );
   }
