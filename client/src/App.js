@@ -19,6 +19,19 @@ export default class App extends Component {
       savedList.push(movie);
       this.setState({ savedList });
     }
+
+    else {
+      const index = this.state.savedList.map(movie => movie.id).indexOf(movie.id);
+      console.log(index);
+      if(this.state.savedList.length <= 1){
+        this.setState({savedList: []})
+      }
+      else{
+        const newSavedList = this.state.savedList;
+        this.setState({ savedList: newSavedList.splice(index - 1, 1) });
+      }
+
+    }
   };
 
   render() {
