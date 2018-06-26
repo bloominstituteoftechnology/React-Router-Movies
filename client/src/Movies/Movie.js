@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+
 export default class Movie extends Component {
   constructor (props) {
     super(props)
@@ -11,7 +11,6 @@ export default class Movie extends Component {
 
   componentDidMount () {
     // change this line to grab the id passed on the URL
-    console.log(this.props)
     const id = this.props.match.params.id
     this.fetchMovie(id)
   }
@@ -27,11 +26,11 @@ export default class Movie extends Component {
       })
   }
   // Uncomment this code when you're ready for the stretch problems
-  // componentWillReceiveProps (newProps) {
-  //   if (this.props.match.params.id !== newProps.match.params.id) {
-  //     this.fetchMovie(newProps.match.params.id)
-  //   }
-  // }
+  componentWillReceiveProps (newProps) {
+    if (this.props.match.params.id !== newProps.match.params.id) {
+      this.fetchMovie(newProps.match.params.id)
+    }
+  }
 
   saveMovie = () => {
     const addToSavedList = this.props.addToSavedList
@@ -62,11 +61,9 @@ export default class Movie extends Component {
             </div>
           ))}
         </div>
-        <Link to='/'>
-          <div onClick={() => this.saveMovie()} className='save-button'>
-            Save
-          </div>
-        </Link>
+        <div className='save-button' onClick={this.saveMovie}>
+          Save
+        </div>
       </div>
     )
   }

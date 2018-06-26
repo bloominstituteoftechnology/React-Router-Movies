@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import MovieCard from './MovieCard'
 export default class MovieList extends Component {
   constructor (props) {
     super(props)
@@ -31,6 +32,7 @@ export default class MovieList extends Component {
             style={{ textDecoration: 'none' }}
           >
             <MovieDetails key={movie.id} movie={movie} />
+            <MovieCard />
           </Link>
         ))}
       </div>
