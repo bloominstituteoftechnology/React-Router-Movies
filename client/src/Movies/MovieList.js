@@ -21,25 +21,28 @@ export default class MovieList extends Component {
         console.error("Server Error", error);
       });
   }
-
+  
+  goToLink = (url) => {
+    this.props.history.push(url);
+  }
   render() {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <Link to={`movies/${movie.id}`} key = {movie.id}>
-            <MovieDetails movie={movie} />
-          </Link>
+            <MovieDetails movie={movie} key = {movie.id} id = {movie.id}linkHandler = {this.goToLink}/>
         ))}
       </div>
     );
   }
 }
 
-function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
-  return <MovieCard title = {title} 
-  director = {director} 
-  metascore = {metascore}
-  stars = {stars}/>
+function MovieDetails(props) {
+  return <MovieCard title = {props.movie.title} 
+  director = {props.movie.director} 
+  metascore = {props.movie.metascore}
+  stars = {props.movie.stars}
+  id = {props.movie.id}
+  linkHandler = {props.linkHandler}/>
+
   
 }
