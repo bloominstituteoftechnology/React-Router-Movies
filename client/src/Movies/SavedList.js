@@ -4,10 +4,8 @@ export default class SavedList extends Component {
   constructor(props) {
     super(props);
   }
-  goToLink = (url) => {
-    this.props.history.push(url);
-    
-  }
+
+ 
   render() {
     return (
       <div className="saved-list">
