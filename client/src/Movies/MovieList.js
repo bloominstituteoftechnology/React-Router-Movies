@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Movie from './Movie';
 import MovieCard from './MovieCard';
 import {NavLink} from 'react-router-dom';
 
