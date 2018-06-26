@@ -24,13 +24,13 @@ export default class MovieList extends Component {
   }
 
   onHomeClick = () => {
-    console.log(this.props);
+    console.log('something');
   }
 
   render() {
     return (
       <div className="movie-list">
-        <button>Home</button>
+        <button onClick={this.onHomeClick}>Home</button>
         {this.state.movies.map(movie => (
           <MovieDetails key={movie.id} movie={movie} />
         ))}
