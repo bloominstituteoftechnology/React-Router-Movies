@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import SavedList from './Movies/SavedList'
 import MovieList from './Movies/MovieList'
 import Movie from './Movies/Movie'
-
+import NoMatch from './Movies/NoMatch'
 export default class App extends Component {
   constructor () {
     super()
@@ -27,14 +27,16 @@ export default class App extends Component {
           list={this.state.savedList}
           addToSavedList={this.addToSavedList}
         />
-        <Route exact path='/' component={MovieList} />
-        <Route
-          exact
-          path='/movies/:id'
-          render={(props) => (
-            <Movie {...props} addToSavedList={this.addToSavedList} />
-          )}
-        />
+        <Switch>
+          <Route exact path='/' component={MovieList} />
+          <Route
+            path='/movies/:id'
+            render={(props) => (
+              <Movie {...props} addToSavedList={this.addToSavedList} />
+            )}
+          />
+          <Route component={NoMatch} />
+        </Switch>
       </div>
     )
   }

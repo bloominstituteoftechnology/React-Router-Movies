@@ -68,8 +68,10 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
-.saved-list {
-  border: 2px solid red;
+
+.home-button:hover {
+  background-color: #faaf87;
+  color: black;
 }
 
 .movie-list {
