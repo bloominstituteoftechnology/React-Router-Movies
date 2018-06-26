@@ -6,12 +6,7 @@ export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: {
-        title: '',
-        director: '',
-        metascore: '',
-        stars: []
-      }
+      movie: null
     };
   }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const SavedList = ({list}) => {
 
@@ -8,7 +8,7 @@ const SavedList = ({list}) => {
     list.forEach(movie => 
       savedMovies.add(
         React.createElement(
-          Link, 
+          NavLink, 
           {to: `/movies/${movie.id}`,
            key: movie.id,
            className: 'saved-movie'},
