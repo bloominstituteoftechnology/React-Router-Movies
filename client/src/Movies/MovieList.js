@@ -30,7 +30,6 @@ export default class MovieList extends Component {
   render() {
     return (
       <div className="movie-list">
-        <button onClick={this.onHomeClick}>Home</button>
         {this.state.movies.map(movie => (
           <MovieDetails key={movie.id} movie={movie} />
         ))}
