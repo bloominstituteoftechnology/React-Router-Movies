@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
-import { Route, Link } from 'react-router-dom';
+import NoMatch from './Movies/NoMatch';
+import { Route, Link, Switch } from 'react-router-dom';
 
 export default class App extends Component {
   constructor() {
@@ -23,10 +24,12 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList}/>
-        <Route exact path='/' component={MovieList} />
-        <Route exact path='/movies/:id' render={props => ( <Movie {...props} 
-        addToSavedList={this.addToSavedList}  /> )}
-          />
+        <Switch>
+          <Route exact path='/' component={MovieList} />
+          <Route exact path='/movies/:id' render={props => ( <Movie {...props} 
+          addToSavedList={this.addToSavedList}  /> )} />
+          <Route component={NoMatch} />
+        </Switch>
       </div>
     );
   }
