@@ -2,13 +2,7 @@ import React from "react";
 
 const MovieCard = props => {
   return (
-    <div
-      className="movie-card"
-      onClick={() => {
-        console.log(props.linkHandler);
-        props.linkHandler(`/movies/${props.id}`);
-      }}
-    >
+    <div className="movie-card">
       <h2>{props.title}</h2>
       <div className="movie-director">
         Director: <em>{props.director}</em>
