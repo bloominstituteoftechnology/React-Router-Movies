@@ -12,9 +12,6 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    if (this.movie.id) {
-      return (<Route path="/movies/:id" component={Movie}/>)
-    }
     const id = 1;
     this.fetchMovie(id);
   }
