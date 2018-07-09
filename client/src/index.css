@@ -6,7 +6,9 @@ body {
 }
 
 .movie-card {
-  background-color: #fff;
+  background-image: url('http://www.clker.com/cliparts/a/1/6/5/1194985597722582485arrow-right-green_benji__01.svg.hi.png');
+  background-size: contain;
+  background-repeat: no-repeat;
   border: 0;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
@@ -14,6 +16,13 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  padding-left: 120px;
+}
+
+.movie__link {
+  text-decoration: none;
+  color: black;
+  text-align: center;
 }
 
 .movie-director {

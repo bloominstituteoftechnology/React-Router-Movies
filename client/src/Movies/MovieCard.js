@@ -8,7 +8,7 @@ const MovieCard = props => {
       <Nav className="App">
         <h1>React Router Mini</h1>
         <NavItem>
-          <Link to="/movies/id">MovieList</Link>
+          <Link to="/movies/:id">MovieList</Link>
         </NavItem>
       </Nav>
     </div>
