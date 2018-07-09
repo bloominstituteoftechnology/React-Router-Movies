@@ -51,6 +51,9 @@ body {
 
 .saved-movie {
   margin: 0 10px;
+  background: lightgreen;
+  border: 5px solid green;
+  padding: 2px;
 }
 .saved-active {
   color: blue;
@@ -77,7 +80,7 @@ body {
 
 .home-button {
   padding: 5px 10px;
-  background-color: lightskyblue;
+  background-color: lightseagreen;
   text-decoration: none;
   color: black;
 }
