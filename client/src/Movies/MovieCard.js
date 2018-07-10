@@ -1,8 +1,8 @@
 import React from 'react';
 
-const MovieCard = props => {
+const MovieCard = ({movie}) => {
 
-  const { title, director, metascore, stars, id } = this.state.movie;
+  const { title, director, metascore, stars, id } = movie;
   return (
     <div className="save-wrapper">
         <div className="movie-card">
@@ -22,7 +22,7 @@ const MovieCard = props => {
           ))}
         </div>
         <div className="save-button">Save</div>
-      </div>
+    </div>
   );
 };
 
