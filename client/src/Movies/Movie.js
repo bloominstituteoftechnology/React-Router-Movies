@@ -10,18 +10,22 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
+    // is called after the render
     // change this line to grab the id passed on the URL
+    // change id to be dynamically or delete
     const id = 1;
     this.fetchMovie(id);
   }
 
-  fetchMovie = id => {
+  // contacting server on local host pulling info from localhost on 5000
+  // front end making axios from port 3000 request to port 5000 where the back end is
+  fetchMovie = (id) => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
-      .then(response => {
+      .then((response) => {
         this.setState(() => ({ movie: response.data }));
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   };
@@ -55,7 +59,7 @@ export default class Movie extends Component {
           </div>
           <h3>Actors</h3>
 
-          {stars.map(star => (
+          {stars.map((star) => (
             <div key={star} className="movie-star">
               {star}
             </div>
