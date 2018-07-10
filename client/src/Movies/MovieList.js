@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -8,7 +8,6 @@ export default class MovieList extends Component {
     this.state = {
       movies: []
     };
-    console.log(props);
     // props aren't passed from App.js state but from router off of App.js
     // props are default props from router (history, location, match)
   }
@@ -38,7 +37,7 @@ function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
     // movie is beind passed in so you access id by doing movie.id
-    <NavLink to={`/movies/${movie.id}`}>
+    <Link to={`/movies/${movie.id}`}>
       <div className="movie-card">
         <h2>{title}</h2>
         <div className="movie-director">
@@ -55,6 +54,6 @@ function MovieDetails({ movie }) {
           </div>
         ))}
       </div>
-    </NavLink>
+    </Link>
   );
 }
