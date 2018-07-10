@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import SavedList from './Movies/SavedList';
-import MovieList from './Movies/MovieList';
-import Movie from './Movies/Movie';
+import SavedList from './components/Movies/SavedList';
+import MovieList from './components/Movies/MovieList';
+import Movie from './components/Movies/Movie';
 
 export default class App extends Component {
   constructor() {
@@ -19,7 +19,7 @@ export default class App extends Component {
         return;
       }
     }
-    
+
     savedList.push(movie);
 
     this.setState({ savedList });
