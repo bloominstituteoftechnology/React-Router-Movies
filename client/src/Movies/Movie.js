@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {BrowserRouter as Router, Route, Link, NavLink} from "react-router-dom";
+import MovieList from "./MovieList";
 
 export default class Movie extends Component {
   constructor(props) {
@@ -10,8 +12,10 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
+    // You will need to modify line 13 of Movie.js in order to accept the correct id for the movie selected.
     // change this line to grab the id passed on the URL
-    const id = 1;
+    
+    const id = this.props.match.params.id
     this.fetchMovie(id);
   }
 
