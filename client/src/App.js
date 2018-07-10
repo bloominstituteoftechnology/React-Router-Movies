@@ -3,33 +3,27 @@ import { Route } from 'react-router-dom';
 import SavedList from './components/Movies/SavedList';
 import MovieList from './components/Movies/MovieList';
 import Movie from './components/Movies/Movie';
+import { connect } from 'react-redux';
+import { setSavedMovies } from './actions';
+import { withRouter } from 'react-router-dom';
 
-export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      savedList: []
-    };
-  }
-
+class App extends Component {
   addToSavedList = movie => {
-    const savedList = this.state.savedList;
+    const savedList = this.props.savedList;
     for (let i = 0; i < savedList.length; i++) {
       if (savedList[i].id === movie.id) {
         return;
       }
     }
 
-    savedList.push(movie);
-
-    this.setState({ savedList });
+    this.props.setSavedMovies(movie);
   };
 
   render() {
     return (
       <div>
 
-        <SavedList list={this.state.savedList} />
+        <SavedList list={this.props.savedList} />
 
         <Route exact path='/' component={MovieList} />
         <Route path='/movies/:id' render={props => <Movie {...props} addToSavedList={this.addToSavedList} />} />
@@ -38,3 +32,11 @@ export default class App extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    savedList: state.savedList
+  }
+}
+
+export default withRouter(connect(mapStateToProps, { setSavedMovies })(App));

@@ -7,8 +7,13 @@ import { setMovie } from '../../actions';
 class Movie extends Component {
   componentDidMount() {
     // change this line to grab the id passed on the URL
+
     let { id } = this.props.match.params;
     this.fetchMovie(id);
+  }
+
+  componentWillUnmount() {
+    this.props.setMovie(null);
   }
 
   fetchMovie = id => {

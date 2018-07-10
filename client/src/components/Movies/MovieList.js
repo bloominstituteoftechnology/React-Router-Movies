@@ -5,6 +5,7 @@ import MovieCard from './MovieCard';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { setMovies } from '../../actions';
+
 class MovieList extends Component {
   componentDidMount() {
     axios
