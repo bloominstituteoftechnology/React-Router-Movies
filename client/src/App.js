@@ -23,9 +23,19 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <Route exact path="/" component={MovieList} />
-        <Route path="/movies/" component={Movie} />
+        <div>
+          <Route exact path="/" component={MovieList} />
+          <Route path="movies/:id" component={Movie} />
+        </div>
       </div>
     );
   }
 }
+// you can put all routes in a switch component acts like a switch statement
+
+// use render prop instead of component when you would need to
+// pass down more things as props like onClick functions
+
+// use button to send page to home using history.push("/")
+// function request API on success of the data navigate to page
+// example login successful sent to home page

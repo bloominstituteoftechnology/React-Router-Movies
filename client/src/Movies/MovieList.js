@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -7,15 +8,19 @@ export default class MovieList extends Component {
     this.state = {
       movies: []
     };
+    console.log(props);
+    // props aren't passed from App.js state but from router off of App.js
+    // props are default props from router (history, location, match)
   }
 
   componentDidMount() {
+    // request to mount all movies
     axios
       .get('http://localhost:5000/api/movies')
-      .then(response => {
+      .then((response) => {
         this.setState(() => ({ movies: response.data }));
       })
-      .catch(error => {
+      .catch((error) => {
         console.error('Server Error', error);
       });
   }
@@ -23,9 +28,7 @@ export default class MovieList extends Component {
   render() {
     return (
       <div className="movie-list">
-        {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
-        ))}
+        {this.state.movies.map((movie) => <MovieDetails key={movie.id} movie={movie} />)}
       </div>
     );
   }
@@ -34,21 +37,24 @@ export default class MovieList extends Component {
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
-    <div className="movie-card">
-      <h2>{title}</h2>
-      <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
-      </div>
-      <h3>Actors</h3>
-
-      {stars.map(star => (
-        <div key={star} className="movie-star">
-          {star}
+    // movie is beind passed in so you access id by doing movie.id
+    <NavLink to={`/movies/${movie.id}`}>
+      <div className="movie-card">
+        <h2>{title}</h2>
+        <div className="movie-director">
+          Director: <em>{director}</em>
         </div>
-      ))}
-    </div>
+        <div className="movie-metascore">
+          Metascore: <strong>{metascore}</strong>
+        </div>
+        <h3>Actors</h3>
+
+        {stars.map((star) => (
+          <div key={star} className="movie-star">
+            {star}
+          </div>
+        ))}
+      </div>
+    </NavLink>
   );
 }

@@ -5,7 +5,7 @@ export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: null // pulling in movies from server.js by axios
     };
   }
 
@@ -13,12 +13,19 @@ export default class Movie extends Component {
     // is called after the render
     // change this line to grab the id passed on the URL
     // change id to be dynamically or delete
-    const id = 1;
+
+    // const id = this.props.match.params.id;
+    // const foundMovie = movies.find((movie) => movie.id === Number(id));
+    // if (!foundMovie) return;
+    // this.setState({ movie: foundMovie});
+
+    const id = this.props.match.params.id; // accessing individual id of each friend
     this.fetchMovie(id);
   }
 
   // contacting server on local host pulling info from localhost on 5000
   // front end making axios from port 3000 request to port 5000 where the back end is
+  // fetch movie making request to movies/id
   fetchMovie = (id) => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
