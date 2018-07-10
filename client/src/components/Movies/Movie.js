@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
+import { connect } from 'react-redux';
+import { setMovie } from '../../actions';
 
-export default class Movie extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movie: null
-    };
-  }
-
+class Movie extends Component {
   componentDidMount() {
     // change this line to grab the id passed on the URL
     let { id } = this.props.match.params;
@@ -20,13 +15,13 @@ export default class Movie extends Component {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => {
-        this.setState(() => ({ movie: response.data }));
+        this.props.setMovie(response.data);
       })
       .catch(error => {
         console.error(error);
       });
   };
-  
+
   // Uncomment this code when you're ready for the stretch problems
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.id !== newProps.match.params.id) {
@@ -36,17 +31,17 @@ export default class Movie extends Component {
 
   saveMovie = () => {
     const addToSavedList = this.props.addToSavedList;
-    addToSavedList(this.state.movie)
+    addToSavedList(this.props.movie)
   }
 
   render() {
-    if (!this.state.movie) {
+    if (!this.props.movie) {
       return <div>Loading movie information...</div>;
     }
 
     return (
       <div className="save-wrapper">
-        <MovieCard movie={this.state.movie} />
+        <MovieCard movie={this.props.movie} />
         <div onClick={() => this.saveMovie()} className='save-button'>
           Save
         </div>
@@ -54,3 +49,11 @@ export default class Movie extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    movie: state.movie
+  }
+}
+
+export default connect(mapStateToProps, { setMovie })(Movie);

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import MovieCard from './MovieCard';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { setMovies } from '../../actions/index';
+import { setMovies } from '../../actions';
 class MovieList extends Component {
   componentDidMount() {
     axios
