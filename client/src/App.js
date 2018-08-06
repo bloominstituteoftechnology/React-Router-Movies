@@ -14,8 +14,14 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
-    const savedList = this.state.savedList;
-    savedList.push(movie);
+    const savedList = this.state.savedList.slice();
+    if(!savedList.includes(movie)){
+      savedList.push(movie);
+    } else {
+      const index = savedList.indexOf(movie)
+      savedList.splice(index, 1);
+    }
+    
     this.setState({ savedList });
   };
 
