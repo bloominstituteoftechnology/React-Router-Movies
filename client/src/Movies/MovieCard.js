@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 
 const MovieCard = props => {
     return (
       <div className="movie-list">
         {props.values.map(movie => (
-        <Fragment key={movie.id}>
+        <div key={movie.id}>
           <div className="movie-card">
             <Link to={`/movies/${movie.id}`}><h2>{movie.title}</h2></Link>
             <div className="movie-director">
@@ -22,7 +22,7 @@ const MovieCard = props => {
             </div>
           ))}
           </div>
-        </Fragment>
+        </div>
               ))}
       </div>
   )

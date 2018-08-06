@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from 'axios';
+import SavedList from './SavedList';
 
 export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: null,
+      savedList: []
     };
   }
 
@@ -25,15 +27,10 @@ export default class Movie extends Component {
         console.error(error);
       });
   };
-  // componentWillReceiveProps(newProps){
-  //   if(this.props.match.params.id !== newProps.match.params.id){
-  //     this.fetchMovie(newProps.match.params.id);
-  //   }
-  // }
+
 
   saveMovie = () => {
-    const addToSavedList=() => this.props.addToSavedList;
-    addToSavedList(this.state.movie);
+    localStorage.setItem("movieTitle", this.state.movie.title); 
   }
 
   render() {
@@ -43,6 +40,7 @@ export default class Movie extends Component {
 
     const { title, director, metascore, stars } = this.state.movie;
     return (
+      <Fragment>
       <div className="save-wrapper">
         <div className="movie-card">
           <h2>{title}</h2>
@@ -62,6 +60,7 @@ export default class Movie extends Component {
         </div>
         <div className="save-button" onClick={this.saveMovie}>Save</div>
       </div>
+      </Fragment>
     );
   }
 }
