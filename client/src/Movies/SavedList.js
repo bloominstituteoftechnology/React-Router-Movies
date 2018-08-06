@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class SavedList extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export default class SavedList extends Component {
           <span className="saved-movie">{movie.title}</span>
         ))}
         <div className="home-button">Home</div>
+          <Link to="/">Home</Link>
       </div>
     );
   }
