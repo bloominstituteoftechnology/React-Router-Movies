@@ -15,8 +15,6 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList.slice();
-    console.log(movie);
-    console.log(savedList);
     const titleOfMovies = [];
     if(savedList.length){
       //only if savedList has items in it is this neccessary. 
@@ -24,7 +22,7 @@ export default class App extends Component {
       for (let item in savedList){
         titleOfMovies.push(savedList[item].title);
       }
-      console.log(titleOfMovies); 
+      
     }
     if(!titleOfMovies.includes(movie.title)){
       savedList.push(movie);
