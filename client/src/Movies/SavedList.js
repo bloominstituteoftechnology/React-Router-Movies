@@ -11,7 +11,7 @@ const SavedList = props => {
           activeClassName="saved-active"
           className="saved-movie"
         >
-          {movie.title}
+          <img className="saved-img" src={movie.src} />
         </NavLink>
       ))}
       <Link to="/" className="home-button">
