@@ -12,7 +12,7 @@ export default class SavedList extends Component {
       <div className="saved-list">
         <h3>Saved Movies:</h3>
         {this.props.list.map(movie => (
-          <span className="saved-movie"><NavLink to={`../movies/${movie.id}`} activeStyle={{textDecoration: 'none'}}>{movie.title}</NavLink></span>
+          <span className="saved-movie"><NavLink to={`../movies/${movie.id}`} activeClassName='saved-active'>{movie.title}</NavLink></span>
         ))}
         <Link to='/'><div className="home-button">Home</div></Link>
       </div>
