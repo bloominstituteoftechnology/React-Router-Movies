@@ -15,6 +15,8 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList.slice();
+    console.log(movie);
+    console.log(savedList);
     if(!savedList.includes(movie)){
       savedList.push(movie);
     } else {
