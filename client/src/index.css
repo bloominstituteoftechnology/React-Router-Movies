@@ -14,6 +14,9 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+
+  width: 75%;
+ 
 }
 
 .movie-director {
@@ -48,11 +51,7 @@ body {
   border: 1px solid grey;
   padding: 5px;
 }
-.save-wrapper {
-  position: relative;
-  width: 75%;
-  margin: 1rem auto;
-}
+
 .save-button {
   position: absolute;
   top: 25px;

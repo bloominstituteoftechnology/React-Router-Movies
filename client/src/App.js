@@ -15,7 +15,16 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
+    let dupFound = false;
+    savedList.forEach(element => {
+      if(element.title === movie.title){
+        dupFound = true;
+        return; 
+      }
+    });
+    if (!dupFound){
+      savedList.push(movie);
+    }
     this.setState({ savedList });
   };
 
