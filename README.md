@@ -7,7 +7,7 @@ Topics:
 * Passing Route Parameters
 * Passing props to components rendered by the Router
 
-## Instructions
+#### Instructions
 
 * **Fork** this repository, then clone your fork.
 * **NOTE** You have 2 servers that you will be running here so read these instructions carefully.
