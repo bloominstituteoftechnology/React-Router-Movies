@@ -4,7 +4,7 @@ const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
   console.log("MovieCard", props);
   return (
-    <div className="movie-card">
+    <div className="movie-card" onClick={props.saveMovieHandler}>
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
