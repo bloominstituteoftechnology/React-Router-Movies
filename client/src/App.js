@@ -1,8 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import SavedList from "./Movies/SavedList";
+import MovieList from "./Movies/MovieList";
+import Movie from "./Movies/Movie";
 
-import SavedList from './Movies/SavedList';
-import MovieList from './Movies/MovieList';
-import Movie from './Movies/Movie';
+
+<Router>
+  <div>
+    <Route exact path="/" component={Home} />
+    <Route path="/news" component={NewsFeed} />
+  </div>
+</Router>
+If the location of the app is / then the UI hierarchy will be something like: <div>
+  <Home />
+  <!-- react-empty: 2 -->
+</div>
+And if the location of the app is / news then the UI hierarchy will be: <div>
+  <!-- react-empty: 1 -->
+  <NewsFeed />
+</div>
+
 
 export default class App extends Component {
   constructor() {
