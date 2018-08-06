@@ -30,7 +30,7 @@ export default class App extends Component {
       <Fragment>
         <SavedList list={this.state.savedList} />
         <Route exact path = '/' component = {MovieList} />
-        <Route path = '/movies/:id' render = {(props) => <Movie {...props} handleSave ={this.addToSavedList}/>}/> 
+        <Route path = '/movies/:id' render = {(props) => <Movie {...props} addToSavedList ={this.addToSavedList}/>}/> 
       </Fragment>
     );
   }
