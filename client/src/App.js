@@ -17,12 +17,18 @@ export default class App extends Component {
     const savedList = this.state.savedList.slice();
     console.log(movie);
     console.log(savedList);
-    if(!savedList.includes(movie)){
-      savedList.push(movie);
-    } else {
-      const index = savedList.indexOf(movie)
-      savedList.splice(index, 1);
+    const titleOfMovies = [];
+    if(savedList.length){
+      //only if savedList has items in it is this neccessary. 
+      //objective is to make sure you cannot add more than one movie into the saved List if its the same there is no need to add another. 
+      for (let item in savedList){
+        titleOfMovies.push(savedList[item].title);
+      }
+      console.log(titleOfMovies); 
     }
+    if(!titleOfMovies.includes(movie.title)){
+      savedList.push(movie);
+     } 
     
     this.setState({ savedList });
   };
