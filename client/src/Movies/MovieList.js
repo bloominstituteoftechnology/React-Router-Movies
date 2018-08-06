@@ -1,5 +1,11 @@
+//Import Packages
 import React, { Component } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Link } from "react-router-dom"
+
+//Import Files
+import MovieCard from './MovieCard';
+
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -32,10 +38,13 @@ export default class MovieList extends Component {
 }
 
 function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
   return (
     <div className="movie-card">
-      <h2>{title}</h2>
+    <Link to ={`/movies/${movie.id}`}>
+      <MovieCard movie = {movie} />
+    </Link>
+
+      {/* <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
@@ -48,7 +57,7 @@ function MovieDetails({ movie }) {
         <div key={star} className="movie-star">
           {star}
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
