@@ -4,22 +4,26 @@ const MovieCard = props => {
   const { title, director, metascore, stars, poster } = props.movie;
   return (
     <div className="movie-card">
+      <div className="movie-info-container">
         <h2>{title}</h2>
-        <div className="movie-director">
-          Director: <em>{director}</em>
-        </div>
-        <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
-        </div>
-        <h3>Actors</h3>
-
-        {stars.map(star => (
-          <div key={star} className="movie-star">
-            {star}
+          <div className="movie-director">
+            Director: <em>{director}</em>
           </div>
-        ))}
-        <img src={poster} alt="Movie poster"/>
+          <div className="movie-metascore">
+            Metascore: <strong>{metascore}</strong>
+          </div>
+          <h3>Actors</h3>
+
+          {stars.map(star => (
+            <div key={star} className="movie-star">
+              {star}
+            </div>
+          ))}
       </div>
+      <div className="poster-container">
+        <img src={poster} alt="Movie poster"/>  
+      </div>  
+    </div>
   );
 };
 

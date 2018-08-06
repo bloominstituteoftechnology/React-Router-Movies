@@ -5,6 +5,17 @@ body {
   background-color: #f2f2f2;
 }
 
+.movielist-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.movie-list {
+  width: 100%;
+}
+
 .movie-card {
   background-color: #fff;
   border: 0;
@@ -14,6 +25,15 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  width: 25rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.movie-info-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .movie-director {
