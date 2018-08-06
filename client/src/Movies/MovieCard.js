@@ -18,7 +18,7 @@ const MovieCard = props => {
               {star}
             </div>
           ))}
-        <div className="save-button">Save</div>
+        <div className="save-button" onClick={()=>props.clickHandler(props.movie)}>Save</div>
         </div>
       </div>
   )

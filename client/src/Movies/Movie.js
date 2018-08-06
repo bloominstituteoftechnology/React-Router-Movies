@@ -3,6 +3,7 @@ import axios from 'axios';
 import MovieCard from './MovieCard.js';
 export default class Movie extends Component {
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
       movie: null
@@ -43,7 +44,7 @@ export default class Movie extends Component {
     }
 
     return (
-      <MovieCard movie={this.state.movie}/>
+      <MovieCard movie={this.state.movie} clickHandler={this.props.clickHandler}/>
     );
   }
 }
