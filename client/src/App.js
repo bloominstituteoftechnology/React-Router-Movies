@@ -13,7 +13,7 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
-    const savedList = this.state.savedList;
+    const savedList = this.state.savedList.slice();
     savedList.push(movie);
     this.setState({ savedList });
   };
@@ -24,7 +24,13 @@ export default class App extends Component {
         <div>
           <SavedList list={this.state.savedList} />
           <Route exact path="/" component={MovieList} />
-          <Route exact path="/movies/:id" component={Movie} />
+          <Route
+            exact
+            path="/movies/:id"
+            render={props => (
+              <Movie {...props} addToSavedList={this.addToSavedList} />
+            )}
+          />
         </div>
       </Router>
     );
