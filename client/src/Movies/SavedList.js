@@ -12,7 +12,7 @@ export default class SavedList extends Component {
         <h3>Saved Movies:</h3>
         {this.props.list.map(movie => (
           <NavLink to={`/movies/${movie.id}`}>
-          <span className="saved-movie">{movie.title}</span>
+          <span className="saved-movie"><img src={movie.poster} alt="The movie poster."/></span>
           </NavLink>
         ))}
         <NavLink to="/" className="home-button">

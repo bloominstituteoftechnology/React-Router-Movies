@@ -43,6 +43,11 @@ body {
 .saved-movie {
   margin: 0 10px;
 }
+
+.saved-movie img {
+  width: 80px;
+}
+
 .saved-active {
   color: blue;
   border: 1px solid grey;
