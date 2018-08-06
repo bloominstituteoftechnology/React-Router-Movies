@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 export default class SavedList extends Component {
+  // eslint-disable-next-line
   constructor(props) {
     super(props);
   }
