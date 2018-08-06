@@ -5,7 +5,6 @@ import MovieCard from "./MovieCard";
 export default class Movie extends Component {
   constructor(props) {
     super(props);
-    console.log("Movie", props);
     this.state = {
       movie: null,
       url: props.match
@@ -14,7 +13,6 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    console.log("URL", this.state.url.params.id);
     const id = this.state.url.params.id;
     this.fetchMovie(id);
   }
