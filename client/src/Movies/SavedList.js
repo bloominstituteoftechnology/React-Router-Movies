@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 export default class SavedList extends Component {
   constructor(props) {
     super(props);
@@ -10,9 +10,9 @@ export default class SavedList extends Component {
       <div className="saved-list">
         <h3>Saved Movies:</h3>
         {this.props.list.map((movie,i) => (
-          <Link to={`/movies/${movie.id}`}><span className="saved-movie" key={i}>{movie.title}</span></Link>
+          <NavLink to={`/movies/${movie.id}`}><span className="saved-movie" key={i}>{movie.title}</span></NavLink>
         ))}
-        <Link to='/'>Home</Link>
+        <NavLink to='/'>Home</NavLink>
       </div>
     );
   }
