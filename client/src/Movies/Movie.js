@@ -33,8 +33,15 @@ export default class Movie extends Component {
   }
   }
 
- saveMovie = () => {
+ saveMovie = (movie) => {
   const addToSavedList = this.props.addToSavedList;
+  const savedList=this.props.savedList;
+  
+  for (let i=0; i<savedList.length; i++) {
+    if (JSON.stringify(savedList[i])===JSON.stringify(movie)) {
+      return;
+    }
+  }
     addToSavedList(this.state.movie);
    }
 
@@ -44,7 +51,7 @@ export default class Movie extends Component {
     }
 
     return (
-      <MovieCard movie={this.state.movie} clickHandler={this.props.clickHandler}/>
+      <MovieCard movie={this.state.movie} clickHandler={this.saveMovie}/>
     );
   }
 }

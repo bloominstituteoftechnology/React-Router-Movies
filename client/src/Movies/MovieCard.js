@@ -1,9 +1,11 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const MovieCard = props => {
   return(
   <div className="save-wrapper">
         <div className="movie-card">
+        <Link to={`/movies/${props.movie.id}`}>
           <h2>{props.movie.title}</h2>
           <div className="movie-director">
             Director: <em>{props.movie.director}</em>
@@ -18,7 +20,8 @@ const MovieCard = props => {
               {star}
             </div>
           ))}
-        <div className="save-button" onClick={()=>props.clickHandler(props.movie)}>Save</div>
+        <div className="save-button" onClick={props.clickHandler?props.clickHandler(props.movie):null}>Save</div>
+        </Link>
         </div>
       </div>
   )
