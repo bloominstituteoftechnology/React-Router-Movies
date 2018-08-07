@@ -3,6 +3,7 @@ import { Route, Link } from "react-router-dom";
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
+import './index.css';
 // https://github.com/LambdaSchool/React-Router-Movies/pull/341
 export default class App extends Component {
   constructor() {
@@ -21,10 +22,14 @@ export default class App extends Component {
   render() {
     return (
       <div>
-
         <Route exact path="/" component={MovieList} />
-        <Route path="/movies/:id" component={Movie} />
-        <SavedList list={this.state.savedList} />
+        {/* <Route path="/movies/:id" component={Movie} addToSavedList={this.addToSavedList} /> */}
+        
+        <Route path="/movies/:id" render={(props) => {
+          console.log(props)
+          return (<Movie {...props} addToSavedList={this.addToSavedList} />)
+        }} />
+        <SavedList list={this.state.savedList} addToSavedList={this.addToSavedList}/>
       </div>
     );
   }

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
 import  styled from 'styled-components';
+import '../index.css';
 
-const Link = styled.
+
+
+
 const MovieCard = props => {
   console.log(props);
   let {id, title, director, metascore, stars }= props.movie;
