@@ -1,7 +1,7 @@
 import React from 'react';
 
-const MovieCard = props => {
-  const {title,director,metascore,stars,poster} = props.movie;
+const MovieCard = ({movie}) => {
+  const {title,director,metascore,stars,id,poster} = movie;
   return(
     <div className="movie-card">
       <h2>{title}</h2>
@@ -18,7 +18,7 @@ const MovieCard = props => {
           {star}
         </div>
       ))}
-      <img src={poster} alt="Movie poster" />
+      <img src={poster} alt="Movie Poster" />
     </div>
 
   );
