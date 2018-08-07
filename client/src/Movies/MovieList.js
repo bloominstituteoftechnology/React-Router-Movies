@@ -1,7 +1,7 @@
 //Import Packages
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Link } from "react-router-dom"
+import { NavLink } from 'react-router-dom';
 
 //Import Files
 import MovieCard from './MovieCard';
@@ -38,11 +38,12 @@ export default class MovieList extends Component {
 }
 
 function MovieDetails({ movie }) {
+  const { id } = movie;
   return (
     <div className="movie-card">
-    <Link to ={`/movies/${movie.id}`}>
+    <NavLink to ={`/movies/${id}`}>
       <MovieCard movie = {movie} />
-    </Link>
+    </NavLink>
 
       {/* <h2>{title}</h2>
       <div className="movie-director">
