@@ -19,7 +19,7 @@ export default class App extends Component {
     savedList.push(movie);
     this.setState({ savedList });
   };
-
+//Note the spread attribute htis allows you to take in all of the declard prop.
   render() {
     return (
       <div>
