@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import { Link, Route } from 'react-router-dom';
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +35,8 @@ function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
     <div className="movie-card">
-      <h2>{title}</h2>
+      <Link to='/movies/:id'><h2>{title}</h2></Link>
+      <Route path='/movies/:id' component={movie}/>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
