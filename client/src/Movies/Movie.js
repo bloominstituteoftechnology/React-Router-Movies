@@ -3,12 +3,9 @@ import axios from 'axios';
 import MovieCard from './MovieCard';
 
 export default class Movie extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movie: null
-    };
-  }
+  state = {
+    movie: null
+  };
 
   componentDidMount() {
     const id = this.props.match.params.id;
