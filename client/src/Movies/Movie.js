@@ -15,6 +15,8 @@ export default class Movie extends Component {
     this.fetchMovie(id);
   }
 
+
+  
   fetchMovie = id => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
