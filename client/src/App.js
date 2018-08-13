@@ -23,7 +23,12 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <div>Replace this Div with your Routes</div>
+        {/* one route for / that loads the MovieList component. */}
+        <Route path='/' component={MovieList} />
+        {/* one route that will take an id parameter after/movies/ 
+        (ex: /movies/2, /movies/3 where the id is dynamic). 
+        This route should load the Movie component. */}
+        <Route path='/movies/:id' component={Movie} />
       </div>
     );
   }
