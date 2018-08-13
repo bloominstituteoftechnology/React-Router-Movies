@@ -22,7 +22,10 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <div>Replace this Div with your Routes</div>
+        <div>
+          <Route path="/" Component="MovieList" />
+          <Route path="/movies/:id" Component="Movie" />
+        </div>
       </div>
     );
   }
