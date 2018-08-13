@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
-import { BrowserRouter as Router} from "react-router-dom";
+import Route from '../node_modules/react-router-dom/Route';
 
 export default class App extends Component {
   constructor() {
@@ -23,7 +23,9 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <div></div>
+        <div>
+          <Route exact path="/" component = {MovieList}/>
+        </div>
       </div>
     );
   }
