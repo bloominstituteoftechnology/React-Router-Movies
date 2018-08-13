@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
+import Route from 'react-router-dom/Route';
 
 export default class App extends Component {
   constructor() {
@@ -12,19 +13,24 @@ export default class App extends Component {
     };
   }
 
+
+
+
   addToSavedList = movie => {
     const savedList = this.state.savedList;
     savedList.push(movie);
     this.setState({ savedList });
   };
 
-{console.log( "making pull request")}
 
   render() {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <div>Replace this Div with your Routes</div>
+        <div>
+          <Route exact path="./Movies" component={MovieList}/>
+          <Route path="./Movies/:id" component={Movie}/>
+        </div>
       </div>
     );
   }
