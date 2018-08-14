@@ -30,7 +30,7 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
-  width: 75%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,4 +69,9 @@ body {
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
 }
