@@ -50,7 +50,7 @@ body {
 }
 .save-wrapper {
   position: relative;
-  width: 75%;
+  width: 100%;
   margin: 1rem auto;
 }
 .save-button {
@@ -74,5 +74,9 @@ body {
 a{
   text-decoration: none;
   color: #222222;
-  
+
+}
+
+.movie-card {
+  width: 75%;
 }
