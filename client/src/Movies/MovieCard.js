@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 // style
 import "../styles/MovieCard.css";
 // components
