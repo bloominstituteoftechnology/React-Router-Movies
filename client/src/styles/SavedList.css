@@ -9,6 +9,12 @@
 	margin-right: 10px;
 }
 
+.saved-list-buttonrow {
+	display: flex;
+	width: 10%;
+	justify-content: space-around;
+}
+
 .saved-movie {
 	margin: 0 10px;
 }
@@ -19,7 +25,7 @@
 }
 
 .home-button {
-	margin-left: 75%;
+	margin-right: 10px;
 }
 
 .home-button,

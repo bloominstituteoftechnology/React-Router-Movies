@@ -18,10 +18,12 @@ const SavedList = props => {
           <span className="saved-movie">{movie.title}</span>
         </NavLink>
       ))}
-      <Link to="/" className="home-button">
-        Home
-      </Link>
-      <button className="clear-button">Clear</button>
+      <div className="saved-list-buttonrow">
+        <Link to="/" className="home-button">
+          Home
+        </Link>
+        <button className="clear-button">Clear</button>
+      </div>
     </div>
   );
 };
