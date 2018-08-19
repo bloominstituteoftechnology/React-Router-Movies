@@ -22,7 +22,13 @@ const SavedList = props => {
         <Link to="/" className="home-button">
           Home
         </Link>
-        <button className="clear-button">Clear</button>
+        <button
+          className="clear-button"
+          onClick={() => {
+            props.clear();
+          }}>
+          Clear
+        </button>
       </div>
     </div>
   );
