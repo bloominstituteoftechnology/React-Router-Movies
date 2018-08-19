@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
+// style
+import "./styles/App.css";
+// data
 import SavedList from "./Movies/SavedList";
+// components
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
 
@@ -20,7 +24,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="MainContainer">
         <SavedList list={this.state.savedList} />
         {/* path to a list of movies*/}
         <Switch>
