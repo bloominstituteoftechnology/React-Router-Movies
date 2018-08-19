@@ -3,3 +3,8 @@
 	margin-bottom: 40px;
 	width: 60%;
 }
+
+.movie-card-link {
+	color: black;
+	text-decoration: none;
+}
