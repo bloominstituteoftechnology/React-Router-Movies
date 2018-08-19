@@ -1,5 +1,5 @@
 .movie-card {
-	border: 1px solid red;
+	box-shadow: 5px 5px 3px 2px #ff7961;
 	margin-bottom: 40px;
 	width: 60%;
 }
