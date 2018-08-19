@@ -1,3 +1,17 @@
 .saved-list {
 	box-shadow: 5px 5px 3px 2px #ff7961;
 }
+
+.saved-list h3 {
+	margin-right: 10px;
+}
+
+.saved-movie {
+	margin: 0 10px;
+}
+
+.home-button,
+.clear-button {
+	padding: 5px 10px;
+	background-color: lightskyblue;
+}
