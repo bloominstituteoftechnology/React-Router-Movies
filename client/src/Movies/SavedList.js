@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
+import "../styles/SavedList.css";
 
 export default class SavedList extends Component {
   constructor(props) {
@@ -16,8 +17,7 @@ export default class SavedList extends Component {
             activeStyle={{
               fontWeight: "bold",
               color: "red"
-            }}
-          >
+            }}>
             <span className="saved-movie">{movie.title}</span>
           </NavLink>
         ))}
