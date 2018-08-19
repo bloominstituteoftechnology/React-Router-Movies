@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+// style
+import "../styles/MovieList.css";
+// components
 import Movie from "./Movie.js";
 import MovieCard from "./MovieCard.js";
 import { Link } from "react-router-dom";
@@ -24,7 +27,6 @@ export default class MovieList extends Component {
   }
 
   render() {
-    // console.log(this.state.movies);
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
