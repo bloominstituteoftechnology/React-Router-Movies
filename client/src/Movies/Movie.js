@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard.js";
+import "../styles/Movie.css";
 
 export default class Movie extends Component {
   constructor(props) {
@@ -54,8 +55,7 @@ export default class Movie extends Component {
           className="save-button"
           onClick={() => {
             this.props.addToSavedList(this.state.movie);
-          }}
-        >
+          }}>
           Save
         </div>
       </div>

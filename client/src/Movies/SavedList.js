@@ -22,7 +22,13 @@ export default class SavedList extends Component {
             <span className="saved-movie">{movie.title}</span>
           </NavLink>
         ))}
-        <Link to="/" className="home-button">
+        <Link
+          // activeStyle={{
+          //   textDecoration: "none",
+          //   color: "black"
+          // }}
+          to="/"
+          className="home-button">
           Home
         </Link>
         <button className="clear-button">Clear</button>
