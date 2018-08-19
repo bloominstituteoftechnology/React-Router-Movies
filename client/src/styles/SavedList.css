@@ -1,8 +1,8 @@
 .saved-list {
-	box-shadow: 5px 5px 3px 2px #ff7961;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	box-shadow: 5px 5px 3px 2px #ff7961 !important;
 }
 
 .saved-list h3 {
