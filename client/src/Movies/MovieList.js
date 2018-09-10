@@ -50,7 +50,7 @@ function MovieDetails({ movie }) {
           {star}
         </div>
       ))}
-      <Link to={`movies/${movie.id}`}>Link</Link>
+      <Link to={`movies/${id}`}>Link</Link>
     </div>
   );
 }
