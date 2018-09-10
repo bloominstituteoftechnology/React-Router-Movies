@@ -12,7 +12,8 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = window.location.href.split('/').slice(-1);
+    const id = window.location.href.split('/').slice(-2)[0];
+    console.log(id);
     this.fetchMovie(id);
   }
 
@@ -42,12 +43,12 @@ export default class Movie extends Component {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
-    
+
     return (
-      <div>
-      <MovieCard movie={this.state.movie} />
+      <React.Fragment>
+        <MovieCard movie={this.state.movie} />
         <div onClick={this.saveMovie} className="save-button">Save</div>
-      </div>
+      </React.Fragment>
     );
   }
 }
