@@ -13,7 +13,7 @@ export default class SavedList extends Component {
         {this.props.list.map(movie => (
           <span className="saved-movie">{movie.title}</span>
         ))}
-        <Link to='/' className="home-button">Home</Link>
+        <div onClick={() => this.props.history.push('/')} className="home-button">Home</div>
       </div>
     );
   }
