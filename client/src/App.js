@@ -20,6 +20,7 @@ export default class App extends Component {
   };
 
   render() {
+    // TODO: refactor render to link up and pass props the movie component after i get breakfast
     return (
       <div>
         <SavedList list={this.state.savedList} />
