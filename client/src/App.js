@@ -13,9 +13,11 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
+    if(!this.state.savedList.includes(movie)){
     const savedList = this.state.savedList;
     savedList.push(movie);
     this.setState({ savedList });
+    }
   };
 
   render() {
@@ -27,7 +29,7 @@ export default class App extends Component {
         render={(props) => <MovieList {...props}/>} />
         <Route 
         path="/movies/:id" 
-        render={(props) => <Movie {...props}/>} />
+        render={(props) => <Movie addToSavedList={this.addToSavedList} {...props}/>} />
       </div>
     );
   }
