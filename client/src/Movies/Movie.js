@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import MovieCard from './MovieCard';
+
 export default class Movie extends Component {
   constructor(props) {
+    console.log("Movie props: ", props.match.params);
     super(props);
     this.state = {
       movie: null
@@ -11,8 +14,9 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const id=0;
     this.fetchMovie(id);
+    // this.fetchMovie(this.props.params.id);
   }
 
   fetchMovie = id => {
@@ -25,6 +29,9 @@ export default class Movie extends Component {
         console.error(error);
       });
   };
+
+
+
   // Uncomment this code when you're ready for the stretch problems
   // componentWillReceiveProps(newProps){
   //   if(this.props.match.params.id !== newProps.match.params.id){
