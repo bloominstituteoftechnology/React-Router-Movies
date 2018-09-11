@@ -11,6 +11,7 @@ import {
   Route,
 } from 'react-router-dom'
 
+
 export default class App extends Component {
   constructor() {
     super();
@@ -20,8 +21,11 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
+    console.log(movie)
+    // console.log(movie.target.previousSibling.children)
+    // console.log(movie.target.previousSibling.children[0].innerText)
     const savedList = this.state.savedList;
-    savedList.push(movie);
+    savedList.push({ movie });
     this.setState({ savedList });
   };
 
@@ -29,9 +33,10 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <Route path="/" component={MovieList}/>
-        <Route path="/movies/:id" component={Movie}/>
-        {/* <div>Replace this Div with your Routes</div> */}
+        <Route exact path="/" component={MovieList}  />
+        <Route path="/movies/:id" render={ (props) => (
+          <Movie {...props} addToSavedList={this.addToSavedList} />
+        )} />
       </div>
     );
   }
