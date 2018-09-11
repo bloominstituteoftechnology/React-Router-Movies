@@ -20,12 +20,19 @@ export default class App extends Component {
   };
 
   render() {
-    // TODO: refactor render to link up and pass props the movie component after i get breakfast
+    /* 
+      Rendering the Movie component in Route using the render property 
+      and using a callback function that takes in props and passes them to 
+      the rendered Movie Component. Also decomposing the props for easier 
+      access to them using the elipses notation (spread operator).
+    */
     return (
       <div>
         <SavedList list={this.state.savedList} />
         <Route exact path="/" component={MovieList} />
-        <Route path="/movies/:id" component={Movie} />
+        <Route path="/movies/:id" render={props =>
+          <Movie {...props} addToSavedList={this.addToSavedList}/>
+        } />
       </div>
     );
   }
