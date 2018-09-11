@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
+
 
 export default class App extends Component {
   constructor() {
@@ -25,11 +27,16 @@ export default class App extends Component {
         <Route 
         exact 
         path="/" 
-        render={props => <MovieList {...props} />} />
-        <Route 
+        render={props => (<MovieList {...props} />) } />
+        <Route
         path="/movies/:id"
-        render={props => <Movie {...props}}
+        render={props => (
+          <Movie {...props} />
+          )}
         />
+
+
+     
       </div>
     );
   }
