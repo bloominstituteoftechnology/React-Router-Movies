@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const MovieCard = props => {
   
   const { id, title, director, metascore, stars } = props.data;    
   return( 
-    <Link to={`/movie/${id}`}>
-      <div className="movie-card"> 
+      <div onClick={() => props.history.push(`/movie/${id}`)} className="movie-card"> 
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
@@ -22,7 +20,6 @@ const MovieCard = props => {
           </div>
         ))}
       </div>
-    </Link>
   )
 };
 
