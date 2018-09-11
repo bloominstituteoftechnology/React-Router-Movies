@@ -30,8 +30,8 @@ export default class MovieList extends Component {
           <Link to={`/movies/${movie.id}`}>
             <MovieCard 
               key={movie.id} 
-              movie={movie} 
-              // onClick={() => props.history.push()} 
+              movie={movie}  
+              match={this.props.match}
               />
           </Link>
         ))}

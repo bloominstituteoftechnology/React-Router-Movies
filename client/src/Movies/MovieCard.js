@@ -2,6 +2,7 @@ import React from 'react';
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
+ 
   return (
     <div className="movie-card">
       <h2>{title}</h2>
@@ -18,7 +19,7 @@ const MovieCard = props => {
           {star}
         </div>
       ))}
-      <div className="save-button">Save</div>
+      <div className={`save-button ${props.match.path !== '/'? 'active': null}`} onClick={props.saveMovie}>Save</div>
     </div>
   )
 }
