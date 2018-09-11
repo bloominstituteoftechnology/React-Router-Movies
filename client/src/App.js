@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
+import NoMatch from './Components/NoMatch'
 
 import {
   BrowserRouter as Router,
@@ -33,10 +34,13 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
+        <Switch>
         <Route exact path="/" component={MovieList}  />
         <Route path="/movies/:id" render={ (props) => (
           <Movie {...props} addToSavedList={this.addToSavedList} />
         )} />
+        <Route component={NoMatch} />
+        </Switch>
       </div>
     );
   }
