@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+// make sure to check if movie is already on the list before adding again
+
 export default class SavedList extends Component {
   constructor(props) {
     super(props);
