@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 export default class Movie extends Component {
   constructor(props) {
@@ -8,13 +9,16 @@ export default class Movie extends Component {
       movie: null
     };
   }
-
+  
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const { id }= this.props.match.params;
+   
+    // const id = 1;
     this.fetchMovie(id);
+   
   }
-
+ 
   fetchMovie = id => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
@@ -45,6 +49,7 @@ export default class Movie extends Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="save-wrapper">
+      {/* <Link to={`/movies/${movie.id}`}> */}
         <div className="movie-card">
           <h2>{title}</h2>
           <div className="movie-director">
@@ -61,8 +66,13 @@ export default class Movie extends Component {
             </div>
           ))}
         </div>
+        {/* </Link> */}
         <div className="save-button">Save</div>
       </div>
     );
   }
+}
+
+Movie.propTypes = {
+
 }

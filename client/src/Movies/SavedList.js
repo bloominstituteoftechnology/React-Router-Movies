@@ -5,6 +5,11 @@ export default class SavedList extends Component {
     super(props);
   }
 
+  homeBtnHandler() {
+    console.log('clicked');
+    
+   }
+
   render() {
     return (
       <div className="saved-list">
@@ -12,7 +17,9 @@ export default class SavedList extends Component {
         {this.props.list.map(movie => (
           <span className="saved-movie">{movie.title}</span>
         ))}
-        <div className="home-button">Home</div>
+        
+        <div className="home-button" onClick={(e) => this.homeBtnHandler(e)}>Home</div>
+        
       </div>
     );
   }
