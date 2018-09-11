@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
+// import MovieList from "./MovieList";
+// import {Route} from "react-router-dom";
+
+import { Link } from 'react-router-dom';
+
 
 export default class SavedList extends Component {
   constructor(props) {
     super(props);
   }
 
-  homeBtnHandler() {
-    console.log('clicked');
+  // homeBtnHandler(e) {
     
-   }
+    
+  //  }
 
   render() {
     return (
@@ -18,9 +23,14 @@ export default class SavedList extends Component {
           <span className="saved-movie">{movie.title}</span>
         ))}
         
-        <div className="home-button" onClick={(e) => this.homeBtnHandler(e)}>Home</div>
+        <Link to={"/"}>
+        <div className="home-button" >Home</div>
+        </Link>
         
       </div>
     );
   }
 }
+
+
+// onClick={(e) => this.homeBtnHandler(e)}
