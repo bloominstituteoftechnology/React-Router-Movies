@@ -14,8 +14,13 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    if(savedList.indexOf(movie) === -1){
+      savedList.push(movie);
+      this.setState({ savedList });
+    } else {
+      // console.log('duplicate found');
+      return;
+    }
   };
 
   MovieProps = (props) => {
