@@ -7,11 +7,12 @@ class MovieCreate extends React.Component{
         this.state={
             title:'',
             director:'',
+            metascore:'',
             stars:''
         }
     }
-    onInputChange=e=>{
-        this.setState({[e.target.name]:e.target.value});
+    onInputChange=event=>{
+        this.setState({[event.target.name]:event.target.value});
     }
     submitMovie=()=>{
         const newMovieObj={
