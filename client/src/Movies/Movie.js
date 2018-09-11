@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import MovieList from "./MovieList";
 
 export default class Movie extends Component {
   constructor(props) {
