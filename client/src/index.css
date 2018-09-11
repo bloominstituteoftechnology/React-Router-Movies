@@ -41,7 +41,14 @@ body {
 }
 
 .saved-movie {
-  margin: 0 10px;
+  padding: 5px 5px;
+  width: 100px; 
+  height: auto;
+  background-color: lightgray;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+
 }
 .saved-active {
   color: blue;
