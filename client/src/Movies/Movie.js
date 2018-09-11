@@ -35,10 +35,18 @@ export default class Movie extends Component {
   //   }
   // }
 
+  // Because componentWillReceiveProps() is deprecated, I instead
+  // used componentDidUpdate()
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.fetchMovie(this.props.match.params.id);
+    }
+  }
+
   saveMovie = () => {
     const addToSavedList = this.props.addToSavedList;
     
-    addToSavedList(this.state.movie)
+    addToSavedList(this.state.movie);
   }
 
   render() {
