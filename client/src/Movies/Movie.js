@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import MovieCard from './MovieCard';
 
+import './Movie.css';
+
 export default class Movie extends Component {
   constructor(props) {
     super(props);

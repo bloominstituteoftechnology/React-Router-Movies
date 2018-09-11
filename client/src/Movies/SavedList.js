@@ -4,10 +4,6 @@ import { NavLink, Link } from 'react-router-dom';
 import './SavedList.css';
 
 export default class SavedList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const activeStyle = {
       border: '1px solid black',
