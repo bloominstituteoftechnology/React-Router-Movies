@@ -25,17 +25,18 @@ export default class Movie extends Component {
         console.error(error);
       });
   };
-  // Uncomment this code when you're ready for the stretch problems
-  // componentWillReceiveProps(newProps){
-  //   if(this.props.match.params.id !== newProps.match.params.id){
-  //     this.fetchMovie(newProps.match.params.id);
-  //   }
-  // }
+  //Uncomment this code when you're ready for the stretch problems
+  componentWillReceiveProps(newProps) {
+    if (this.props.match.params.id !== newProps.match.params.id) {
+      this.fetchMovie(newProps.match.params.id);
+      console.log(this.state);
+    }
+  }
 
-  // saveMovie = () => {
-  //   const addToSavedList = this.props.addToSavedList;
-  //   addToSavedList(this.state.movie)
-  // }
+  saveMovie = () => {
+    const addToSavedList = this.props.addToSavedList;
+    addToSavedList(this.state.movie);
+  };
 
   render() {
     if (!this.state.movie) {
@@ -45,7 +46,7 @@ export default class Movie extends Component {
       <div className="save-wrapper">
         <MovieCard movie={this.state.movie} />
         <div
-          onClick={event => this.props.addToSavedList(this.state.movie)}
+          onClick={event => this.saveMovie(this.state.movie)}
           className="save-button"
         >
           Save
