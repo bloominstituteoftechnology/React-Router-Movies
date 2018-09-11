@@ -70,3 +70,25 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+.nav-link {
+  text-decoration: none;
+  border: 2px solid red;
+  background: orange;
+  color: black;
+  padding: 6px;
+  border-radius: 7px;
+  transition-duration: .7s;
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: blue;
+  transition-duration: .7s;
+}
+
+.selected {
+  color: white;
+  background-color: red;
+  transition-duration: .7s;
+}
