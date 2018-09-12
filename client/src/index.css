@@ -5,6 +5,13 @@ body {
   background-color: #f2f2f2;
 }
 
+.movie-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .movie-card {
   background-color: #fff;
   border: 0;
@@ -14,6 +21,9 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  /* border: 1px solid black; */
+  width: 225px;
+  margin: 50px 20px;
 }
 
 .movie-director {
@@ -69,4 +79,9 @@ body {
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+}
+
+.home-button:hover {
+  background-color: dodgerblue;
+  color: white;
 }
