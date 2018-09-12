@@ -17,11 +17,11 @@ export default class SavedList extends Component {
         {this.props.list.map(movie => {
           return(
             <Link key={movie.id}
-                  to={`/movie/${movie.id}`}>
-              <span className="saved-movie" 
-                    onClick={()=>{this.props.history.push(`/movie/${movie.id}`)}}>
+                  to={`/movies/${movie.id}`}>
+              {/* <span className="saved-movie" 
+                    onClick={()=>{this.props.history.push(`/movie/${movie.id}`)}}> */}
                 {movie.title}
-              </span>
+              {/* </span> */}
             </Link>
           )})}
         <div className="home-button" onClick={() =>{this.props.history.push("/")}}>Home</div>
