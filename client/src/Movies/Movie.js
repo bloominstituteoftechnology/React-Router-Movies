@@ -10,7 +10,13 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
-const id = this.props.match.params.id;
+
+    console.log(this.props);
+  const id =  this.props.match.params.id;
+  //.find(
+    //  id => id === parseInt(this.props.match.params.id,10)
+    //);
+  //console.log(id)
     this.fetchMovie(id);
   }
 
@@ -24,17 +30,17 @@ const id = this.props.match.params.id;
         console.error(error);
       });
   };
-  // Uncomment this code when you're ready for the stretch problems
-  // componentWillReceiveProps(newProps){
-  //   if(this.props.match.params.id !== newProps.match.params.id){
-  //     this.fetchMovie(newProps.match.params.id);
-  //   }
-  // }
+  //Uncomment this code when you're ready for the stretch problems
+   componentWillReceiveProps(newProps){
+   if(this.props.match.params.id !== newProps.match.params.id){
+  this.fetchMovie(newProps.match.params.id);
+    }
+  }
 
-  // saveMovie = () => {
-  //   const addToSavedList = this.props.addToSavedList;
-  //   addToSavedList(this.state.movie)
-  // }
+  saveMovie = () => {
+    const addToSavedList = this.props.addToSavedList;
+  addToSavedList(this.state.movie)
+  }
 
   render() {
     if (!this.state.movie) {
@@ -60,7 +66,7 @@ const id = this.props.match.params.id;
             </div>
           ))}
         </div>
-        <div className="save-button">Save</div>
+        <div className="save-button" onClick={this.saveMovie}>Save</div>
       </div>
     );
   }
