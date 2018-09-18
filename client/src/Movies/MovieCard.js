@@ -1,7 +1,9 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
 
 const MovieCard = props => {
+
+ 
   return (
     <React.Fragment>
       <h2>{props.movie.title}</h2>
@@ -15,7 +17,7 @@ const MovieCard = props => {
 
       {props.stars.map(star => (
         <div key={star} className="movie-star">
-          {props.movie.star}
+          {star}
         </div>
       ))}
     </React.Fragment>
