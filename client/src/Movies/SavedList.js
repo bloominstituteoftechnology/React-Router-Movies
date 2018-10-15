@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 export default class SavedList extends Component {
   constructor(props) {
     super(props);
   }
+
+  returnHome = () => {
+    this.props.history.push('/');
+  };
 
   render() {
     return (
@@ -13,8 +16,8 @@ export default class SavedList extends Component {
         {this.props.list.map(movie => (
           <span className="saved-movie">{movie.title}</span>
         ))}
-        <div className="home-button">
-          <Link to="/">Home</Link>
+        <div className="home-button" onClick={this.returnHome}>
+          Home
         </div>
       </div>
     );

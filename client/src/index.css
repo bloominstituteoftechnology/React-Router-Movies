@@ -70,3 +70,9 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+.movie-card-link,
+.movie-card-link:visited {
+  color: black;
+  transition: all 200ms;
+}
