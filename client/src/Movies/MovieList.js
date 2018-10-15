@@ -35,8 +35,8 @@ function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
     <div className="movie-card">
-      {/* <h2>{title}</h2> */}
-      <h1>what the fuck</h1>
+    <a href="bruh.com">BRUH</a>
+      <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
