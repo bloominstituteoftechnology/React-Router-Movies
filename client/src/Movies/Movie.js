@@ -60,7 +60,9 @@ export default class Movie extends Component {
             </div>
           ))}
         </div>
-        <div className="save-button">Save</div>
+        <div onClick={() => this.props.addToSavedList(this.state.movie)} on className="save-button">
+          Save
+        </div>
       </div>
     );
   }
