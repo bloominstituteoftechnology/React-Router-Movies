@@ -41,6 +41,11 @@ body {
   justify-content: space-between;
 }
 
+.saved-list a {
+  text-decoration: none;
+  color: black;
+}
+
 .saved-list h3 {
   margin-right: 10px;
 }
