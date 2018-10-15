@@ -18,13 +18,22 @@ export default class App extends Component {
     this.setState({ savedList });
   };
 
+  removeFromSavedList = movie => {
+    const savedList = this.state.savedList;
+    savedList.pop(movie);
+    this.setState({ savedList });
+  };
+
+
   render() {
     return (
       <div>
-        <SavedList list={this.state.savedList} />
+        <SavedList list={this.state.savedList} removeFromSavedList={this.removeFromSavedList} />
         <Route exact path='/' component={MovieList} />
-        <Route path='/movies/:id' component={Movie} />
+        <Route path='/movies/:id' render={props => <Movie {...props} addToSavedList={this.addToSavedList} /> } />
       </div>
     );
   }
 }
+
+//render={props => <Movie addToSavedList={this.addToSavedList} />}
