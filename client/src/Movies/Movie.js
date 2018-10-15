@@ -5,23 +5,23 @@ export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: null,
     };
   }
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const id = this.props.match.params.id;
     this.fetchMovie(id);
   }
 
-  fetchMovie = id => {
+  fetchMovie = (id) => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
-      .then(response => {
+      .then((response) => {
         this.setState(() => ({ movie: response.data }));
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   };
@@ -55,7 +55,7 @@ export default class Movie extends Component {
           </div>
           <h3>Actors</h3>
 
-          {stars.map(star => (
+          {stars.map((star) => (
             <div key={star} className="movie-star">
               {star}
             </div>
