@@ -25,7 +25,7 @@ const MovieCard = props => {
       </NavLink>
       <div
         className="save-button"
-        onClick={movie => props.addToSavedList(props.movie)}>
+        onClick={() => props.addToSavedList(props.movie)}>
         Save
       </div>
     </div>
