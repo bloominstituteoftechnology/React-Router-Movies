@@ -21,6 +21,10 @@ body {
   font-size: 0.8rem;
 }
 
+.movie-link{
+  text-decoration: none;
+}
+
 .saved-list {
   background-color: #fff;
   border: 0;
