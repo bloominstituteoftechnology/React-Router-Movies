@@ -70,3 +70,8 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+.active {
+  background: black;
+  color: white;
+}
