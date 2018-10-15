@@ -23,8 +23,8 @@ class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <Route path='/' component={MovieList} />
-        <Route path='/movies/:id' component={Movie} />
+        <Route path='/movies' component={MovieList} />
+        {/* <Route path='/movies/:id' component={Movie} /> */}
         <div>Replace this Div with your Routes</div>
       </div>
     );
