@@ -3,7 +3,7 @@ import React from 'react';
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
   const showSave = () => {
-    if (props.details) return(<div className="save-button">Save</div>);
+    if (props.details) return(<div className="save-button" onClick={props.saveMovie}>Save</div>);
   }
     return (
       <div className="save-wrapper">
