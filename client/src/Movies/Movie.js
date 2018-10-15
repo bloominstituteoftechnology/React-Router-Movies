@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 
 export default class Movie extends Component {
@@ -46,6 +47,7 @@ export default class Movie extends Component {
 
     const { title, director, metascore, stars } = this.state.movie;
     return (
+      <Link to={this.state.movie.id}>
       <div className="save-wrapper">
         <div className="movie-card">
           <h2>{title}</h2>
@@ -65,6 +67,7 @@ export default class Movie extends Component {
         </div>
         <div className="save-button">Save</div>
       </div>
+      </Link>
     );
   }
 }
