@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 export default class Movie extends Component {
   constructor(props) {
+    console.log(props)
     super(props);
     this.state = {
-      movie: null
+      movie: null,
+      id: props.match.params.id
     };
   }
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const id = this.state.id;
     this.fetchMovie(id);
   }
+
 
   fetchMovie = id => {
     axios
