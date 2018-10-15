@@ -16,7 +16,7 @@ body {
   margin: 1rem auto;
 }
 
-.movie-card a {
+a.card-link {
   color: black;
   text-decoration: none;
 }
