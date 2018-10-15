@@ -5,6 +5,11 @@ body {
   background-color: #f2f2f2;
 }
 
+.movie-list a {
+  text-decoration: none;
+  color: black;
+}
+
 .movie-card {
   background-color: #fff;
   border: 0;
@@ -54,6 +59,7 @@ body {
   margin: 1rem auto;
 }
 .save-button {
+  cursor: pointer;
   position: absolute;
   top: 25px;
   right: 25px;
