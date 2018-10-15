@@ -18,6 +18,7 @@ const MovieCard = props => {
         </div>
       ))}
     </div>
-  );};
+  );
+};
 
 export default MovieCard;
