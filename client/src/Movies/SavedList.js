@@ -10,7 +10,7 @@ export default class SavedList extends Component {
   }
 
   deleteMovie = () => {
-    const removeFromSavedList = this.props.addToSavedList;
+    const removeFromSavedList = this.props.removeFromSavedList;
     removeFromSavedList(this.state.movie)
   }
 
