@@ -5,6 +5,11 @@ body {
   background-color: #f2f2f2;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .movie-card {
   background-color: #fff;
   border: 0;
@@ -68,5 +73,19 @@ body {
 
 .home-button {
   padding: 5px 10px;
+  margin-bottom: 40px;
   background-color: lightskyblue;
+}
+
+.clear-button {
+  position: absolute;
+  top: 55px;
+  right: 18px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+}
+.clear-button:hover {
+  background-color: green;
+  color: white;
 }
