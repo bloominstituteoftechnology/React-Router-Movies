@@ -6,7 +6,8 @@ const MovieCard = props => {
         <em className={'movie-director'}>{props.movie.director}</em>
         <p>{props.movie.metascore}</p>
         <h3>Actors</h3>
-        {props.movie.stars.map(actor => <p>{actor}</p>)}
+        {props.movie.stars.map((actor, idx) => <p key={idx}>{actor}</p>)}
+        <div onClick={props.saveMovie}className="save-button">Save</div>
       </div>
       );
 };
