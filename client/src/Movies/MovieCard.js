@@ -30,7 +30,7 @@ export default class MovieCard extends Component {
 
           </Link>
         </div>
-        <div className="save-button">Save</div>
+        <button onClick = {this.props.addToSavedList} className="save-button">Save</button>
       </div>
     );
   }
