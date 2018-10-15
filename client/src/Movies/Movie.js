@@ -44,7 +44,7 @@ export default class Movie extends Component {
     }
 
     return (
-      <MovieCard movie={this.state.movie} />
+      <MovieCard movie={this.state.movie} addToSavedList={this.props.addToSavedList}/>
     );
   }
 }
