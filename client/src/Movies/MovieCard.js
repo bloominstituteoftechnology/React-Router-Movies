@@ -7,7 +7,7 @@ const MovieCard = props => {
 
   const { title, director, metascore, stars } = props.movie;
 
-  return(
+  return (
     <div>
       <div className="movie-card">
         <h2>{title}</h2>

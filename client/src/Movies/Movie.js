@@ -45,12 +45,12 @@ export default class Movie extends Component {
 
 
 
-      return (
-        <div>
-          <MovieCard movie={this.state.movie} />
-          <div className="save-button">Save</div>
+    return (
+      <div>
+        <MovieCard movie={this.state.movie} />
+        <div className="save-button">Save</div>
 
-        </div>
-      )
+      </div>
+    )
   }
 }
