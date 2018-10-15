@@ -2,7 +2,6 @@ import React from 'react';
 
 const MovieCard = props => {
   return (
-    <div className="save-wrapper">
       <div className="movie-card">
         <h2>{props.movie.title}</h2>
         <div className="movie-director">
@@ -19,8 +18,6 @@ const MovieCard = props => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
-    </div>
   );
 };
 
