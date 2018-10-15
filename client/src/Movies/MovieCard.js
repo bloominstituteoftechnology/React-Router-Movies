@@ -1,7 +1,13 @@
 import React from 'react';
 
+
 const MovieCard = props => {
-  return;
+  const movieItem = movie
+
+
+  return(
+    
+  );
 };
 
 export default MovieCard;
