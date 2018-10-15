@@ -28,7 +28,7 @@ export default class App extends Component {
         <Route exact path="/" component={MovieList} />
         <Route
           exact
-          path="/movies:id"
+          path="/movies/:id"
           // component={Movie}
           //will use this render technique instead of componentt once I finish learning it's consequences
           render={props => (
