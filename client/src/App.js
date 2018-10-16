@@ -14,13 +14,14 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
+    savedList.includes(movie) ? 
+    null : savedList.push(movie);
     this.setState({ savedList });
   };
 
-  removeFromSavedList = movie => {
+  removeFromSavedList = event => {
     const savedList = this.state.savedList;
-    savedList.pop(movie);
+    savedList.pop(event);
     this.setState({ savedList });
   };
 
