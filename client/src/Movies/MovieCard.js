@@ -1,18 +1,18 @@
 import React from 'react';
 
-const MovieCard = ({title, director, metascore, stars}) => {
+const MovieCard = ({movie}) => {
   return(
     <div className="movie-card">
-      <h2>{title}</h2>
+      <h2>{movie.title}</h2>
       <div className="movie-director">
-        Director: <em>{director}</em>
+        Director: <em>{movie.director}</em>
       </div>
       <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
+        Metascore: <strong>{movie.metascore}</strong>
       </div>
       <h3>Actors</h3>
 
-      {stars.map(star => (
+      {movie.stars.map(star => (
         <div key={star} className="movie-star">
           {star}
         </div>

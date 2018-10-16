@@ -38,7 +38,7 @@ function MovieDetails({ movie }) {
 
   return (
     <Link to={`/movies/${movie.id}`} key={movie.id}>
-      <MovieCard {...movie} />
+      <MovieCard movie={movie} />
     </Link>
   );
 }
