@@ -1,6 +1,9 @@
 import React from 'react';
 
 const MovieCard = props => {
+  if (!props.movie) {
+      return <div>Loading movie information...</div>;
+    }
   const { title, director, metascore, stars } = props.movie;
   
   return(

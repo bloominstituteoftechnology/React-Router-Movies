@@ -34,10 +34,10 @@ export default class Movie extends Component {
   //   }
   // }
 
-  // saveMovie = () => {
-  //   const addToSavedList = this.props.addToSavedList;
-  //   addToSavedList(this.state.movie)
-  // }
+  saveMovie = () => {
+    const addToSavedList = this.props.addToSavedList;
+    addToSavedList(this.state.movie)
+  }
 
   render() {
     console.log("In Movie ****  " ,this.props);
@@ -49,7 +49,7 @@ export default class Movie extends Component {
     return (
       <div className="save-wrapper">
         <MovieCard/>
-        <div className="save-button" >
+        <div className="save-button" onClick = {() => this.saveMovie} >
             Save
         </div>
       </div>
