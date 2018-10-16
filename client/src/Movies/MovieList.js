@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';//What is axios? backend stuffage
 import { Link } from 'react-router-dom';
+import MovieCard from './MovieCard';
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ function MovieDetails({ movie }) {
   const { title, director, metascore, stars, } = movie;
   return (
     <Link to={`/movies/${movie.id}`} className="movie-card">
-      <h2>{title}</h2>
+      {/* <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
@@ -49,7 +50,8 @@ function MovieDetails({ movie }) {
         <div key={star} className="movie-star">
           {star}
         </div>
-      ))}
+      ))} */}
+      <MovieCard movie={movie}/>
     </Link>
   );
 }
