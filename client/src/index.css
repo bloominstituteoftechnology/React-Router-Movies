@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+a.active {
+  font-weight: bold;
+}
+
 .movie-list {
   margin: 0 auto;
 }
