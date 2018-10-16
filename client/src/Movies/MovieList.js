@@ -38,5 +38,5 @@ export default class MovieList extends Component {
 }
 
 function MovieDetails({ movie }) {
-  return <Route exact path='/'render = {()=> <MovieCard movie={movie}/>}/>
+  return <MovieCard movie={movie}/>
 }

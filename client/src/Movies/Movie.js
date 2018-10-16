@@ -12,7 +12,7 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
-    console.log('here i am in movie',this.props.match.params.movieId)
+    console.log('here i am in movie',this.props)
     const id = this.props.match.params.movieId;
     this.fetchMovie(id);
   }
@@ -35,6 +35,7 @@ export default class Movie extends Component {
   }
 
   saveMovie = () => {
+    console.log('this.props.addtosavedlist ', this.props)
     const addToSavedList = this.props.addToSavedList;
     addToSavedList(this.state.movie)
   }
@@ -48,8 +49,8 @@ export default class Movie extends Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="save-wrapper">
-        <Route  path='/movies/:id' render={()=><MovieCard movie={this.state.movie}/>}/>
-        <div className="save-button">Save</div>
+        <MovieCard movie={this.state.movie}/>
+        <div onClick={this.saveMovie} className="save-button">Save</div>
       </div>
     );
   }
