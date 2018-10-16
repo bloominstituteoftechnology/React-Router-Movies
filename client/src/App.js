@@ -4,6 +4,8 @@ import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
+import { Route } from 'react-router-dom';
+
 export default class App extends Component {
   constructor() {
     super();
@@ -23,7 +25,7 @@ export default class App extends Component {
       <div>
         <SavedList list={this.state.savedList} />
         <Route exact path="/" render={props => <MovieList {...props} />} />
-        <Route path="/movies/:id" render={props => <MovieList {...props} />} />
+        <Route path="/movies/:id" render={props => <Movie {...props} />} />
       </div>
     );
   }
