@@ -28,7 +28,8 @@ const movies = [
   },
   {
     id: 2,
-    img: "https://images-na.ssl-images-amazon.com/images/I/41a37t9BwTL.jpg",
+    img:
+      "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SY999_CR0,0,673,999_AL_.jpg",
     title: "The Lord of the Rings: The Fellowship of the Ring",
     director: "Peter Jackson",
     metascore: 92,
@@ -36,7 +37,8 @@ const movies = [
   },
   {
     id: 3,
-    img: "https://images-na.ssl-images-amazon.com/images/I/41a37t9BwTL.jpg",
+    img:
+      "https://m.media-amazon.com/images/M/MV5BMGU2NzRmZjUtOGUxYS00ZjdjLWEwZWItY2NlM2JhNjkxNTFmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY999_CR0,0,672,999_AL_.jpg",
     title: "Terminator 2: Judgement Day",
     director: "James Cameron",
     metascore: 94,
@@ -44,7 +46,8 @@ const movies = [
   },
   {
     id: 4,
-    img: "https://images-na.ssl-images-amazon.com/images/I/41a37t9BwTL.jpg",
+    img:
+      "https://m.media-amazon.com/images/M/MV5BZDQwMjNiMTQtY2UwYy00NjhiLTk0ZWEtZWM5ZWMzNGFjNTVkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     title: "Dumb and Dumber",
     director: "The Farely Brothers",
     metascore: 76,
@@ -52,7 +55,8 @@ const movies = [
   },
   {
     id: 5,
-    img: "https://images-na.ssl-images-amazon.com/images/I/41a37t9BwTL.jpg",
+    img:
+      "https://m.media-amazon.com/images/M/MV5BODRkYzA4MGItODE2MC00ZjkwLWI2NDEtYzU1NzFiZGU1YzA0XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
     title: "Tombstone",
     director: "George P. Cosmatos",
     metascore: 89,
