@@ -37,7 +37,7 @@ export default class App extends Component {
                     render={(props) => (
                         <Movie
                             {...props}
-                            addToSavedList={this.addToSavedList}
+                            addToSavedList={(movie) => {this.addToSavedList(movie)}}
                             savedList={this.state.savedList}
                             clearList={this.clearList}
                         />
