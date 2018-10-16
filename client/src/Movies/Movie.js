@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import SaveButton from "./SaveButton";
 
 export default class Movie extends Component {
   constructor(props) {
