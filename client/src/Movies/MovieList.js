@@ -11,8 +11,10 @@ export default class MovieList extends Component {
 	}
 
 	componentDidMount() {
+		// const id = this.props.match.params.id;
+
 		axios
-			.get('http://localhost:5000/api/movies')
+			.get(`http://localhost:5000/api/movies`)
 			.then((response) => {
 				this.setState(() => ({ movies: response.data }));
 			})
@@ -34,7 +36,7 @@ export default class MovieList extends Component {
 function MovieDetails({ movie }) {
 	const { title, director, metascore, stars } = movie;
 	return (
-		<Link to={`/movie/${movie.id}`}>
+		<Link to={`/movies/${movie.id}`}>
 			<div className="movie-card">
 				<h2>{title}</h2>
 				<div className="movie-director">
