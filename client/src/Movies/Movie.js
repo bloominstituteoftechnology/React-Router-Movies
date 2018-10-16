@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class Movie extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +12,7 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const id = this.props.match.params.id;
     this.fetchMovie(id);
   }
 
@@ -38,6 +39,7 @@ export default class Movie extends Component {
   // }
 
   render() {
+    console.log("In Movie ****  " ,this.props);
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
@@ -60,8 +62,10 @@ export default class Movie extends Component {
               {star}
             </div>
           ))}
+
+          
         </div>
-        <div className="save-button">Save</div>
+        <div className="save-button" >Save</div>
       </div>
     );
   }
