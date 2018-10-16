@@ -7,7 +7,7 @@ const MovieCard = props => {
         <p>{props.movie.metascore}</p>
         <h3>Actors</h3>
         {props.movie.stars.map((actor, idx) => <p key={idx}>{actor}</p>)}
-        <div onClick={props.saveMovie}className="save-button">Save</div>
+        <div onClick={props.addToSavedList}className="save-button">Save</div>
       </div>
       );
 };
