@@ -70,3 +70,8 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+.movie-card {
+  border: 5px solid red;
+  text-decoration: none;
+}
