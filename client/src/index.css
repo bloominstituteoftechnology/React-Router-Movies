@@ -70,3 +70,16 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+a.activeSavedMovie {
+  background: black;
+  color: white;
+  border-radius: 3px;
+}
