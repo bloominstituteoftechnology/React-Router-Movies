@@ -16,6 +16,8 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
+    // const myKey = savedList.Link.key;
+    // console.log(`this is the key: ${myKey}`);
     if (savedList.includes(movie)){
       alert("You already saved this movie!")
     }else{savedList.push(movie);
@@ -29,7 +31,7 @@ export default class App extends Component {
         <div>
           <Route exact path="/" component={MovieList} />
           <Route path="/movies/:id" 
-          render={props => <Movie {...props} addToSavedList={this.addToSavedList} />}
+          render= {props => <Movie {...props} addToSavedList={this.addToSavedList} />}
            />
         </div>
       </div>
