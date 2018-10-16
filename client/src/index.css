@@ -48,6 +48,15 @@ body {
   border: 1px solid grey;
   padding: 5px;
 }
+
+.saved-link {
+  text-decoration: none;
+}
+
+.saved-link:hover {
+  text-decoration: underline;
+}
+
 .save-wrapper {
   position: relative;
   width: 75%;
