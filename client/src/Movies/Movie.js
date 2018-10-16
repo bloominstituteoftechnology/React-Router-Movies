@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import MovieCard from './MovieCard'
 
-
 export default class Movie extends Component {
     constructor(props) {
         super(props)
@@ -30,15 +29,16 @@ export default class Movie extends Component {
 
     componentWillReceiveProps(newProps) {
         if (this.props.match.params.id !== newProps.match.params.id) {
-        this.fetchMovie(newProps.match.params.id)}
+            this.fetchMovie(newProps.match.params.id)
+        }
     }
 
     saveMovie = () => {
         const addToSavedList = this.props.addToSavedList
-        if(!this.props.savedList.includes(this.state.movie) && this.props.match.params.id !== this.state.movie.id) {
+        if (!this.props.savedList.includes(this.state.movie) && this.props.match.params.id !== this.state.movie.id) {
             addToSavedList(this.state.movie)
         } else {
-            return null;
+            return null
         }
     }
 
@@ -48,17 +48,20 @@ export default class Movie extends Component {
             return <div>Loading movie information...</div>
         } else {
             return (
-                <MovieCard
-                    key={movie.id}
-                    movie={movie}
-                    title={movie.title}
-                    director={movie.director}
-                    metascore={movie.metascore}
-                    stars={movie.stars}
-                    addToSavedList={this.saveMovie}
-                    clearList={this.props.clearList}
-                    savedList={this.props.savedList}
-                />
+                <div>
+                    <MovieCard
+                        key={movie.id}
+                        movie={movie}
+                        title={movie.title}
+                        director={movie.director}
+                        metascore={movie.metascore}
+                        stars={movie.stars}
+                        addToSavedList={this.saveMovie}
+                        clearList={this.props.clearList}
+                        savedList={this.props.savedList}
+                    />
+
+                </div>
             )
         }
     }

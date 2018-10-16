@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const MovieCard = (props) => {
     return (
         <div className="save-wrapper">
@@ -19,7 +18,11 @@ const MovieCard = (props) => {
                     </div>
                 ))}
             </div>
-            <div className="save-button" onClick={props.addToSavedList}>Save</div>
+            {props.addToSavedList && (
+                <div className="save-button" onClick={props.addToSavedList}>
+                    Save
+                </div>
+            )}
         </div>
     )
 }
