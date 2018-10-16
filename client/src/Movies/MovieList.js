@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MovieCard from './MovieCard';
 
+import '../index.css';
+
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
