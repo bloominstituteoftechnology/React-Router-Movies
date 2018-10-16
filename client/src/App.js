@@ -12,6 +12,7 @@ export default class App extends Component {
     };
   }
 
+
   addToSavedList = movie => {
     const savedList = this.state.savedList;
     savedList.push(movie);
@@ -23,12 +24,22 @@ export default class App extends Component {
       <div>
         <SavedList list={this.state.savedList} />
         <Route path='/' component={MovieList}/>
-        <Route exact path='/movies/:id' component={Movie}/>
+        <Route 
+          path='/movies'
+          render={props => (
+          <MovieList {...props} movieList={MovieList}/>)}/>
+        <Route 
+          path='`/movies/${movie.id}`'
+          render={props => (
+          <Movie {...props} movieList={MovieList}/>)}/>
+          
       </div>
     );
   }
 }
-/* Inside your App file add two routes.
+/* 
+
+Inside your App file add two routes.
 one route for / that loads the MovieList component.
 one route that will take an id parameter 
 after/movies/ (ex: /movies/2, /movies/3 where the id is dynamic). 
