@@ -9,6 +9,7 @@ export default class MovieList extends Component {
     this.state = {
       movies: []
     };
+    console.log(props)
   }
 
   componentDidMount() {
@@ -28,7 +29,7 @@ export default class MovieList extends Component {
         {this.state.movies.map(movie => (
          <Link key={movie.id} to={`/movies/${movie.id}`}>
 
-           <div><MovieCard movie={movie} addToSavedList={this.props.addToSavedList} /></div>
+           <div><MovieCard movie={movie}  /></div>
 
          </Link>
         ))}
