@@ -1,4 +1,5 @@
 import React from 'react';
+import Emitter from '../events'
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
@@ -20,7 +21,13 @@ const MovieCard = props => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={
+        (event) => {
+          event.preventDefault();
+          props.addToList(props.movie)
+        }
+        // Emitter.dispatch('addToList', props.movie)
+      }>Save</div>
     </div>
   );
 };

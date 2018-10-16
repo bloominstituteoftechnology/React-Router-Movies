@@ -3,6 +3,8 @@ import { Route } from 'react-router-dom';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
+// import Emmiter from './events.js';
+// console.log(Emitter)
 
 export default class App extends Component {
   constructor() {
@@ -10,6 +12,7 @@ export default class App extends Component {
     this.state = {
       savedList: []
     };
+    // Emitter.subscribe('addToList', (event) => this.addToSavedList(event));
   }
 
   addToSavedList = movie => {
@@ -22,8 +25,8 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <Route exact path='/' component={MovieList}/>
-        <Route path='/movies/:id' component={Movie}/>
+        <Route exact path='/' render={props => <MovieList {...props} addToList={this.addToSavedList}/>}/>
+        <Route path='/movies/:id' component={props => <Movie {...props} addToList={this.addToSavedList}/>}/>
       </div>
     );
   }
