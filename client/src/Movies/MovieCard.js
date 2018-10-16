@@ -1,13 +1,22 @@
 import React from 'react';
+import MovieActors from './MovieActors'
+import {Route, Link} from 'react-router-dom';
 const MovieCard = props => {
   return(
-      <div className={'movie-card'}>
-        <h2>{props.movie.title}</h2>
-        <em className={'movie-director'}>{props.movie.director}</em>
-        <p>{props.movie.metascore}</p>
-        <h3>Actors</h3>
-        {props.movie.stars.map((actor, idx) => <p key={idx}>{actor}</p>)}
-        <div onClick={props.addToSavedList}className="save-button">Save</div>
+      <div>
+          <Link to={`/movies/${props.movie.id}`} >Actors</Link>
+          <Link to={`/movies/${props.movie.id}`}>
+            <div className={'movie-card'}>
+              <h2>{props.movie.title}</h2>
+              <em className={'movie-director'}>Director: {props.movie.director}</em>
+              <p>metascore: {props.movie.metascore}</p>
+              <Route
+                path={'movie/:id/actors'}
+                render={props => <MovieActors {...props} actors={props.movie.stars}/>}
+               />
+              <div onClick={props.addToSavedList}className="save-button">Save</div>
+            </div>
+          </Link>
       </div>
       );
 };
