@@ -5,10 +5,6 @@ export default class SavedList extends Component {
 		super(props);
 	}
 
-	goHome = () => {
-		this.props.history.push(`/movies/`);
-	};
-
 	render() {
 		return (
 			<div className="saved-list">
