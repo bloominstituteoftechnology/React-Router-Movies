@@ -37,6 +37,15 @@ export default class Movie extends Component {
     addToSavedList(this.state.movie);
   };
 
+  searchMovies = e => {
+    const mov = this.props.movies.filter(m => {
+      if (m.title.includes(e.target.value)) {
+        return m;
+      }
+    });
+    this.setState({ filteredMovies: mov });
+  };
+
   render() {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;

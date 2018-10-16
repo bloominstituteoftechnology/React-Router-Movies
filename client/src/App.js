@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
+import Searchbar from "./Movies/SearchBar";
 
 export default class App extends Component {
   constructor() {
@@ -25,6 +26,7 @@ export default class App extends Component {
         <header className="main-header">
           <div className="logo" />
         </header>
+        <Searchbar />
         <SavedList list={this.state.savedList} />
         <Route exact path="/" component={MovieList} />
         <Route

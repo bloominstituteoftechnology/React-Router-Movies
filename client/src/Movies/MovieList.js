@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import SearchBar from "./SearchBar";
 
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: []
+      movies: [],
+      filteredMovies: []
     };
   }
 
@@ -20,6 +22,15 @@ export default class MovieList extends Component {
         console.error("Server Error", error);
       });
   }
+
+  searchMovieHandler = e => {
+    const mov = this.state.movies.filter(m => {
+      if (m.title.includes(e.target.value)) {
+        return m;
+      }
+    });
+    this.setState({ filteredMovies: mov });
+  };
 
   render() {
     return (
@@ -36,7 +47,7 @@ function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
     <div className="movie-card">
-      <Link to={`/movies/${movie.id}`} className="movie-card-link">
+      <Link exact to={`/movies/${movie.id}`} className="movie-card-link">
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
