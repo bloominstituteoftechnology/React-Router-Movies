@@ -20,8 +20,10 @@ export default class App extends Component {
     // console.log(`this is the key: ${myKey}`);
     if (savedList.includes(movie)){
       alert("You already saved this movie!")
-    }else{savedList.push(movie);
-    this.setState({ savedList });}
+    } else {
+      savedList.push(movie);
+      this.setState({ savedList });
+    }
   };
 
   render() {
