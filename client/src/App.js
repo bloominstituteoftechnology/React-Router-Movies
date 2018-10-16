@@ -15,12 +15,19 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
-    const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+
+    let savedList = this.state.savedList;
+    //  console.log(movie);
+     if(!savedList.some( (savedMovie) => savedMovie.title === movie.title)){
+      console.log("inside of include method", this.state.savedList);
+      
+      savedList.push(movie);
+      this.setState({ savedList });
+     }
   };
 
   render() {
+    console.log(this.state.savedList);
     return (
       <div>
         <SavedList list={this.state.savedList} />
