@@ -16,9 +16,12 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
-    const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    // prevent duplicate entries
+    if (this.state.savedList.find( m => m.id == movie.id) === undefined) {
+      const savedList = this.state.savedList;
+      savedList.push(movie);
+      this.setState({ savedList });
+    }
   };
 
   render() {
