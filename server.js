@@ -15,6 +15,7 @@ const movies = [
     title: "The Godfather",
     director: "Francis Ford Coppola",
     metascore: 100,
+    trailer: "5DO-nDW43Ik",
     stars: ["Marlon Brando", "Al Pacino", "Robert Duvall"]
   },
   {
@@ -24,6 +25,7 @@ const movies = [
     title: "Star Wars",
     director: "George Lucas",
     metascore: 92,
+    trailer: "XHk5kCIiGoM",
     stars: ["Mark Hamill", "Harrison Ford", "Carrie Fisher"]
   },
   {
@@ -33,6 +35,7 @@ const movies = [
     title: "The Lord of the Rings: The Fellowship of the Ring",
     director: "Peter Jackson",
     metascore: 92,
+    trailer: "V75dMMIW2B4",
     stars: ["Elijah Wood", "Ian McKellen", "Orlando Bloom"]
   },
   {
@@ -42,6 +45,7 @@ const movies = [
     title: "Terminator 2: Judgement Day",
     director: "James Cameron",
     metascore: 94,
+    trailer: "-W8CegO_Ixw",
     stars: ["Arnold Schwarzenegger", "Edward Furlong", "Linda Hamilton"]
   },
   {
@@ -51,6 +55,7 @@ const movies = [
     title: "Dumb and Dumber",
     director: "The Farely Brothers",
     metascore: 76,
+    trailer: "l13yPhimE3o",
     stars: ["Jim Carrey", "Jeff Daniels", "Lauren Holly"]
   },
   {
@@ -60,6 +65,7 @@ const movies = [
     title: "Tombstone",
     director: "George P. Cosmatos",
     metascore: 89,
+    trailer: "5fzBGpSI_ek",
     stars: ["Kurt Russell", "Bill Paxton", "Sam Elliot"]
   }
 ];

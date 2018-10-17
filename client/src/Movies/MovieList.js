@@ -39,7 +39,9 @@ function MovieDetails({ movie }) {
   return (
     <div className="movie-card">
       <h1>{title}</h1>
-      <img src={img} />
+      <div className="title-img">
+        <img src={img} />
+      </div>
     </div>
   );
 }

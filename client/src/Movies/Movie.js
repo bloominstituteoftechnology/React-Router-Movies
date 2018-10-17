@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import YouTube from "react-youtube";
+
 export default class Movie extends Component {
   constructor(props) {
     super(props);
@@ -41,12 +43,25 @@ export default class Movie extends Component {
       return <div>Loading movie information...</div>;
     }
 
-    const { img, title, director, metascore, stars } = this.state.movie;
+    const {
+      img,
+      title,
+      director,
+      metascore,
+      trailer,
+      stars
+    } = this.state.movie;
     return (
       <div className="save-wrapper">
         <div className="movie-card">
           <h2>{title}</h2>
-          <img src={img} alt={title} />
+
+          <YouTube
+            videoId={trailer}
+            onReady={this._onReady}
+            className="video-player"
+          />
+
           <div className="movie-director">
             Director: <em>{director}</em>
           </div>
