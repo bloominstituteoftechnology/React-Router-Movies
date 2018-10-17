@@ -9,11 +9,12 @@ export default class App extends Component {
     super();
     this.state = {
       savedList: []
+      
     };
   }
 
   addToSavedList = movie => {
-    const savedList = this.state.savedList;
+    const savedList = this.state.savedList.map(item => item);
     savedList.push(movie);
     this.setState({ savedList });
   };
