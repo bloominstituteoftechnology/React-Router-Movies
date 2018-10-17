@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import MovieCard from './MovieCard';
+import React, { Component } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import MovieCard from "./MovieCard";
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -13,12 +13,12 @@ export default class MovieList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/movies')
+      .get("http://localhost:5000/api/movies")
       .then(response => {
         this.setState(() => ({ movies: response.data }));
       })
       .catch(error => {
-        console.error('Server Error', error);
+        console.error("Server Error", error);
       });
   }
 
@@ -26,21 +26,17 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <Link to={`/movies/${movie.id}`} className='link'>
-            <MovieCard
-        key=
-        {movie.id}
-        movie=
-        {movie}
-        title=
-        {movie.title}
-        director=
-        {movie.director}
-        metascore=
-        {movie.metascore}
-        stars=
-        {movie.stars}
-      />
+          <Link to={`/movies/${movie.id}`} className="link" key={movie.id}>
+            <div className="save-wrapper">
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+                title={movie.title}
+                director={movie.director}
+                metascore={movie.metascore}
+                stars={movie.stars}
+              />
+            </div>
           </Link>
         ))}
       </div>
