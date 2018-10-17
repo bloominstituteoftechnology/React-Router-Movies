@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-//moved lines from movie.js to here DRY
+//moved lines from movie.js to here DRY (apparently this is a stretch goal)
 const MovieCard = props => {
   const { title, director, metascore, stars } = props;
   return (
