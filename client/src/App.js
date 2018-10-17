@@ -5,6 +5,9 @@ import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
+//App.js renders movies based on two paths
+//path="/" is exact to avoid multiple renders when clicking movies
+
 export default class App extends Component {
   constructor() {
     super();

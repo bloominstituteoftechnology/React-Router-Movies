@@ -32,6 +32,7 @@ export default class MovieList extends Component {
   }
 }
 
+//Movie Details is a link that links to the selected movies id
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
