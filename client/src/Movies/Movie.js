@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import axios from 'axios';
 
 export default class Movie extends Component {
@@ -14,7 +13,8 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = this.props.params.id;
+    const id = this.props.match.params.id;
+    console.log(this.props.match)
     this.fetchMovie(id);
   }
 

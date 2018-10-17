@@ -23,11 +23,8 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <Route path='/' component={MovieList}/>
-        <Route 
-          path='`/movies/${movie.id}`'
-          render={props => (
-          <Movie {...props} movieList={MovieList}/>)}/>
+        <Route exact path='/' component={MovieList}/>
+        <Route exact path='/movies/:id' component={Movie}/>
           
       </div>
     );
@@ -52,5 +49,10 @@ the correct id for the movie selected.Add functionality so the Home button
 on the SavedList component navigates back to home.
 You should now be able to navigate back and forth between 
 the individual movies and the home screen
+
+  <Route 
+          exact path={`/Movies/${Movie.id}`}
+          render={props => (
+          <Movie {...props} movieList={MovieList}/>)}/>
 
 */
