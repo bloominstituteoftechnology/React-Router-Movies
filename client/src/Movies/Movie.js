@@ -12,7 +12,6 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
-    console.log('here i am in movie',this.props)
     const id = this.props.match.params.movieId;
     this.fetchMovie(id);
   }
@@ -29,13 +28,13 @@ export default class Movie extends Component {
   };
   
   componentWillReceiveProps(newProps){
-    if(this.props.match.params.id !== newProps.match.params.id){
-      this.fetchMovie(newProps.match.params.id);
+    console.log('New props = ', newProps.match.params, ' this . ', this.props.match.params)
+    if(this.props.match.params.movieId !== newProps.match.params.movieId){
+      this.fetchMovie(newProps.match.params.movieId);
     }
   }
 
   saveMovie = () => {
-    console.log('this.props.addtosavedlist ', this.props)
     const addToSavedList = this.props.addToSavedList;
     addToSavedList(this.state.movie)
   }

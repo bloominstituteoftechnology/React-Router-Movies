@@ -7,8 +7,8 @@ import { Route } from 'react-router-dom';
 
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       savedList: []
     };
@@ -21,6 +21,7 @@ export default class App extends Component {
   };
 
   render() {
+    console.log('here.... with idk what ')
     return (
       <div>
         <SavedList list={this.state.savedList} />
