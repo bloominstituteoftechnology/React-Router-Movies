@@ -16,15 +16,15 @@ Topics:
 * [x] In a separate terminal cd into the `client` folder and run `yarn install` to download dependencies.
 * [x] Still inside the `client` folder run `yarn start` to run the client application.
 
-* Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
+* [x] Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
   ![Movies Home](https://ibin.co/3xhmmHVl9BKF.png)
 
 ### Part 1:
 
-* Wrap your app with the router.
-* Inside your App file add two routes.
-  * one route for `/` that loads the `MovieList` component.
-  * one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
+* [x] Wrap your app with the router.
+* [x] Inside your App file add two routes.
+  * [x] one route for `/` that loads the `MovieList` component.
+  * [x] one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
 
 ### Part 2:
 
