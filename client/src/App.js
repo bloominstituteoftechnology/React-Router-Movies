@@ -14,13 +14,14 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
+    let newMovie = true;
     const savedList = this.state.savedList;
     savedList.map(item => {
       if (movie.title === item.title) {
-        newItem = false;
+        newMovie = false;
       }
     })
-    if (newItem) {
+    if (newMovie) {
       savedList.push(movie);
       this.setState({ savedList });
     }
