@@ -19,6 +19,7 @@ export default class MovieList extends Component {
       .catch(error => {
         console.error('Server Error', error);
       });
+      console.log(this.state.movies)
   }
 
   render() {
