@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Route} from "react-router-dom"; /*Importing the route component from react router dom*/
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
@@ -22,7 +23,8 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <div>Replace this Div with your Routes</div>
+        <Route exact path="/" component={MovieList} /> {/*Setting the route at "/" to generate the component "MovieList"*/}
+        <Route exact path="/movies/:id" component={Movie} /> {/*Setting the route at "/movies/" to generate the component "Movie" where each movie is assigned a dynamic id that is placed in the route after /movies/*/}
       </div>
     );
   }
