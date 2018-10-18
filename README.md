@@ -21,18 +21,18 @@ Topics:
 
 ### Part 1:
 
-* Wrap your app with the router.
-* Inside your App file add two routes.
-  * one route for `/` that loads the `MovieList` component.
-  * one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
+x Wrap your app with the router.
+x Inside your App file add two routes.
+  x one route for `/` that loads the `MovieList` component.
+  x one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
 
 ### Part 2:
 
-* Make it so that the card in `MovieList` is a link, this should direct the user to the `/movies/{id of movie here}` URL, where `:id` is the id of the individual movie.
-* When a user clicks on a movie card they should be taken to `/movies/{id of movie here}` to see the details for the selected movie.
-* You will need to modify line 13 of `Movie.js` in order to accept the correct id for the movie selected.
-* Add functionality so the `Home` button on the `SavedList` component navigates back to home.
-* You should now be able to navigate back and forth between the individual movies and the home screen.
+x Make it so that the card in `MovieList` is a link, this should direct the user to the `/movies/{id of movie here}` URL, where `:id` is the id of the individual movie.
+x When a user clicks on a movie card they should be taken to `/movies/{id of movie here}` to see the details for the selected movie.
+x You will need to modify line 13 of `Movie.js` in order to accept the correct id for the movie selected.
+x Add functionality so the `Home` button on the `SavedList` component navigates back to home.
+x You should now be able to navigate back and forth between the individual movies and the home screen.
 
 ## Stretch Goals.
 
@@ -40,7 +40,7 @@ If you have completed Parts 1 & 2 feel free to move on to these stretch goals.
 
 ### Refactor so that our code is DRY.
 
-You may notice that we are using essentially the same exact JSX code in the `Movie` component and the `MovieDetails` component in `MovieList.js` create a new component in `MovieCard.js` that returns this JSX code. Then remove the old code from `Movie` and `MovieDetails` and instead return the new `MovieCard` component.
+X You may notice that we are using essentially the same exact JSX code in the `Movie` component and the `MovieDetails` component in `MovieList.js` create a new component in `MovieCard.js` that returns this JSX code. Then remove the old code from `Movie` and `MovieDetails` and instead return the new `MovieCard` component.
 
 ### Add `Save Movie` funcitonality.
 
