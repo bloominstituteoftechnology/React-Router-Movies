@@ -17,7 +17,7 @@ export default class MovieList extends Component {
 				this.setState(() => ({ movies: response.data }));
 			})
 			.catch(error => {
-				console.error('Server Error', error); 
+				console.error('Server Error', error);
 			});
 	}
 
