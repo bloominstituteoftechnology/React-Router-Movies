@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 //moved lines from movie.js to here DRY (apparently this is a stretch goal)
+function Button(props) {
+  if (typeof(props.save) === "function"){
+    return <div className="save-button" onClick={() => props.save(props)}>Save</div>
+  }
+  return <div></div>;
+}
 const MovieCard = props => {
   const { title, director, metascore, stars } = props;
   return (
@@ -22,7 +28,7 @@ const MovieCard = props => {
             </div>
           ))}
         </div>
-        <div className="save-button" onClick={() => props.save(props)}>Save</div>
+        <Button save={props.save}/>
       </div>
   );
 };
