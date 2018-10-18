@@ -17,7 +17,9 @@ body {
   position: relative;
   margin: 1rem auto;
 }
-
+.save{
+  cursor: pointer;
+}
 .movie-director {
   padding: 4px 0;
   font-size: 0.8rem;
@@ -62,6 +64,7 @@ body {
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
+  cursor: pointer;
 }
 .save-button:hover {
   background-color: green;
