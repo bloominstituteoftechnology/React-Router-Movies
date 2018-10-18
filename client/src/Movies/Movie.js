@@ -47,7 +47,7 @@ console.log(this.props)
     return (
       
       <div className="save-wrapper">
-        <div className="movie-card">
+        <div className="movie-card ">
           <h2>{title}</h2>
           <div className="movie-director">
             Director: <em>{director}</em>
@@ -55,7 +55,7 @@ console.log(this.props)
           <div className="movie-metascore">
             Metascore: <strong>{metascore}</strong>
           </div>
-          <h3>Actors</h3>
+          <h3 >Actors</h3>
 
           {stars.map(star => (
             <div key={star} className="movie-star">
@@ -63,7 +63,7 @@ console.log(this.props)
             </div>
           ))}
         </div>
-        <div onClick={() => this.props.addToSavedList(this.state.movie)}  className="save-button">Save</div>
+        <div  onClick={() => this.props.addToSavedList(this.state.movie)} className="save-button">Save</div>
       </div>
     );
   }
