@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Link} from "react-router-dom"; /*Importing the link component (replacement for anchor tag) from react router dom*/
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
+          <Link to={`/movies/${movie.id}`}><MovieDetails key={movie.id} movie={movie} /></Link> /*Wrapped in a link tag that makes the MovieDetails component a link, and setting the link to lead to /movies/${movie.id} which will generate the movie a unique link at id*/
         ))}
       </div>
     );
