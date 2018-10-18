@@ -46,7 +46,7 @@ export default class Movie extends Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="save-wrapper">
-        <MovieCard title={title} director={director} metascore={metascore} stars={stars} />
+        <MovieCard id={this.state.movie.id} title={title} director={director} metascore={metascore} stars={stars} />
         <div className="save-button">Save</div>
       </div>
     );

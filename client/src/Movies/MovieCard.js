@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = props => {
     const { title, director, metascore, stars } = props;
+    console.log(props);
     return (
       <div className="movie-card">
         <Link to={`/movie/${props.id}`}><h2>{title}</h2></Link>

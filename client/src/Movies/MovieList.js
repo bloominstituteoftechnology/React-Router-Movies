@@ -23,6 +23,7 @@ export default class MovieList extends Component {
 
   render() {
       console.log(this.state.movies);
+      console.log(this.state);
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
@@ -36,6 +37,6 @@ export default class MovieList extends Component {
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
-    <MovieCard title={title} director={director} metascore={metascore} stars={stars}/>
+    <MovieCard id={movie.id} title={title} director={director} metascore={metascore} stars={stars}/>
   );
 }
