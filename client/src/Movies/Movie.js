@@ -42,7 +42,7 @@ export default class Movie extends Component {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
-
+console.log(this.props)
     const { title, director, metascore, stars } = this.state.movie;
     return (
       
@@ -63,7 +63,7 @@ export default class Movie extends Component {
             </div>
           ))}
         </div>
-        <div className="save-button">Save</div>
+        <div onClick={() => this.props.saved(this.state.movie)}  className="save-button">Save</div>
       </div>
     );
   }
