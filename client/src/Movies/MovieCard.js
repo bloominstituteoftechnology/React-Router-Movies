@@ -1,7 +1,12 @@
 import React from 'react';
 
-const MovieCard = props => {
-  return;
-};
+import MovieList from './MovieList';
+import Movie from './Movie';
 
-export default MovieCard;
+export default props => {
+  
+  const MovieCard = props.movies.filter(item => 
+    {return item.id === props.match.params.id;
+  });
+  return <Movie {...MovieCard} />;
+}
