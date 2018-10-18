@@ -4,20 +4,21 @@ const MovieCard = props => {
   return(
       <div>
         <div className="movie-card">
-          <h2>{props.movie.title}</h2>
+          <h2 className="movie-title">{props.movie.title}</h2>
           <div className="movie-director">
-            Director: <em>{props.movie.director}</em>
+            <p>Director: <em>{props.movie.director}</em></p>
+          </div>
+          <div className="movie-actors">
+            <h3>Actors</h3>
+            {props.movie.stars.map(star => (
+              <div key={star} className="movie-star">
+                ⭐️ {star}
+              </div>
+            ))}
           </div>
           <div className="movie-metascore">
-            Metascore: <strong>{props.movie.metascore}</strong>
+            <p>Metascore: <strong>{props.movie.metascore}</strong></p>
           </div>
-          <h3>Actors</h3>
-
-          {props.movie.stars.map(star => (
-            <div key={star} className="movie-star">
-              {star}
-            </div>
-          ))}
       </div>
     </div>
   );

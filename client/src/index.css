@@ -5,7 +5,20 @@ body {
 }
 
 h2 {
+  font-family: amboy-inline, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   text-align: center;
+}
+
+.movie-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 100%;
+  margin: 25px 0 0 0;
+  background-color: rgba(220, 189, 16, 0.632);
 }
 
 .movie-list {
@@ -22,17 +35,44 @@ h2 {
   color: black;
   background-color: rgba(255, 255, 255, 0.589);
   border: 0;
+  border-radius: 3px;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
-  padding: 1rem;
   cursor: pointer;
-  /* position: relative; */
-  margin: 1rem auto;
+  margin: 0 auto;
+  font-family: industry, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .movie-director {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 4px 0;
   font-size: 0.8rem;
+  color:  rgb(167, 167, 167);
+}
+
+.movie-director p {
+  margin: 0;
+}
+
+.movie-actors {
+  padding: 10px 0 50px 10px;
+}
+
+.movie-actors h3 {
+  margin: 0;
+}
+
+.movie-metascore {
+  display: flex;
+  justify-content: center;
+}
+
+.movie-metascore p {
+  margin: 0;
 }
 
 .saved-list {
@@ -48,9 +88,13 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: industry, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .saved-list h3 {
+
   margin-right: 10px;
 }
 
@@ -71,16 +115,26 @@ h2 {
   position: absolute;
   top: 25px;
   right: 25px;
-  border: 1px solid grey;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 3px;
   padding: 5px 10px;
-  background-color: lightseagreen;
+  background-color: rgba(255, 255, 255, 0.589);
+  cursor: pointer;
 }
 .save-button:hover {
-  background-color: green;
-  color: white;
+  background-color: rgba(0, 225, 0, 0.639);
+  color: #df1cb8;
 }
 
 .home-button {
   padding: 5px 10px;
-  background-color: lightskyblue;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.589);
+  text-decoration: none;
+  cursor: pointer;
+}
+.home-button:hover {
+  background-color: rgba(0, 225, 0, 0.639);
+  color: #df1cb8;
 }
