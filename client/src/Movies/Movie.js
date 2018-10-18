@@ -11,7 +11,7 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
-    const id = this.props.match.params.id;
+    const id = this.props.match.params.id; 
     this.fetchMovie(id);
   }
 
@@ -46,7 +46,7 @@ export default class Movie extends Component {
     return (
       <div>
       <MovieCard movie={this.state.movie} />
-      
+
       </div>
     );
   }

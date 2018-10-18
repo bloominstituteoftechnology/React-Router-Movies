@@ -22,7 +22,7 @@ export default class App extends Component {
     return (
       <div>
         <Route exact path='/' component={MovieList} />
-        <Route path='movies/:id' addToSavedList={this.addToSavedList} component={Movie} />
+        <Route exact path='movies:id' addToSavedList={this.addToSavedList} component={Movie} />
     
       </div>
     );
