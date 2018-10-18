@@ -26,8 +26,8 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <Link to={`/movies/${movie.id}`} className="link" key={movie.id}>
-            <div className="save-wrapper">
+          <div className="save-wrapper" key={movie.id}>
+            <Link to={`/movies/${movie.id}`} className="link">
               <MovieCard
                 key={movie.id}
                 movie={movie}
@@ -36,8 +36,8 @@ export default class MovieList extends Component {
                 metascore={movie.metascore}
                 stars={movie.stars}
               />
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
     );
