@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -49,6 +50,7 @@ function MovieDetails({ movie }) {
           {star}
         </div>
       ))}
+      <Link to={`/movies/${movie.id}`}>Details</Link>
     </div>
   );
 }
