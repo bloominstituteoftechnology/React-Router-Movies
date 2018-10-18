@@ -14,6 +14,7 @@ const movies = [
 		director: 'Francis Ford Coppola',
 		metascore: 100,
 		stars: ['Marlon Brando', 'Al Pacino', 'Robert Duvall'],
+		image: 'http://www.gstatic.com/tv/thumb/v22vodart/6326/p6326_v_v8_aj.jpg'
 	},
 	{
 		id: 1,
@@ -21,6 +22,7 @@ const movies = [
 		director: 'George Lucas',
 		metascore: 92,
 		stars: ['Mark Hamill', 'Harrison Ford', 'Carrie Fisher'],
+		image: 'https://mvpo.us/img/P5848.jpg'
 	},
 	{
 		id: 2,
@@ -28,6 +30,8 @@ const movies = [
 		director: 'Peter Jackson',
 		metascore: 92,
 		stars: ['Elijah Wood', 'Ian McKellen', 'Orlando Bloom'],
+		image:
+			'https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg'
 	},
 	{
 		id: 3,
@@ -35,6 +39,8 @@ const movies = [
 		director: 'James Cameron',
 		metascore: 94,
 		stars: ['Arnold Schwarzenegger', 'Edward Furlong', 'Linda Hamilton'],
+		image:
+			'https://images-na.ssl-images-amazon.com/images/I/61id7dm4b6L._SY679_.jpg'
 	},
 	{
 		id: 4,
@@ -42,14 +48,17 @@ const movies = [
 		director: 'The Farely Brothers',
 		metascore: 76,
 		stars: ['Jim Carrey', 'Jeff Daniels', 'Lauren Holly'],
+		image:
+			'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/9559/9559219_sa.jpg;maxHeight=640;maxWidth=550'
 	},
 	{
 		id: 5,
 		title: 'Tombstone',
 		director: 'George P. Cosmatos',
 		metascore: 89,
-		stars: ['Kurt Russell', 'Bill Paxton', 'Sam Elliot'],
-	},
+    stars: ['Kurt Russell', 'Bill Paxton', 'Sam Elliot'],
+    image: 'https//images-na.ssl-images-amazon.com/images/I/516-FErN6PL._SX425_.jpg'
+	}
 ];
 
 app.get('/api/movies', (req, res) => {
