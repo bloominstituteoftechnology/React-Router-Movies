@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+// import MovieCard from './MovieCard';
 
 export default class Movie extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ export default class Movie extends Component {
 
     const { title, director, metascore, stars } = this.state.movie;
     return (
+
       <div className="save-wrapper">
         <div className="movie-card">
           <h2>{title}</h2>
@@ -64,6 +66,7 @@ export default class Movie extends Component {
         </div>
         <div className="save-button">Save</div>
       </div>
+
     );
   }
 }
