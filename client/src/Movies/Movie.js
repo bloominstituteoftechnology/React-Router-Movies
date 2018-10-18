@@ -5,7 +5,7 @@ export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: null,
     };
   }
 
@@ -25,17 +25,20 @@ export default class Movie extends Component {
         console.error(error);
       });
   };
-  // Uncomment this code when you're ready for the stretch problems
-  // componentWillReceiveProps(newProps){
-  //   if(this.props.match.params.id !== newProps.match.params.id){
-  //     this.fetchMovie(newProps.match.params.id);
-  //   }
-  // }
-
-  // saveMovie = () => {
-  //   const addToSavedList = this.props.addToSavedList;
-  //   addToSavedList(this.state.movie)
-  // }
+  
+  componentWillReceiveProps(newProps){
+    if(this.props.match.params.id !== newProps.match.params.id){
+      this.fetchMovie(newProps.match.params.id);
+    }
+  }
+  
+  saveMovie = () => {
+    console.log('click')
+    const addToSavedList = this.props.addToSavedList;
+    addToSavedList(this.state.movie)
+    console.log(this.state.savedList)
+    ;
+  }
 
   render() {
     if (!this.state.movie) {
@@ -44,7 +47,10 @@ export default class Movie extends Component {
 
     const { title, director, metascore, stars } = this.state.movie;
     return (
-      <MovieCard movie = {this.state.movie}/>
+      <div className="save-wrapper">
+      <MovieCard movie = {this.state.movie} />
+      <div className="save-button" onClick={this.saveMovie}>Save</div>
+      </div>
       // <div className="save-wrapper">
       //   <div className="movie-card">
       //     <h2>{title}</h2>
