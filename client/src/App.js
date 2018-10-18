@@ -17,6 +17,7 @@ export default class App extends Component {
     savedList.push(movie);
     this.setState({ savedList });
   };
+  
 
   render() {
     return (

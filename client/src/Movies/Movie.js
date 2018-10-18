@@ -39,7 +39,7 @@ export default class Movie extends Component {
     console.log(this.state.savedList)
     ;
   }
-
+  
   render() {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
