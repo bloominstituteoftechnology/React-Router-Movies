@@ -27,6 +27,7 @@ export default class App extends Component {
         <div>Replace this Div with your Routes Paul Paul!!!!</div>
         <Route exact path="/" component={MovieList} />
         <Route path="/movies/:id" component={Movie} />
+        {/* <Route path="/movies/:id" component={() => <Movie addToSavedList={this.addToSavedList()}/>} /> */}
       </div>
     );
   }
