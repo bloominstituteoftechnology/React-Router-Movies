@@ -94,16 +94,15 @@ img {
   position: absolute;
   top: 2.5rem;
   right: 2.5rem;
-  border: 1px solid grey;
-  padding: 5px 10px;
-  background-color: lightseagreen;
-}
-.save-button:hover {
-  background-color: green;
-  color: white;
 }
 
-.home-button a {
+/* .save-button:hover {
+  background-color: green;
+  color: white;
+} */
+
+.home-button a,
+.save-button a {
   border-radius: 5px;
   background-color: #2d3436;
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.4);
@@ -115,4 +114,11 @@ img {
   text-align: center;
   text-decoration: none;
   margin-top: 2rem;
+  cursor: pointer;
+}
+
+.home-button a:active,
+.save-button a:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
