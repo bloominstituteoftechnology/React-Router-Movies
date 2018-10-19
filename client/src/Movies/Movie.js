@@ -46,7 +46,7 @@ export default class Movie extends Component {
 
     const { title, director, metascore, stars } = this.state.movie;
     return (
-      <MovieCard movie={this.state.movie}/>
+      <MovieCard movie={this.state.movie} save={this.saveMovie}/>
     );
   }
 }
