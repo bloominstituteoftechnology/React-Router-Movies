@@ -1,7 +1,7 @@
 import React from "react"
 
 const MovieCard = ({ movie, addToSavedList }) => {
-	const { title, director, metascore, stars } = movie
+	const { title, director, metascore, stars, image } = movie
 	return (
 		<React.Fragment>
 			<div className="movie-card">
@@ -13,12 +13,12 @@ const MovieCard = ({ movie, addToSavedList }) => {
 					Metascore: <strong>{metascore}</strong>
 				</div>
 				<h3>Actors</h3>
-
 				{stars.map(star => (
 					<div key={star} className="movie-star">
 						{star}
 					</div>
 				))}
+				<img src={image} alt={title} />
 			</div>
 		</React.Fragment>
 	)

@@ -15,6 +15,7 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     console.log(this.state.savedList)
+    console.log(movie)
     this.state.savedList.filter(item => {
       return item === movie
     })

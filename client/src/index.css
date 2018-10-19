@@ -1,19 +1,43 @@
+* {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-color: #f2f2f2;
+  font-family: arial, sans-serif;
+  background-color: #2d3436;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  height: 63vh;
 }
 
 .movie-card {
-  background-color: #fff;
+  background-color: #f5f6fa;
   border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
   padding: 1rem;
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  border-radius: 0.2rem;
+  box-shadow: 0 2px 3px rgba(245, 246, 250, 1);
+}
+
+.movie-list {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.movie-list a {
+  text-decoration: none;
+  color: #2d3436;
+  font-size: 1.5rem;
 }
 
 .movie-director {
@@ -22,26 +46,39 @@ body {
 }
 
 .saved-list {
-  background-color: #fff;
+  background-color: #b2bec3;
   border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
+  font-size: 2rem;
+  box-shadow: 0 2px 2px #e0e0e0, 0 2px 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
-  padding: 1rem;
+  padding: 2rem;
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
   width: 75%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 
 .saved-list h3 {
-  margin-right: 10px;
+  /* margin-right: 10px; */
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+  color: #2d3436;
+  font-size: 2rem;
 }
 
 .saved-movie {
-  margin: 0 10px;
+  /*  margin: 0 10px; */
+  padding: 2.5rem 1rem;
+  font-size: 2rem;
+  border: 1px solid #f5f6fa;
+  text-align: center;
+  margin-top: 2rem;
+  width: 100%;
+  background-color: #f5f6fa;
+  border-radius: 0.2rem;
 }
 .saved-active {
   color: blue;
@@ -55,8 +92,8 @@ body {
 }
 .save-button {
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 2.5rem;
+  right: 2.5rem;
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
@@ -66,7 +103,16 @@ body {
   color: white;
 }
 
-.home-button {
-  padding: 5px 10px;
-  background-color: lightskyblue;
+.home-button a {
+  border-radius: 5px;
+  background-color: #2d3436;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.4);
+  color: #dfe6e9;
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: 1rem 2.5rem;
+  width: 10rem;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 2rem;
 }
