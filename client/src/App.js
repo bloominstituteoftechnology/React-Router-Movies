@@ -18,13 +18,17 @@ export default class App extends Component {
     this.setState({ savedList });
   };
 
+  clearList = () => {
+    this.setState({savedList: []})
+  }
+
   render() {
     return (
       <div>
-        <SavedList list={this.state.savedList} />
+        <SavedList list={this.state.savedList} clear={this.clearList} />
         <div>
           <Route exact path="/" component={MovieList} />
-          <Route path="/movies/:id" component={Movie} />
+          <Route path="/movies/:id" render={(props) => <Movie {...props} addToSavedList={this.addToSavedList} /> } />
         </div>
       </div>
     );

@@ -32,8 +32,17 @@ body {
   margin: 1rem auto;
   width: 75%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+}
+
+.saved-movie {
+  background-color: #fff;
+  display: flex;
+    width: 100%;
+    flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
 }
 
 .saved-list h3 {
@@ -69,6 +78,7 @@ body {
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+    margin: 10px;
 }
 
 
