@@ -22,8 +22,10 @@ export default class App extends Component {
     return (
       <div>
         <Route exact path='/' component={MovieList} />
-        <Route exact path='/movies/:id' component={Movie} />
-    
+        <Route exact path='/movies/:id' addToSavedList={this.addToSavedList} component={Movie} />
+        <div className="home-button">
+          <Link to="/">Home</Link>
+        </div>
       </div>
     );
   }
