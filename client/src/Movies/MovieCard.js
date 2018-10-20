@@ -22,7 +22,7 @@ const MovieCard = props => {
           ))}
         </div>
       </Link>
-      <div className="save-button" onClick={props.save}>Save</div>
+      <div className="save-button" onClick={props.save.bind(this, props.movie)}>Save</div>
     </div>
   )
 };
