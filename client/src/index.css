@@ -16,6 +16,7 @@ body {
   margin: 1rem auto;
 }
 
+
 .movie-director {
   padding: 4px 0;
   font-size: 0.8rem;
@@ -42,6 +43,7 @@ body {
 
 .saved-movie {
   margin: 0 10px;
+  color:blue;
 }
 .saved-active {
   color: blue;
