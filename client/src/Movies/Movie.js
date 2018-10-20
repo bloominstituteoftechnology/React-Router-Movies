@@ -6,7 +6,7 @@ import withMovies from "../Containers/withMovies";
 class Movie extends Component {
     constructor(props) {
         super(props);
-
+console.log(props);
         this.state = {
             movie: null
         };
@@ -19,18 +19,15 @@ class Movie extends Component {
     }
 
 
-    // Uncomment this code when you're ready for the stretch problems
-    //
-
-    // saveMovie = () => {
-    //   const addToSavedList = this.props.addToSavedList;
-    //   addToSavedList(this.state.movie)
-    // }
+    saveMovie = () => {
+        const addToSavedList = this.props.addToSavedList;
+        addToSavedList(this.state.movie)
+    }
 
     render() {
         const {movie} = this.state;
 
-        return !movie ? <div>Loading movie information...</div> : <MovieCard movie={movie}/>
+        return !movie ? <div>Loading movie information...</div> : <MovieCard movie={movie} addToSavedList={this.props.addToSavedList}/>
     }
 }
 
