@@ -6,7 +6,7 @@ import withMovies from "../Containers/withMovies";
 class Movie extends Component {
     constructor(props) {
         super(props);
-console.log(props);
+
         this.state = {
             movie: null
         };
@@ -18,11 +18,6 @@ console.log(props);
         })
     }
 
-
-    saveMovie = () => {
-        const addToSavedList = this.props.addToSavedList;
-        addToSavedList(this.state.movie)
-    }
 
     render() {
         const {movie} = this.state;
