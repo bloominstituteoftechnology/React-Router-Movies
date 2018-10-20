@@ -1,4 +1,7 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+
+import NavLinks from './NavLinks';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -8,13 +11,17 @@ class NavBar extends React.Component {
         }
     }
 
-    render () {
-        return (
+    render() {
+        return(
             <div>
-                I am a Nav Bar
+                {this.props.NavLinks.map((item) => {
+                    return(
+                        <Route path="/" render={(props) => <NavLinks category={item.category} products={item.products} /> } />
+                         )
+                })}
             </div>
         )
     }
 };
 
-export default NavBar;
+export default NavBar
