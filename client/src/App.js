@@ -14,9 +14,12 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-
+/*
     let gudToAdd = true;
     console.log(movie.id);
+
+
+
 
     savedList.forEach( el => {
       if(el.id === movie.id) {
@@ -24,9 +27,9 @@ export default class App extends Component {
       }
     });
 
+*/
 
-
-    if(gudToAdd) {
+    if(!savedList.find(movieInfo => movieInfo.id === movie.id)) {
       savedList.push(movie);
       this.setState({ savedList });
 
