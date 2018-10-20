@@ -3,6 +3,7 @@ import {Route, Link} from "react-router-dom";
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
+import MovieCard from './Movies/MovieCard';
 
 export default class App extends Component {
   constructor() {
@@ -22,7 +23,8 @@ export default class App extends Component {
     return (
       <div>
         <Route exact path='/' component={MovieList} />
-        <Route exact path='/movies/:id' addToSavedList={this.addToSavedList} component={Movie} />
+        <SavedList list={this.state.savedList} />
+        <Route path='/movies/:id' render={ props => <Movie {...props} addToSavedList={this.addToSavedList} />} />
         <div className="home-button">
           <Link to="/">Home</Link>
         </div>
