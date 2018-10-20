@@ -18,9 +18,6 @@ export default class App extends Component {
     let gudToAdd = true;
     console.log(movie.id);
 
-
-
-
     savedList.forEach( el => {
       if(el.id === movie.id) {
         gudToAdd = false;
@@ -28,8 +25,10 @@ export default class App extends Component {
     });
 
 */
+    console.log(!savedList.includes(movie));
 
-    if(!savedList.find(movieInfo => movieInfo.id === movie.id)) {
+    // if(savedList.includes(movie)){    // not working
+     if(!savedList.find(movieInfo => movieInfo.id === movie.id)) {
       savedList.push(movie);
       this.setState({ savedList });
 
