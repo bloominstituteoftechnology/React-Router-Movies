@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 export default class Movie extends Component {
   constructor(props) {
@@ -61,8 +62,13 @@ export default class Movie extends Component {
             </div>
           ))}
         </div>
-        <div className="save-button">Save</div>
+        <button className="save-button" onClick={this.props.onClick}>Save</button>
       </div>
     );
   }
+}
+
+
+Movie.propTypes = {
+  onClick: PropTypes.func.isRequired,
 }
