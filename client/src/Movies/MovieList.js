@@ -19,10 +19,11 @@ export default class MovieList extends Component {
       .catch(error => {
         console.error('Server Error', error);
       });
-      console.log(this.state.movies)
   }
 
   render() {
+
+    console.log(this.state.movies)
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
