@@ -50,6 +50,13 @@ const movies = [
 		metascore: 89,
 		stars: ['Kurt Russell', 'Bill Paxton', 'Sam Elliot'],
 	},
+	{
+		id: 6,
+		title: 'Venom',
+		director: 'Ruben Fleischer',
+		metascore: 100,
+		stars: ['Tom Hardy', 'Michelle Williams', 'Riz Ahmed'],
+	},
 ];
 
 app.get('/api/movies', (req, res) => {
