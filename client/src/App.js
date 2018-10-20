@@ -14,8 +14,26 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+
+    let gudToAdd = true;
+    console.log(movie.id);
+
+    savedList.forEach( el => {
+      if(el.id === movie.id) {
+        gudToAdd = false;
+      }
+    });
+
+
+
+    if(gudToAdd) {
+      savedList.push(movie);
+      this.setState({ savedList });
+
+    } else {
+      console.log('ALREADY ADDED');
+    }
+
   };
 
   render() {
