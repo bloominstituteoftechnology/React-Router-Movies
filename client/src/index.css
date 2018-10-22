@@ -115,3 +115,7 @@ body {
 a {
   text-decoration: none;
 }
+
+.save-button {
+   cursor: pointer;
+}
