@@ -18,7 +18,8 @@ body {
   border: 2px solid darkcyan;
   border-radius: 5px;
   font-weight: bolder;
-
+  text-decoration: none;
+  color: black
 }
 .movie-card {
   background-color: #fff;
