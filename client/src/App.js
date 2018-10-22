@@ -18,7 +18,7 @@ export default class App extends Component {
     const savedList = this.state.savedList;
     const arr = [];  
     savedList.forEach(item=> {
-      if (item === movie) {
+      if (JSON.stringify(item) === JSON.stringify(movie)) {
         arr.push(movie)
       }
     })    

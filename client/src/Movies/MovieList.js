@@ -30,6 +30,4 @@ export default class MovieList extends Component {
   }
 }
 
-const MovieDetails = ({ movie }) => <Link to={`/movies/${movie.id}`} >
-                                        <MovieCard movie={movie} />                       
-                                    </Link>
+const MovieDetails = props => <div onClick={() => props.history.push(`/movies/${props.movie.id}`)} > <MovieCard movie={props.movie} /> </div>
