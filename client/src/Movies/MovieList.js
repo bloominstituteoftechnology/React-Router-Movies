@@ -5,7 +5,8 @@ export default class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: []
+      movies: [],
+      selectedmovie: false
     };
   }
 
@@ -29,13 +30,20 @@ export default class MovieList extends Component {
       </div>
     );
   }
+
+  selectMovie(id) {
+    return() => {
+      this.setState({selectedmovie: id})
+    }
+  }
 }
 
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
+  var link = "/Movie/" + movie.id;
   return (
     <div className="movie-card">
-      <h2>{title}</h2>
+      <a href={link}><h2>{title}</h2></a>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
