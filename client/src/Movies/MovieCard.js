@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const MovieCard = props => {
+  console.log("props card", props);
   const { title, director, metascore, stars } = props
   return (
     <div className='save-wrapper'>

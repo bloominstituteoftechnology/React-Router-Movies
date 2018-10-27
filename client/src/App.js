@@ -23,16 +23,13 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <Route
-          exact
-          path='/'
-          component={MovieList}
-          save={this.addToSavedList}
-        />
+        <Route exact path='/' render={props => <MovieList {...props} save={this.addToSavedList} />} />
+
         <Route
           path='/movies/:id'
           render={props => <Movie {...props} save={this.addToSavedList} />} // Allows you to click on a movie and add it to a save list on top, working on functionality so you don't have to actually click on the movie itself.
         />
+
       </div>
     )
   }
