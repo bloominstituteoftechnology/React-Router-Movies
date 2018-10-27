@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //moved lines from movie.js to here DRY (apparently this is a stretch goal)
 function Button(props) {
   if (typeof(props.save) === "function"){
-    return <div className="save-button" onClick={() => props.save(props)}>Save</div>
+    return <div className="save-button" onClick={() => props.save(props.movie)}>Save</div>
   }
   return <div></div>;
 }
@@ -28,7 +28,7 @@ const MovieCard = props => {
             </div>
           ))}
         </div>
-        <Button save={props.save}/>
+        <Button save={props.save} movie={props}/>
       </div>
   );
 };
