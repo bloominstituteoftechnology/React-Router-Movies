@@ -9,7 +9,7 @@ export default class MovieList extends Component {
     this.state = {
       movies: []
     }
-    console.log("test" , this.props);
+ //   console.log("test" , this.props);
   }
 
   componentDidMount () {
@@ -17,7 +17,7 @@ export default class MovieList extends Component {
       .get('http://localhost:5000/api/movies')
       .then(response => {
         this.setState(() => ({ movies: response.data }))
-        console.log("test2" , this.props);
+  //      console.log("test2" , this.props);
       })
       .catch(error => {
         console.error('Server Error', error)
@@ -25,8 +25,8 @@ export default class MovieList extends Component {
   }
 
   render () {
-    console.log("props", this.props);
-    console.log(this.state.movies, "movie");
+ //   console.log("props", this.props);
+  //  console.log(this.state.movies, "movie");
     return (
       <div className='movie-list'>
         {this.state.movies.map(movie => (
