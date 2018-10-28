@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = props => {
   return(
-
+    <div>
   <Link to={`/movies/${props.movie.id}`}>
   <div className="movie-card">
     <h2>{props.title}</h2>
@@ -18,11 +18,18 @@ const MovieCard = props => {
     {props.stars.map(star => (
       <div key={props.star} className="movie-star">
         {props.star}
+        
       </div>
+      
     ))}
+    </div>
+    
+  </Link>
+  <button onClick={props.saveMovie}>SAVE ME</button>
+
   </div>
   
-  </Link>
+  
   );
 };
 
