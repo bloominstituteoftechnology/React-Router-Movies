@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { NavLink } from 'react-router-dom';
-import MovieCard from './MovieCard';
-
+import React, { Component } from "react";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
+import MovieCard from "./MovieCard";
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -14,25 +13,25 @@ export default class MovieList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/movies')
+      .get("http://localhost:5000/api/movies")
       .then(response => {
         this.setState(() => ({ movies: response.data }));
       })
       .catch(error => {
-        console.error('Server Error', error);
+        console.error("Server Error", error);
       });
   }
 
   render() {
     return (
       <div className="cardflow">
-      <div className="cardrow">
-      <div className="movie-list">
-        {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
-        ))}
-      </div>
-      </div>
+        <div className="cardrow">
+          <div className="movie-list">
+            {this.state.movies.map(movie => (
+              <MovieDetails key={movie.id} movie={movie} />
+            ))}
+          </div>
+        </div>
       </div>
     );
   }
