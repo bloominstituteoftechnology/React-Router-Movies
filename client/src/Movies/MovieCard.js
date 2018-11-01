@@ -1,37 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import Movie from './Movie'
 import axios from 'axios'
 
 class MovieCard extends React.Component{
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
-      movie: null
+      movie: this.props.movies
     }
   }
 
   componentDidMount(){
     this.setState({
-      movies: this.props.movies
+      // movies: this.props.movies
 
     })
+    // const id = this.props.match.params.id
+    // this.fetchMovie(id)
   }
 
+  // componentWillReceiveProps(newProps){
+  //   if(this.props.match.params.id !== newProps.match.params.id){
+  //     this.fetchMovie(newProps.match.params.id)
+  //   }
+  // }
 
   fetchMovie = id => {
     axios
-    .get(`http://localhost:5000/api/movies/${id}`)
+    .get(`http://localhost:5000/api/movies/`)
     .then(response => {
       this.setState({
         movies: response.data
       })
+    })
+    .catch(err => {
+      console.error(err)
     })
   }
 
 
   
   render(){
+    // if (!this.state.movie) {
+    //   return <div>Loading movie information...</div>;
+    // }
      return(
     <div>
         <Link to={`/movies/${this.props.id}`} >
@@ -43,7 +56,8 @@ class MovieCard extends React.Component{
       <div className="movie-metascore">
         Metascore: <strong>{this.props.metascore}</strong>
       </div>
-      <h3>Actors</h3>
+      <h3>Actors:</h3>
+
     </div>
   )
   }
