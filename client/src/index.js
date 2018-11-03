@@ -9,11 +9,12 @@ import App from './App';
 
 ReactDOM.render(
 <Router>
-<App />
+
 
 <div> 
  <Route exact path="/" component={MovieList}/>
  <Route path="/movies/:id" component={Movie}/>
+ <App />
  </div>
 
 </Router>,
