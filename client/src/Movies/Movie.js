@@ -11,13 +11,6 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    // this.props.location;
-    const myStr = window.location.href;
-  
-    
-    console.log(window.location.href);
-    console.log(this.props.match.params);
-    // myStr.substr(myStr.length - 2)
     const id = this.props.match.params.id;
     this.fetchMovie(id);
   }
@@ -33,16 +26,16 @@ export default class Movie extends Component {
       });
   };
   // Uncomment this code when you're ready for the stretch problems
-  // componentWillReceiveProps(newProps){
-  //   if(this.props.match.params.id !== newProps.match.params.id){
-  //     this.fetchMovie(newProps.match.params.id);
-  //   }
-  // }
+  componentWillReceiveProps(newProps){
+    if(this.props.match.params.id !== newProps.match.params.id){
+      this.fetchMovie(newProps.match.params.id);
+    }
+  }
 
-  // saveMovie = () => {
-  //   const addToSavedList = this.props.addToSavedList;
-  //   addToSavedList(this.state.movie)
-  // }
+  saveMovie = () => {
+    const addToSavedList = this.props.addToSavedList;
+    addToSavedList(this.state.movie)
+  }
 
   render() {
     console.log(this.state.movie);
@@ -70,7 +63,7 @@ export default class Movie extends Component {
             </div>
           ))}
         </div>
-        <div className="save-button">Save</div>
+        <button onClick={this.saveMovie} className="save-button">Save</button>
       </div>
     );
   }
