@@ -4,6 +4,7 @@ import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
+
 export default class App extends Component {
   constructor() {
     super();
@@ -18,15 +19,27 @@ export default class App extends Component {
     this.setState({ savedList });
   };
 
+  handleClick = () => {
+  //do i add a route?
+
+  }
+
   render() {
     return (
       <div>
-        <SavedList list={this.state.savedList} />
+        <SavedList list={this.state.savedList}
+                   onclick={this.handleClick}  />
         <div>
           <Route exact path="/" component={MovieList}/>
-             <Route path="/movies/:id" component={Movie}/>
-        </div>
+          <Route path="/movies/:id" render={props =>
+          <Movie {...props} addToSavedList={this.addToSavedList}/>
+
+
+} />        
       </div>
+
+        </div>
     );
   }
 }
+

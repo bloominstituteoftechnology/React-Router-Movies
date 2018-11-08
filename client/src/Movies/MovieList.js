@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Route, Link} from 'react-router-dom';
 
+
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
@@ -37,7 +38,7 @@ function MovieDetails({ movie }) {
   return (
     <div className="movie-card">
 
-    <Link to={`/movie/${movie.id}`} key={movie.id}> 
+    <Link to={`/movies/${movie.id}`} key={movie.id}> 
         <h2>{title}</h2>
       </Link>
       <div className="movie-director">
