@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
+import Typography from '@material-ui/core/Typography';
+import { NavLink } from 'react-router-dom';
+import Card from '@material-ui/core/Card';
+import { withStyles } from '@material-ui/core/styles';
 
-export default class MovieList extends Component {
+const styles = {
+  heading: {
+    margin: '30px auto',
+    textAlign: 'center'
+  }
+}
+
+class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,19 +33,28 @@ export default class MovieList extends Component {
   }
 
   render() {
+
+    const { classes } = this.props;
+
     return (
-      <div className="movie-list">
-        {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
-        ))}
+      <div>
+        <Typography className={classes.heading} variant='h3'>Movie List</Typography>
+        <div className="movie-list">
+          {this.state.movies.map(movie => (
+            <MovieDetails key={movie.id} movie={movie} />
+          ))}
+        </div>
       </div>
     );
   }
 }
 
+export default withStyles(styles)(MovieList);
+
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
-     <MovieCard movie ={movie}/>
+
+        <MovieCard movie={movie} />
   );
 }

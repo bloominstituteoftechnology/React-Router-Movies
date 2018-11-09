@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 
-export default class Movie extends Component {
+const styles = {
+  root: {
+
+  },
+  saveBtn: {
+    width: '150px'
+  }
+}
+
+class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +22,11 @@ export default class Movie extends Component {
   }
 
   componentDidMount() {
+
+
+
     // change this line to grab the id passed on the URL
+    console.log(this.props);
   const id = this.props.match.params.id;
     this.fetchMovie(id);
   }
@@ -33,12 +48,15 @@ export default class Movie extends Component {
   //   }
   // }
 
-  // saveMovie = () => {
-  //   const addToSavedList = this.props.addToSavedList;
-  //   addToSavedList(this.state.movie)
-  // }
+  saveMovie = () => {
+    const addToSavedList = this.props.addToSavedList;
+    addToSavedList(this.state.movie)
+  }
 
   render() {
+
+    const { classes } = this.props;
+
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
@@ -47,8 +65,10 @@ export default class Movie extends Component {
     return (
       <div className="save-wrapper">
        <MovieCard movie = {this.state.movie} />
-       <div className="save-button" onClick={this.saveMovie}>Save</div>
+       <Button className={classes.saveBtn} color='primary' variant='contained' fullWidth='false' onClick={this.saveMovie}>Save Movie</Button>
       </div>
     );
   }
 }
+
+export default withStyles(styles)(Movie);
