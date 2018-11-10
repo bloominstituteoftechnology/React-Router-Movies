@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
 import Typography from '@material-ui/core/Typography';
-import { NavLink } from 'react-router-dom';
-import Card from '@material-ui/core/Card';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
@@ -35,13 +33,14 @@ class MovieList extends Component {
   render() {
 
     const { classes } = this.props;
+    // <MovieDetails key={movie.id} movie={movie} />
 
     return (
       <div>
         <Typography className={classes.heading} variant='h3'>Movie List</Typography>
         <div className="movie-list">
           {this.state.movies.map(movie => (
-            <MovieDetails key={movie.id} movie={movie} />
+            <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
       </div>
@@ -50,11 +49,3 @@ class MovieList extends Component {
 }
 
 export default withStyles(styles)(MovieList);
-
-function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
-  return (
-
-        <MovieCard movie={movie} />
-  );
-}

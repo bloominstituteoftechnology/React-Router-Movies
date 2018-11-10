@@ -22,12 +22,7 @@ class Movie extends Component {
   }
 
   componentDidMount() {
-
-
-
-    // change this line to grab the id passed on the URL
-    console.log(this.props);
-  const id = this.props.match.params.id;
+    const id = this.props.match.params.id;
     this.fetchMovie(id);
   }
 
@@ -49,8 +44,12 @@ class Movie extends Component {
   // }
 
   saveMovie = () => {
-    const addToSavedList = this.props.addToSavedList;
-    addToSavedList(this.state.movie)
+    const { movie } = this.state;
+    const { addToSavedList, savedList} = this.props;
+
+    console.log(savedList);
+
+    addToSavedList(movie);
   }
 
   render() {
@@ -61,11 +60,10 @@ class Movie extends Component {
       return <div>Loading movie information...</div>;
     }
 
-    const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="save-wrapper">
        <MovieCard movie = {this.state.movie} />
-       <Button className={classes.saveBtn} color='primary' variant='contained' fullWidth='false' onClick={this.saveMovie}>Save Movie</Button>
+       <Button className={classes.saveBtn} color='primary' variant='contained' onClick={this.saveMovie}>Save Movie</Button>
       </div>
     );
   }

@@ -1,13 +1,9 @@
 import React from 'react';
-import {NavLink, Link,} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -34,7 +30,7 @@ const styles = {
   },
   linkStyle: {
     textDecoration: 'none',
-    color: 'black',
+    color: 'inherit',
     height: '100%',
   },
   metaScore: {

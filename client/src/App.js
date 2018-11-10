@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, NavLink, Link,} from 'react-router-dom';
+import {Route, NavLink} from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
@@ -8,6 +8,13 @@ import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 import { withStyles } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+    palette: {
+      type: 'light'
+    }
+});
 
 const styles = {
   link: {
@@ -30,6 +37,9 @@ class App extends Component {
     this.state = {
       savedList: []
     };
+
+    this.AddToSavedList = this.addToSavedList.bind(this);
+    this.removeFromSavedList = this.removeFromSavedList.bind(this);
   }
 
   addToSavedList = movie => {
@@ -38,13 +48,20 @@ class App extends Component {
     this.setState({ savedList });
   };
 
+  removeFromSavedList = movie => {
+    const savedList = this.state.savedList;
+    savedList.splice(savedList.indexOf(movie), 1);
+    this.setState({savedList});
+  }
+
   render() {
 
     const { classes } = this.props;
 
     return (
       <div>
-        <AppBar position='static'>
+        <MuiThemeProvider theme={theme}>
+        <AppBar position='static' color='primary'>
           <Toolbar className={classes.toolBar}>
           <Typography variant="h6" color="inherit">
             Lambda Movie Selector
@@ -53,8 +70,9 @@ class App extends Component {
           </Toolbar>
         </AppBar>
         <Route exact path="/" render={props => <MovieList {...props} />} />
-        <Route path="/movies/:id" render={props => <Movie {...props} addToSavedList={this.addToSavedList} />} />
-        <SavedList list={this.state.savedList} />
+        <Route path="/movies/:id" render={props => <Movie {...props} savedList={this.state.savedList} addToSavedList={this.addToSavedList} />} />
+        <SavedList list={this.state.savedList} removeFromSavedList={this.removeFromSavedList} />
+        </MuiThemeProvider>
       </div>
     );
   }
