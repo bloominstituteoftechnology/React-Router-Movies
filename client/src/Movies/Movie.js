@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import MovieCard from './MovieCard';
 // import movies from '../../../server'
 
 export default class Movie extends Component {
@@ -26,17 +27,17 @@ export default class Movie extends Component {
         console.error(error);
       });
   };
-  // Uncomment this code when you're ready for the stretch problems
-  // componentWillReceiveProps(newProps){
-  //   if(this.props.match.params.id !== newProps.match.params.id){
-  //     this.fetchMovie(newProps.match.params.id);
-  //   }
-  // }
 
-  // saveMovie = () => {
-  //   const addToSavedList = this.props.addToSavedList;
-  //   addToSavedList(this.state.movie)
-  // }
+  componentWillReceiveProps(newProps){
+    if (this.props.match.params.id !== newProps.match.params.id) {
+      this.fetchMovie(newProps.match.params.id);
+    }
+  }
+
+  saveMovie = () => {
+    const addToSavedList = this.props.addToSavedList;
+    addToSavedList(this.state.movie)
+  }
 
   render() {
     if (!this.state.movie) {
@@ -46,7 +47,8 @@ export default class Movie extends Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="save-wrapper">
-        <div className="movie-card">
+        <MovieCard key={this.state.movie.id} movie={this.state.movie} />
+        {/* <div className="movie-card">
           <h2>{title}</h2>
           <div className="movie-director">
             Director: <em>{director}</em>
@@ -61,8 +63,8 @@ export default class Movie extends Component {
               {star}
             </div>
           ))}
-        </div>
-        <div className="save-button">Save</div>
+        </div> */}
+        <div className="save-button" onClick={this.saveMovie}>Save</div>
       </div>
     );
   }
