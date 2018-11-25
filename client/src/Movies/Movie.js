@@ -5,9 +5,10 @@ import MovieCard from './MovieCard';
 
 export default class Movie extends Component {
   constructor(props) {
+    console.log(props)
     super(props);
     this.state = {
-      movie: null
+      movie: null,
     };
   }
 
@@ -34,17 +35,18 @@ export default class Movie extends Component {
     }
   }
 
-  saveMovie = () => {
-    const addToSavedList = this.props.addToSavedList;
-    addToSavedList(this.state.movie)
-  }
+  // saveMovie = () => {
+  //   const addToSavedList = this.props.addToSavedList;
+  //   addToSavedList(this.state.movie)
+  //   // console.log(addToSavedList)
+  // }
 
   render() {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
 
-    const { title, director, metascore, stars } = this.state.movie;
+    // const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="save-wrapper">
         <MovieCard key={this.state.movie.id} movie={this.state.movie} />
