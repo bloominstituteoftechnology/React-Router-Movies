@@ -38,7 +38,6 @@ export default class Movie extends Component {
   saveMovie = () => {
     const addToSavedList = this.props.addToSavedList;
     addToSavedList(this.state.movie)
-    // console.log(addToSavedList)
   }
 
   render() {
