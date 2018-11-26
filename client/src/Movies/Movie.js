@@ -35,6 +35,10 @@ export default class Movie extends Component {
   }
 
   render() {
+
+    if (this.state.movie === '')
+      return <h2>Invalid movie ID</h2>
+
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
