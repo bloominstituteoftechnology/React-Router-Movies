@@ -49,6 +49,8 @@ a {
 
 .saved-movie {
   margin: 0 10px;
+  text-decoration: underline;
+  color: blue;
 }
 .saved-active {
   color: blue;
