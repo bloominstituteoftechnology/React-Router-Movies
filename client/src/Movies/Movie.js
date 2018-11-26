@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
-import { Link } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 export default class Movie extends Component {
   constructor(props) {
