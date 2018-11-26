@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Route} from 'react-router-dom';
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
@@ -9,15 +9,15 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      savedList: []
+      savedList: [],
     };
   }
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
     if (!savedList.includes(movie)) {
-    savedList.push(movie);
-    this.setState({ savedList });
+      savedList.push(movie);
+      this.setState({savedList});
     }
   };
 
@@ -26,9 +26,11 @@ export default class App extends Component {
       <div>
         <SavedList list={this.state.savedList} />
         <Route exact path="/" component={MovieList} />
-        <Route path="/movies/:id" 
-          render={props => <Movie {...props} addToSavedList={this.addToSavedList}
-          />}
+        <Route
+          path="/movies/:id"
+          render={props => (
+            <Movie {...props} addToSavedList={this.addToSavedList} />
+          )}
         />
       </div>
     );
