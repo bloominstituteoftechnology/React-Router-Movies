@@ -29,7 +29,7 @@ export default class MovieList extends Component {
           {this.state.movies.map(movie => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
-          {/* <Route path="/movies/:id" component={MovieCard} /> */}
+          <Route path="/movies/:id" component={MovieCard} />
       </div>
     );
   }

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import axios from 'axios';
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
   console.log('props from moviecard', props.movie)
+
   return (
     <Link to={`/movies/${props.movie.id}`}>
       <div className="movie-card">
