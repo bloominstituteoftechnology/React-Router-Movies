@@ -38,6 +38,9 @@ export default class Movie extends Component {
   //   const addToSavedList = this.props.addToSavedList;
   //   addToSavedList(this.state.movie)
   // }
+  clickHandler = event => {
+    this.props.addToSavedList(this.state.movie);
+  };
 
   render() {
     if (!this.state.movie) {
@@ -63,7 +66,9 @@ export default class Movie extends Component {
             </div>
           ))}
         </div>
-        <div className="save-button">Save</div>
+        <div className="save-button" onClick={this.clickHandler}>
+          Save
+        </div>
       </div>
     );
   }
