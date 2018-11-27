@@ -14,15 +14,30 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
+
     const savedList = this.state.savedList;
-    savedList.includes(movie) ? alert('Movie is already in list') : savedList.push(movie);
+    savedList.includes(movie) ? alert(`${movie.title} is already in list`) : savedList.push(movie);
     this.setState({ savedList });
   };
+
+  removeFromSavedList = movie => {
+    let savedList = this.state.savedList.filter(m => m !== movie);
+
+    this.setState({ savedList });
+
+    alert(`${movie.title} was removed from the saved list`);
+  }
+
+  clearList = () => {
+    this.setState({
+      savedList: []
+    })
+  }
 
   render() {
     return (
       <div>
-        <SavedList list={this.state.savedList} />
+        <SavedList list={this.state.savedList} remove={this.removeFromSavedList} clear={this.clearList} />
         <Route exact path='/' component={ MovieList }/>
         
         <Route path='/movies/:id' render={props => <Movie {...props} save={this.addToSavedList}/>} />
