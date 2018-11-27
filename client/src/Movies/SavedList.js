@@ -12,7 +12,9 @@ export default class SavedList extends Component {
           </NavLink>
         ))}
         <div className="home-button">
-          <NavLink to="/">Home</NavLink>
+          <NavLink exact to="/">
+            Home
+          </NavLink>
         </div>
       </div>
     );
