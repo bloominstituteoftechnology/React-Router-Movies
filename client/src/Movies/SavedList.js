@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default class SavedList extends Component {
   render() {
@@ -12,7 +12,7 @@ export default class SavedList extends Component {
           </NavLink>
         ))}
         <div className="home-button">
-          <Link to="/">Home</Link>
+          <NavLink to="/">Home</NavLink>
         </div>
       </div>
     );
