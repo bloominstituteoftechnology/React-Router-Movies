@@ -43,32 +43,11 @@ export default class Movie extends Component {
     }
 
     const { movie } = this.state;
-    console.log(this.state.movie,"props")
     return (
       <div className="save-wrapper">
         <MovieCard movie={movie} />
-        <div className="save-button" onClick={ () => console.log("clicked")}>Save</div>
+        <div className="save-button" onClick={ () => this.saveMovie()}>Save</div>
       </div>
     );
   }
 }
-
-
-// const { title, director, metascore, stars } = this.state.movie;
-
-{/* <div className="movie-card">
-<h2>{title}</h2>
-<div className="movie-director">
-  Director: <em>{director}</em>
-</div>
-<div className="movie-metascore">
-  Metascore: <strong>{metascore}</strong>
-</div>
-<h3>Actors</h3>
-
-{stars.map(star => (
-  <div key={star} className="movie-star">
-    {star}
-  </div>
-))}
-</div> */}
