@@ -34,6 +34,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .saved-list h3 {
@@ -69,4 +70,13 @@ body {
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+}
+.active {
+  text-decoration: underline;
 }

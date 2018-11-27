@@ -27,11 +27,25 @@ export default class Movie extends Component {
       });
   };
   // Uncomment this code when you're ready for the stretch problems
-  componentWillReceiveProps(newProps){
-    if(this.props.match.params.movieId !== newProps.match.params.movieId){
-      this.fetchMovie(newProps.match.params.movieId);
+  // componentWillReceiveProps(newProps){
+  //   if(this.props.match.params.movieId !== newProps.match.params.movieId){
+  //     this.fetchMovie(newProps.match.params.movieId);
+  //   }
+  // }
+  // static getDerivedStateFromProps(newProps, prevState){
+  //   if(prevState.movie.id !== newProps.match.params.movieId){
+  //     // return { movie: newProps.match.params.movieId }
+  //     return {a:1}
+  //   }
+  //   else return null;
+  // }
+
+  componentDidUpdate(oldProps){
+    if(this.props.match.params.movieId !== oldProps.match.params.movieId){
+      this.fetchMovie(this.props.match.params.movieId);
     }
   }
+
 
   saveMovie = () => {
     const addToSavedList = this.props.addToSavedList;
