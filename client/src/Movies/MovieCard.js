@@ -1,9 +1,5 @@
 import React from 'react';
 
-// const MovieCard = props => {
-//   return;
-// };
-
 function MovieCard({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
