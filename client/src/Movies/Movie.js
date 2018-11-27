@@ -5,13 +5,13 @@ export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: null,
+      id: props.match.params.id
     };
   }
 
   componentDidMount() {
-    // change this line to grab the id passed on the URL
-    const id = 1;
+    const id = this.state.id; //props.match.params.id;
     this.fetchMovie(id);
   }
 
@@ -45,23 +45,25 @@ export default class Movie extends Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="save-wrapper">
-        <div className="movie-card">
-          <h2>{title}</h2>
-          <div className="movie-director">
-            Director: <em>{director}</em>
-          </div>
-          <div className="movie-metascore">
-            Metascore: <strong>{metascore}</strong>
-          </div>
-          <h3>Actors</h3>
-
-          {stars.map(star => (
-            <div key={star} className="movie-star">
-              {star}
+        
+          <div className="movie-card">
+            <h2>{title}</h2>
+            <div className="movie-director">
+              Director: <em>{director}</em>
             </div>
-          ))}
-        </div>
-        <div className="save-button">Save</div>
+            <div className="movie-metascore">
+              Metascore: <strong>{metascore}</strong>
+            </div>
+            <h3>Actors</h3>
+
+            {stars.map(star => (
+              <div key={star} className="movie-star">
+                {star}
+              </div>
+            ))}
+          </div>
+          <div className="save-button">Save</div>
+        
       </div>
     );
   }
