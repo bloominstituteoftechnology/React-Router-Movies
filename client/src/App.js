@@ -14,7 +14,7 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
-    let savedList = this.state.savedList;
+    let savedList = [...this.state.savedList];
     let id = movie.id;
     if (!savedList.every(item => item.id !== id)) {
       return;
