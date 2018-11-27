@@ -9,14 +9,20 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      savedList: []
+      savedList: [] 
     };
   }
 
   addToSavedList = movie => {
+    
+
     const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    const filteredMovie = savedList.filter(item => item.id === movie.id);
+    if(filteredMovie.length === 0){
+      savedList.push(movie);
+      this.setState({ savedList });
+    }
+
   };
 
   render() {
