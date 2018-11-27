@@ -38,6 +38,13 @@ export default class Movie extends Component {
   //   addToSavedList(this.state.movie)
   // }
 
+  componentDidUpdate = (prev) => {
+    const id = this.props.match.params.id;
+    if(id !== prev.match.params.id){
+      this.fetchMovie(id);
+    }
+  }
+
   render() {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
