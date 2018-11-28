@@ -6,42 +6,55 @@ import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      savedList: []
+    constructor() {
+        super();
+        this.state = {
+            savedList: []
+        };
+    }
+
+    addToSavedList = movie => {
+        const savedList = this.state.savedList
+            // const savedListIds = savedList.map(i => i.id);
+
+        savedList.map(i => i.id).includes(movie.id) ? alert(`${movie.title} is already in list`) : savedList.push(movie);
+        this.setState({ savedList });
     };
-  }
 
-  addToSavedList = movie => {
+    removeFromSavedList = movie => {
+        let savedList = this.state.savedList.filter(m => m !== movie);
 
-    const savedList = this.state.savedList;
-    savedList.includes(movie) ? alert(`${movie.title} is already in list`) : savedList.push(movie);
-    this.setState({ savedList });
-  };
+        this.setState({ savedList });
 
-  removeFromSavedList = movie => {
-    let savedList = this.state.savedList.filter(m => m !== movie);
+        alert(`${movie.title} was removed from the saved list`);
+    }
 
-    this.setState({ savedList });
+    clearList = () => {
+        this.setState({
+            savedList: []
+        })
+    }
 
-    alert(`${movie.title} was removed from the saved list`);
-  }
+    render() {
+        return ( <
+            div >
+            <
+            SavedList list = { this.state.savedList }
+            remove = { this.removeFromSavedList }
+            clear = { this.clearList }
+            /> <
+            Route exact path = '/'
+            component = { MovieList }
+            />
 
-  clearList = () => {
-    this.setState({
-      savedList: []
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <SavedList list={this.state.savedList} remove={this.removeFromSavedList} clear={this.clearList} />
-        <Route exact path='/' component={ MovieList }/>
-        
-        <Route path='/movies/:id' render={props => <Movie {...props} save={this.addToSavedList}/>} />
-      </div>
-    );
-  }
-}
+            <
+            Route path = '/movies/:id'
+            render = {
+                props => < Movie {...props }
+                save = { this.addToSavedList }
+                />} / >
+                <
+                /div>
+            );
+        }
+    }
