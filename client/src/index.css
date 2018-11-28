@@ -67,8 +67,18 @@ body {
   padding: 5px 10px;
   background-color: lightseagreen;
 }
+
+.save-button.saved {
+  background-color: grey;
+  color: white;
+}
 .save-button:hover {
   background-color: green;
+  color: white;
+}
+
+.save-button.saved:hover {
+  background-color: lightgray;
   color: white;
 }
 

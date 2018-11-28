@@ -45,10 +45,15 @@ export default class Movie extends Component {
       return <div>Loading movie information...</div>;
     }
 
+    const saved = this.props.savedList.find(movie => movie.id === this.state.movie.id);
+
 return (
       <div className="save-wrapper">
         <MovieCard movie={this.state.movie} />
-        <div className="save-button" onClick={this.saveMovie}>Save</div>
+        <div
+          className={`save-button ${!saved? '': 'saved'}`}
+          onClick={this.saveMovie}>{!saved ? 'Save' : 'Remove'}
+        </div>
       </div>
     );
   }
