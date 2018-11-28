@@ -20,7 +20,7 @@ export default class MovieList extends Component {
         console.error('Server Error', error);
       });
   }
-
+//comment
   render() {
     return (
       <div className="movie-list">
