@@ -5,7 +5,7 @@ export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: props.match.arguments
     };
   }
 
