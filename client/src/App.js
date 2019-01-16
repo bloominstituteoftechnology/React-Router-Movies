@@ -15,8 +15,12 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    //!! coerces the returned object into a boolean checking for true
+    //I added one more ! to negate it
+    if(!!!savedList.find(e=>e.id === movie.id)){
+      savedList.push(movie)
+      this.setState({ savedList });
+    }
   };
 
   render() {
