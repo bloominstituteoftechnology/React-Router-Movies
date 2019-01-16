@@ -2,7 +2,7 @@
 
 Topics:
 
-* React Router 
+* React Router
 * Using Link and NavLink to navigate to specific routes
 * Passing Route Parameters
 * Passing props to components rendered by the Router
