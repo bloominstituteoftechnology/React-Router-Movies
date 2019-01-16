@@ -69,4 +69,18 @@ body {
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+  text-decoration: none;
+  color: black;
+}
+.home-button:hover {
+  color: white;
+}
+a {
+  color: lightseagreen;
+  text-decoration: none;
+  font-weight: bolder;
+}
+a:hover {
+  color: darkgreen;
+  font-weight: bolder;
 }

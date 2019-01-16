@@ -36,6 +36,8 @@ Topics:
 * Add functionality so the `Home` button on the `SavedList` component navigates back to home.
 * You should now be able to navigate back and forth between the individual movies and the home screen.
 
+DONE
+
 ## Stretch Goals.
 
 If you have completed Parts 1 & 2 feel free to move on to these stretch goals.
