@@ -17,6 +17,7 @@ export default class Movie extends Component {
         error: "ERROR 404: Movie not found"
       });
     }
+    console.log(this.props);
     this.fetchMovie(id);
   }
 
@@ -56,7 +57,9 @@ export default class Movie extends Component {
           metascore={metascore}
           stars={stars}
         />
-        <div className="save-button">Save</div>
+        <div onClick={this.saveMovie} className="save-button">
+          Save
+        </div>
       </div>
     );
   }
