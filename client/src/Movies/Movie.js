@@ -14,6 +14,7 @@ export default class Movie extends Component {
     // change this line to grab the id passed on the URL
     const id = this.props.match.params.id;
     this.fetchMovie(id);
+   
   }
 
   fetchMovie = id => {
@@ -33,10 +34,7 @@ export default class Movie extends Component {
   //   }
   // }
 
-  // saveMovie = () => {
-  //   const addToSavedList = this.props.addToSavedList;
-  //   addToSavedList(this.state.movie)
-  // }
+   
 
   render() {
     if (!this.state.movie) {
@@ -44,7 +42,7 @@ export default class Movie extends Component {
     }
     
     return (
-      <MovieCard movie={this.state.movie} save />
+      <MovieCard movie={this.state.movie} addToSavedList={this.props.addToSavedList} />
     );
   }
 }
