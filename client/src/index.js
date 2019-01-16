@@ -4,4 +4,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { BrowserRouter as Router } from 'react-router-dom';
+
+ReactDOM.render(
+  <Browser>
+    <App />
+  </Browser>, document.getElementById('root'));
