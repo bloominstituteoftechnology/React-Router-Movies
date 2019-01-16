@@ -10,6 +10,11 @@ a {
   text-decoration: none;
 }
 
+.list-wrapper {
+  width: 75%;
+  margin: auto;
+}
+
 .movie-card {
   background-color: #fff;
   border: 0;
@@ -62,6 +67,8 @@ a {
 }
 
 .save-button {
+  cursor: pointer;
+  user-select: none;
   position: absolute;
   top: 25px;
   right: 25px;
