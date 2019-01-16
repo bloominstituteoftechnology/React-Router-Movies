@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
@@ -15,7 +15,7 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
+    savedList.push(<Link to={`/movie/${movie.id}`}>{movie.title}</Link>);
     this.setState({ savedList });
   };
 
