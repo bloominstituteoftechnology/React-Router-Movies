@@ -17,7 +17,6 @@ export default class Movie extends Component {
         error: "ERROR 404: Movie not found"
       });
     }
-    console.log(this.props);
     this.fetchMovie(id);
   }
 

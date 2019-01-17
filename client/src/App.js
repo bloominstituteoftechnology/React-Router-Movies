@@ -15,8 +15,15 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(<NavLink to={`/movie/${movie.id}`}>{movie.title}</NavLink>);
-    this.setState({ savedList });
+    let ditto = false;
+    this.state.savedList.forEach(mov => {
+      if (mov.props.children === movie.title) ditto = true;
+    });
+    if (!ditto)
+      savedList.push(
+        <NavLink to={`/movie/${movie.id}`}>{movie.title}</NavLink>
+      );
+    if (!ditto) this.setState({ savedList });
   };
 
   render() {

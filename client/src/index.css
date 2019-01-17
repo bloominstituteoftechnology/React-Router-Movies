@@ -54,6 +54,28 @@ a {
   margin: 0 10px;
 }
 
+.saved-movie a {
+  display: inline-block;
+  padding: 5px;
+}
+
+.saved-movie a:hover {
+  box-shadow: -1px 0 0 0 black;
+}
+
+.saved-movie .active {
+  display: inline-block;
+  font-weight: bold;
+  padding: 5px;
+  box-shadow: -2px 0 0 0 black;
+}
+
+.saved-movie .active:hover {
+  font-size: 1rem;
+  border-left: none;
+  box-shadow: -2px 0 0 0 black;
+}
+
 .saved-active {
   color: blue;
   border: 1px solid grey;
