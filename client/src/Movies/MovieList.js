@@ -43,6 +43,6 @@ function MovieDetails({ movie }) {
       director={director}
       metascore={metascore}
       stars={stars}
-      />
+    />
   );
 }

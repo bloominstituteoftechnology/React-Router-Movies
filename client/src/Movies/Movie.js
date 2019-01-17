@@ -54,6 +54,7 @@ export default class Movie extends Component {
         metascore={metascore}
         stars={stars}
         addToSavedList={this.props.addToSavedList}
+        saveMovie={this.saveMovie}
       />
     );
   }
