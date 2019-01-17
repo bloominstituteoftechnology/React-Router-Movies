@@ -1,10 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MovieCard = props => {
-  console.log(props);
+  let button;
+  if (props.hide) {
+    button = <button style={{display: 'none'}} onClick={props.saveMovie}> Add Movie </button>
+    } else {
+    button = <button className="save-button" onClick={props.saveMovie}> Add Movie </button>
+    }
+
   return (
       <div className="movie-card">
-        <h2>{props.movie.title}</h2>
+        <Link style={{color: '#000' }} to={`/movies/${props.movie.id}`} key={props.movie.id}>{props.movie.title}</Link>
         <div className="movie-director">
           Director: <em>{props.movie.director}</em>
         </div>
@@ -18,7 +25,7 @@ const MovieCard = props => {
               {star}
             </div>
           ))}
-
+          {button}
       </div>
 )}
 

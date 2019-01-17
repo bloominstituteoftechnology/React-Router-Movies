@@ -13,8 +13,14 @@ export default class App extends Component {
     };
   }
 
-  addToSavedList = movie => {
+  addToSavedList = (movie) => {
     const savedList = this.state.savedList;
+    for (let i = 0; i < savedList.length; i++){
+      if (savedList[i].id === movie.id){
+        console.log("Duplicate, can't add to movies");
+        return true;
+      }
+    }
     savedList.push(movie);
     this.setState({ savedList });
   };
@@ -24,8 +30,14 @@ export default class App extends Component {
       <div>
         <SavedList list={this.state.savedList} />
         <div>
-          <Route exact path='/' component={ MovieList } />
-          <Route exact path="/movies/:id" component= { Movie } />
+          <Route
+            exact path='/'
+            render={(props) => <MovieList {...props} addToSavedList={this.addToSavedList} />}
+          />
+          <Route
+            exact path="/movies/:id"
+            render={(props) => <Movie {...props} addToSavedList={this.addToSavedList} />}
+          />
         </div>
       </div>
     );
