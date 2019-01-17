@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
+// import styled from 'styled-components';
 
 export default class App extends Component {
   constructor() {
@@ -23,9 +24,9 @@ export default class App extends Component {
       <div>
         <SavedList list={this.state.savedList} />
         <div>Replace this Div with your Routes</div>
-        <Route  path="/" Component={MovieList}/>
-        {/* <Route exact path="/movies" Component={} /> */}
-        <Route  path="/movies/:id" Component={Movie} />
+        <Route exact path="/" component={MovieList}/>
+        {/* <Route path="/movies" component={Movie} />*/}
+        <Route path="/movies/:id" component={Movie} /> 
       </div>
     );
   }
