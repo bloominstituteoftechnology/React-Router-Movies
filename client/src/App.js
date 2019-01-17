@@ -27,5 +27,5 @@ export default class App extends Component {
         <Route path="/Movies/:id" component={Movie}/>
       </div>
     );
-  }
+  }   
 }
