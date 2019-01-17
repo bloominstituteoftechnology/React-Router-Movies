@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MovieCard = props => {
-console.log(props);
   return (
     <div className="save-wrapper">
       <div className="movie-card">
