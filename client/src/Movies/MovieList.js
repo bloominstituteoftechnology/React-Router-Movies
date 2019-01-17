@@ -31,7 +31,7 @@ export default class MovieList extends Component {
   }
 }
 
-function MovieDetails({props}) {
+function MovieDetails(props) {
   const { title, director, metascore, stars } = props.movie;
 
   return (
