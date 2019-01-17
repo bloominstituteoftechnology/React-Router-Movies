@@ -1,34 +1,32 @@
 import React from 'react';
-import SavedList from "./SavedList";
+import {Link} from "react-router-dom";
+import Movie from "./Movie"
 
 const MovieCard = props => {
 
-  let movie;
-  let id;
-  console.log(props);
-  if(props.match && props.match.param.id){
-    id= props.match.id;
-  }else {
-    id=props.id;
-  }
-  movie=SavedList.find(movie => {
-     $`{movie.id}`
-     === (id)
-  })
 
-  return movie ===undefined? <div><h1>Error ,movie can't be found</h1></div>:
+  return (
       <div className="movie-card">
-        <h2>{movie.title}</h2>
-        <p> className="movie-director">
-          Director: <em>{movie.director}</em>
-        </p>
-        <p> className="movie-metascore">
-          Metascore: <strong>{movie.metascore}</strong>
-        </p>
-        <h3>{movie.Actors}</h3>
+        <h2>
+          <Link to={`/movies/${props.movie.id}`  }> {props.movie.title}</Link>
+        </h2>
+        <div className="movie-director">
+          Director: <em>{props.movie.director}</em>
+        </div>
+        <div className="movie-metascore">
+          Metascore: <strong>{props.movie.metascore}</strong>
+        </div>
+        <h3>Actors</h3>
 
-
+        {props.movie.stars.map(star => (
+            <div key={star} className="movie-star">
+              {star}
+            </div>
+        ))}
       </div>
+  );
+
+
 };
 
 export default MovieCard;
