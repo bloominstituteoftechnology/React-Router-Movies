@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import MovieCard from './MovieCard';
+
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
@@ -32,24 +34,10 @@ export default class MovieList extends Component {
 }
 
 function MovieDetails(props) {
-  const { title, director, metascore, stars } = props.movie;
 
   return (
     <div onClick = {() => {props.history.push(`/movies/${props.movie.id}`)}} className="movie-card">
-      <h2>{title}</h2>
-      <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
-      </div>
-      <h3>Actors</h3>
-
-      {stars.map(star => (
-        <div key={star} className="movie-star">
-          {star}
-        </div>
-      ))}
+      <MovieCard movie={props.movie}/>
     </div>
   );
 }
