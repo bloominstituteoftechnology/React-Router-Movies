@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MovieCard from './MovieCard';
 import axios from 'axios';
 
 export default class Movie extends Component {
@@ -26,6 +27,7 @@ export default class Movie extends Component {
       });
   };
   // Uncomment this code when you're ready for the stretch problems
+  
   // componentWillReceiveProps(newProps){
   //   if(this.props.match.params.id !== newProps.match.params.id){
   //     this.fetchMovie(newProps.match.params.id);
@@ -47,19 +49,7 @@ export default class Movie extends Component {
       <div className="save-wrapper">
         <div className="movie-card">
           <h2>{title}</h2>
-          <div className="movie-director">
-            Director: <em>{director}</em>
-          </div>
-          <div className="movie-metascore">
-            Metascore: <strong>{metascore}</strong>
-          </div>
-          <h3>Actors</h3>
-
-          {stars.map(star => (
-            <div key={star} className="movie-star">
-              {star}
-            </div>
-          ))}
+          <MovieCard movie={this.state.movie}/>
         </div>
         <div className="save-button">Save</div>
       </div>
