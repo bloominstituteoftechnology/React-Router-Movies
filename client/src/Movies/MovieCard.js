@@ -5,6 +5,7 @@ const MovieCard = props => {
     <div className="save-wrapper">
       <div className="movie-card">
         <h2>{props.title}</h2>
+        <div className="movie-card-line"></div>
         <div className="movie-director">
           Director: <em>{props.director}</em>
         </div>
@@ -12,7 +13,7 @@ const MovieCard = props => {
           Metascore: <strong>{props.metascore}</strong>
         </div>
         <h3>Actors</h3>
-
+        <div className="movie-card-line actor-line"></div> 
         {props.stars.map(star => (
           <div key={star} className="movie-star">
             {star}

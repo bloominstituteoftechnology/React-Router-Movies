@@ -1,13 +1,37 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
+  color: #323232;
+  font-family: 'Playfair Display', serif;
+  background: #0F2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: none;
+  min-height: 100vh;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #323232;
+  transition: all .3s ease-out;
+}
+
+a:hover {
+  color: lightskyblue;
+  background: #323232;
 }
 
 .movie-card {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #323232;
   border: 0;
+  border-radius: 3px;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
   padding: 1rem;
@@ -16,14 +40,38 @@ body {
   margin: 1rem auto;
 }
 
+.movie-card h2 {
+  text-transform: uppercase;
+  max-width: 80%;
+}
+
+.movie-card h3 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
 .movie-director {
   padding: 4px 0;
   font-size: 0.8rem;
 }
 
+.movie-card-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+
+.actor-line {
+  width: 20%;
+  margin-bottom: 10px;
+}
+
 .saved-list {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: rgba(255, 255, 255, 0.8);
   border: 0;
+  border-radius: 3px;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
   padding: 1rem;
@@ -43,30 +91,62 @@ body {
 .saved-movie {
   margin: 0 10px;
 }
+
 .saved-active {
-  color: blue;
+  color: lightseagreen;
   border: 1px solid grey;
+  border-radius: 3px;
   padding: 5px;
+  font-weight: bold;
+  text-shadow: 0px 0px 0px;
 }
+
 .save-wrapper {
   position: relative;
   width: 75%;
   margin: 1rem auto;
 }
+
 .save-button {
   position: absolute;
-  top: 25px;
+  top: 30px;
   right: 25px;
-  border: 1px solid grey;
-  padding: 5px 10px;
+  /* border: 1px solid grey; */
+  padding: 10px 20px;
   background-color: lightseagreen;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  min-width: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .3s ease-out;
 }
+
 .save-button:hover {
-  background-color: green;
-  color: white;
+  background-color: #323232;
+  color: lightseagreen;
+}
+
+.save-button a {
+  color: #323232;
 }
 
 .home-button {
-  padding: 5px 10px;
-  background-color: lightskyblue;
+  padding: 10px 20px;
+  /* background-color: lightskyblue; */
+  background-color: rgba(136, 206, 250, 0.8);
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  border-radius: 3px;
+  min-width: 50px;
+  text-align: center;
+  color: #323232;
+  transition: all .3s ease-out;
+
+}
+
+.home-button:hover {
+  color: lightskyblue;
+  background: #323232;
 }
