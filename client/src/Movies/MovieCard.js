@@ -1,9 +1,8 @@
 import React from 'react';
 
 const MovieCard = props => {
-    const {title, director, metascore, stars} = props.movie;
+    const {title, director, metascore, stars, saveData} = props.movie;
   return(
-    // <div className="save-wrapper">
         <div className="movie-card">
         <h2>{title}</h2>
         <div className="movie-director">
@@ -19,8 +18,10 @@ const MovieCard = props => {
             {star}
           </div>
         ))}
+        <div className="save-button" onClick={props => props.history.push(saveData)}>Save</div>
       </div>
-    // </div>
+      
+  
   );
 };
 
