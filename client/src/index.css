@@ -72,3 +72,8 @@ body {
   background-color: lightskyblue;
   text-decoration: none;
 }
+
+.activeNavButton:hover {
+  color: white;
+  text-decoration: none;
+}

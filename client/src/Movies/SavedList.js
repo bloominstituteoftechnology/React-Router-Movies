@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-// import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-// const HomeButtonClass = styled.div`
-// text-decoration: none;
-// `;
 
 export default class SavedList extends Component {
   constructor(props) {
@@ -16,12 +12,14 @@ export default class SavedList extends Component {
       <div className="saved-list">
         <h3>Saved Movies:</h3>
         {this.props.list.map(movie => (
-          <span className="saved-movie">{movie.title}</span>
+          <NavLink to={`/movies/${movie.id}`}>
+            <span className="saved-movie">{movie.title}</span>
+           </NavLink>
         ))}
-        <Link to='/'>
-        <div className="home-button">Home</div>
-        {/* <HomeButtonClass>Home</HomeButtonClass> */}
-        </Link>
+      
+        <NavLink activeClassName='activeNavButton' to='/'>
+          <div className="home-button">Home</div>
+        </NavLink>
       </div>
     );
   }
