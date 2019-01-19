@@ -17,18 +17,19 @@ export default class App extends Component {
   addToSavedList = (movie) => {
     const savedList = this.state.savedList;
 
-    // function isMovie(selectedMovie) {
-    //   if (selectedMovie === movie) {
-    //     return 
-    //   }
-    // }
-    // const savedListMovie = savedList.findIndex(movie);
-    // if (savedList.findIndex(movie) >= 0) {
-    //   console.log(movie);
-    // } else {
-    // }
-    // console.log(savedListMovie);
-    savedList.push(movie);
+    function isMovie(selectedMovie) {
+      if (selectedMovie === movie) {
+        return movie;
+      } else {
+        return null;
+      }
+    }
+    const savedListMovie = savedList.findIndex(isMovie);
+    if (savedListMovie >= 0) {
+      savedList.splice(savedListMovie, 1);
+    } else {
+      savedList.push(movie);
+    }
     this.setState({ savedList });
   };
 
