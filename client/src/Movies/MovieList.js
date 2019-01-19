@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import MovieCard from "./MovieCard";
 
 export default class MovieList extends Component {
@@ -26,13 +26,7 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <Link to={`/movies/${movie.id}`}>
-            <MovieDetails
-              to={`/movies/${movie.id}`}
-              key={movie.id}
-              movie={movie}
-            />
-          </Link>
+          <MovieDetails key={movie.id} movie={movie} />
         ))}
       </div>
     );
@@ -40,13 +34,9 @@ export default class MovieList extends Component {
 }
 
 function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
   return (
-    <MovieCard
-      title={title}
-      director={director}
-      metascore={metascore}
-      stars={stars}
-    />
+    <Link to={`/movies/${movie.id}`}>
+      <MovieCard movie={movie} />
+    </Link>
   );
 }
