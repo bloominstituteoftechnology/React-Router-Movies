@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-color: #f2f2f2; */
   color: #323232;
   font-family: 'Playfair Display', serif;
   background: #0F2027;
@@ -27,7 +26,6 @@ a:hover {
 }
 
 .movie-card {
-  /* background-color: #fff; */
   background-color: rgba(255, 255, 255, 0.8);
   color: #323232;
   border: 0;
@@ -111,7 +109,6 @@ a:hover {
   position: absolute;
   top: 30px;
   right: 25px;
-  /* border: 1px solid grey; */
   padding: 10px 20px;
   background-color: lightseagreen;
   border-radius: 3px;
@@ -134,7 +131,6 @@ a:hover {
 
 .home-button {
   padding: 10px 20px;
-  /* background-color: lightskyblue; */
   background-color: rgba(136, 206, 250, 0.8);
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
