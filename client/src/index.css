@@ -73,7 +73,7 @@ body {
   color: black;
   border: 1px solid black;
 }
-/* .home-button:hover {
+.home-button:hover {
   color: white;
 }
 a {
@@ -84,4 +84,4 @@ a {
 a:hover {
   color: darkgreen;
   font-weight: bolder;
-} */
+}

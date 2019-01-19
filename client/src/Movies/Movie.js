@@ -47,6 +47,7 @@ export default class Movie extends Component {
       // <div className="save-wrapper">
       <div className="movie-card">
       <MovieCard 
+      islist={false}
       title={title}
       director={director}
       metascore={metascore}
@@ -55,6 +56,9 @@ export default class Movie extends Component {
       />
       <div className="save-button">Save</div>
       </div>
+
+// (condition) ? [if condition true] : [if condition false]
+
       // </div>
       // <div className="save-wrapper">
       //   <div className="movie-card">

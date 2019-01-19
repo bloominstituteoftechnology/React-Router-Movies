@@ -7,8 +7,9 @@ const MovieCard = props => {
   return (
     <div className="save-wrapper">
          <div className="movie-card">
-         {/* <Link to={`/movies/${props.movie.id}`} key={props.movie.id}>{props.title}</Link> */}
-           <h2>{props.title}</h2>
+        <h2>{props.islist ? <Link to={`/movies/${props.id}`} key={props.id}>{props.title}</Link> : props.title }
+          {/* <Link to={`/movies/${props.id}`} key={props.id}>{props.title}</Link> */}
+          </h2>
            <div className="movie-director">
              Director: <em>{props.director}</em>
            </div>
