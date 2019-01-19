@@ -8,6 +8,7 @@ export default class SavedList extends Component {
   }
 
   render() {
+    // console.log(this.props)
     return (
       <div className="saved-list">
         <h3><Link to = "/MovieList">Saved Movies:</Link></h3>
