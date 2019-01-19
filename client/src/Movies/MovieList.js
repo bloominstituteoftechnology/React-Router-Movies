@@ -26,13 +26,13 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
+          <MovieDetails key={movie.id} movie={movie} saveHandlerFunc={this.props.handlerFunc}/>
         ))}
       </div>
     );
   }
 }
 
-function MovieDetails({ movie }) {
-  return <MovieCard movie={movie}/>
+function MovieDetails({ movie,  saveHandlerFunc}) {
+  return <MovieCard movie={movie} saveHandlerFunc={saveHandlerFunc}/>
 }
