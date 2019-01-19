@@ -5,7 +5,7 @@ export default class SavedList extends Component {
   constructor(props) {
     super(props);
   }
-
+  returnHome = _ => this.props.history.push("/");
   render() {
     return (
       <div className="saved-list">
@@ -15,7 +15,7 @@ export default class SavedList extends Component {
             {movie}
           </span>
         ))}
-        <Link to="/">
+        <Link to="/" onClick={this.returnHome}>
           <div className="home-button">Home</div>
         </Link>
       </div>
