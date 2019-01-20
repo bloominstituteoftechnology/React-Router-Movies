@@ -18,7 +18,7 @@ export default class App extends Component {
     for (let i = 0; i < savedList.length; i++){
       if (savedList[i].id === movie.id){
         console.log("Duplicate, can't add to movies");
-        return true;
+        return;
       }
     }
     savedList.push(movie);
