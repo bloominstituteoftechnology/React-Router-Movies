@@ -14,8 +14,29 @@ export default class App extends Component {
 
   addToSavedList = movie => {
     const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    let isFound = false;
+
+    if (savedList.length === 0) {
+        savedList.push(movie);
+        this.setState({ savedList });
+    }
+    else {
+      for (let i=0; i < savedList.length; i++) {
+        
+        if (savedList[i].id === movie.id) {
+          isFound = true;
+        }
+        else {
+          isFound = false;
+        }
+      }
+
+      if (isFound === false) {
+          savedList.push(movie);
+          this.setState({ savedList });
+      }
+    }
+    
   };
 
   render() {
