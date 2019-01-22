@@ -42,6 +42,16 @@ body {
 
 .saved-movie {
   margin: 0 10px;
+  background-color: ghostwhite;
+  border: 1px solid lightblue;
+  border-radius: .25rem;
+  padding: 5px 20px;
+  text-decoration: none;
+}
+.saved-movie:hover{
+  background-color: lightblue;
+  border: 1px solid lightgray;
+  color: white;
 }
 .saved-active {
   color: blue;
@@ -69,4 +79,7 @@ body {
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+}
+.activeNavButton{
+  background-color: lightblue;;
 }
