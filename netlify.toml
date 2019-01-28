@@ -1,0 +1,4 @@
+[build]
+base="React-Router-Movies"
+publish="client/"
+command="build/"
