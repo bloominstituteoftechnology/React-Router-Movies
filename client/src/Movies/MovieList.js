@@ -39,6 +39,6 @@ function MovieDetails({ movie }) {
   console.log("Movie ID: ", movie.id)
   return (
     <NavLink to={`/movies/${movie.id}`}>
-      <MovieCard />
+      <MovieCard movie={movie} />
     </NavLink>);
 }
