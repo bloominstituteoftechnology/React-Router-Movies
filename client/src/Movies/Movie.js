@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+// import MovieCard from './MovieCard';
 
 export default class Movie extends Component {
   constructor(props) {
@@ -10,10 +11,11 @@ export default class Movie extends Component {
     };
   }
 
-  componentDidMount(props) {
+  componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
-    // const id = props.match.params.id
+    // const id = 2;
+    console.log(this.props.match.params.id)
+    const id = this.props.match.params.id
     this.fetchMovie(id);
   }
 
@@ -64,6 +66,7 @@ export default class Movie extends Component {
           ))}
         </div>
         <div className="save-button">Save</div>
+        
       </div>
     );
   }
