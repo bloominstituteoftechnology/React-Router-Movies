@@ -1,0 +1,9 @@
+.movie-list a {
+	text-decoration: inherit;
+	color: black;
+}
+.movie-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}

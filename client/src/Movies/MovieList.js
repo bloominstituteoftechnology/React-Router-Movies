@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
 import { NavLink } from 'react-router-dom';
-
+import './MovieList.css';
 export default class MovieList extends Component {
 	constructor(props) {
 		super(props);
