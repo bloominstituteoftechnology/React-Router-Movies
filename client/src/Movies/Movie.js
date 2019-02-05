@@ -9,11 +9,14 @@ export default class Movie extends Component {
     };
   }
 
-  componentDidMount(props) {
-    // change this line to grab the id passed on the URL
-    const id = props.match.params.id;
-    this.fetchMovie(id);
-  }
+  // componentDidMount(props) {
+  //   // console.log(props.match.params)
+  //   // change this line to grab the id passed on the URL
+  //   const id = props.match.params.id;
+   
+  //   this.fetchMovie(id);
+    
+  // }
 
   fetchMovie = id => {
     axios
@@ -44,7 +47,9 @@ export default class Movie extends Component {
 
     const { title, director, metascore, stars } = this.state.movie;
     return (
+     
       <div className="save-wrapper">
+       {/* <div>{this.state.movie.find(movie => movie.id === this.id)}</div> */}
         <div className="movie-card">
           <h2>{title}</h2>
           <div className="movie-director">
