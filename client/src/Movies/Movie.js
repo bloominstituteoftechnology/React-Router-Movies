@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import MovieCard from "./MovieCard";
 
 export default class Movie extends Component {
   constructor(props) {
@@ -9,14 +10,10 @@ export default class Movie extends Component {
     };
   }
 
-  // componentDidMount(props) {
-  //   // console.log(props.match.params)
-  //   // change this line to grab the id passed on the URL
-  //   const id = props.match.params.id;
-   
-  //   this.fetchMovie(id);
-    
-  // }
+  componentDidMount(){
+    const {id} = this.props.match.params;
+    this.fetchMovie(id);
+  }
 
   fetchMovie = id => {
     axios
@@ -45,29 +42,11 @@ export default class Movie extends Component {
       return <div>Loading movie information...</div>;
     }
 
-    const { title, director, metascore, stars } = this.state.movie;
+    const { movie } = this.state;
     return (
-     
-      <div className="save-wrapper">
-       {/* <div>{this.state.movie.find(movie => movie.id === this.id)}</div> */}
-        <div className="movie-card">
-          <h2>{title}</h2>
-          <div className="movie-director">
-            Director: <em>{director}</em>
-          </div>
-          <div className="movie-metascore">
-            Metascore: <strong>{metascore}</strong>
-          </div>
-          <h3>Actors</h3>
-
-          {stars.map(star => (
-            <div key={star} className="movie-star">
-              {star}
-            </div>
-          ))}
-        </div>
-        <div className="save-button">Save</div>
-      </div>
+    <div className ="save-wrapper">
+    <MovieCard movie={movie}/>
+    </div>
     );
   }
 }
