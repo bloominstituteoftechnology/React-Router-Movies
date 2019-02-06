@@ -27,8 +27,6 @@ export default class App extends Component {
         
         <Route path="/movies/:id" component={Movie}/>
         
-        
-        <div>Replace this Div with your Routes</div>
       </div>
     );
   }
