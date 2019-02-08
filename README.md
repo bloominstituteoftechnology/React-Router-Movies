@@ -1,3 +1,5 @@
+<!-- prettier-ignore
+
 # Client Side Routing w/ React Router v. 4
 
 Topics:
@@ -9,22 +11,22 @@ Topics:
 
 ## Instructions
 
-* **Fork** this repository, then clone your fork.
-* **NOTE** You have 2 servers that you will be running here so read these instructions carefully.
-* **In the root of this directory**: Run `yarn install` to download dependencies.
-* Run the server using `yarn start` or `node server.js`. (Don't worry too much about this process, you'll get used to doing this and it will be explained more in the future).
-* In a separate terminal cd into the `client` folder and run `yarn install` to download dependencies.
-* Still inside the `client` folder run `yarn start` to run the client application.
+[X] **Fork** this repository, then clone your fork.
+[X]* **NOTE** You have 2 servers that you will be running here so read these instructions carefully.
+[X] **In the root of this directory**: Run `yarn install` to download dependencies.
+[X] Run the server using `yarn start` or `node server.js`. (Don't worry too much about this process, you'll get used to doing this and it will be explained more in the future).
+[X] In a separate terminal cd into the `client` folder and run `yarn install` to download dependencies.
+[X] Still inside the `client` folder run `yarn start` to run the client application.
 
-* Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
+[X] Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
   ![Movies Home](https://ibin.co/3xhmmHVl9BKF.png)
 
 ### Part 1:
 
-* Wrap your app with the router.
-* Inside your App file add two routes.
-  * one route for `/` that loads the `MovieList` component.
-  * one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
+[X] Wrap your app with the router.
+[X] Inside your App file add two routes.
+  [X] one route for `/` that loads the `MovieList` component.
+  [X] one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
 
 ### Part 2:
 
@@ -51,3 +53,4 @@ You will notice there is a 'Saved Movies' component that we are not currently us
 You will need to uncomment lines 29-39 in `Movie.js` to complete this. Your list of saved movies should be links to the movie itself. Study and understand what the `saveMovie` function is doing.
 
 ### Turn your Saved Movie `Link`s into `NavLink`s.
+-->
