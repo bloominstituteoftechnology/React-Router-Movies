@@ -21,4 +21,11 @@ export default class SavedList extends Component {
       </div>
     );
   }
+
 }
+
+
+// fuction routeToHome(props){
+//   // console.log("routeToHome props: ", props)
+//   this.props.history.push('/')
+//  }
