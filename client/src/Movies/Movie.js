@@ -9,8 +9,8 @@ export default class Movie extends Component {
     };
   }
 
-  componentDidMount(props) {
-    const id = Number(props.match.params.id);
+  componentDidMount() {
+    const id = Number(this.props.match.params.id);
     this.fetchMovie(id);
   }
 
