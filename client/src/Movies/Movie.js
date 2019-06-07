@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+ 
 export default class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
       movie: null
     };
+    const id = `${Movie.id}`
+    const movie =  ` ${Movie.id}` === this.props.match.params.id;
+    console.log(props.match)
+    console.log(movie.id)
   }
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const id = `${Movie.id}`
+    const movie =  ` ${Movie.id}` === this.props.match.params.id;
+    console.log( movie)
+    console.log(this.props.match.params.id)
+    console.log(movie.id)
     this.fetchMovie(id);
   }
 
@@ -40,6 +48,7 @@ export default class Movie extends Component {
   render() {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
+ 
     }
 
     const { title, director, metascore, stars } = this.state.movie;
