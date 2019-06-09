@@ -18,9 +18,11 @@ const MovieCard = ({ movie, saveMovie }) => {
           {star}
         </div>
       ))}
-      <div className='save-button' onClick={saveMovie}>
-        Save
-      </div>
+      {window.location.pathname !== '/' && (
+        <div className='save-button' onClick={saveMovie}>
+          Save
+        </div>
+      )}
     </div>
   );
 };

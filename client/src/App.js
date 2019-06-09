@@ -8,9 +8,10 @@ const App = () => {
   const [savedList, setSavedList] = useState([]);
 
   const addToSavedList = movie => {
-    const helperArray = [];
-    helperArray.push(movie);
-    setSavedList(helperArray);
+    const helperArray = [...savedList, movie];
+    let newArray = [];
+    newArray = [...new Set(helperArray)];
+    setSavedList(newArray);
   };
   return (
     <div>
