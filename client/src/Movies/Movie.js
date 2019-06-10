@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import MovieCard from './MovieCard';
  
 export default class Movie extends Component {
   constructor(props) {
@@ -7,20 +8,22 @@ export default class Movie extends Component {
     this.state = {
       movie: null
     };
-    const id = `${Movie.id}`
-    const movie =  ` ${Movie.id}` === this.props.match.params.id;
-    console.log(props.match)
-    console.log(movie.id)
+     const movie =  ` ${Movie.id}` === this.props.match.params.id;
+     console.log("LLL"+movie )
+     console.log(Movie.props)
   }
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = `${Movie.id}`
-    const movie =  ` ${Movie.id}` === this.props.match.params.id;
-    console.log( movie)
-    console.log(this.props.match.params.id)
-    console.log(movie.id)
-    this.fetchMovie(id);
+    // const id = this.props.match.params.id;
+    // const movie =  ` ${Movie.id}` === this.props.match.params.id;
+     
+    this.fetchMovie(this.props.match.params.id);
+  }
+  componentWillReceiveProps(newProps){
+    if(this.props.match.params.id !== newProps.match.params.id){
+      this.fetchMovie(newProps.match.params.id);
+    }
   }
 
   fetchMovie = id => {
@@ -40,10 +43,10 @@ export default class Movie extends Component {
   //   }
   // }
 
-  // saveMovie = () => {
-  //   const addToSavedList = this.props.addToSavedList;
-  //   addToSavedList(this.state.movie)
-  // }
+  saveMovie = () => {
+    const addToSavedList = this.props.addToSavedList;
+    addToSavedList(this.state.movie)
+  }
 
   render() {
     if (!this.state.movie) {
@@ -54,7 +57,9 @@ export default class Movie extends Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="save-wrapper">
-        <div className="movie-card">
+        <MovieCard movie ={this.state.movie}/>
+        <div className = 'save-button' onClick={this.saveMovie}>Save</div>
+        {/* <div className="movie-card">
           <h2>{title}</h2>
           <div className="movie-director">
             Director: <em>{director}</em>
@@ -70,7 +75,7 @@ export default class Movie extends Component {
             </div>
           ))}
         </div>
-        <div className="save-button">Save</div>
+        <div className="save-button">Save</div> */}
       </div>
     );
   }
