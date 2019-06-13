@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-
-import SavedList from './Movies/SavedList';
-import MovieList from './Movies/MovieList';
+import { Switch, Route } from 'react-router-dom';
+import { SavedList, withConditionalRender }from './Movies/SavedList';
+import List from './Movies/List';
 import Movie from './Movies/Movie';
+import FourOhFour from './FourOhFour';
+
 
 export default class App extends Component {
   constructor() {
@@ -13,16 +15,22 @@ export default class App extends Component {
   }
 
   addToSavedList = movie => {
-    const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    if(this.state.savedList.includes(movie)){
+      alert("You have already saved this movie!")
+      return;
+    }
+    this.setState({savedList: [...this.state.savedList, movie]});
   };
 
   render() {
     return (
-      <div>
-        <SavedList list={this.state.savedList} />
-        <div>Replace this Div with your Routes</div>
+      <div className="container">
+        <SavedList list={this.state.savedList}/>
+        <Switch>
+          <Route exact path="/" render={(props) => <List {...props} saveMovie={this.addToSavedList}/>}/>
+          <Route exact path="/movies/:id" render={(props) => <Movie {...props} saveMovie={this.addToSavedList}/>} />
+          {/* <Route component={FourOhFour}/> */}
+        </Switch>
       </div>
     );
   }
