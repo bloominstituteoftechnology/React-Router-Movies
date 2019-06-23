@@ -29,7 +29,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" render={(props) => <List {...props} saveMovie={this.addToSavedList}/>}/>
           <Route exact path="/movies/:id" render={(props) => <Movie {...props} saveMovie={this.addToSavedList}/>} />
-          {/* <Route component={FourOhFour}/> */}
+          <Route component={FourOhFour}/>
         </Switch>
       </div>
     );
