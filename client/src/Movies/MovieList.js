@@ -7,6 +7,7 @@ export default class MovieList extends Component {
     this.state = {
       movies: []
     };
+    console.log(props, "from constructor");
   }
 
   componentDidMount() {
@@ -21,20 +22,26 @@ export default class MovieList extends Component {
   }
 
   render() {
+
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
+          <MovieDetails key={movie.id} movie={movie} props={this.props} />
         ))}
       </div>
     );
   }
 }
 
-function MovieDetails({ movie }) {
+function routeToMovies(props,movie){
+  props.history.push(`/movies/${movie.id}`)
+
+}
+
+function MovieDetails({ movie, props }) {
   const { title, director, metascore, stars } = movie;
   return (
-    <div className="movie-card">
+    <div className="movie-card" onClick={() => routeToMovies(props,movie)}>
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
