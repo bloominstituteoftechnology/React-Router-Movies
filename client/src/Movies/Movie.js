@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Movie = (props) => {
+  console.log('props', props)
   const [movie, setMovie] = useState();
-
+  const id = props.match.params.id;
+ 
   useEffect(() => {
     
-    const { id } = props.match.params;
-  
-    const fetchMovie = id => {
+      
+     
       axios
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
@@ -17,31 +18,14 @@ const Movie = (props) => {
         .catch(error => {
           console.error(error);
         });
-    };
-  });
+ 
+  }, [id]);
 
-  // componentDidMount() {
-  //   // change this line to grab the id passed on the URL
-  //   const { id } = this.props.match.params;
-  //   this.fetchMovie(id);
-    
-  // }
 
-  // fetchMovie = id => {
-  //   axios
-  //     .get(`http://localhost:5000/api/movies/${id}`)
-  //     .then(response => {
-  //       this.setState(() => ({ movie: response.data }));
-  //     })
-  //     .catch(error => {
-  //       console.error(error);
-  //     });
-  // };
-  
-  // saveMovie = () => {
-  //   const addToSavedList = props.addToSavedList;
-  //   addToSavedList(movie)
-  // }
+  const saveMovie = () => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList(movie)
+  }
 
 
    if (!movie) {
@@ -67,7 +51,7 @@ const Movie = (props) => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={saveMovie}>Save</div>
     </div>
   );
 }
