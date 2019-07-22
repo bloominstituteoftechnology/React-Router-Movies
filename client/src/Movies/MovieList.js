@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// import movie from "./Movie.js"; 
 
 const MovieList = props => {
   const [movies, setMovies] = useState([])
@@ -23,6 +24,7 @@ const MovieList = props => {
       {movies.map(movie => (
         <MovieDetails key={movie.id} movie={movie} />
       ))}
+      
     </div>
   );
 }
