@@ -34,7 +34,7 @@ const Movie = (props) => {
   return (
     <div className="save-wrapper">
       <div className="movie-card">
-        <h2>{title}</h2>
+        <link to={`movie/${movie.id}`}>{title}</link>
         <div className="movie-director">
           Director: <em>{director}</em>
         </div>
