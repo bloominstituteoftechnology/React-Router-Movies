@@ -10,7 +10,8 @@ const App = () => {
   const [savedList, setSavedList] = useState( [] );
 
   const addToSavedList = (movie) => {
-    return savedList.includes(movie) ? null : setSavedList([...savedList, movie]);
+    let matches = savedList.filter(mov => mov.id === movie.id)
+    return matches[0] ? null : setSavedList([...savedList, movie])
 
   };
 
