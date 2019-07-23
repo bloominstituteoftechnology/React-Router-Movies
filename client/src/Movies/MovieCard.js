@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const MovieCard = props => {
   console.log('MOVIE CARD ERROR', props)
   return (
