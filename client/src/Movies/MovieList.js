@@ -25,7 +25,6 @@ const MovieList = (props) => {
     return (
       <div className="movie-list">
         {movies.map(movie => {
-          console.log("movieList: ", movie, "STARS: ", movie.stars)
           return (
           <div className="save-wrapper" key={movie.id}>
             <Link to={`/movies/${movie.id}`} className="link">
