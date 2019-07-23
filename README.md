@@ -9,6 +9,7 @@ Topics:
 
 ## Instructions
 
+<<<<<<< HEAD
 * [x] **Fork** this repository, then clone your fork.
 * [x] **NOTE** You have 2 servers that you will be running here so read these instructions carefully.
 * [x] **In the root of this directory**: Run `yarn install` to download dependencies.
@@ -17,6 +18,18 @@ Topics:
 * [x] Still inside the `client` folder run `yarn start` to run the client application.
 
 * [x] Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
+=======
+**NOTE ⚠️ - You will NOT need to finish this project after React Router I. Start working on it now, then you can finish it up after the next module - React Router II.**
+
+* **Fork** this repository, then clone your fork.
+* **NOTE** You have 2 servers that you will be running here so read these instructions carefully.
+* **In the root of this directory**: Run `yarn install` to download dependencies.
+* Run the server using `yarn start` or `node server.js`. (Don't worry too much about this process, you'll get used to doing this and it will be explained more in the future).
+* In a separate terminal cd into the `client` folder and run `yarn install` to download dependencies.
+* Still inside the `client` folder run `yarn start` to run the client application.
+
+* Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
+>>>>>>> upstream/master
   ![Movies Home](https://ibin.co/3xhmmHVl9BKF.png)
 
 ### Part 1:
@@ -42,13 +55,17 @@ If you have completed Parts 1 & 2 feel free to move on to these stretch goals.
 
 - [x] You may notice that we are using essentially the same exact JSX code in the `Movie` component and the `MovieDetails` component in `MovieList.js` create a new component in `MovieCard.js` that returns this JSX code. Then remove the old code from `Movie` and `MovieDetails` and instead return the new `MovieCard` component.
 
-### Add `Save Movie` funcitonality.
+### Add `Save Movie` functionality.
 
 - [x] You will notice there is a 'Saved Movies' component that we are not currently using. In this step you will add the functionality to save a movie. You will need to pass the `addToSavedList` function to the `Movie` component. Once you have done that you will need to add a click handler to the save button.
 
 ### Turn your Saved Movie list into `Link`s.
 
+<<<<<<< HEAD
 - [x] You will need to uncomment lines 29-39 in `Movie.js` to complete this. Your list of saved movies should be links to the movie itself. Study and understand what the `saveMovie` function is doing.
+=======
+You will need to uncomment lines 25-28 in `Movie.js` to complete this. Your list of saved movies should be links to the movie itself. Study and understand what the `saveMovie` function is doing.
+>>>>>>> upstream/master
 
 ### Saved Movie `Link`s into `NavLink`s.
 - [x] Turn your Saved Movie `Link`s into `NavLink`s

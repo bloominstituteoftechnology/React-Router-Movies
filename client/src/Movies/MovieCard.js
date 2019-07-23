@@ -1,8 +1,7 @@
 import React from 'react';
 
 const MovieCard = props => {
-  return (
-    // <div className="save-wrapper">
+  return props.movie.stars ? (
         <div className="movie-card">
           <h2>{props.title}</h2>
           <div className="movie-director">
@@ -13,14 +12,27 @@ const MovieCard = props => {
           </div>
           <h3>Actors</h3>
 
-          {props.stars.map(star => (
+          {props.movie.stars.map(star => (
             <div key={star} className="movie-star">
               {star}
             </div>
           ))}
         </div>
-        /* <div className="save-button">Save</div> */
-      // </div>
+  ) : (
+    <div className="movie-card">
+          <h2>Loading Movie Card...</h2>
+          <div className="movie-director">
+            Director: <em>Loading...</em>
+          </div>
+          <div className="movie-metascore">
+            Metascore: <strong>Loading...</strong>
+          </div>
+          <h3>Actors</h3>
+            <div className="movie-star">
+              Loading...
+            </div>
+          ))}
+        </div>
   )
 };
 

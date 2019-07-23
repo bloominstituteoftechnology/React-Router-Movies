@@ -1,31 +1,32 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 
-export default class MovieList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movies: []
-    };
-  }
+const MovieList = (props) => {
+  
+  const [movies, setMovies] = useState([])
 
-  componentDidMount() {
-    axios
-      .get("http://localhost:5000/api/movies")
-      .then(response => {
-        this.setState(() => ({ movies: response.data }));
-      })
-      .catch(error => {
-        console.error("Server Error", error);
-      });
-  }
+  useEffect(() => {
+    const getMovies = () => {
+      axios
+        .get('http://localhost:5000/api/movies')
+        .then(response => {
+          setMovies(response.data);
+        })
+        .catch(error => {
+          console.error('Server Error', error);
+        });
+    }
+    
+    getMovies();
+  }, []);
 
-  render() {
     return (
       <div className="movie-list">
-        {this.state.movies.map(movie => (
+        {movies.map(movie => {
+          console.log("movieList: ", movie, "STARS: ", movie.stars)
+          return (
           <div className="save-wrapper" key={movie.id}>
             <Link to={`/movies/${movie.id}`} className="link">
               <MovieCard
@@ -38,8 +39,10 @@ export default class MovieList extends Component {
               />
             </Link>
           </div>
-        ))}
+        )})}
       </div>
     );
-  }
+  
 }
+
+export default MovieList;
