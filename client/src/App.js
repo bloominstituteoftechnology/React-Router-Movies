@@ -8,6 +8,7 @@ const App = () => {
   const [savedList, setSavedList] = useState([]);
 
   const addToSavedList = movie => {
+    console.log("test movie", movie);
     setSavedList([...savedList, movie]);
   };
 
@@ -26,7 +27,7 @@ const App = () => {
 
 export default App;
 
-// <Route pat="/hoime" render={() => <MyComponent someProp={someData} someOtherProp={moreData} />} />
+// <Route pat="/home" render={() => <MyComponent someProp={someData} someOtherProp={moreData} />} />
 // pass anon function return whose sole job is to return the component to which we want mounted
 // delacring route and want to pass data to next component, pass location, history and match...
 // <Route render={(props) => (
@@ -38,4 +39,4 @@ export default App;
 // )} />
 // react render helps control state or data in onse spot(app.js)
 //
-//
+// history location and match is bascially what route render does {...props}

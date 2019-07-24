@@ -4,6 +4,7 @@ import axios from "axios";
 const Movie = props => {
   const [movie, setMovie] = useState({});
 
+  // console.log("pre test test", props);
   useEffect(() => {
     const id = props.match.params.id;
     // console.log("im in da props", id);
