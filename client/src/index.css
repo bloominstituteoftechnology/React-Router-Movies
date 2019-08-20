@@ -70,3 +70,14 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+.saved-movie{
+  text-decoration: none;
+  color: black;
+  padding: .3%;
+}
+.saved-movie.active-link{
+  font-weight: 600;
+  color: white;
+  background: black;
+}

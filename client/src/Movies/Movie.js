@@ -29,8 +29,6 @@ const Movie = (props) => {
     addToSavedList(movie)
   }
 
-  const clearSavedList = props.clearSavedList
-
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
