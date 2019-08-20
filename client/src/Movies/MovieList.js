@@ -20,14 +20,10 @@ const MovieList = props => {
     getMovies();
   }, []);
 
-  const pathToCard = id => {
-    props.history.push(`/movies/${id}`);
-  }
-
   return (
     <div className="movie-list">
       {movies.map(movie => (
-        <div onClick={()=>{pathToCard(movie.id)}}>
+        <div onClick={()=>props.history.push(`/movies/${movie.id}`)}>
           <MovieCard key={movie.id} id={movie.id} movie={movie} />
         </div>
       ))}
