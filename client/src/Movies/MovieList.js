@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const MovieList = props => {
   const [movies, setMovies] = useState([])
+  console.log('From Movie List:',props);
   useEffect(() => {
     const getMovies = () => {
       axios
