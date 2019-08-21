@@ -30,7 +30,7 @@ const Movie = props => {
     return <div>Loading movie information...</div>;
   }
 
-  const { title, director, metascore, stars } = movie;
+  // const { title, director, metascore, stars } = movie;
   return (
     <div className="save-wrapper">
       <MovieCard movie={movie} />
