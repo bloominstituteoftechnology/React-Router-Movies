@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState({});
- 
+ console.log('Movie', props.props.match.params.id);
+
+// function must be outside of the useEffect scope so it can be called back in the [] at the end.
+ const id = props.match.params.id;
   useEffect(() => {
-    const id = 1;
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
@@ -18,13 +21,15 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
+  },[id]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
   //   const addToSavedList = props.addToSavedList;
   //   addToSavedList(movie)
   // }
+
+  // !true === false, !false === true, !null === undefined === !false === true
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -35,6 +40,7 @@ const Movie = (props) => {
     <div className="save-wrapper">
       <div className="movie-card">
         <h2>{title}</h2>
+        <Link to='/movies/2'>Next Movie</Link>
         <div className="movie-director">
           Director: <em>{director}</em>
         </div>
