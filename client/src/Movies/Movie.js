@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState({});
- console.log('Movie', props.props.match.params.id);
+ console.log('Movie', props.match.params.id);
 
 // function must be outside of the useEffect scope so it can be called back in the [] at the end.
  const id = props.match.params.id;
@@ -35,6 +35,11 @@ const Movie = (props) => {
     return <div>Loading movie information...</div>;
   }
 
+  // const save = (event) =>{
+  //   event.preventDefault();
+  //   props.addToSavedList(movie);
+  // };
+
   const { title, director, metascore, stars } = movie;
   return (
     <div className="save-wrapper">
@@ -49,15 +54,23 @@ const Movie = (props) => {
         </div>
         <h3>Actors</h3>
 
-        {stars.map(star => (
+        {stars && stars.map(star => (
           <div key={star} className="movie-star">
             {star}
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div 
+        onClick={(event) => {
+          event.preventDefault();
+          props.addToSavedList(movie);
+      }} 
+      className="save-button">Save</div>
     </div>
   );
 }
 
 export default Movie;
+
+
+// <div onClick {save} className="save-button">Save</div>

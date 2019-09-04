@@ -17,9 +17,20 @@ const App = () => {
     <div>
       <SavedList list={savedList} />
       <Route exact path ='/' component={MovieList}  />
-      <Route path='/movies/:id' component={Movie}   />
+      <Route path='/movies/:id'
+      //  component={Movie}
+       render={props => <Movie
+                        addToSavedList={addToSavedList}
+                        {...props}
+                        // history={props.history}
+                        // location={props.location}
+                        // match={props.match}
+                        />} 
+      />
     </div>
   );
 };
 
 export default App;
+
+// ...spread operator
