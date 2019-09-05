@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import MovieCard from './MovieCard';
 
 const Movie = (props) => {
-  const [movie, setMovie] = useState({});
- console.log('Movie', props.match.params.id);
+  const [movie, setMovie] = useState(null);
+ console.log('Movie', props, props.match.params.id);
 
 // function must be outside of the useEffect scope so it can be called back in the [] at the end.
  const id = props.match.params.id;
@@ -34,43 +34,11 @@ const Movie = (props) => {
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
-
-  // const save = (event) =>{
-  //   event.preventDefault();
-  //   props.addToSavedList(movie);
-  // };
-
-  const { title, director, metascore, stars } = movie;
-  return (
-    <div className="save-wrapper">
-      <div className="movie-card">
-        <h2>{title}</h2>
-        <Link to='/movies/2'>Next Movie</Link>
-        <div className="movie-director">
-          Director: <em>{director}</em>
-        </div>
-        <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
-        </div>
-        <h3>Actors</h3>
-
-        {stars && stars.map(star => (
-          <div key={star} className="movie-star">
-            {star}
-          </div>
-        ))}
-      </div>
-      <div 
-        onClick={(event) => {
-          event.preventDefault();
-          props.addToSavedList(movie);
-      }} 
-      className="save-button">Save</div>
-    </div>
-  );
+    return (
+      <MovieCard movie={movie} addToSavedList={props.addToSavedList} />
+    );
 }
 
 export default Movie;
 
-
-// <div onClick {save} className="save-button">Save</div>
+// OR   <MovieCard movie={movie} {...props} />

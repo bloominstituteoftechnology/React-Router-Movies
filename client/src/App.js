@@ -33,4 +33,4 @@ const App = () => {
 
 export default App;
 
-// ...spread operator
+// ...spread operator. finds key:value pairs.
