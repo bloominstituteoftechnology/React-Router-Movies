@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 const MovieCard = props => {
   const movie = props.movie;
@@ -8,7 +8,7 @@ const MovieCard = props => {
     <div className="save-wrapper">
       <div className="movie-card">
         <h2>{title}</h2>
-        {/* <Link to='/movies/4'>Next Movie</Link> */}
+        {/* <NavLink to='/movies/'>Next Movie</NavLink> */}
         <div className="movie-director">
           Director: <em>{director}</em>
         </div>
@@ -32,8 +32,21 @@ const MovieCard = props => {
           className="save-button">Save</div>}
     </div>
   );
-  return;
 };
+
+// function ActionLink() {
+//   function handleClick(e) {
+//     e.preventDefault();
+//     console.log('The link was clicked.');
+//   }
+
+//   return (
+//     <NavLink to={'/movies'}>
+//       Next Movie
+//     </NavLink>
+//   );
+// }
+// {/* <NavLink to='/movies/3'>Next Movie</NavLink> */ }
 
 export default MovieCard;
 
@@ -44,3 +57,8 @@ export default MovieCard;
 
 
 // <div onClick {save} className="save-button">Save</div>
+
+// function routeToAvenger() {
+//   props.history.push(`/avengers/${avenger.id}`)
+// }
+

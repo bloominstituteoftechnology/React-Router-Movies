@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import MovieCard from './MovieCard';
 
 const MovieList = props => {
@@ -32,9 +32,9 @@ const MovieList = props => {
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars, id } = movie;
   return (
-    <Link to={`/movies/${id}`}>
+    <NavLink to={`/movies/${id}`}>
       <MovieCard movie={movie} />
-    </Link>
+    </NavLink>
   );
 }
 

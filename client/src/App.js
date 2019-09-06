@@ -7,10 +7,11 @@ import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
 const App = () => {
-  const [savedList, setSavedList] = useState( [] );
+  const [savedList, setSavedList] = useState([]);
 
   const addToSavedList = movie => {
-    setSavedList( [...savedList, movie] );
+    (!savedList.includes(movie)) &&
+      setSavedList([...savedList, movie]);
   };
 
   return (
