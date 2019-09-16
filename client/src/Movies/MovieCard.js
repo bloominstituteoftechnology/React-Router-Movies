@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const MovieCard = props => {
-  return;
+  console.log(props);
+  return <Link to="" />;
 };
 
 export default MovieCard;
