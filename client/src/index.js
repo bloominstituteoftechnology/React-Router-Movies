@@ -8,7 +8,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
 
-
+//Added Router Wrapper around App component
 <Router>
     <App />
 </Router>
