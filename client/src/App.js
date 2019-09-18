@@ -5,12 +5,12 @@ import Movie     from "./Movies/Movie";
 import MovieList from "./Movies/MovieList";
 
 
-const App = (props) => {
+const App = () => {
   const [savedList, setSavedList] = useState( [] );
 
   const addToSavedList = movie => {
     setSavedList( [...savedList, movie] );
-  };
+  }; 
 
   return (
     <div>
