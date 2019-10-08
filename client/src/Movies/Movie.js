@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import MovieList from './MovieList';
 
 const Movie = (props) => {
-  console.log(props);
+  
   const [movie, setMovie] = useState();
   
   useEffect(() => {
@@ -19,7 +20,6 @@ const Movie = (props) => {
         });
 
   },[]);
-  
   
   //Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
