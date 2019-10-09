@@ -8,7 +8,7 @@ import { Route, Link } from "react-router-dom";
 
 const App = (props) => {
   const [savedList, setSavedList] = useState( [] );
-
+// eslint-disable-next-line
   const addToSavedList = movie => {
     setSavedList( [...savedList, movie] );
   };

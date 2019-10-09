@@ -21,7 +21,7 @@ const Movie = (props) => {
 
   },[props.match.params.id]);
   
-  // Uncomment this only when you have moved on to the stretch goals
+  // eslint-disable-next-line
   const saveMovie = () => {
     const addToSavedList = props.addToSavedList;
     addToSavedList(movie)
