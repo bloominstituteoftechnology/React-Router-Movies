@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LambdaSchool/SPA-Routing-React"
+    "url": "https://github.com/LambdaSchool/SPA-Routing-React"
   },
   "author": "Lambda School",
   "license": "ISC",
@@ -19,6 +19,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react-router-dom": "^5.0.1"
   }
 }
