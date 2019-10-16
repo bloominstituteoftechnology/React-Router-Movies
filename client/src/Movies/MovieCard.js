@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-
 const MovieCard = props => {
   console.log(props);
   const [movies, setMovies] = useState([])
@@ -55,7 +54,7 @@ function CardDetails({ movie }){
 
       <button className="save-button">Save</button>
     </div>
-  
+    
     </div>
   );
 };
