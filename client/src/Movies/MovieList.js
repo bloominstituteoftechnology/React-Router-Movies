@@ -8,6 +8,7 @@ const MovieList = props => {
       axios
         .get('http://localhost:5000/api/movies')
         .then(response => {
+          console.log(response);
           setMovies(response.data);
         })
         .catch(error => {
@@ -26,6 +27,8 @@ const MovieList = props => {
     </div>
   );
 }
+
+
 
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
