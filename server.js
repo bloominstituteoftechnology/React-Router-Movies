@@ -14,6 +14,7 @@ const movies = [
 		director: 'Francis Ford Coppola',
 		metascore: 100,
 		stars: ['Marlon Brando', 'Al Pacino', 'Robert Duvall'],
+		image: 'http://www.gstatic.com/tv/thumb/v22vodart/6326/p6326_v_v8_aj.jpg'
 	},
 	{
 		id: 1,
@@ -21,6 +22,7 @@ const movies = [
 		director: 'George Lucas',
 		metascore: 92,
 		stars: ['Mark Hamill', 'Harrison Ford', 'Carrie Fisher'],
+		image: 'https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_.jpg'
 	},
 	{
 		id: 2,
@@ -28,6 +30,8 @@ const movies = [
 		director: 'Peter Jackson',
 		metascore: 92,
 		stars: ['Elijah Wood', 'Ian McKellen', 'Orlando Bloom'],
+		image: 'http://www.gstatic.com/tv/thumb/v22vodart/28828/p28828_v_v8_bg.jpg'
+
 	},
 	{
 		id: 3,
@@ -35,6 +39,8 @@ const movies = [
 		director: 'James Cameron',
 		metascore: 94,
 		stars: ['Arnold Schwarzenegger', 'Edward Furlong', 'Linda Hamilton'],
+		image: 'http://www.gstatic.com/tv/thumb/v22vodart/13308/p13308_v_v8_al.jpg'
+
 	},
 	{
 		id: 4,
@@ -42,6 +48,7 @@ const movies = [
 		director: 'The Farely Brothers',
 		metascore: 76,
 		stars: ['Jim Carrey', 'Jeff Daniels', 'Lauren Holly'],
+		image: 'http://www.gstatic.com/tv/thumb/v22vodart/16298/p16298_v_v8_aa.jpg'
 	},
 	{
 		id: 5,
@@ -49,6 +56,7 @@ const movies = [
 		director: 'George P. Cosmatos',
 		metascore: 89,
 		stars: ['Kurt Russell', 'Bill Paxton', 'Sam Elliot'],
+		image: 'http://www.gstatic.com/tv/thumb/v22vodart/15292/p15292_v_v8_ap.jpg'
 	},
 ];
 
