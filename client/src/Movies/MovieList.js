@@ -32,10 +32,12 @@ const MovieList = props => {
 };
 
 function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
+  const { title, director, metascore, stars, image } = movie;
   return (
     <div className="movie-card">
       <h2>{title}</h2>
+      <img height="300px" src={image}></img>
+
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
