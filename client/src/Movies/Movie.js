@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Movie = (props) => {
+const Movie = ({match}) => {
   const [movie, setMovie] = useState({});
- 
+  console.log(match);
+
+  
+  
   useEffect(() => {
-    const id = 1;
+    const {id} = match.params;
+    // const id = 1;
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
