@@ -52,8 +52,7 @@ const movies = [
 	},
 ];
 
-app.get('/api/movies', (req, res) => {
-	res.send(movies);
+app.get('/api*movies);
 });
 
 app.get('/api/movies/:id', (req, res) => {
