@@ -31,10 +31,10 @@ const Movie = (props) => {
           <div> <MovieCard title = {movie.title} director= {movie.director} metascore = {movie.metascore} stars= {movie.stars} /> </div>
         )
   // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = () => {
-  //   const addToSavedList = props.addToSavedList;
-  //   addToSavedList(movie)
-  // }
+  const saveMovie = () => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList(movie)
+  }
 }
 
 export default Movie;
