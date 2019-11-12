@@ -38,7 +38,7 @@ function MovieDetails({ movie }) {
 
 
   return (
-    <Link excet to={`/movies/${movie.id}`}>
+    <Link to={`/movies/${movie.id}`}>
       <div className="movie-card" >
         <h2>{title}</h2>
         <div className="movie-director">
