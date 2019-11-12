@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import MovieCard from './MovieCard';
 const MovieList = props => {
   
+  const saveMovie = () => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList(props.movie)
+  }
   
   
   return (
@@ -17,12 +21,14 @@ const MovieList = props => {
 
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
+  
+  
   return (
-     <Link to ={`/Movies/${movie.id}`}>
+     <NavLink to ={`/Movies/${movie.id}`}>
     <div> 
-        <MovieCard title = {movie.title} director= {movie.director} metascore = {movie.metascore} stars= {movie.stars} /> 
+        <MovieCard  title = {title} director= {director} metascore = {metascore} stars= {stars} /> 
       </div>
-     </Link> 
+     </NavLink> 
   );
 }
 
