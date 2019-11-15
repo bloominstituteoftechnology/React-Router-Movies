@@ -21,9 +21,7 @@ const MovieList = props => {
   console.log(movies);
   return (
     
-  <Link to=' /movies/${movie.id}'>
-
-
+  <Link to={`/movies/${movies.id}`}>
     <div className="movie-list">
       {movies.map(movie => (
         <MovieDetails key={movie.id} movie={movie} />
