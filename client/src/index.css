@@ -42,6 +42,7 @@ body {
 
 .saved-movie {
   margin: 0 10px;
+  color: red;
 }
 .saved-active {
   color: blue;
