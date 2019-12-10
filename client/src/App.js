@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import SavedList from './Movies/SavedList';
+import MovieList from './Movies/MovieList';
+import Movie from './Movies/Movie';
 
-const App = () => {
-  const [savedList, setSavedList] = useState( [] );
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      savedList: []
+    };
+  }
 
-  const addToSavedList = movie => {
-    setSavedList( [...savedList, movie] );
-  };
-
+render(){
   return (
     <div>
       <SavedList list={savedList} />
@@ -20,7 +24,6 @@ const App = () => {
         </Switch>
       </div>
     </div>
-  );
-};
-
-export default App;
+    );
+  };
+}
