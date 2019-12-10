@@ -22,13 +22,9 @@ const MovieList = props => {
   return (
     <div className="movie-list">
       {movies.map(movie => (
-        <Link to= {{
-          pathname: "/movies/:id",
-          search: "?sort=name",
-          hash: "#the-hash",
-          state: { setMovies: true }
-        }} 
-        MovieDetails key={movie.id} movie={movie} />
+        <Link to= {`/movies/${movie.id}`} >
+        <MovieDetails key={movie.id} movie={movie} />
+        </Link>
       ))}
     </div>
   );
