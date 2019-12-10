@@ -5,6 +5,7 @@ import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
+
 export default class App extends Component {
   constructor() {
     super();
@@ -12,11 +13,17 @@ export default class App extends Component {
       savedList: []
     };
   }
+addToSavedList = movie => {
+  const savedList = this.state.savedList;
+  savedList.push(movie);
+  this.setState({ savedList });
+};
+
 
 render(){
   return (
     <div>
-      <SavedList list={savedList} />
+      <SavedList list={this.state.savedList} />
       <div>
         <Switch>
           <Route path="/movies/:id" component={Movie} />
