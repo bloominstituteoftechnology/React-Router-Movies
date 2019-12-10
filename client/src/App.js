@@ -7,23 +7,23 @@ import { Route, Link } from 'react-router-dom';
 
 const App = () => {
 
-  const [savedList, setSavedList] = useState( [] );
+   const [savedList, setSavedList] = useState( [] );
   
   const addToSavedList = movie => {
     setSavedList( [...savedList, movie] );
+    
   };
-  // console.log(addToSavedList);
 
   return (
     <div>
       <SavedList list={savedList} />
       <div>
-        <Link exact to ='/movies/:id' > Movies</Link>
+        <Link exact to ='/' > Back to movie list</Link>
 
-        <Route exact path="/" component={MovieList}/>
-        <Route path = '/movies/:id' component = {Movie}/>
-         {/* <Route exact path="/movies/:id" render = {props => <Movie {...props} />}/> 
-          <Route exact path="/movies/:id" render = {props => <Movie {...props}  banana={savedList}/>}/>  */}
+        <Route exact path = "/" component={MovieList}/>
+        <Route path ='/movies/:id' component = {Movie}/>
+        {/* <Route exact path="/movies/:id" render = {props => <Movie {...props} />}/> 
+        <Route exact path="/movies/:id" render = {props => <Movie {...props}  banana={savedList}/>}/>  */}
       </div>
     </div>
   );
