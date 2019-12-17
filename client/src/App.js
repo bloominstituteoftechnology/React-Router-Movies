@@ -12,14 +12,16 @@ const App = () => {
     setSavedList([...savedList, movie]);
   };
 
+  const [savedMovie, setSavedMovie] = useState(true);
+
   return (
     <div>
-      <SavedList list={savedList} />
+      <SavedList list={savedList} savedMovie={savedMovie} />
       <Route exact path="/">
         <MovieList />
       </Route>
       <Route path="/movies/:id">
-        <Movie />
+        <Movie addToSavedList={addToSavedList} setSavedMovie={setSavedMovie} />
       </Route>
     </div>
   );
