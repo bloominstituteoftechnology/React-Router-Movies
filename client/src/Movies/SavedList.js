@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const SavedList = props => (
   
@@ -7,14 +7,14 @@ const SavedList = props => (
     <h3>Saved Movies:</h3>
     
     {props.list.map(movie => (
-      <NavLink key={movie.id} to={`/Movies/${movie.id}`}>
-      <span className="saved-movie">{movie.title}</span>
+      <NavLink to={`/movies/${movie.id}`}>
+        <span className="saved-movie">{movie.title}</span>{" "}
       </NavLink>
     ))}
 
-    <Link to="/">
+    <NavLink to="/">
       <div className="home-button">Home</div>
-    </Link>
+    </NavLink>
   </div>
 );
 
