@@ -12,9 +12,12 @@ body {
     0 2px 4px rgba(0, 0, 0, 0.24);
   padding: 1rem;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   margin: 1rem auto;
-  color: yellow;
+  color: gold;
   background-color: black;
 }
 
@@ -24,7 +27,6 @@ body {
 }
 
 .saved-list {
-  background-color: #fff;
   border: 0;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
@@ -33,9 +35,9 @@ body {
   position: relative;
   margin: 1rem auto;
   width: 75%;
-  display: flex;
+  /* display: flex; */
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .saved-list h3 {
