@@ -5,7 +5,7 @@ import MovieCard from './MovieCard';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
-  let {id} = useParams();
+  let { id } = useParams();
 
   useEffect(() => {
     // change ^^^ that line and grab the id from the URL
@@ -15,6 +15,7 @@ const Movie = (props) => {
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
           setMovie(response.data);
+          console.log(response);
         })
         .catch(error => {
           console.error(error);
