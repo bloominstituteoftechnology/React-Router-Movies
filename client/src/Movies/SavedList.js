@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route} from 'react-router-dom';
-import { Link } from 'react-router-dom';
+
+import { Link, BrowserRouter as Route, Router } from 'react-router-dom';
 
 const SavedList = props => (
   <div className="saved-list">
@@ -11,6 +11,7 @@ const SavedList = props => (
     <div className = "home-button">
     <Link to = '/' className="home-button">Home</Link>
     </div>
+    <Link to="/movies/"><div className="home-button">Movies</div></Link>
   </div>
 );
 

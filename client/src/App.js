@@ -15,10 +15,12 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <div>
-      <Route path = '/'> <MovieList />  </Route>
-      <Route path = '/movies/:id'> <Movie />  </Route>
-      </div>
+      <Route exact path="/movies" >
+        <MovieList/>
+        </Route>
+        <Route path="/movie/:id">
+         <Movie />
+        </Route>
     </div>  
   );
 };
