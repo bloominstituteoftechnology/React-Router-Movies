@@ -23,10 +23,10 @@ Topics:
 
 ### Part 1:
 
-- [ ] Wrap your app with the router.
-- [ ] Inside your App file add two routes.
-  - [ ] one route for `/` that loads the `MovieList` component.
-  - [ ] one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
+- [x] Wrap your app with the router.
+- [x] Inside your App file add two routes.
+  - [x] one route for `/` that loads the `MovieList` component.
+  - [x] one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
 
 ### Part 2:
 
@@ -46,7 +46,7 @@ If you have completed Parts 1 & 2 feel free to move on to these stretch goals.
 
 ### Add `Save Movie` functionality.
 
-- [ ] You will notice there is a 'Saved Movies' component that we are not currently using. In this step you will add the functionality to save a movie. You will need to pass the `addToSavedList` function to the `Movie` component. Once you have done that you will need to add a click handler to the save button. You will need to uncomment lines 24-27 in `Movie.js` to complete this. 
+- [ ] You will notice there is a 'Saved Movies' component that we are not currently using. In this step you will add the functionality to save a movie. You will need to pass the `addToSavedList` function to the `Movie` component. Once you have done that you will need to add a click handler to the save button. You will need to uncomment lines 24-27 in `Movie.js` to complete this.
 
 ### Turn your Saved Movie list into `Link`s.
 
