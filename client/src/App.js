@@ -12,9 +12,18 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <div>Replace this Div with your Routes</div>
+      <div>
+        <Route exact path='/' component={Movies}/>
+
+        <Route path='/movies/:itemID'>
+          <Movie/>
+        </Route>
+
+      </div>
     </div>
+
   );
 };
 
 export default App;
+
