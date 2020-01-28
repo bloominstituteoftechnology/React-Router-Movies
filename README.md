@@ -18,7 +18,7 @@ Topics:
 - [x ] In a separate terminal cd into the `client` folder and run `yarn install` to download dependencies.
 - [ x] Still inside the `client` folder run `yarn start` to run the client application.
 
-- x[ ] Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
+- x[x ] Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
   ![Movies Home](https://ibin.co/3xhmmHVl9BKF.png)
 
 ### Part 1:
