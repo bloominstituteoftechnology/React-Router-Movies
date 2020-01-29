@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {useParams, Route, NavLink, Switch, useRouteMatch} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 
-const Movie = (props) => {
+const Movie = () => {
   const [movie, setMovie] = useState();
   const { itemID } = useParams();
 
