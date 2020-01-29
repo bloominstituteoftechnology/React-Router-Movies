@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { Route, 
-//NavLink}
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -31,9 +30,10 @@ const MovieList = props => {
 }
 
 function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
+  const { title, director, metascore, stars, id } = movie;
   return (
-    <div className="movie-card">/movies/{id of movie here} URL :id (id of indiv movie)
+  <Link to = {`/movie/${id}`}>
+    <div className="movie-card">
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
@@ -49,6 +49,7 @@ function MovieDetails({ movie }) {
         </div>
       ))}
     </div>
+  </Link>
   );
 }
 
