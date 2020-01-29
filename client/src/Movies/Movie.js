@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {useParams} from "react-router-dom"
 
 const Movie = (props) => {
+  console.log(props, "Movie Props")
   const [movie, setMovie] = useState();
+    const params = useParams()
+  console.log(params, "params")
  
   useEffect(() => {
-    const id = 1;
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
        axios
-        .get(`http://localhost:5000/api/movies/${id}`)
+        .get(`http://localhost:5000/api/movies/${params.id}`)
         .then(response => {
           setMovie(response.data);
         })
@@ -49,7 +52,7 @@ const Movie = (props) => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={"hey"} >Save</div>
     </div>
   );
 }
