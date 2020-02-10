@@ -9,26 +9,27 @@ const App = () => {
   const [savedList, setSavedList] = useState( [] );
 
   const addToSavedList = movie => {
-		if (!savedList.includes(movie)) {
-			setSavedList( [...savedList, movie] );
-		}
+    // Added to prevent duplicates
+    if (!savedList.includes(movie)) {
+      setSavedList( [...savedList, movie] );
+    }
   };
 
   return (
     <div>
-			<Route render={(props) => (
-				<SavedList
-					{...props}
-					list={savedList}
-				/>
-			)} />
-			<Route exact path='/' component={MovieList} />
-			<Route path='/movie/:id' render={(props) => (
-				<Movie
-					{...props}
-					addToSavedList={addToSavedList}
-				/>
-			)} />
+      <Route render={(props) => (
+	<SavedList
+	  {...props}
+	  list={savedList}
+	/>
+      )} />
+      <Route exact path='/' component={MovieList} />
+      <Route path='/movie/:id' render={(props) => (
+	<Movie
+	  {...props}
+	  addToSavedList={addToSavedList}
+	/>
+      )} />
     </div>
   );
 };
