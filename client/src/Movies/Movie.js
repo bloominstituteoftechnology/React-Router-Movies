@@ -21,21 +21,24 @@ const Movie = (props) => {
 
   },[props.match.params.id]);
   
-  // Uncomment this only when you have moved on to the stretch goals
+  // Why even have this function at all? Just call addToSavedList directly
   // const saveMovie = () => {
   //   const addToSavedList = props.addToSavedList;
-  //   addToSavedList(movie)
+  //   addToSavedList(movie);
   // }
 
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
 
-  const { title, director, metascore, stars } = movie;
   return (
     <div className="save-wrapper">
       <MovieCard movie={movie} />
-      <div className="save-button">Save</div>
+      <div
+        onClick={() => props.addToSavedList(movie)}
+        className="save-button"
+        >Save
+      </div>
     </div>
   );
 }
