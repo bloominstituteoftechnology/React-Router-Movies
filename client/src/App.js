@@ -10,7 +10,7 @@ const App = () => {
   const addToSavedList = movie => {
     setSavedList( [...savedList, movie] );
   };
-//returning savedList passing the new contents of SavedList from addToSavedList as props?
+//returning savedList passing the new contents of SavedList from addToSavedList as props??
   return (
     <div>
 
