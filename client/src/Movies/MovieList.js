@@ -10,13 +10,14 @@ const MovieList = props => {
       axios
         .get('http://localhost:5000/api/movies')
         .then(response => {
+          // gets all the movies to be able to display on the home page 
+          console.log(response.data);
           setMovies(response.data);
         })
         .catch(error => {
           console.error('Server Error', error);
         });
     }
-
     getMovies();
   }, []);
 
