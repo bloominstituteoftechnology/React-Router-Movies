@@ -7,7 +7,7 @@ import Movie from './Movies/Movie';
 const App = () => {
   const [savedList, setSavedList] = useState( [] );
 
-  const addToSavedList = movie => {
+  const ToSavedList = movie => {
     setSavedList( [...savedList, movie] );
   };
 
@@ -20,7 +20,7 @@ const App = () => {
       </Route>
 
       <Route path="/movies/:moiveID">
-        <Movie />
+        <Movie ToSavedList={ToSavedList}/>
       </Route>
     </div>
   );
