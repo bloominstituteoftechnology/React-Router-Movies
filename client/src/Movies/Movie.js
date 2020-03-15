@@ -10,7 +10,7 @@ const Movie = (props) => {
     // You will NEED to add a dependency array to this effect hook
 
        axios
-        .get(`http://localhost:5000/api/movies/${props.Movie.id}`)
+        .get(`http://localhost:5000/api/movies/${props.movie.id}`)
         .then(response => {
           setMovie(response.data);
         })
