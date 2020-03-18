@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import {useParams} from "react-router-dom"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const Movie = (props) => {
-  console.log(props, "Movie Props")
+const Movie = props => {
+  console.log(props, "Movie Props");
   const [movie, setMovie] = useState();
-    const params = useParams()
-  console.log(params, "params")
+  const params = useParams();
+  console.log(params, "params");
 
   useEffect(() => {
-axios
-.get(`http://localhost:5000/api/movies/${params.id}`)
-        .then(response => {
-          setMovie(response.data);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-  },[]);
-  
+    axios
+      .get(`http://localhost:5000/api/movies/${params.id}`)
+      .then(response => {
+        setMovie(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
   //   const addToSavedList = props.addToSavedList;
@@ -46,9 +46,10 @@ axios
         ))}
       </div>
 
-
-<div className="save-button" onClick={"hey"} >Save</div>
-</div>
-);
-}
+      <div className="save-button" onClick={"hey"}>
+        Save
+      </div>
+    </div>
+  );
+};
 export default Movie;
