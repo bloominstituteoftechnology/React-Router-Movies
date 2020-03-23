@@ -26,8 +26,6 @@ const App = () => {
           <Movie addToSavedList= {addToSavedList}/>
         </Route>
       </div>
-   
-
     </div>
   );
 };
