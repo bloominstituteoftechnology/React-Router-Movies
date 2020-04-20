@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import MovieCard from './MovieCard';
 
 const MovieList = props => {
@@ -25,18 +24,18 @@ const MovieList = props => {
   return (
     <div className="movie-list">
       {movies.map(movie => (
-        <MovieDetails key={movie.id} movie={movie} />
+        <MovieDetails key={movie.id} movie={movie} addToSavedList={props.addToSavedList} />
       ))}
     </div>
   );
 }
 
-function MovieDetails({ movie }) {
+function MovieDetails({ movie, addToSavedList }) {
   //const { title, director, metascore, stars, id } = movie;
 
 
   return (
-    <MovieCard movie={movie}/>
+    <MovieCard key={movie.id} movie={movie} addToSavedList={addToSavedList}/>
   );
 }
 

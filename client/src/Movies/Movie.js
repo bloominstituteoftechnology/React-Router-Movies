@@ -25,10 +25,7 @@ const Movie = (props) => {
   },[id]);
   
   // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = () => {
-  //   const addToSavedList = props.addToSavedList;
-  //   addToSavedList(movie)
-  // }
+  
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -36,7 +33,7 @@ const Movie = (props) => {
 
   //const { title, director, metascore, stars } = movie;
   return (
-    <MovieCard movie={movie}/>
+    <MovieCard key={movie.id} addToSavedList={props.addToSavedList} movie={movie}/>
   );
 }
 

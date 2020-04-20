@@ -8,6 +8,10 @@ const MovieCard = props => {
   
   const history = useHistory();
   
+  const saveMovie = () => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList(movie)
+}
 
   return(
 
@@ -28,7 +32,7 @@ const MovieCard = props => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div onClick={saveMovie} className="save-button">Save</div>
     </div>
 
 
