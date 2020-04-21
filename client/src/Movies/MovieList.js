@@ -3,7 +3,9 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 export default function MovieList(props){
+
   const [movies, setMovies] = useState([])
+
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -22,8 +24,8 @@ export default function MovieList(props){
   return (
     <div className="movie-list">
       {movies.map(movie => (
-        <Link to={`/movies/${movie.id}`}>
-          <MovieDetails href={movie.id} key={movie.id} movie={movie} />
+        <Link to={ `/movies/${movie.id}` }>
+          <MovieDetails key={movie.id} movie={movie} />
         </Link>
       ))}
     </div>
