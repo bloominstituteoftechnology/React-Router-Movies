@@ -5,9 +5,9 @@ import {Link} from 'react-router-dom'
 const MovieList = props => {
   return (
     <div className="movie-list">
-      <Link to='/movies/:id'>{props.movies.map(movie => (
-        <MovieDetails key={movie.id} movie={movie} />
-      ))}</Link>
+      {props.movies.map(movie => (
+        <Link to={`/movies/${movie.id}`}><MovieDetails key={movie.id} movie={movie} /></Link>
+      ))}
     </div>
   );
 }
