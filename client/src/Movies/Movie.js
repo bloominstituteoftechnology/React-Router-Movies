@@ -22,7 +22,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
+  },[seeMovie.id]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
@@ -35,6 +35,7 @@ const Movie = (props) => {
   }
 
   const { title, director, metascore, stars } = movie;
+
   return (
     <div className="save-wrapper">
       <div className="movie-card">
