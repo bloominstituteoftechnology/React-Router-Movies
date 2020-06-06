@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import SavedList from './Movies/SavedList';
 import {Route, useParams} from 'react-router-dom'
 import MovieList from './Movies/MovieList' 
+import Movie from './Movies/Movie'
 
 const App = (props) => {
   console.log('App props', props)
@@ -34,12 +35,13 @@ const App = (props) => {
 
   return (
     <div>
-      <Route path='/'> 
+      {/* <Route>  */}
         <SavedList list={savedList} />
-      </Route>
-      <Route path='/'> 
+      {/* </Route> */}
+      <Route exact path='/'> 
         <MovieList movies={movieList}/>
       </Route>
+  <Route path='/movies/:id' render={(props) => <Movie {...props}/>}/>
       {/* <Route path */}
     </div>
   );
