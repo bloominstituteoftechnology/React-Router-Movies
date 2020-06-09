@@ -45,13 +45,13 @@ const App = () => {
      //13. adding Movie Route
     <div>  
       <SavedList list={savedList} />
-      <Route exact path = "/">Replace this Div with your Routes</Route>
-      <Route> 
-        <MovieList movies = {MovieList} />
+      <Route exact path = "/">
+        <MovieList movies = {movieList} />
       </Route>
-      <Route path = "/movie-list/:movieID">
-        <Movie movies={MovieList}/>
+      <Route path = "/movies/:movieID">
+        <Movie />
       </Route>
+      {/* <Route render={props => <Movie {...props} addToSavedList={addToSavedList} />}  path ="/movies/:movieID"/> */}
     </div>
   );
 };

@@ -5,7 +5,7 @@ import {useParams} from "react-router-dom"
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
-  const movieID = useParams();
+  const {movieID} = useParams();
   //adding params hook
   console.log("params:", movieID)
 
@@ -15,12 +15,12 @@ const Movie = (props) => {
   // })
  
   useEffect(() => {
-    const id = movieID.id;
+
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
-
+      // console.log("ID",id)
        axios
-        .get(`http://localhost:5000/api/movies/${id}`)
+        .get(`http://localhost:5000/api/movies/${movieID}`)
         .then(response => {
           setMovie(response.data);
         })
