@@ -70,3 +70,14 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+.myLinkStyles {
+  text-decoration:none;
+  color:darkBlue;
+}
+
+.movie-card {
+  background-color:darkGray;
+  box-shadow:2px 4px 2px blue;
+  color:darkBlue;
+}
