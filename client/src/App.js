@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <div>
-      <Route />
+      <Route to='' />
       <SavedList list={savedList} />
       <div>Replace this Div with your Routes</div>
     </div>
