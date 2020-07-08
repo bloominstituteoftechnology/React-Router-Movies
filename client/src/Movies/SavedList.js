@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom';
+
+
 export default class SavedList extends Component {
   constructor(props){
     super(props)
@@ -16,6 +18,8 @@ export default class SavedList extends Component {
             </NavLink>
           )
         })}
+        
+        {/* Add functionality so the `Home` button on the `SavedList` component navigates back to home. */}
         <div className="home-button">
           <Link to="/">Home</Link>
         </div>

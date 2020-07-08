@@ -23,7 +23,9 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
+        {/* //one route for `/` that loads the `MovieList` component. **This component will need the movies injected into it via props**. */}
         <Route exact path="/" component={MovieList} />
+        {/* one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component. */}
         <Route path="/movies/:id" render={ (props) => {
           return(<Movie {...props} addToSavedList={this.addToSavedList}/>)
         }} />

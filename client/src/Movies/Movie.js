@@ -9,7 +9,7 @@ export default class Movie extends React.Component {
       movie: null,
     };
   }
-
+  /* You will need to modify line 13 of `Movie.js` in order to accept the correct id for the movie selected. */
   componentDidMount() {
     this.fetchMovie(this.props.match.params.id)
   }
