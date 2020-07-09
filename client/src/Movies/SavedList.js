@@ -13,7 +13,7 @@ export default class SavedList extends Component {
         <h3>Saved Movies:</h3>
         {this.props.list.map( movie => {
           return(
-            <NavLink to={`/movies/${movie.id}`} key={movie.id} activeClassName="saved-active">
+            <NavLink to={`/movies/${movie.id}`} key={movie.id} activeClassName="saved-active" style={{paddingLeft: 13, textDecoration: 'none'}}>
               <span className="saved-movie">{movie.title}</span>
             </NavLink>
           )
@@ -21,7 +21,7 @@ export default class SavedList extends Component {
         
         {/* Add functionality so the `Home` button on the `SavedList` component navigates back to home. */}
         <div className="home-button">
-          <Link to="/">Home</Link>
+          <Link to="/"style={{paddingLeft: 13, textDecoration: 'none', color: 'black'}}>Home</Link>
         </div>
       </div>
     )

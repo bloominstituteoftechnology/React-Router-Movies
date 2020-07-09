@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const CORS = require('cors');
+const { urlencoded } = require('body-parser');
 
 const app = express();
 
@@ -14,6 +15,7 @@ const movies = [
 		director: 'Francis Ford Coppola',
 		metascore: 100,
 		stars: ['Marlon Brando', 'Al Pacino', 'Robert Duvall'],
+		image: url("https://m.media-amazon.com/images/M/MV5BNGU4NmRlYjctZDgwYi00NTAzLTk4ZGMtZTU2Yzc0NDI0NTcyXkEyXkFqcGdeQXVyMDc2NTEzMw@@._V1_SY1000_CR0,0,653,1000_AL_.jpg");
 	},
 	{
 		id: 1,

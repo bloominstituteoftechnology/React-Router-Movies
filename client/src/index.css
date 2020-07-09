@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #f2f2f2;
   background-image: url("https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
   height: 500px;
   background-position: center;
@@ -11,7 +10,7 @@ body {
 }
 
 .movie-card {
-  background-color: #fff;
+  background-color: #bab5b6;
   border: 0;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
@@ -19,6 +18,7 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  color: black;
 }
 
 .movie-director {
@@ -27,7 +27,7 @@ body {
 }
 
 .saved-list {
-  background-color: #fff;
+  background-color: #bab5b6;
   border: 0;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
@@ -49,7 +49,7 @@ body {
   margin: 0 10px;
 }
 .saved-active {
-  color: blue;
+  color: black;
   border: 1px solid grey;
   padding: 5px;
 }
@@ -64,14 +64,23 @@ body {
   right: 25px;
   border: 1px solid grey;
   padding: 5px 10px;
-  background-color: lightseagreen;
+  background-color: lightslategray;
 }
 .save-button:hover {
-  background-color: green;
+  background-color: red;
   color: white;
 }
 
 .home-button {
+  top: 25px;
+  right: 25px;
+  border: 1px solid black;
   padding: 5px 10px;
-  background-color: lightskyblue;
+  background-color: red;
+  color: white;
+}
+
+.home-button:hover {
+background-color: red;
+color: white;
 }
