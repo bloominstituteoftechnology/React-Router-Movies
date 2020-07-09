@@ -38,7 +38,7 @@ export default class MovieList extends Component {
 function MovieDetails({ movie }) {
   return (
    /*  Make it so that the card in `MovieList` is a link, this should direct the user to the `/movies/{id of movie here}` URL, where `:id` is the id of the individual movie. */
-    <Link to={`/movies/${movie.id}`}style={{paddingLeft: 13, textDecoration: 'none'}}>
+    <Link to={`/movies/${movie.id}`} style={{paddingLeft: 13, textDecoration: 'none'}}>
       <MovieCard movie={movie} style={{paddingLeft: 13, textDecoration: 'none'}}/>
     </Link>
   );

@@ -19,6 +19,7 @@ body {
   position: relative;
   margin: 1rem auto;
   color: black;
+  text-align: center;
 }
 
 .movie-director {
@@ -78,6 +79,7 @@ body {
   padding: 5px 10px;
   background-color: red;
   color: white;
+  border-radius: 10%;
 }
 
 .home-button:hover {
