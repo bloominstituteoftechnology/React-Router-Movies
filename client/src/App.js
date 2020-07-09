@@ -1,36 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import SavedList from './Movies/SavedList';
+import MovieList from './Movies/MovieList';
+import Movie from './Movies/Movie'
 
-const App = () => {
-  const [savedList, setSavedList] = useState([]);
-  const [movieList, setMovieList] = useState([]);
-
-  useEffect(() => {
-    const getMovies = () => {
-      axios
-        .get('http://localhost:5000/api/movies')
-        .then(response => {
-          setMovieList(response.data);
-        })
-        .catch(error => {
-          console.error('Server Error', error);
-        });
+export default class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      savedList: []
     }
-    getMovies();
-  }, []);
+  }
 
-  const addToSavedList = movie => {
-    setSavedList([...savedList, movie]);
-  };
+  addToSavedList = (movie) => {
+    console.log(this.state.savedList)
+    const savedList = this.state.savedList;
+    savedList.push(movie);
+    this.setState({savedList});
+  }
 
-  return (
-    <div>
-      <SavedList list={savedList} />
-      <div>Replace this Div with your Routes</div>
-    </div>
-  );
-};
-
-export default App;
+  render(){
+    return (
+      <div>
+        <SavedList list={this.state.savedList} />
+        {/* //one route for `/` that loads the `MovieList` component. **This component will need the movies injected into it via props**. */}
+        <Route exact path="/" component={MovieList} />
+        {/* one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component. */}
+        <Route path="/movies/:id" render={ (props) => {
+          return(<Movie {...props} addToSavedList={this.addToSavedList}/>)
+        }} />
+      </div>
+    )
+  }
+}
