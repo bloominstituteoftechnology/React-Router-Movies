@@ -20,7 +20,7 @@ body {
   margin: 1rem auto;
   color: black;
   text-align: center;
-  width: 75%;
+  width: 60%;
 }
 
 .movie-director {
@@ -80,7 +80,7 @@ body {
   padding: 5px 10px;
   background-color: red;
   color: white;
-  border-radius: 10%;
+  border-radius: 20%;
 }
 
 .home-button:hover {
