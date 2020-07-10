@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
@@ -13,7 +13,7 @@ const App = () => {
     const getMovies = () => {
       axios
         .get('http://localhost:5000/api/movies')
-        .then(response => {
+        .then(response => {console.log(response)
           setMovieList(response.data);
         })
         .catch(error => {
@@ -28,11 +28,15 @@ const App = () => {
   };
 
   return (
-    <div>
-      <Route exact path='/' component={MovieList}/>
-      <Route path='/movies/:id' component={Movie}/>
+    <div>   
       <SavedList list={savedList} />
-      <div>Replace this Div with your Routes</div>
+      <Switch>
+        <Route path='/movies/:id' component={Movie}/>
+        <Route path='/'>
+          <MovieList movies={movieList}></MovieList>
+        </Route>
+      </Switch>
+      {/* <div>Replace this Div with your Routes</div> */}
     </div>
   );
 };
