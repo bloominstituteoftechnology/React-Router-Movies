@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {useRouteMatch} from 'react-router-dom';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
+  const match = useRouteMatch('/movie/:id/');   // useMatch overrides the default id=1; and matches the id to movie  ex) /movie/1  /movie/2/
  
   useEffect(() => {
     const id = 1;
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
-       axios
-        .get(`http://localhost:5000/api/movies/${id}`)
+      axios
+       .get(`http://localhost:5000/api/movies/${match.params.id}`)    //using match, get the value from object to link movie to movieCard
         .then(response => {
           setMovie(response.data);
         })
