@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const CORS = require('cors');
+const { urlencoded } = require('body-parser');
 
 const app = express();
 
@@ -14,6 +15,7 @@ const movies = [
 		director: 'Francis Ford Coppola',
 		metascore: 100,
 		stars: ['Marlon Brando', 'Al Pacino', 'Robert Duvall'],
+		imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQNzV4q9PCIsJOoZ9jpPPnUCj7ztQDpKPj9A&usqp=CAU',
 	},
 	{
 		id: 1,
@@ -21,6 +23,7 @@ const movies = [
 		director: 'George Lucas',
 		metascore: 92,
 		stars: ['Mark Hamill', 'Harrison Ford', 'Carrie Fisher'],
+		imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTro4o1KVhQqBJUDdYgD-5D4zDT0q0DLLpxDw&usqp=CAU',
 	},
 	{
 		id: 2,
@@ -28,6 +31,7 @@ const movies = [
 		director: 'Peter Jackson',
 		metascore: 92,
 		stars: ['Elijah Wood', 'Ian McKellen', 'Orlando Bloom'],
+		imgURL: 'https://lh3.googleusercontent.com/aw_D73BxPhvF4kBD1W0NSeQ-lkDAkUmH7Ljl12BNUIRqmh6Bo-73P7ZXeTsMb2ZFSBEF=w400-h600-rw',
 	},
 	{
 		id: 3,
@@ -35,6 +39,7 @@ const movies = [
 		director: 'James Cameron',
 		metascore: 94,
 		stars: ['Arnold Schwarzenegger', 'Edward Furlong', 'Linda Hamilton'],
+		imgURL: 'https://contestimg.wish.com/api/webimage/5519724c4d613a0ce9c4f4bc-large.jpg?cache_buster=03c8932328964a836db69ca3c477ca3b',
 	},
 	{
 		id: 4,
@@ -42,6 +47,7 @@ const movies = [
 		director: 'The Farely Brothers',
 		metascore: 76,
 		stars: ['Jim Carrey', 'Jeff Daniels', 'Lauren Holly'],
+		imgURL: 'https://i.ebayimg.com/images/g/tYwAAOSwTA9X7Lbj/s-l640.jpg',
 	},
 	{
 		id: 5,
@@ -49,6 +55,7 @@ const movies = [
 		director: 'George P. Cosmatos',
 		metascore: 89,
 		stars: ['Kurt Russell', 'Bill Paxton', 'Sam Elliot'],
+		imgURL: 'https://cdn.shopify.com/s/files/1/1878/3879/products/N4526_1000x.jpg?v=1556167644',
 	},
 ];
 
