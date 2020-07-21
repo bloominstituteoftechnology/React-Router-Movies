@@ -33,7 +33,7 @@ const App = () => {
       <SavedList list={[ /* This is stretch */]} />
       {/* Step Three: Create and wrap MovieList component in Route - Make sure Route and the component are imported!*/}
       <Switch>
-      <Route path='/movies/:itemId'>
+      <Route path='/movies/:id'>
         <Movie /> 
       </Route>
       
