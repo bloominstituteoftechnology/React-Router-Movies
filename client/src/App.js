@@ -15,7 +15,7 @@ const App = () => {
         .get('http://localhost:5000/api/movies')
         .then(response => {
           setMovieList(response.data);
-          console.log(response.data)          
+                   
         })
         .catch(error => {
           console.error('Server Error', error);
