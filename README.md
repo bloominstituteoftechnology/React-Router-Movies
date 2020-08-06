@@ -25,7 +25,7 @@ Topics:
 ### Task 2a: MVP
 
 #### Set up Routes
-
+.
 * [ ] Wrap your app with the router.
 * [ ] Inside your App file add two routes.
   * [ ] one route for `/` that loads the `MovieList` component. **This component will need the movies injected into it via props**.
