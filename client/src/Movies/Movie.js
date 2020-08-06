@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom'
 const Movie = (props) => {
   const [movie, setMovie] = useState();
 
-  const {itemId} = usePramas()
+  const {itemId} = useParams()
  
   useEffect(() => {
     const id = itemId;
