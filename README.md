@@ -16,7 +16,7 @@ Topics:
 * [ ] **In the root of this directory**: Run `npm install` to download dependencies.
 * [ ] Run the server using `npm start` or `node server.js`. (Don't worry too much about this process, you'll get used to doing this and it will be explained more in the future).
 * [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
-* [ ] Still inside the `client` folder run `npm start` to run the client application.
+* [ ] Still inside the `client` folder run `npm start` to run the client applicatio.
 
 * [ ] Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000` (although the port number will be different if 3000 is being used).
 
