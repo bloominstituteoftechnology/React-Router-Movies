@@ -51,7 +51,7 @@ const App = () => {
           />
         )}
       />
-      <Route path="/movies/:id" component={Movie} />
+      <Route path="/movie/:id" component={Movie} />
     </div>
   );
 };

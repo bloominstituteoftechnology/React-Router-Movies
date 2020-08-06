@@ -5,8 +5,11 @@ import { useParams, Link, useHistory } from "react-router-dom";
 const Movie = (props) => {
   const [movie, setMovie] = useState();
   let params = useParams();
-  let history = useHistory();
-  const id = props.movie.find((element) => element.id === Number(params.movie));
+
+  let id = params.id;
+
+  console.log(params);
+  // const id = props.movie.find((element) => element.id === Number(params.movie));
   useEffect(() => {
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
@@ -32,7 +35,7 @@ const Movie = (props) => {
   const { title, director, metascore, stars } = movie;
   return (
     <div className="save-wrapper">
-      <div className="movie-card" onClick={() => history.push("/movies/id")}>
+      <div className="movie-card">
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
