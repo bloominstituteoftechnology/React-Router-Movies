@@ -21,7 +21,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[movie]);
+  },[itemId]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => {
