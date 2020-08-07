@@ -2,14 +2,17 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #f2f2f2;
+  background-image: url("https://images.unsplash.com/photo-1446825597988-2bb4dfd264ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60");
 }
 
 .movie-card {
-  background-color: #fff;
+  background-color: black;
+  width: 80%;
+  color: orangered;
+  text-decoration: none;
   border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 -1px 0 grey, 0 0 4px grey,
+    0 4px 4px grey;
   padding: 1rem;
   cursor: pointer;
   position: relative;
@@ -19,13 +22,15 @@ body {
 .movie-director {
   padding: 4px 0;
   font-size: 0.8rem;
+  text-decoration: none;
+
 }
 
 .saved-list {
-  background-color: #fff;
+  background-color: black;
   border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 -1px 0 grey, 0 0 2px grey,
+    0 2px 4px grey;
   padding: 1rem;
   cursor: pointer;
   position: relative;
@@ -34,6 +39,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: orangered;
 }
 
 .saved-list h3 {
@@ -44,7 +50,7 @@ body {
   margin: 0 10px;
 }
 .saved-active {
-  color: blue;
+  color: red;
   border: 1px solid grey;
   padding: 5px;
 }
@@ -68,5 +74,11 @@ body {
 
 .home-button {
   padding: 5px 10px;
-  background-color: lightskyblue;
+  background-color: orangered;
+  color: black;
+}
+
+a{
+  text-decoration: none;
+  
 }
