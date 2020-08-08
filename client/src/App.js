@@ -36,7 +36,7 @@ const App = () => {
       
       <SavedList list={ [/*This is a strech*/] } />
         <Switch>
-          <Route path='/movies/:id'>
+          <Route path='/movies/:itemId'>
             <Movie />
           </Route>
 
