@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const MovieList = props => {
   return (
@@ -11,10 +12,13 @@ const MovieList = props => {
 }
 
 function MovieDetails({ movie }) {
-  const { title, director, metascore } = movie;
+  const { itemId, title, director, metascore } = movie;
   return (
+  <Link to={`movies/${movie.id}`}>
     <div className="movie-card">
       <h2>{title}</h2>
+      
+
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
@@ -22,6 +26,7 @@ function MovieDetails({ movie }) {
         Metascore: <strong>{metascore}</strong>
       </div>
     </div>
+  </Link>
   );
 }
 
