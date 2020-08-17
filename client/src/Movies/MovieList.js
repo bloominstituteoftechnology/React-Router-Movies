@@ -1,10 +1,19 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 const MovieList = props => {
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
+      <Link to = {`/movies/${movie.id}`}>
         <MovieDetails key={movie.id} movie={movie} />
+      </Link>
       ))}
     </div>
   );
