@@ -7,11 +7,11 @@ const Movie = (props) => {
   console.log(props, 'Movie Props');
 
 
-  const { id } = useParams()
+  const paramsId = useParams()
   
  
   useEffect(() => {
-    
+    const {id} = paramsId
        axios
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {

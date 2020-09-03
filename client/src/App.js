@@ -35,7 +35,9 @@ const App = () => {
     <Card style={{backgroundImage: "url(https://www.tvovermind.com/wp-content/uploads/2018/06/32-2.jpg)", backgroundPosition: "center" }}>
       <SavedList list={[SavedList]} />
       <div>
+
       <Route exact path ="/" ><MovieList movies={movieList} /></Route>
+      
        <Route path = "/movies/:id" component={Movie} />
       </div>
       
