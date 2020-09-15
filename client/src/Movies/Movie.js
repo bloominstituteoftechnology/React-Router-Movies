@@ -11,8 +11,8 @@ import {
 
 
 export default function Movie(props) {
+  const { items } = props;
   const [movie, setMovie] = useState();
-
   const { id } = useParams();
   
   // let id = 1;
