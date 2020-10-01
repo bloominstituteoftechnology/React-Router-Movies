@@ -27,20 +27,32 @@ export default function App () {
   }, []);
 
   const addToSavedList = id => {
-    // This is stretch. Prevent the same movie from being "saved" more than once
-  };
+    let match=false;
+    // This is stretch. Prevent same movie from being "saved" more than once
+    console.log('addsaved=',movieList[id])
+    console.log('saved=',saved);
+    console.log('saved.length=',saved.length);
+    if (saved.length === 0){
+    setSaved([...saved,movieList[id]])
+    }else{
+        // match= saved.filter(item=>(item.id == (id)))
+        (!saved.find(item=>(item.id===Number(id)))) ? setSaved([...saved,movieList[id]]) : console.log('movie already exist');
+    }
+  }
 
   return (
     <div>
-       <SavedList list={saved} /> 
+       <SavedList key={saved.id} list={saved} /> 
       <Switch>
          
       <Route path="/movies/:movieId">
-       <Movie movies={movieList}/>
+       <Movie movies={movieList}
+       addToSavedList={addToSavedList}/>
       </Route> 
 
       <Route path="/">
-        <MovieList movies={movieList}/>
+        <MovieList movies={movieList}
+        />
       </Route> 
 
       </Switch>
