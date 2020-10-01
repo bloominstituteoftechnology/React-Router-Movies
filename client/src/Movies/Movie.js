@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {useParams} from 'react-router-dom';
 
 export default function Movie(props) {
+  console.log(props);
   const [movie, setMovie] = useState();
-
-  let id = 1;
+  const params=useParams();
+  //params.movieId has the dynamic id value
+  // let id = 1;
+  // let {id}=useParams();
+  let id=params.movieId
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
   useEffect(() => {
@@ -13,16 +18,22 @@ export default function Movie(props) {
       .then(response => {
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
+        console.log(response.data);
+        setMovie(response.data);
       })
       .catch(error => {
         console.error(error);
       });
     // This effect should run every time time
     // the `id` changes... How could we do this?
-  }, []);
+  }, [id]);
 
   // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = evt => { }
+  //  const saveMovie = evt => { 
+  //   //  evt.preventDefault();
+  //    console.log('id in movies=',id);
+  //    props.addToSavedList(id);
+  //  }
 
   if (!movie) {
     return <div>Loading movie information...</div>;
