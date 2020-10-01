@@ -32,12 +32,11 @@ export default function App () {
 
   return (
     <div>
-      {/* <SavedList list={saved} /> */}
+       <SavedList list={saved} /> 
       <Switch>
          
       <Route path="/movies/:movieId">
-       <Movie movies={movieList}
-     />
+       <Movie movies={movieList}/>
       </Route> 
 
       <Route path="/">
