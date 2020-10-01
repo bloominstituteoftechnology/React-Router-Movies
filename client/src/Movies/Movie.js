@@ -4,6 +4,9 @@ import axios from 'axios';
 
 export default function Movie(props) {
   const [movie, setMovie] = useState();
+  const [save, setSave] = useState(false);
+
+  const {saved} = props;
 
 const {id} = useParams();
 
@@ -26,7 +29,14 @@ const {id} = useParams();
   }, [id]);
 
   // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = evt => { }
+  const saveMovie = evt => { 
+    if (saved) {
+      props.removeFromSavedList(movie.id)
+    } else {
+      props.addToSavedList(movie.id)
+    }
+    setSave(!save)
+  };
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -52,7 +62,8 @@ const {id} = useParams();
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={saveMovie}>Save</div>
+
     </div>
   );
 }

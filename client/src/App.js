@@ -27,7 +27,20 @@ export default function App () {
   }, []);
 
   const addToSavedList = id => {
-    // This is stretch. Prevent the same movie from being "saved" more than once
+    const filteredList = movieList.filter((item) => item.id === id)[0];
+
+    const list = [...saved, filteredList];
+
+    setSaved(list);
+
+  };
+
+  const removeFromSavedList = id => {
+    const list = saved.filter((item) => item.id !== id);
+
+
+    setSaved(list);
+
   };
 
   return (
@@ -41,6 +54,7 @@ export default function App () {
         </Route>
         <Route exact path="/" >
           <MovieList movies={movieList}/>
+          <Movie addToSavedList={addToSavedList} saved={saved} removeFromSavedList={removeFromSavedList} />
         </Route>
       </div>
     </div>
