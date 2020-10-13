@@ -36,7 +36,7 @@ export default function App () {
       <div>
        
       <Route exact path='/'> 
-        <MovieList movieList={movieList} />
+        <MovieList movies={movieList} />
       </Route>
 
       <Route path='/movies/:id'>
