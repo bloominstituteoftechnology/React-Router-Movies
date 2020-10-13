@@ -34,13 +34,13 @@ export default function App () {
   return (
     <div>
       <SavedList list={[ /* This is stretch */]} />
-
-      <Route path='/MovieList'>
+      <Route exact path='/'>
         <MovieList movies={movieList}/>
       </Route>
-      <Route path='/Movie'>
+      <Route path='/movie/:id'>
         <Movie id={saved} />
       </Route>
+
     </div>
   );
 }
