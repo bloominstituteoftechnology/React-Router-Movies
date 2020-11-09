@@ -1,5 +1,6 @@
 import React from 'react';
 
 export default function MovieCard (props) {
-  return;
+  const { movie } = props;
+  console.log(props);
 }
