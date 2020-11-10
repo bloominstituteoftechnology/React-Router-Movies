@@ -1,10 +1,16 @@
 import React from 'react';
+import {useHistory, useParams} from 'react-router-dom';
 
 export default function MovieList(props) {
+const history = useHistory();
+
+// const{movieID} = useParams();
+// const {id} = props.movie;
   return (
     <div className="movie-list">
-      {props.movies.map(movie => (
+      {props.movies.map(movie => (<div onClick={()=>history.push(`/movies/${movie.id}`)}>
         <MovieDetails key={movie.id} movie={movie} />
+        </div>
       ))}
     </div>
   );
