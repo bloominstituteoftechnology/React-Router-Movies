@@ -53,11 +53,11 @@ const movies = [
 ];
 
 app.get('/api/movies', (req, res) => {
-	res.status(200).json(movies.map(({ id, title, director, metascore }) => ({ id, title, director, metascore })));
+	res.send(movies);
 });
 
 app.get('/api/movies/:id', (req, res) => {
-	const movie = movies.find(movie => movie.id.toString() === req.params.id);
+	const movie = movies.filter(movie => movie.id.toString() === req.params.id)[0];
 	res.status(200).json(movie);
 });
 
