@@ -1,4 +1,5 @@
 body {
+  display: grid;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -6,8 +7,11 @@ body {
 }
 
 .movie-card {
-  background-color: #fff;
+  background-color: rgba(210, 217, 165, 0.822);
   border: 0;
+  max-width: 70%;
+  text-align-last: center;
+  border-radius: 5px;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
   padding: 1rem;
@@ -18,11 +22,13 @@ body {
 
 .movie-director {
   padding: 4px 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .saved-list {
-  background-color: #fff;
+  background-color: rgba();
+  border-radius: 10px;
+  max-width: 70%;
   border: 0;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
@@ -44,29 +50,34 @@ body {
   margin: 0 10px;
 }
 .saved-active {
-  color: blue;
   border: 1px solid grey;
   padding: 5px;
 }
 .save-wrapper {
   position: relative;
-  width: 75%;
   margin: 1rem auto;
 }
 .save-button {
   position: absolute;
-  top: 25px;
-  right: 25px;
-  border: 1px solid grey;
-  padding: 5px 10px;
-  background-color: lightseagreen;
+  border-radius: 20px;
+  top: 100px;
+  left: 30px;
+  font-family: sans-serif;
+  padding: 4px 4px;
+  background-color: whitesmoke;
+  border: solid 3px rgba(210, 217, 165, 0.822);
+  color: rgba(85, 96, 17, 0.822);
+
+  border-radius: 20px;
 }
 .save-button:hover {
-  background-color: green;
+  background-color: cornflowerblue;
   color: white;
 }
 
 .home-button {
   padding: 5px 10px;
-  background-color: lightskyblue;
+  border-radius: 20px;
+  color: black;
+  background-color: rgba(235, 235, 235, 0.995);
 }
