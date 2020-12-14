@@ -1,9 +1,16 @@
 import React from 'react';
+import { useHistory, useParams } from 'react-router-dom'
 
 export default function MovieCard ({details}) {
+  const {history} = useHistory();
+
+  const goToMovieCard = () =>{
+    history.push(`/movies/${details.id}`);
+  }
+
   return(
     <div>
-      <div className="movie-card">
+      <div className="movie-card" onClick={goToMovieCard} >
           <h2>{details.title}</h2>
           <div className="movie-director">
             Director: <em>{details.director}</em>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import MovieCard from './MovieCard'
 
 export default function Movie(props) {
@@ -34,7 +34,7 @@ export default function Movie(props) {
 
   return (
     <div className="save-wrapper">
-      <MovieCard details = {movie}/>
+      <MovieCard details={movie}/>
     </div>
   );
 }
