@@ -20,7 +20,7 @@ Topics:
 
 * [ ] Once your application is up and running on the client, you should see a browser window that looks like [this](https://tk-assets.lambdaschool.com/c6b3e8d8-afe0-4663-82da-60b1de76f649_movies-home.png) at `localhost:3000` (although the port number will be different if 3000 is being used).
 
-### Task 2: MVP
+### Task 2: MVP//
 
 #### Design Files
 
