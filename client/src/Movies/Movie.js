@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 export default function Movie(props) {
-
+  const {goBack} = useHistory();
   const [movie, setMovie] = useState();
   const { id } = useParams();
 console.log(id);
@@ -53,7 +54,7 @@ console.log(id);
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={()=>(goBack(-1))}>Save</div>
     </div>
   );
 }
