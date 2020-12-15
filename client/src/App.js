@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {Route,Link,Switch } from "react-router-dom"
-
+import {Route,Switch } from "react-router-dom"
+import Movie from "./Movies/Movie"
 import SavedList from './Movies/SavedList';
+import MovieList from "./Movies/MovieList";
+// import Item from ".MovieCard";
 
 export default function App () {
   const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
@@ -31,9 +33,14 @@ export default function App () {
   return (
     <div>
       <SavedList list={[ /* This is stretch */]} />
-        <Route exact path='/'>
-        <MovieList key = {movieList} />
+      <Switch>
+        <Route path="/movies/:Id">
+         <Movie/>
         </Route>
+        <Route exact path='/'>
+        <MovieList  movies = {movieList}/>
+        </Route>
+        </Switch>
         </div>
   );
 }
