@@ -70,3 +70,22 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(7, 37, 47);
+  color: #e0e0e0;
+}
+
+.nav-links a{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
