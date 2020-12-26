@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams} from "react-router-dom"
+import { useParams } from "react-router-dom"
 
-export default function Movie(props) {
+export default function Movie() {
   const [movie, setMovie] = useState();
-
+  
   let {id}= useParams()
+   console.log(id)
 
-console.log(id)
-
+  
+  
 
   useEffect(() => {
     axios
@@ -16,7 +17,7 @@ console.log(id)
       .then(response => {
         // Study this response with a breakpoint or log statements
         setMovie(response.data)
-        // console.log(response.data)
+         console.log(response.data)
       })
       .catch(error => {
         console.error(error);
