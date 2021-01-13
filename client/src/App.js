@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { BrowserRouter, Route, Link } from "react-router-dom";
+// import { BrowserRouter, Route, Link } from "react-router-dom";
 
 import axios from "axios";
 
@@ -39,10 +39,7 @@ export default function App() {
         }
       />
 
-      <div>
-        Replace this Div with your Routes
-        <BrowserRouter></BrowserRouter>
-      </div>
+      <div>Replace this Div with your Routes</div>
     </div>
   );
 }
