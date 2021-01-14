@@ -30,7 +30,7 @@ function MovieDetails(props) {
  
 
   return (
-    <div  onClick={(evt) => history.push(`/movies/${movie.id}`)} to={'/movies/:movie.id'}className="movie-card">
+    <div  onClick={(evt) => history.push(`/movies/${movie.id}`)} to={'/movies/:movie.id'} className="movie-card">
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
