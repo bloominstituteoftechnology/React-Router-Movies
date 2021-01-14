@@ -21,7 +21,7 @@ export default function Movie(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/movies/${movieId}`) // Study this endpoint with Postman
+      .get(`http://localhost:5000/api/movies/${movieId}`)
       .then(response => {
         // Study this response with a breakpoint or log statements
         console.log("Response from Movie useEffect: ", response);
@@ -32,7 +32,7 @@ export default function Movie(props) {
         console.error(error);
       });
     // This effect should run every time time the `id` changes... How could we do this?
-  }, [movieId]);
+  }, [movieId]); // fetches detailed movie id info, dependency movieId
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => { }
