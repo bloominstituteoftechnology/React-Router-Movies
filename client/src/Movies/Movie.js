@@ -16,19 +16,19 @@ console.log(id);
       .then(response => {
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
-        console.log('get response', response);
+        console.log('success', response);
         setMovie(response.data);
         
       })
       .catch(error => {
-        console.error(error);
+        console.error('error', error);
       });
     // This effect should run every time
     // the `id` changes... How could we do this?
   }, [id]);
 
   // Uncomment this only when you have moved on to the stretch goals
-  const saveMovie = evt => { }
+  //const saveMovie = evt => { }
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -46,7 +46,7 @@ console.log(id);
         <div className="movie-metascore">
           Metascore: <strong>{metascore}</strong>
         </div>
-        <h3>Actors</h3>
+        <h3>Starring</h3>
 
         {stars.map(star => (
           <div key={star} className="movie-star">
