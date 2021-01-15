@@ -11,7 +11,7 @@
         import Route from 'react-router-dom/Route';
 4. Wrap the main App in the <Router> tags in the entire return statement on the index.js page. FIRST CODING STEP
 
-5. Build the route! 
+5. Build the routes on the App.js page ***MAKE SURE TO DO ALL PROPER IMPORTING OF COMPONENTS/DEPENDENCIES/ETC.
     <Route path="/" exact={true} render={                     //the exact is a parameter, this allows you only to see one of those routes at a time
         ()=> {
             return (<h1>Welcome Home</h1>);
