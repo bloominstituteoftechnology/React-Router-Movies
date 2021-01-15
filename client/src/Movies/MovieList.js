@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useRouteMatch, useHistory } from 'react-router-dom';
 
+
 export default function MovieList({movieList}) {
   const { url } = useRouteMatch(); //Matching the url for the individual movie pages?
   console.log("url: ", url); //Here we can see it in the console
@@ -15,12 +16,12 @@ export default function MovieList({movieList}) {
 }
 
 function MovieDetails(props) {
-  const { eachMovie }=props;
-  const { title, director, metascore } = props.eachMovie;
+  const { movie }=props; //should be eachMovie? --No, because it's a different variable in the MovieList function, here we're importing the movie component
+  const { title, director, metascore } = props.movie; //eachMovie?
   const history = useHistory();
 
   return (
-  <Link to ={"/movies/:eachMovie.id"} className='movie-card'>
+  <Link to ={"/movies/:movie.id"} className='movie-card'> 
     <div className="movie-card">
       <h2>{title}</h2>
       <div className="movie-director">
