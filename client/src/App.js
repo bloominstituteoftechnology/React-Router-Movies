@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
@@ -8,6 +8,7 @@ import Movie from './Movies/Movie';
 export default function App () {
   
   const [movieList, setMovieList] = useState([]);
+  console.log("what is this, I'm from App.js:", movieList);
 
   useEffect(() => {
     const getMovies = () => {
@@ -28,16 +29,18 @@ export default function App () {
  
 
   return (
-  
-    <div>
-      <Route path={'/'}>
+   
+    
+    <Switch>
+      <Route exact path={'/'}>
         <MovieList movieList={movieList}/>
       </Route>
 
       <Route path={'/movies/:movieId'}>
         <Movie movieList={movieList}/>
       </Route>
-    </div>
+    
+    </Switch>
   
   );
 }
