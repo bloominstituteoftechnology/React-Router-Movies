@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory, useParams, useRouteMatch } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 export default function MovieCard (props) {
   const [movie, setMovie] = useState({});
@@ -8,11 +8,11 @@ export default function MovieCard (props) {
   // NOTE: only one prop will be defined
   // If route is for the MovieList on home, movieDetails will be defined, movieId will come from movieDetails.id
   // If route is for a MovieCard, movieList will be defined, movieId will come from useParams()
-  let { movieList, movieDetails } = props; 
-  console.log("Props from MovieCard: ", props);
+  let { movieList, movieDetails, addToSavedList } = props; 
+  // console.log("Props from MovieCard: ", props);
 
   let { movieId } = useParams();
-  console.log("movieId from MovieCard: ", movieId); // gets the movieId, an integer
+  // console.log("movieId from MovieCard: ", movieId); // gets the movieId, a string
 
   const isHomepage = movieDetails !== undefined;
     
@@ -25,6 +25,7 @@ export default function MovieCard (props) {
     // we have movieId
     movieDetails = movieList.find(movie => `${movie.id}` === movieId);
   }; // defines movieId and defines movieDetails in the case where it's undef
+  // movie.id is an integer but movie.Id is a string
 
   const history = useHistory();
 
@@ -35,7 +36,7 @@ export default function MovieCard (props) {
     axios
       .get(`http://localhost:5000/api/movies/${movieId}`)
       .then(response => {
-        console.log("Response from MovieCard useEffect: ", response);
+        // console.log("Response from MovieCard useEffect: ", response);
         // and set the response data as the 'movie' slice of state
         setMovie(response.data);
       })
@@ -44,9 +45,12 @@ export default function MovieCard (props) {
       }); 
   }, [movieId]); // uses movieId, fetches movie id info, movieId dependency
 
-  // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = evt => { }
 
+  const saveMovie = evt => { 
+    console.log("function: ", addToSavedList);
+    addToSavedList(movie);
+    console.log("movie from MC: ", movie);
+  };
 
   if (!movieDetails) {
     return <div>Loading movie information...</div>;
@@ -54,11 +58,8 @@ export default function MovieCard (props) {
 
   const { title, director, metascore } = movieDetails;
   const { stars } = movie;
-  console.log("MOVIE CARD: movieDetails: ", movieDetails);
-  console.log("MOVIE CARD director: ", director);
-  
- 
-
+  // console.log("MOVIE CARD: movieDetails: ", movieDetails);
+  // console.log("MOVIE CARD director: ", director);
 
   return (
     <div className="save-wrapper">
@@ -72,9 +73,7 @@ export default function MovieCard (props) {
           Metascore: <strong>{metascore}</strong>
         </div>
         {/* Inline If with Logical && Operator */}
-        { !isHomepage &&
-        <h3>Actors</h3>
-      }
+        { !isHomepage && <h3>Actors</h3> }
 
       {/* Only render if it's not the homepage  */}
         {!isHomepage && stars && stars.map(star => (
@@ -82,11 +81,10 @@ export default function MovieCard (props) {
             {star}
           </div>
         ))}
-        
-         
-
       </div>
-      <div className="save-button">Save</div>
+
+      <div onClick={saveMovie} className="save-button">Save</div>
+
     </div>
 
     

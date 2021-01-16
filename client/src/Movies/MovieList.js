@@ -3,7 +3,7 @@ import { useRouteMatch } from 'react-router-dom';
 import MovieCard from './MovieCard';
 
 
-export default function MovieList({movieList}) {
+export default function MovieList({movieList, addToSavedList}) {
   // console.log("props passed to movieList: ",{movieList}) // it works, array of movie objects
 
   // We'll grab the current URL using the hook
@@ -13,9 +13,9 @@ export default function MovieList({movieList}) {
   return (
     <div className="movie-list">
       {movieList && movieList.map(movie => {
-      console.log("Movie: ", movie);
-        //  return <MovieDetails key={movie.id} movie={movie} />
-          return <MovieCard key={movie.id} movieDetails={movie}/>
+        // console.log("Movie: ", movie);
+        
+          return <MovieCard addToSavedList={addToSavedList} key={movie.id} movieDetails={movie}/>
       })}
     </div>
   );
