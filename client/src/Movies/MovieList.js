@@ -1,27 +1,42 @@
 import React from 'react';
+import { useRouteMatch } from 'react-router-dom';
+import MovieCard from './MovieCard';
 
-export default function MovieList(props) {
+
+export default function MovieList({movieList, addToSavedList}) {
+  // console.log("props passed to movieList: ",{movieList}) // it works, array of movie objects
+
+  // We'll grab the current URL using the hook
+  const { url } = useRouteMatch();
+  console.log("url from MovieList: ", url);
+
   return (
     <div className="movie-list">
-      {props.movies.map(movie => (
-        <MovieDetails key={movie.id} movie={movie} />
-      ))}
+      {movieList && movieList.map(movie => {
+        // console.log("Movie: ", movie);
+        
+          return <MovieCard addToSavedList={addToSavedList} key={movie.id} movieDetails={movie}/>
+      })}
     </div>
   );
-}
+    }
+// COMBINED IN MOVIECARD: 
+// function MovieDetails(props) {
+//   const {movie} = props;
+//   const { title, director, metascore } = props.movie;
+  
+//   const history = useHistory();
+ 
 
-function MovieDetails(props) {
-  const { title, director, metascore } = props.movie;
-
-  return (
-    <div className="movie-card">
-      <h2>{title}</h2>
-      <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div  onClick={(evt) => history.push(`/movies/${movie.id}`)} to={'/movies/:movie.id'} className="movie-card">
+//       <h2>{title}</h2>
+//       <div className="movie-director">
+//         Director: <em>{director}</em>
+//       </div>
+//       <div className="movie-metascore">
+//         Metascore: <strong>{metascore}</strong>
+//       </div>
+//     </div>
+//   );
+// }
