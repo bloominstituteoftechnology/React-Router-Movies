@@ -28,16 +28,18 @@ export default function App () {
   const addToSavedList = id => {
     // This is stretch. Prevent the same movie from being "saved" more than once
   };
-//next pass the props <--------------
+
   return (
     <div>
-      <SavedList list={[ /* This is stretch */]} />
-      <Route patch="/movies/">
-        <Movie />
-      </Route>
-      <Route path="/">
-        <MovieList movies={movieList}/>
-      </Route>
+      
+        <SavedList list={[ /* This is stretch */]} />
+        <Route path="/movies/:id">
+          <Movie />
+        </Route>
+        <Route exact path="/">
+          <MovieList movies={movieList}/>
+        </Route>
+      
     </div>
   );
 }
