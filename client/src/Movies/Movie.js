@@ -5,11 +5,7 @@ import { useParams } from 'react-router-dom';
 
 export default function Movie(props) {
   const [movie, setMovie] = useState();
-  const {movieID} = useParams();
-  const movies = movie.find((movie) => {
-    return movie.id == movieID;
-  }) || {};
-  let id = {movies};
+  const {id} = useParams();
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
   useEffect(() => {
@@ -19,7 +15,7 @@ export default function Movie(props) {
         setMovie(res.data)
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
-      }, [])
+      })
       .catch(error => {
         console.error(error);
       });
