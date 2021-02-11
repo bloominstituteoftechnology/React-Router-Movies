@@ -1,5 +1,10 @@
 import React from 'react';
+import {useParams} from "react-router-dom"
 
 export default function MovieCard (props) {
-  return;
+  let {id} = useParams()
+  console.log(id);
+  return null;
 }
+// for use params
+
