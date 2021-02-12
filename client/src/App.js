@@ -29,21 +29,36 @@ export default function App () {
 
   const addToSavedList = id => {
     // This is stretch. Prevent the same movie from being "saved" more than once
+    
+    const innerSearch = (list, funID) => {
+      return list.find(e => e.id == funID)
+    }
+
+    if(!innerSearch(saved, id)) {
+      let newList = saved;
+      newList.push(innerSearch(movieList, id))
+      setSaved(newList)
+      // console.log(newList)
+
+    } else {
+      console.log('This movie already exist in the list')
+    }
+
   };
 
   return (
     <div>
       <SavedList list={[ /* This is stretch */]} />
 
+      {/* <div>Replace this Div with your Routes</div> */}
       <Switch>
         <Route path='/movies/:id'>
-          <Movie />
+          <Movie addToSavedList={addToSavedList} />
         </Route>
         <Route path='/'>
           <MovieList movies={movieList} />
         </Route>
       </Switch>
-      {/* <div>Replace this Div with your Routes</div> */}
     </div>
   );
 }

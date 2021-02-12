@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom'
 export default function SavedList(props) {
 
   let history = useHistory()
-  console.log(history)
 
   const handleClick = () => {
     history.push('/home')
