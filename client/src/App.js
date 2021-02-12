@@ -48,7 +48,7 @@ export default function App () {
 
   return (
     <div>
-      <SavedList list={[ /* This is stretch */]} />
+      <SavedList list={saved} />
 
       {/* <div>Replace this Div with your Routes</div> */}
       <Switch>
