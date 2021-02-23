@@ -4,6 +4,29 @@ body {
   font-family: sans-serif;
   background-color: #f2f2f2;
 }
+.nav-bar {
+  background-color: rgb(24, 23, 23);
+}
+.nav-bar ul{
+  list-style-type: none;
+  ;
+  overflow: hidden;
+}
+.nav-bar li {
+  display: inline;
+  padding: 14px 16px;
+  float: left;
+  color: rgb(51, 124, 124)
+}
+.nav-bar li a{
+  text-decoration: none;
+}
+.nav-bar li a:visited{
+  color: white;
+}
+.nav-bar li a:visited {
+  color: teal;
+}
 
 .movie-card {
   background-color: #fff;
@@ -55,7 +78,7 @@ body {
 }
 .save-button {
   position: absolute;
-  top: 25px;
+  bottom: 30px;
   right: 25px;
   border: 1px solid grey;
   padding: 5px 10px;
