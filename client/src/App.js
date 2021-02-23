@@ -14,7 +14,6 @@ export default function App () {
       axios
         .get('http://localhost:5000/api/movies') // Study this endpoint with Postman
         .then(response => {
-          console.log(response)
           setMovieList(response.data)
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
@@ -26,7 +25,6 @@ export default function App () {
     getMovies();
   }, []);
 
-  console.log(movieList)
   const addToSavedList = id => {
     // This is stretch. Prevent the same movie from being "saved" more than once
   };
@@ -35,15 +33,13 @@ export default function App () {
     <div>
       <SavedList list={[ /* This is stretch */]} />
       
-        <Route exact path='/' >
-          <MovieList title={movieList.title} director={movieList.director} metascore={movieList.metascore}  />
-        </Route>
+          <Route path='/movies/:id' movieList={movieList} >
+            <Movie />
+          </Route>
+          <Route  path='/' >
+            <MovieList movies={movieList} />
+          </Route>
 
-        <Route path='./movies/:id'>
-          <Movie />
-        </Route>
-
-        
       
     </div>
   );
