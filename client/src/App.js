@@ -23,7 +23,7 @@ export default function App () {
   }, []);
 
   const addToSavedList = id => {
-    // This is stretch. Prevent the same movie from being "saved" more than once
+    // This is stretch. Prevent the same mov from being "saved" more than once
   };
 
   return (
