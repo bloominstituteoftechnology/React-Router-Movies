@@ -35,13 +35,12 @@ export default function App () {
   return (
     <div>
       <SavedList list={[ /* This is stretch */]} />
-        <Route path="http://localhost:5000/api/movies/:id" component={Movie}>.
-          {movieList.map(movie => {
-            return (
-            <MovieList key={movie.id} movie={movie}/>
-              );
-            })    
-          }
+      <Route exact path='/'>
+        <MovieList movies={movieList} />
+      </Route>
+
+      <Route path='/movies/:id'>
+        <Movie />
       </Route>
     </div>
   );
