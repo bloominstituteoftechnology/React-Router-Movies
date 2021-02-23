@@ -70,3 +70,9 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
