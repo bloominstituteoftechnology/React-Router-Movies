@@ -9,7 +9,7 @@ export default function MovieList(props) {
     </div>
   );
 }
-
+  
 function MovieDetails(props) {
   const { title, director, metascore } = props.movie;
 
