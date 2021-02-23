@@ -13,7 +13,9 @@ export default function SavedList(props) {
           </span>
           
       ))}
-      <div className="home-button">Home</div>
+      <div className="home-button">
+        <Link to={'/'}>Home</Link>
+      </div>
     </div>
   );
 }
