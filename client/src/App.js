@@ -39,8 +39,8 @@ export default function App () {
 
       <div>
         <Switch>
-          {<Route path='/'><MovieList movies={movieList} /></Route>}
           {<Route path='/movies/:id'><Movie /></Route>}
+          {<Route path='/'><MovieList movies={movieList} /></Route>}
         </Switch>
       </div>
     </div>
