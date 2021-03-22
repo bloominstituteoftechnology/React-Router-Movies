@@ -43,7 +43,7 @@ export default function App () {
         <Movies />
       </Route>
 
-      <Route path = '/'>
+      <Route path ='/'>
         <MoviesList movies={movieList}/>
       </Route>
 
