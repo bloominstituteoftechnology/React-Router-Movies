@@ -40,7 +40,7 @@ export default function App () {
           <Route path= {"/movies/:id"}>
             <Movie />
           </Route>
-
+          
           <Route path= {"/"}>
             <MovieList movies={movieList} />
           </Route>
