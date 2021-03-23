@@ -14,7 +14,9 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  text-decoration: none;
 }
+
 
 .movie-director {
   padding: 4px 0;
@@ -35,7 +37,10 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
+.na{
+  text-decoration: none;
+  color:black;
+}
 .saved-list h3 {
   margin-right: 10px;
 }
