@@ -25,11 +25,10 @@ export default function Movie(props) {
   // const saveMovie = evt => { }
 
   if (!movie) {
-    return <div>Loading movie information...</div>;
+    return <div>Loading movie info...</div>;
   }
 
   const { title, director, metascore, stars } = movie;
-
   return (
     <div className="save-wrapper">
       <div className="movie-card">
