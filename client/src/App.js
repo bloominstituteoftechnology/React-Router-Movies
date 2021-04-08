@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, Route, Switch } from 'react-router-dom'
-import "./index.css";
+import { Route, Switch } from 'react-router-dom'
+
 import SavedList from './Movies/SavedList';
 import Movie from './Movies/Movie';
-import MovieList from './Movies/MovieList';
+//import MovieList from './Movies/MovieList';
 
 export default function App () {
   const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
-  const [movieList, setMovieList] = useState([]);
+  const [MovieList, setMovieList] = useState([]);
 
   useEffect(() => {
     const getMovies = () => {
@@ -17,8 +17,8 @@ export default function App () {
         .then(response => {
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
-          setMovieList(response.movieList)
-          console.log(response.movieList, 'movieList')
+          setMovieList(response.MovieList)
+          console.log(response.MovieList, 'MovieList')
 
         })
         .catch(error => {
@@ -38,8 +38,13 @@ export default function App () {
      
       <div>
       <Switch> 
-      <Route exact path="/" component={Movie}/>
-      <Route path="/MovieList" component={MovieList}/>
+     < Route exact path='/'>
+					<MovieList movies={MovieList} />
+				</Route>
+				<Route exact path='/movies/:star'>
+					<Movie />
+				</Route>
+
       </Switch>
       </div>
        
