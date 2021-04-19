@@ -3,11 +3,10 @@ import axios from 'axios';
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
-import MovieCard from './Movies/MovieCard;';
-import Movie from './Movies/Movie';
-import {Route} from 'react-router-dom'
+import MovieCard from './Movies/MovieCard';
+import {BrowserRouter, Route, Link} from 'react-router-dom'
 
-export default function App () {
+export default function App (props) {
   const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
   const [movieList, setMovieList] = useState([]);
 
@@ -32,14 +31,20 @@ export default function App () {
   };
 
   return (
-    <div>
+    <div className = "App">
+      <div className = "Header">
+
+        {/* <Link to = "/">Home</Link>
+        <Link to = "/MovieList">Movies!</Link> */}
       <SavedList list={[ /* This is stretch */]} />
         <Route exact path='/'>
-          <MovieList movies={movieList}/>
+          <MovieList movies={props}/>
         </Route>
-        <Route path='/movies/movie/:itemID'>
-          <MovieCard movie={movie}/>
+        <Route path='/MovieList/:props.movie.items'>
+          <MovieCard />
         </Route>
+
+    </div>
     </div>
   );
 }

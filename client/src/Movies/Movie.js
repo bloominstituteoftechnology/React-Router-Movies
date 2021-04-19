@@ -5,12 +5,13 @@ import { useParams } from 'react-router';
 export default function Movie(props) {
   const [movie, setMovie] = useState();
 
-  const {id} = useParams();
+
+  const {items} = props;
 
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
+      .get(`http://localhost:5000/api/movies/${items}`) // Study this endpoint with Postman
       .then(response => {
         setMovie(response.data)
         // Study this response with a breakpoint or log statements
