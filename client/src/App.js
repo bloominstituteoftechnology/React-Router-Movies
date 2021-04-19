@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
+import MovieCard from './Movies/MovieCard;';
 import Movie from './Movies/Movie';
 import {Route} from 'react-router-dom'
 
@@ -13,7 +14,7 @@ export default function App () {
   useEffect(() => {
     const getMovies = () => {
       axios
-        .get('http://localhost:5000/api/movies') // Study this endpoint with Postman
+        .get('http://localhost:5000/api/') // Study this endpoint with Postman
         .then(response => {
           setMovieList(response.data)
           // Study this response with a breakpoint or log statements
@@ -36,9 +37,10 @@ export default function App () {
         <Route exact path='/'>
           <MovieList movies={movieList}/>
         </Route>
-        <Route path='/movies/:id' component={Movie}/>
+        <Route path='/movies/movie/:itemID'>
+          <MovieCard movie={movie}/>
+        </Route>
     </div>
   );
 }
 
-// ^^^ 'exact' path, mean exactly an '/' only - which means "home" to the files
