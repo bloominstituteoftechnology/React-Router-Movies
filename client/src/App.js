@@ -7,6 +7,9 @@ export default function App () {
   const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
   const [movieList, setMovieList] = useState([]);
 
+// insert wrap here and continue working through MVP
+// Notes Here
+
   useEffect(() => {
     const getMovies = () => {
       axios
