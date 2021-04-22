@@ -37,7 +37,7 @@ export default function App (props) {
       <SavedList list={[ /* This is stretch */]} />
 
       <Switch>
-        <Route path='/movies/:movieid'>
+        <Route path='/movies/:movieIdPARAMETER'>
           <Movie />
         </Route> 
         <Route path='/'>

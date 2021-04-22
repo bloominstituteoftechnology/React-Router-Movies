@@ -14,7 +14,7 @@ export default function MovieList(props) {
 
 function MovieDetails(props) {
   const { title, director, metascore, id } = props.movie;
-
+//HAD TO PASS IN id FROM props ABOVE (FROM props.movie.map)
   return (
     <div className="movie-card">
       <Link to={`/movies/${id}`}>
