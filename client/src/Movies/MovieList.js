@@ -12,11 +12,11 @@ export default function MovieList(props) {
 }
 
 function MovieDetails(props) {
-  const { title, director, metascore } = props.movie;
+  const { title, director, metascore, id } = props.movie;
 
   return (
     <Link
-      to={`/movies/${props.movie.id}`}
+      to={`/movies/${id}`}
       style={{ color: 'inherit', textDecoration: 'inherit' }}
     >
       <div className="movie-card">
