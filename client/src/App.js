@@ -28,26 +28,31 @@ export default function App() {
 
   const addToSavedList = (id) => {
     // This is stretch. Prevent the same movie from being "saved" more than once
+    if (!saved.find((item) => item.id === Number(id))) {
+      let temp = [...saved];
+      temp.push(movieList[id]);
+      temp.sort((a, b) => a.id - b.id);
+      setSaved([...temp]);
+      console.log(`${movieList[id].title} was added to the saved movies list.`);
+    } else {
+      console.log(
+        `${movieList[id].title} is already in the saved movies list.`,
+      );
+    }
   };
 
   return (
     <div>
-      <SavedList
-        list={
-          [
-            /* This is stretch */
-          ]
-        }
-      />
+      <SavedList list={saved} />
 
-      <div>
-        <Switch>
-          <Route path="/movies/:id" component={Movie} />
-          <Route exact path="/">
-            <MovieList movies={movieList} />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/movies/:id">
+          <Movie save={addToSavedList} />
+        </Route>
+        <Route exact path="/">
+          <MovieList movies={movieList} />
+        </Route>
+      </Switch>
     </div>
   );
 }
