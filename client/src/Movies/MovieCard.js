@@ -6,16 +6,20 @@ export default function MovieCard(props) {
   const ActorList = (props) => {
     const { stars } = props;
 
-    return (
-      <>
-        <h3>Actors</h3>
-        {stars.map((star) => (
-          <div key={star} className="movie-star">
-            {star}
-          </div>
-        ))}
-      </>
-    );
+    if (stars === null) {
+      return null;
+    } else {
+      return (
+        <>
+          <h3>Actors</h3>
+          {stars.map((star) => (
+            <div key={star} className="movie-star">
+              {star}
+            </div>
+          ))}
+        </>
+      );
+    }
   };
 
   return (
@@ -27,7 +31,7 @@ export default function MovieCard(props) {
       <div className="movie-metascore">
         Metascore: <strong>{metascore}</strong>
       </div>
-      {stars !== null && <ActorList stars={stars} />}
+      <ActorList stars={stars} />
     </div>
   );
 }
