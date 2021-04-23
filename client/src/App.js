@@ -33,11 +33,6 @@ export default function App() {
       temp.push(movieList[id]);
       temp.sort((a, b) => a.id - b.id);
       setSaved([...temp]);
-      console.log(`${movieList[id].title} was added to the saved movies list.`);
-    } else {
-      console.log(
-        `${movieList[id].title} is already in the saved movies list.`,
-      );
     }
   };
 
