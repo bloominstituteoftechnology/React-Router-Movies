@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 export default function MovieList(props) {
   return (
@@ -7,16 +7,15 @@ export default function MovieList(props) {
       {props.movies.map(movie => (
         <MovieDetails key={movie.id} movie={movie} />
       ))}
-      <Link to='/movies/:id'>Details</Link>
     </div>
   );
 }
 
 function MovieDetails(props) {
   const { title, director, metascore } = props.movie;
-
+  const history = useHistory()
   return (
-    <div className="movie-card">
+    <div className="movie-card" onClick={i => history.push(`/movies/${props.movies.id}`)}>
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
