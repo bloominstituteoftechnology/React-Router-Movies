@@ -33,8 +33,8 @@ export default function App () {
     <div>
       <SavedList list={[ /* This is stretch */]} />
 
-      <Route path='/' >
-        <MovieList title={movieList.title} director={movieList.director} metascore={movieList.metascore}/>
+      <Route exact path='/' >
+        <MovieList movies={movieList} title={movieList.title} director={movieList.director} metascore={movieList.metascore}/>
       </Route>
       <Route path='/movies/:id' >
         <Movie title={movieList.title} director={movieList.director} metascore={movieList.metascore} />
