@@ -1,10 +1,15 @@
 import React from 'react';
 import Movie from './Movie';
+import { Link } from 'react-router-dom'
+
+
 
 export default function MovieCard (props) {
   return (
-    <div>'
-      <Movie />
-    </div>
+    // <Link to={`/movies/${MovieList.id}`}>
+      <div>
+        <Movie />  
+      </div>
+    // </Link>
   );
 }

@@ -37,7 +37,7 @@ export default function App () {
         <MovieList movies={movieList} title={movieList.title} director={movieList.director} metascore={movieList.metascore}/>
       </Route>
       <Route path='/movies/:id' >
-        <Movie title={movieList.title} director={movieList.director} metascore={movieList.metascore} />
+        <Movie id={movieList.id} title={movieList.title} director={movieList.director} metascore={movieList.metascore} />
       </Route> 
     </div>
   );
