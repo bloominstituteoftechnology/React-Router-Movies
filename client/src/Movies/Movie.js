@@ -3,23 +3,31 @@ import axios from "axios";
 
 export default function Movie(props) {
   const [movie, setMovie] = useState();
-
-  let id = 1;
+  console.log("this is movie.js props", props);
+  // let id = 1
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
+
+  let id = useEffect(() => {
+    ///I don't think I did this right-- also nothing on this page is console logging
+    fetch().then((res) => res.id);
+  }, []);
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
+
       .then((response) => {
         // Study this response with a breakpoint or log statements
+        console.log("movie.js response", response);
         // and set the response data as the 'movie' slice of state
+        setMovieList(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
     // This effect should run every time time
     // the `id` changes... How could we do this?
-  }, []);
+  }, [`${id}`]);
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => { }
