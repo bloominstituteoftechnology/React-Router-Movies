@@ -2,8 +2,11 @@ import React from 'react';
 import MovieCard from './MovieCard';
 import Movie from './Movie';
 import { Link } from 'react-router-dom';
+// import { useRouteMatch } from 'react-router-dom';
+
 
 export default function MovieList(props) {
+  const { movies, title, director, metascore } = props;
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
