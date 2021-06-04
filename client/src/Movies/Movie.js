@@ -4,32 +4,32 @@ import { useParams } from 'react-router-dom';
 
 
 export default function Movie(props) {
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState();  
 
-  // let id = useParams();  
-
-  let id = props.id
+  console.log(movie)
+   let { id } = useParams() 
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`) 
       .then(res => {
-        
-        console.log(res.data)
-        setMovie(res.data)
-      })
+        // console.log(res.data)  
+        setMovie(res.data)        
+      }) 
       .catch(error => {
         console.error(error);
       });
-  }, [id]);
+  }, [id]); // Makes it run only when id is ran. 
 
-  console.log(movie);
 
-  if (!movie) {
-    return <div>Loading movie information...</div>;
-  }
 
-  const { title, director, metascore, stars } = movie;
+  // if (!movie) {
+  //   return <div>Loading movie information...</div>;  // THIS IS ALL THAT SHOWS UP...
+  // }
+
+  const { title, director, metascore, stars } = props.movie;
+
+console.log(props.movie)
 
   return (
     <div className="save-wrapper">
@@ -51,5 +51,6 @@ export default function Movie(props) {
       </div>
       <div className="save-button">Save</div>
     </div>
+
   );
 }
