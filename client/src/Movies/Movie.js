@@ -3,8 +3,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 
-export default function Movie(props) {
-  const [movie, setMovie] = useState();  
+export default function Movie() {
+  const [movie, setMovie] = useState({});  
 
   console.log(movie)
    let { id } = useParams() 
@@ -19,17 +19,9 @@ export default function Movie(props) {
       .catch(error => {
         console.error(error);
       });
-  }, [id]); // Makes it run only when id is ran. 
+  }, [id]); 
 
-
-
-  // if (!movie) {
-  //   return <div>Loading movie information...</div>;  // THIS IS ALL THAT SHOWS UP...
-  // }
-
-  const { title, director, metascore, stars } = props.movie;
-
-console.log(props.movie)
+  const { title, director, metascore, stars } = movie;
 
   return (
     <div className="save-wrapper">
@@ -42,8 +34,9 @@ console.log(props.movie)
           Metascore: <strong>{metascore}</strong>
         </div>
         <h3>Actors</h3>
-
-        {stars.map(star => (
+        debugger
+   {/*} true     true then ... else nothing */}
+        {stars && stars.map(star => (
           <div key={star} className="movie-star">
             {star}
           </div>

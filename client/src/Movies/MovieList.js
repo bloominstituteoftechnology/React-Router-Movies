@@ -15,7 +15,7 @@ export default function MovieList(props) {
 }
 
 function MovieDetails(props) {
-  const { title, director, metascore } = props.movie[key];
+  const { title, director, metascore } = props.movie;
 // console.log(props.movie) // 6 objs
 
   return (

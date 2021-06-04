@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import Movie from './Movies/Movie';
 import MovieList from './Movies/MovieList'
-import SavedList from './Movies/SavedList';
 // {/*  */}
 
 export default function App () {
   const [movieList, setMovieList] = useState([]);
+
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -29,7 +29,7 @@ export default function App () {
       {/* <Link to='movies/:id'> Movie </Link>  */}
 
       <Route exact path='/' render={() => <MovieList movies={movieList}/> }/>   
-      <Route path='/movies/:id' Movie movie={movieList}/>        
+      <Route path='/movies/:id' render={() => <Movie />} />       
     </>
   );
 }
