@@ -41,6 +41,7 @@ export default function App () {
         <Link to='/'>Home</Link>
         <Link to='/Movies/MovieList'>Movie</Link>
       </div>
+      <Switch>
       <Route exact path='/'> 
         <Movie />
       </Route>
@@ -52,6 +53,7 @@ export default function App () {
       <Route>
         <SavedList list={saved}/>
       </Route>
+      </Switch>
     </div>
   );
 }
