@@ -21,13 +21,16 @@ export default function App () {
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
           setMovieList(response.data);
+          // debugger
         })
         .catch(error => {
           console.error('Server Error', error);
         });
     }
     getMovies();
+
   }, []);
+
 
   const addToSavedList = id => {
     // This is stretch. Prevent the same movie from being "saved" more than once
@@ -39,16 +42,15 @@ export default function App () {
 
       <div>
         <Link to='/'>Home </Link>
-        <Link to='/Movies/MovieList'>Movie</Link>
+        <Link to='/Movies/MovieList/:id'>Movie</Link>
       </div>
       <Switch>
     
-
       {/* <Route>
         <SavedList list={saved}/>
       </Route> */}
 
-      <Route path='/Movies/MovieList'> 
+      <Route path='/Movies/MovieList/:id'> 
         <Movie />
       </Route>
 

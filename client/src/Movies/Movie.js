@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom'
 
+
 export default function Movie(props) {
   const [movie, setMovie] = useState();
 
@@ -16,8 +17,9 @@ export default function Movie(props) {
       .then(response => {
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
+        
         setMovie(response.data);
-        console.log(response.data);
+        console.log(`ID DATA:`, response.data);
       })
       .catch(error => {
         console.error(error);
