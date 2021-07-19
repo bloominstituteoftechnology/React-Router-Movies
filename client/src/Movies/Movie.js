@@ -1,33 +1,73 @@
+/**
+ * Thomas Bielawski
+ * Lambda School WEB45
+ * 2.3.1 React Router Project movie.js
+ * 7/19/2021
+ **/
+
+//Import statements
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-export default function Movie(props) {
+//Movie function definition, pass in props
+export default function Movie(props) 
+{
+  //Set movie state
   const [movie, setMovie] = useState();
 
-  let id = 1;
+  const { movieID } = useParams();
+  let id = movieID;
+  
+  //const movieItem = movieItem.find(movieItem  => movieItem.id == id);
+ 
+  
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
+  // Maybe find()
 
-  useEffect(() => {
+  //Use effect hook function
+  useEffect(() => 
+  {
     axios
-      .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
-      .then(response => {
-        // Study this response with a breakpoint or log statements
-        // and set the response data as the 'movie' slice of state
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    //Get the url with id
+    .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
+    
+    //.Then() accepts the data
+    .then(response => 
+    {
+      // Study this response with a breakpoint or log statements
+      // and set the response data as the 'movie' slice of state
+
+      //invoke setMovie() to set the movie data
+      setMovie(response.data);
+
+    })
+
+    //.catch if there is an error
+    .catch(error => 
+    {
+      //Log the error
+      console.error(error);
+    });
+
     // This effect should run every time time
     // the `id` changes... How could we do this?
-  }, []);
+
+    //[id] dependency ensures effect runs only when id changes
+  }, [id]);
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => { }
 
-  if (!movie) {
+
+  //If no movie...
+  if (!movie) 
+  {
+    //...return this
     return <div>Loading movie information...</div>;
   }
 
+  
   const { title, director, metascore, stars } = movie;
 
   return (
