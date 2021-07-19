@@ -41,8 +41,8 @@ export default function App () {
       <SavedList list={[ /* This is stretch */]} />
 
       <div>
-        <Link to='/'>Home </Link>
-        <Link to='/Movies/MovieList/:id'>Movie</Link>
+        
+        
       </div>
       <Switch>
     
