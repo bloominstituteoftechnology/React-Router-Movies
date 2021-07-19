@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 
 
 
@@ -9,7 +9,7 @@ export default function MovieList(props) {
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
-        <Link to={`/Movies/MovieList/${movie.id}`}> <MovieDetails key={movie.id} movie={movie} /></Link>
+        <Link key={movie.id} to={`/Movies/MovieList/${movie.id}`}> <MovieDetails key={movie.id} movie={movie} /></Link>
        
         
       ))}
