@@ -1,7 +1,7 @@
 /**
  * Thomas Bielawski
  * Lambda School WEB45
- * 2.3.1 React Router Project movie.js
+ * 2.3.1 React Router Project Movie.js
  * 7/19/2021
  **/
 
@@ -15,10 +15,8 @@ export default function Movie(props)
 {
   //Set movie state
   const [movie, setMovie] = useState();
+  const {id} = useParams();
 
-  const { movieID } = useParams();
-  let id = movieID;
-  
   //const movieItem = movieItem.find(movieItem  => movieItem.id == id);
  
   

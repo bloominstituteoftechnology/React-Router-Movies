@@ -28,10 +28,14 @@ export default function App ()
       //axios.gets the url
       axios
         .get('http://localhost:5000/api/movies') // Study this endpoint with Postman
+
+        //.Then() captures data
         .then(response => 
         {
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
+
+          //Invoke setMovieList
           setMovieList(response.data);
         })
 
@@ -58,21 +62,22 @@ export default function App ()
   //Return function
   return (
     <div>
-      <SavedList list={[ /* This is stretch */]} />       
+      <SavedList list={[ /* This is stretch */]} />
+      <div>       
         <Switch>
 
           {/**Rout uses "path" prop */}
-          <Route path = "/">
             {/**injects movie */}
-            <MovieList movies = { movieList }/>
-          </Route>
+              <Route path = "/Movies/MovieList/:id"> 
+                <Movie />
+              </Route>
           
-          {/**Rout uses "path" prop */}
-          <Route path = "/movies/:movieID">
-            {/**References movie list through the dynamic "id" */}
-            <Movie movie = {movieList}/>
-          </Route>
+              {/* Home directory */}
+              <Route path='/'>
+                <MovieList movies={movieList}/>
+              </Route>
         </Switch>  
+      </div>
     </div>
   );
 }
