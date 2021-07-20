@@ -4,12 +4,7 @@ import { useParams } from 'react-router-dom';
 
 export default function Movie(props) {
   const [movie, setMovie] = useState(); 
-  // const { movies } = props;
-  // const { movieID } = useParams();
-  // const id = movies.find(item => item.id === movieID);
-  // // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
-  // console.log('DATA');
-  // console.log(movie);
+  
   
   useEffect(() => {
     const id = props.match.params.id;
