@@ -35,9 +35,10 @@ export default function App () {
   const addToSavedList = id => {
     console.log(`TRACK ID HERE`,id);
     const movie = movieList.find(movie => movie.id === +id)
-    console.log('TRACK movieList HERE',movieList)
-    console.log(`TRACK MOVE ARRAY HERE`.movie);
-    return movie ? setSaved([...saved, movie]) : null
+    const savedMovie = saved.find(movie => movie.id === +id)
+    // console.log('TRACK movieList HERE',movieList)
+    // console.log(`TRACK MOVE ARRAY HERE`.movie);
+    return !savedMovie ? setSaved([...saved, movie]) : null
     // This is stretch. Prevent the same movie from being "saved" more than once
   };
 
