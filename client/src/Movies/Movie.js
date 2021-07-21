@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 
 
-export default function Movie() {
+export default function Movie(props) {
   const [movie, setMovie] = useState();
 
   // let id = 1;
@@ -30,7 +30,9 @@ export default function Movie() {
   }, [id]);
 
   // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = evt => { }
+  const saveMovie = evt => { 
+    props.addToSavedList(id)
+  }
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -56,7 +58,7 @@ export default function Movie() {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={saveMovie}>Save</div>
     </div>
   );
 }

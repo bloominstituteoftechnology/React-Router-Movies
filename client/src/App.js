@@ -33,16 +33,19 @@ export default function App () {
 
 
   const addToSavedList = id => {
+    console.log(`TRACK ID HERE`,id);
+    const movie = movieList.find(movie => movie.id === +id)
+    console.log('TRACK movieList HERE',movieList)
+    console.log(`TRACK MOVE ARRAY HERE`.movie);
+    return movie ? setSaved([...saved, movie]) : null
     // This is stretch. Prevent the same movie from being "saved" more than once
   };
 
   return (
     <div>
-      <SavedList list={[ /* This is stretch */]} />
-
+      <SavedList list={saved} />
       <div>
-        
-        
+
       </div>
       <Switch>
     
@@ -51,7 +54,7 @@ export default function App () {
       </Route> */}
 
       <Route path='/Movies/MovieList/:id'> 
-        <Movie />
+        <Movie addToSavedList={addToSavedList} />
       </Route>
 
       <Route path='/'>
