@@ -45,9 +45,7 @@ export default function App () {
   return (
     <div>
       <SavedList list={saved} />
-      <div>
-
-      </div>
+ 
       <Switch>
     
       {/* <Route>

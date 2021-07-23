@@ -11,7 +11,8 @@ export default function SavedList(props) {
         <span key={movie.id} className="saved-movie">{movie.title}</span>
       ))}
       
-      <Link to='/'><div className="home-button" onClick={() => history.push('/')}>Home</div></Link>
+      <Link to='/'><div className="home-button" onClick={() => history.push('/')}>Home</div>
+      </Link>
     </div>
   );
 }
