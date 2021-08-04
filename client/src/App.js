@@ -35,14 +35,10 @@ export default function App () {
   return (
     <div>
 
-     
-   
-    
-
       <Route exact path='/' /> 
 
       <Route path='/movies/:id'>
-        <Movie />
+      <Movie />
       </Route>
     
       <SavedList list={saved} />

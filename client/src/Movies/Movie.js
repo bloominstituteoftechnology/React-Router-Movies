@@ -11,7 +11,7 @@ export default function Movie(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
+       .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
       .then(response => {
         console.log(response)
         setMovie(response.data)
