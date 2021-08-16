@@ -10,8 +10,6 @@ export default function SavedList(props) {
       ))}
       {/* <Link className="home-button">Home</button> */}
       <Link to='/' className="home-button">Home</Link>
-
-      
     </div>
   );
 }
