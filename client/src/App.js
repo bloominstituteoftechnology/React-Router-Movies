@@ -6,7 +6,7 @@ import MovieList from './Movies/MovieList.js';
 import Movie from './Movies/Movie.js';
 
 export default function App () {
-  const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
+  // const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
@@ -14,19 +14,18 @@ export default function App () {
       axios
         .get('http://localhost:5000/api/movies') 
         .then(res => {
-          console.log(res);
           setMovieList(res.data);
         })
         .catch(error => {
-          console.error('Server Error', error);
+          console.error('Server Error - error fetching movie list data', error);
         });
     }
     getMovies();
   }, []);
 
-  const addToSavedList = id => {
-    // This is stretch. Prevent the same movie from being "saved" more than once
-  };
+  // const addToSavedList = id => {
+  //   // This is stretch. Prevent the same movie from being "saved" more than once
+  // };
 
   return (
     <div>

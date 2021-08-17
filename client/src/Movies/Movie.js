@@ -2,22 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-export default function Movie(props) {
-  const [movie, setMovie] = useState();
-  const { id } = useParams();
+export default function Movie() {
+  const [ movie, setMovie ] = useState();
+  let { id } = useParams();
 
+  console.log(id);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/movies/${id}`) 
+      .get('http://localhost:5000/api/movies/'+id) 
       .then(response => {
-        // Study this response with a breakpoint or log statements
-        // and set the response data as the 'movie' slice of state
-        console.log(response);
-        setMovie(response);
+        setMovie(response.data);
       })
       .catch(error => {
-        console.error(error);
+        console.error('failed to fetch movie data by id', error);
       });
   }, [id]);
 
