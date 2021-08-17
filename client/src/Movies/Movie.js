@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useRouteMatch, Route, Switch, NavLink } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import MovieCard from './MovieCard';
 
 export default function Movie(props) {
   const [movie, setMovie] = useState();
-
   const { movieId } = useParams();
+
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function Movie(props) {
       });
     // This effect should run every time time
     // the `id` changes... How could we do this?
-  }, []);
+  }, [movieId]);
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => { }
