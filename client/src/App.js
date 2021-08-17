@@ -41,7 +41,7 @@ export default function App()
 
             <nav>
                 <div className='nav-links'>
-                    <Link to="/">Home</Link>
+                    <Link to="/"></Link>
                     <Link to="/movies">MovieList</Link>
                 </div>
             </nav>

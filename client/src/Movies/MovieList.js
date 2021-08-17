@@ -8,8 +8,6 @@ export default function MovieList(props)
     // We'll grab the current URL using the hook
     const { url } = useRouteMatch();
 
-    // console.log("URL:", url);
-
     return (
         <div className="movie-list">
             {movies.map(movie => (
@@ -23,8 +21,6 @@ function MovieDetails(props)
 {
     const { title, director, metascore, id } = props.movie;
     const { url } = props;
-
-    // console.log("ID:", id);
 
     return (
         <div className="movie-card">
