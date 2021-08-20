@@ -6,8 +6,6 @@ export default function Movie() {
   const [ movie, setMovie ] = useState();
   let { id } = useParams();
 
-  console.log(id);
-
   useEffect(() => {
     axios
       .get('http://localhost:5000/api/movies/'+id) 

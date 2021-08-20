@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 export default function SavedList(props) {
   return (
@@ -9,7 +9,9 @@ export default function SavedList(props) {
         <span className="saved-movie">{movie.title}</span>
       ))}
       <Route exact path='/'>
-        <div className="home-button">Home</div>
+        <Link to='/' style={{textDecoration: 'none', color: 'black'}}>
+          <div className="home-button">Home</div>
+        </Link>
       </Route>
     </div>
   );
