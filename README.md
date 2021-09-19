@@ -7,7 +7,7 @@ Topics:
 * Passing Route Parameters
 * Passing props to components rendered by the Router
 
-## Instructions
+## Instructions  
 
 ### Task 1: Project Set-up
 
