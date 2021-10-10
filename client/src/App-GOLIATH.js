@@ -52,12 +52,12 @@ export default function App () {
         <SavedList list={saved}/>
       </Route> */}
 
-      <Route path='/Movies/MovieList/:id'/> 
-
-        <Movie addToSavedList={addToSavedList}/>
-
+      <Route path='/Movies/MovieList/:id'> 
         <Movie addToSavedList={addToSavedList} />
+      </Route>
+
       <Route path='/'>
+        <MovieList movies={movieList}/>
       </Route>
 
       </Switch>
