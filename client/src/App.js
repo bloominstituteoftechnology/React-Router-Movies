@@ -37,7 +37,7 @@ export default function App () {
 
       <div>
 
-      <Route exact path = {'/'}>
+      <Route exact path = {'/movies'}>
         {/*  `MovieList` component injected into it via props. */}
         <MovieList movies ={movieList} />
       </Route>
