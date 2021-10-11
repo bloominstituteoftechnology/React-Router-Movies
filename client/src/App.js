@@ -18,7 +18,6 @@ export default function App () {
           //console.log(response)
           // and set the response data as the 'movieList' slice of state
           setMovieList(response.data)
-          console.log(movieList)
         })
         .catch(error => {
           console.error('Server Error', error);
