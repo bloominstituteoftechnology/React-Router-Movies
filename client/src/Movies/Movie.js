@@ -22,8 +22,6 @@ export default function Movie(props) {
       .catch((error) => {
         console.error(error);
       });
-    // This effect should run every time time
-    // the `id` changes... How could we do this?
   }, [id]);
 
   // Uncomment this only when you have moved on to the stretch goals
@@ -34,6 +32,6 @@ export default function Movie(props) {
   }
 
   return (
-    <MovieCard cardElement={true} movie={movie} stars={movie.stars} />
+    <MovieCard id={id} addToSavedList={props.addToSavedList} cardElement={true} movie={movie} stars={movie.stars} />
   );
 }

@@ -10,7 +10,7 @@ export default function MovieCard(props) {
     return (
       <div className="save-wrapper">
         {sharedHtml(true, props, stars)}
-        <div className="save-button">Save</div>
+        <div onClick={() => {props.addToSavedList(props.id)}} className="save-button">Save</div>
       </div>
     );
   }

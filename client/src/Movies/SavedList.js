@@ -1,12 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function SavedList(props) {
+  if (!props.list) return <h1>Loading...</h1>;
+
   return (
     <div className="saved-list">
       <h3>Saved Movies:</h3>
       {props.list.map((movie) => (
-        <span className="saved-movie">{movie.title}</span>
+        <NavLink
+          key={movie.id}
+          to={`/movie/${movie.id}`}
+          activeStyle={{
+            fontWeight: "bold",
+            color: "red",
+            
+          }}
+        >
+          <span key={movie.id} className="saved-movie">
+            {movie.title}
+          </span>
+        </NavLink>
       ))}
 
       <Link to="/">
