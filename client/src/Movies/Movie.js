@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { 
+  useParams, 
+  NavLink, 
+  useRouteMatch, 
+  Route,
+  Link 
+} from 'react-router-dom';
 export default function Movie(props) {
   const [movie, setMovie] = useState();
 
-  let id = 1;
+  const { id } = useParams();
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
+
 
   useEffect(() => {
     axios
@@ -13,6 +20,8 @@ export default function Movie(props) {
       .then(response => {
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
+        console.log(response)
+        setMovie(response.data)
       })
       .catch(error => {
         console.error(error);
@@ -33,6 +42,7 @@ export default function Movie(props) {
   return (
     <div className="save-wrapper">
       <div className="movie-card">
+      <Link to='/'>Home</Link>
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
@@ -41,7 +51,6 @@ export default function Movie(props) {
           Metascore: <strong>{metascore}</strong>
         </div>
         <h3>Actors</h3>
-
         {stars.map(star => (
           <div key={star} className="movie-star">
             {star}
