@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default function SavedList(props) {
   return (
@@ -8,6 +9,7 @@ export default function SavedList(props) {
         <span className="saved-movie">{movie.title}</span>
       ))}
       <div className="home-button">Home</div>
+      <Link to="/">Home</Link>
     </div>
   );
 }
