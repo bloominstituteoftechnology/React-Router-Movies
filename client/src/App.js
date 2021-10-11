@@ -25,7 +25,6 @@ export default function App () {
   const addToSavedList = id => {
     // This is stretch. Prevent the same movie from being "saved" more than once
   };
-
   return (
     <div>
       <SavedList list={[ /* This is stretch */]} />
@@ -34,3 +33,9 @@ export default function App () {
     </div>
   );
 }
+// to do later
+
+<div> 
+  <h1>
+  </h1>
+</div>
