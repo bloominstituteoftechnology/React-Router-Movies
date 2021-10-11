@@ -36,7 +36,8 @@ export default function App () {
       <SavedList list={[ /* This is stretch */]} />
 
       <div>
-      <Route path = {'/'}>
+
+      <Route exact path = {'/'}>
         {/*  `MovieList` component injected into it via props. */}
         <MovieList movies ={movieList} />
       </Route>
