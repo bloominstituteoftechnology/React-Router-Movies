@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
@@ -15,8 +15,7 @@ export default function App () {
       axios
         .get('http://localhost:5000/api/movies') // Study this endpoint with Postman
         .then(response => {
-          setMovieList(response.data)
-          // and set the response data as the 'movieList' slice of state
+          setMovieList(response.data);
         })
         .catch(error => {
           console.error('Server Error', error);
@@ -26,20 +25,25 @@ export default function App () {
   }, []);
 
   const addToSavedList = id => {
-    // This is stretch. Prevent the same movie from being "saved" more than once
+    const alreadySaved = saved.find(movie => {
+      return movie.id === id
+    })
+    if (alreadySaved) return;
+
+    const foundMovie = movieList.find(movie => movie.id === id);
+    setSaved([...saved, foundMovie])
   };
 
   return (
     <div>
-      <SavedList list={[ /* This is stretch */]} />
-      <Switch>
+      <SavedList list={saved} />
+
+      <Route exact path="/">
+        <MovieList movies={movieList} />
+      </Route>
       <Route path="/movies/:id">
-          <Movie id={[]} />
-        </Route>
-        <Route path="/">
-          <MovieList movies = {movieList} />
-        </Route>
-      </Switch>
+        <Movie saveMovie={addToSavedList} />
+      </Route>
     </div>
   );
 }
