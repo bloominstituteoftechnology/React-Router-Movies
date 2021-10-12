@@ -14,6 +14,9 @@ export default function App () {
         .then(response => {
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
+          // debugger
+          setMovieList(response.data)
+          console.log('response.data: ', response.data);
         })
         .catch(error => {
           console.error('Server Error', error);
