@@ -1,5 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const LinkStyle = styled(Link)`
+  color: black;
+  text-decoration: none;
+`
 export default function MovieList(props) {
   
   return (
@@ -16,7 +22,7 @@ function MovieDetails(props) {
   const { title, director, metascore,id } = props.movie;
 
   return (
-    <Link to ={`/movies/${id}`}>
+    <LinkStyle to ={`/movies/${id}`}>
     
     <div className="movie-card">
       <h2>{title}</h2>
@@ -27,6 +33,6 @@ function MovieDetails(props) {
         Metascore: <strong>{metascore}</strong>
       </div>
     </div>
-    </Link>
+    </LinkStyle>
   );
 }
