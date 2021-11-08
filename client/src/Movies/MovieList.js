@@ -1,6 +1,14 @@
 import React from 'react';
+import MovieCard from './MovieCard';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
+const LinkStyle = styled(Link)`
+  color: black;
+  text-decoration: none;
+`
 export default function MovieList(props) {
+  
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
@@ -11,17 +19,13 @@ export default function MovieList(props) {
 }
 
 function MovieDetails(props) {
-  const { title, director, metascore } = props.movie;
+  
+  const { title, director, metascore,id } = props.movie;
 
   return (
-    <div className="movie-card">
-      <h2>{title}</h2>
-      <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
-      </div>
-    </div>
+    <LinkStyle to ={`/movies/${id}`}>
+    
+    <MovieCard title ={title} director = {director} metascore={metascore}/>
+    </LinkStyle>
   );
 }
