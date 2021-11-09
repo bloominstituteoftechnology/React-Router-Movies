@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
-import MovieList from './Movies/MovieList'
+import MovieList from './Movies/MovieList';
+import Movie from './Movies/Movie';
 import SavedList from './Movies/SavedList';
 
 export default function App () {
@@ -34,6 +35,9 @@ export default function App () {
 
       <Route path ="/">
         <MovieList movies={movieList} />
+      </Route>
+      <Route path ="/movies/:id">
+        <Movie />
       </Route>
     </div>
   );
