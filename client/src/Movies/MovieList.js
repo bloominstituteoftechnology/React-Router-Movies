@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useReducer } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function MovieList(props) {
   return (
@@ -11,10 +12,12 @@ export default function MovieList(props) {
 }
 
 function MovieDetails(props) {
-  const { title, director, metascore } = props.movie;
+  const { title, director, metascore, id } = props.movie;
 
   return (
+    <Link to={`/movies/${id}`}>
     <div className="movie-card">
+      
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
@@ -22,6 +25,8 @@ function MovieDetails(props) {
       <div className="movie-metascore">
         Metascore: <strong>{metascore}</strong>
       </div>
+
     </div>
+    </Link>
   );
 }
