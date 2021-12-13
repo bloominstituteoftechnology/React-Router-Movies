@@ -13,14 +13,22 @@ export default function Movie(props) {
   const [movie, setMovie] = useState();
 
   const { id } = useParams();
+  
+
+  const { url, path } = useRouteMatch();
+  console.log('itemID: ' + parseInt(id));
+  console.log("url: " + url);
+  console.log('path: ' + path);
+
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
       .then(response => {
-        // Study this response with a breakpoint or log statements
-        // and set the response data as the 'movie' slice of state
+        console.log('Movie.js responese');
+        console.log(response.data);
+        console.log('-------------------');
       })
       .catch(error => {
         console.error(error);

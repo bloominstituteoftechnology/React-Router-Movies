@@ -16,9 +16,6 @@ export default function App () {
       axios
         .get('http://localhost:5000/api/movies') // Study this endpoint with Postman
         .then(response => {
-          console.log("--------------------------");
-          console.log(response.data);
-          console.log("--------------------------");
           setMovieList(response.data);
         })
         .catch(error => {
