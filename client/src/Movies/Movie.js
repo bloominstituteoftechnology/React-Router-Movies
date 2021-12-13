@@ -10,8 +10,8 @@ export default function Movie(props) {
     axios
       .get(`http://localhost:5000/api/movies/${movieId}`)
       .then(response => {
-        console.log(response.data.id)
-        movie(response.data.id)
+        console.log(response.data)
+        setMovie(response.data)
       })
       .catch(error => {
         console.error(error);
