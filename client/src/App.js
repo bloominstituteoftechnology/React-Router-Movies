@@ -40,7 +40,7 @@ export default function App () {
         <SavedList list={[ /* This is stretch */]} /> 
       </Route>
       <Route path='/'>
-        <MovieList movies={movieList} title={movieList.title} director={movieList.director} metascore={movieList.metascore} />
+        <MovieList movies={movieList} />
       </Route>
     </Switch>
   );
