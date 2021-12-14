@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // import MovieCard from './Movies/MovieCard';
 import MovieList from './Movies/MovieList';
@@ -33,11 +33,11 @@ export default function App () {
 
   return (
     <div>
-      <Link to="/">Movie List</Link>
+      {/* <Link to="/">Movie List</Link> */}
       <SavedList list={[ /* This is stretch */]} />      
     <div>
 
-      HERE!!!
+      {/* HERE!!! */}
 
       <Switch>
 
