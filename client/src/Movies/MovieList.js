@@ -1,10 +1,7 @@
 import React from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function MovieList(props) {
-  console.log(props);
-
-  const { url } = useRouteMatch();
 
   return (
     <div className="movie-list">
@@ -16,7 +13,6 @@ export default function MovieList(props) {
 }
 
 function MovieDetails(props) {
-  console.log(props);
   const { title, director, metascore } = props.movie;
 
 
