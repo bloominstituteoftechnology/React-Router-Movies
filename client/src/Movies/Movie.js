@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 export default function Movie(props) {
   const [movie, setMovie] = useState();
   const { movieID } = useParams();
-  const uniqueMovie = movie.find(elem => elem.id === parseInt(movieID));
+  // const uniqueMovie = movie.find(elem => elem.id === parseInt(movieID));
   //let id = 1;
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
