@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {useRouteMatch} from 'react-router-dom'
+
 
 export default function Movie(props) {
   const [movie, setMovie] = useState([]);
-  const { movieList } = props;
-
-  const [movieIds, setMovieId] = useState([])
+  
+  let id = 1;
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
+  const {url} = useRouteMatch;
+  console.log(url)
+
 
   useEffect(() => {
     axios
@@ -34,12 +38,12 @@ export default function Movie(props) {
   return (
     <div className="save-wrapper">
       <div className="movie-card">
-        <h2>{movieList.title}</h2>
+        <h2>{title}</h2>
         <div className="movie-director">
-          Director: <em>{movieList.director}</em>
+          Director: <em>{director}</em>
         </div>
         <div className="movie-metascore">
-          Metascore: <strong>{movieList.metascore}</strong>
+          Metascore: <strong>{metascore}</strong>
         </div>
         <h3>Actors</h3>
 
