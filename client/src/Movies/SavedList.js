@@ -1,4 +1,7 @@
 import React from 'react';
+import { useHistory } from 'react-router';
+
+const history = useHistory();
 
 export default function SavedList(props) {
   return (
@@ -7,7 +10,11 @@ export default function SavedList(props) {
       {props.list.map(movie => (
         <span className="saved-movie">{movie.title}</span>
       ))}
-      <div className="home-button">Home</div>
+      <div className="home-button">
+        <button type ='button' onClick={() => history.goBack()}>
+          Go Back Home
+        </button>
+        </div>
     </div>
   );
 }
