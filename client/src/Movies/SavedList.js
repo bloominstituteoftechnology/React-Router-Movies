@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
-export default function SavedList(props) {
-  return (
+export default (props) => {
+    const history = useHistory(); 
+    const {list} = props
+    return (
     <div className="saved-list">
+      {console.log('rerendering')}
       <h3>Saved Movies:</h3>
-      {props.list.map(movie => (
-        <span className="saved-movie">{movie.title}</span>
+      {list.map(movie => (
+        <span key={movie.id} className="saved-movie">{movie.title}</span>
       ))}
-      <div className="home-button">Home</div>
+      <div onClick={()=>history.push('/')} className="home-button">Home</div>
     </div>
   );
 }
