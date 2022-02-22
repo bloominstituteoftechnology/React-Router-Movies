@@ -43,7 +43,7 @@ export default function App () {
 
     <Switch>
 
-    <Route path="/">
+    <Route exact path="/">
       <MovieList movies={ movieList }/>
     </Route>
 
@@ -62,3 +62,8 @@ export default function App () {
     </div>
   );
 }
+
+/** NOTES
+ * path: listening for a URL
+ * to: sends a URL to a certain place
+ */

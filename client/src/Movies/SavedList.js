@@ -6,9 +6,10 @@ export default function SavedList(props) {
 
   const history = useHistory();
 
-  const routeToMovies = () => {
-    history.push("/movie-list");
+  const homeClick = () => {
+    history.push("/");
   }
+
 
   return (
     <div className="saved-list">
@@ -16,7 +17,10 @@ export default function SavedList(props) {
       {props.list.map(movie => (
         <span className="saved-movie">{movie.title}</span>
       ))}
-      <div className="home-button">Home</div>
+  
+      <div className="home-button" onClick={homeClick} >Home</div>
+     
+      
     </div>
   );
 }
