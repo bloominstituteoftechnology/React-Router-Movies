@@ -5,22 +5,16 @@ export default function Movie(props) {
   const [movie, setMovie] = useState();
 
   let {itemID} = useParams();
-  // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
   useEffect(() => {
     axios
-      .get(`http://localhost:5001/api/movies/${itemID}`) // Study this endpoint with Postman
+      .get(`http://localhost:5001/api/movies/${itemID}`)
       .then(response => {
         setMovie(response.data)
       })
       .catch(error => {
         console.error(error);
       });
-    // This effect should run every time time
-    // the `id` changes... How could we do this?
   }, []); 
-
-  // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = evt => { }
 
   if (!movie) {
     return <div>Loading Movie Data...</div>;

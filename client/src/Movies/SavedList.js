@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 export default (props) => {
     const history = useHistory(); 
     const {list} = props
-    useEffect(()=>{console.log(list)},[list])
     return (
     <div className="saved-list">
       {console.log('rerendering')}

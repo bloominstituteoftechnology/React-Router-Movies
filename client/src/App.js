@@ -14,7 +14,6 @@ export default function App () {
         .get('http://localhost:5001/api/movies') // Study this endpoint with Postman
         .then(response => {
           setMovieList(response.data)
-          // setSaved(response.data);
         })
         .catch(error => {
           console.error('Server Error', error);
@@ -24,18 +23,18 @@ export default function App () {
   }, []);
 
   const addToSavedList = movie => {
-    const temp = saved || [] ;
+    const temp = [...saved]
     temp.push(movieList.filter(val=>val.id === movie.id)[0]); 
     setSaved(temp);
-    console.log(saved);
   };
 
   return (
     <div className='app'>
-      {<SavedList list={saved}/>}
+       <SavedList list={saved}/>
       <div>
         <Switch>
           <Route path={'/movies/:itemID'}>
+         
             <Movie addToSavedList={(title)=>addToSavedList(title)} movies={movieList}/>
           </Route>
           <Route path={'/'}>
