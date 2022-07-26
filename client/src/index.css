@@ -70,3 +70,13 @@ body {
   padding: 5px 10px;
   background-color: lightskyblue;
 }
+
+a:visited{
+  text-decoration: none; 
+  color: black;
+}
+
+a{
+  text-decoration: none; 
+  color: black;
+}
