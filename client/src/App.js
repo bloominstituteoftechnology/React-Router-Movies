@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Route} from 'react-router-dom';
-
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/MovieList';
@@ -12,11 +11,13 @@ export default function App () {
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
+    
     const getMovies = () => {
       axios
         .get('http://localhost:5001/api/movies') // Study this endpoint with Postman
         .then(response => {
-          setMovieList(response.data);
+          const { data } = response.data
+          setMovieList(data);
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
         })
