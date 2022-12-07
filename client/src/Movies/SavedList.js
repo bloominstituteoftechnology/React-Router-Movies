@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 export default function SavedList(props) {
   const history = useHistory();
   const goHome = () => {
-    history.pushState('/');
+    history.push('/');
   }
   return (
     <div className="saved-list">
