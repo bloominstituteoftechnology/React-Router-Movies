@@ -1,18 +1,18 @@
 import React from 'react';
 import MovieCard from './MovieCard';
 
-export default function MovieList(props) {
+export default function MovieList({ movies }) {
   return (
     <div className="movie-list">
-      {props.movies.map((movie) => (
+      {movies.map((movie) => (
         <MovieDetails key={movie.id} movie={movie} />
       ))}
     </div>
   );
 }
 
-function MovieDetails(props) {
-  const { id } = props.movie;
+function MovieDetails({ movie }) {
+  const { id } = movie;
 
   const showMovieDetail = () => {
     window.location.href = `/movies/${id}`;
@@ -20,7 +20,7 @@ function MovieDetails(props) {
 
   return (
     <div onClick={showMovieDetail}>
-      <MovieCard movie={props.movie} />
+      <MovieCard movie={movie} />
     </div>
   );
 }

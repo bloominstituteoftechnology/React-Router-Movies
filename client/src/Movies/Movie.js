@@ -12,10 +12,10 @@ export default function Movie(props) {
   useEffect(() => {
     axios
       .get(`http://localhost:5001/api/movies/${id}`) // Study this endpoint with Postman
-      .then((response) => {
+      .then(({ data }) => {
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
-        setMovie(response.data);
+        setMovie(data);
       })
       .catch((error) => {
         console.error(error);

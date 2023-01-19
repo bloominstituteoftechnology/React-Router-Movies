@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-export default function SavedList(props) {
+export default function SavedList({ list }) {
   const history = useHistory();
   const showHomePage = () => {
     history.push(`/`);
@@ -10,8 +10,8 @@ export default function SavedList(props) {
   return (
     <div className="saved-list">
       <h3>Saved Movies:</h3>
-      {props.list.map((movie) => (
-        <span className="saved-movie">{movie.title}</span>
+      {list.map(({ title }) => (
+        <span className="saved-movie">{title}</span>
       ))}
       <div className="home-button" onClick={showHomePage}>
         Home
