@@ -6,12 +6,13 @@ export default function SavedList({ list }) {
   const showHomePage = () => {
     history.push(`/`);
   };
-
   return (
     <div className="saved-list">
       <h3>Saved Movies:</h3>
-      {list.map(({ title }) => (
-        <span className="saved-movie">{title}</span>
+      {list.map(({ title }, index) => (
+        <span className="saved-movie" key={index}>
+          {title}
+        </span>
       ))}
       <div className="home-button" onClick={showHomePage}>
         Home
