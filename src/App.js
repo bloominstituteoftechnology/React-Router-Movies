@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MovieList from "./Movies/MovieList";
+import Movie from "./Movies/Movie";
 import SavedList from "./Movies/SavedList";
 import { Route, Routes } from "react-router-dom";
 
@@ -40,6 +41,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<MovieList movies={movies} />}></Route>
+        <Route path="movies/:id" element={<Movie />}></Route>
       </Routes>
     </div>
   );
